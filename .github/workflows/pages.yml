@@ -18,7 +18,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v5
-      - name: Build
+      - name: Build public site artifact
         run: |
           mkdir -p _site
           cp index.html favicon.svg .nojekyll _site/
@@ -27,4 +27,5 @@ jobs:
       - uses: actions/upload-pages-artifact@v4
         with:
           path: _site
-      - uses: actions/deploy-pages@v4
+      - id: deployment
+        uses: actions/deploy-pages@v4
