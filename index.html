@@ -65,8 +65,11 @@ header{
   gap:var(--space-sm);
   padding-bottom:var(--space-sm);
 }
-.brand{display:flex;align-items:center;gap:16px}
-.logo-img{width:40px;height:40px;border-radius:10px;object-fit:cover}
+.brand{display:flex;align-items:center;gap:12px;min-width:0}
+.logo-stack{display:flex;align-items:center;gap:6px;flex-shrink:0}
+.logo-link{display:block;line-height:0;transition:opacity .2s}
+.logo-link:hover{opacity:.85}
+.logo-img{width:40px;height:40px;border-radius:10px;object-fit:cover;display:block}
 .brand-text .name{
   font-family:var(--serif);font-size:26px;font-weight:400;
   letter-spacing:-.01em;color:var(--ink);
@@ -430,6 +433,9 @@ footer .love{
 @media(max-width:600px){
   .hero h1{font-size:38px}
   section{margin-top:var(--space-xl)}
+  .brand{gap:10px}
+  .logo-stack{gap:5px}
+  .logo-img{width:36px;height:36px;border-radius:9px}
 }
 </style>
 </head>
@@ -437,7 +443,12 @@ footer .love{
 <div class="wrap">
   <header>
     <div class="brand">
-      <img class="logo-img" src="logo.png" width="40" height="40" alt="Plumb"/>
+      <div class="logo-stack" aria-label="Plumb and 35">
+        <img class="logo-img" src="logo.png" width="40" height="40" alt="Plumb"/>
+        <a href="https://35.elghaly.dev/" class="logo-link" target="_blank" rel="noopener noreferrer">
+          <img class="logo-img" src="logo-35.png" width="40" height="40" alt="35"/>
+        </a>
+      </div>
       <div class="brand-text">
         <div class="name">Plumb</div>
         <div class="tag" id="brandTag">Ready desk software</div>
