@@ -149,6 +149,27 @@ footer .net.monad span{color:var(--accent-warm)}
 }
 .why-card p{color:var(--muted);font-size:14px;line-height:1.65}
 
+/* ── Desk modes ── */
+.modes-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--space-sm)}
+.mode-card{
+  background:var(--surface);border:1px solid var(--line);
+  border-radius:var(--radius);padding:var(--space-md) var(--space-lg);
+}
+.mode-card.featured{
+  border-color:var(--line-strong);
+  background:linear-gradient(180deg,rgba(255,255,255,.03),var(--surface));
+}
+.mode-tag{
+  display:inline-block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:12px;font-weight:500;
+}
+.mode-card.featured .mode-tag{color:var(--accent-warm)}
+.mode-card h3{
+  font-family:var(--serif);font-size:22px;font-weight:400;
+  margin-bottom:10px;color:var(--ink);letter-spacing:-.01em;
+}
+.mode-card p{color:var(--muted);font-size:14px;line-height:1.65}
+
 /* ── Sections ── */
 section{margin-top:var(--space-2xl)}
 .section-head{margin-bottom:var(--space-lg);max-width:36em}
@@ -406,7 +427,7 @@ footer .love{
 }
 
 @media(max-width:900px){
-  .why-grid,.seats,.gallery,.flash-gallery,.rails,.timeline{grid-template-columns:1fr}
+  .why-grid,.modes-grid,.seats,.gallery,.flash-gallery,.rails,.timeline{grid-template-columns:1fr}
   .wrap{padding:32px 20px var(--space-xl)}
   header{flex-direction:row;align-items:center}
 }
@@ -450,6 +471,26 @@ footer .love{
     <div class="hero-meta">
       <p class="delivery" id="heroDelivery">After pay, ready bot delivered within <time>3.35</time> hours</p>
       <p class="hero-help" id="heroHelp">Walkthrough &amp; setup help included</p>
+    </div>
+  </section>
+
+  <section id="desk-modes">
+    <div class="section-head">
+      <p class="section-label" id="modesLabel">Two ways to run</p>
+      <h2 class="section-title" id="modesTitle">Spot or arbitrage — your desk, your pace.</h2>
+      <p class="section-note" id="modesNote">Every Plumb seat includes both modes. We recommend starting in spot — learn the desk, then step into arbitrage when you are ready.</p>
+    </div>
+    <div class="modes-grid">
+      <article class="mode-card featured">
+        <span class="mode-tag" id="m1t">Recommended · start here</span>
+        <h3 id="m1h">Spot mode</h3>
+        <p id="m1">No arbitrage loop. One venue, one path at a time — learn Telegram control, sizing, and Jupiter execution on the pairs you name. A calmer first run on a self-hosted desk you hold.</p>
+      </article>
+      <article class="mode-card">
+        <span class="mode-tag" id="m2t">When you are ready</span>
+        <h3 id="m2h">Arbitrage mode</h3>
+        <p id="m2">Cross-venue and cross-route — the desk watches two prices and acts when your rules pass. Full arbitrage board on Pro and Source. Start in spot, then open this door when the path feels familiar.</p>
+      </article>
     </div>
   </section>
 
