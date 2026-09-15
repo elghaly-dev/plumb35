@@ -28,8 +28,10 @@ jobs:
           # Everything the page actually references, plus crawler files.
           cp index.html 404.html i18n.js app.js .nojekyll _site/
           cp favicon.png favicon.svg logo.png robots.txt sitemap.xml site.webmanifest _site/
-          cp brand-35-plumb.jpg logo-plumb-35.png logo-plumb-35.svg _site/
-          cp board-full-arb.png board-partial-350.png _site/
+          cp brand-35-plumb.jpg brand-35-plumb.webp _site/
+          cp logo-plumb-35.png logo-plumb-35.svg _site/
+          cp board-full-arb.png board-full-arb.webp _site/
+          cp board-partial-350.png board-partial-350.webp _site/
           cp -R assets _site/assets
           if [ -f CNAME ]; then cp CNAME _site/; fi
 
@@ -38,8 +40,8 @@ jobs:
           set -euo pipefail
           # Pull local src/href targets out of the built page and confirm each exists.
           # The loop runs in a subshell, so failures are collected in a file.
-          grep -oE '(src|href)="[^":#]+"' _site/index.html \
-            | sed -E 's/^(src|href)="//; s/"$//' \
+          grep -oE '(src|srcset|href)="[^":#]+"' _site/index.html \
+            | sed -E 's/^(src|srcset|href)="//; s/"$//' \
             | grep -vE '^(https?:|mailto:|//)' \
             | sort -u > refs.txt
           : > missing.txt

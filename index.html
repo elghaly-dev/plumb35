@@ -30,7 +30,7 @@
 <link rel="manifest" href="site.webmanifest"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link rel="preload" as="image" href="brand-35-plumb.jpg" fetchpriority="high"/>
+<link rel="preload" as="image" href="brand-35-plumb.webp" type="image/webp" fetchpriority="high"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"/>
 <style>
 :root{
@@ -39,8 +39,8 @@
   --surface:#111113;
   --surface-hover:#161618;
   --ink:#f5f5f7;
-  --muted:#86868b;
-  --muted-soft:#6e6e73;
+  --muted:#9b9ba1;      /* 6.54:1 min — WCAG AA on every surface */
+  --muted-soft:#808086; /* 4.60:1 min — used on 10-12px labels */
   --line:rgba(255,255,255,.08);
   --line-strong:rgba(255,255,255,.14);
   --accent:#e8e6e1;
@@ -284,6 +284,7 @@ section{margin-top:var(--space-2xl)}
 
 /* ── Gallery ── */
 .gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--space-md)}
+picture{display:block;line-height:0}
 .gallery figure{margin:0}
 .gallery img{
   width:100%;border-radius:var(--radius);border:1px solid var(--line);
@@ -571,6 +572,24 @@ footer .love{
 .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line-strong)}
 .btn-ghost:hover{background:rgba(255,255,255,.06)}
 
+.cta-brief{
+  margin:var(--space-lg) auto 0;max-width:40em;
+  padding-top:var(--space-md);border-top:1px solid var(--line);
+}
+.cta-brief-label{
+  font-size:10px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--muted-soft);font-weight:500;margin-bottom:var(--space-xs);
+}
+.cta-brief ul{
+  list-style:none;display:flex;flex-wrap:wrap;justify-content:center;
+  gap:10px var(--space-sm);
+}
+.cta-brief li{
+  font-size:13px;color:var(--muted);line-height:1.5;
+  display:flex;align-items:baseline;gap:8px;
+}
+.cta-brief li::before{content:"\2014";color:var(--accent-warm);opacity:.75}
+
 /* ── Sticky mobile CTA ── */
 .mobile-cta{
   display:none;position:fixed;left:0;right:0;bottom:0;z-index:60;
@@ -644,7 +663,13 @@ footer .love{
   a[href^="http"]::after{content:" (" attr(href) ")";font-size:10px;color:#555}
 }
 </style>
-<script>document.documentElement.className+=' js';</script>
+<script>
+/* Set the js flag and the saved language direction before first paint, so a
+   returning Arabic reader never sees an English LTR frame flip to RTL. */
+(function(){var d=document.documentElement;d.className+=' js';
+try{var l=localStorage.getItem('plumb-lang');
+if(l&&/^(en|ar|ru|zh|de|es)$/.test(l)){d.lang=l;d.dir=l==='ar'?'rtl':'ltr';}}catch(e){}})();
+</script>
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -837,8 +862,8 @@ footer .love{
   <section class="brand-plate reveal" id="brand" aria-labelledby="bpTitle">
     <div class="brand-plate-inner">
       <figure class="brand-plate-figure">
-        <img src="brand-35-plumb.jpg" width="1168" height="784" fetchpriority="high" decoding="async"
-             alt="35 Plumb Elghaly house mark — the numerals 35 in a teal-to-violet gradient over PLUMB and ELGHALY, beside the star, hamsa and eye marks"/>
+        <picture><source srcset="brand-35-plumb.webp" type="image/webp"/><img src="brand-35-plumb.jpg" width="1168" height="784" fetchpriority="high" decoding="async"
+             alt="35 Plumb Elghaly house mark — the numerals 35 in a teal-to-violet gradient over PLUMB and ELGHALY, beside the star, hamsa and eye marks"/></picture>
       </figure>
       <div class="brand-plate-copy">
         <p class="section-label" id="bpLabel">The house mark</p>
@@ -1044,7 +1069,7 @@ footer .love{
     </div>
     <div class="gallery">
       <figure>
-        <img class="board-shot" src="board-partial-350.png" alt="350 Starter partial pair board — limited pairs, slice of the desk" width="800" height="520" loading="lazy" decoding="async"/>
+        <picture><source srcset="board-partial-350.webp" type="image/webp"/><img class="board-shot" src="board-partial-350.png" alt="350 Starter partial pair board — limited pairs, slice of the desk" width="800" height="520" loading="lazy" decoding="async"/></picture>
         <figcaption>
           <span class="tag" id="g2t">Starter $299</span>
           <strong id="g2h">350 · partial board</strong>
@@ -1052,7 +1077,7 @@ footer .love{
         </figcaption>
       </figure>
       <figure>
-        <img class="board-shot" src="board-full-arb.png" alt="Arb Pro Source full multi-pair board — KEEP-style desk" width="1000" height="560" loading="lazy" decoding="async"/>
+        <picture><source srcset="board-full-arb.webp" type="image/webp"/><img class="board-shot" src="board-full-arb.png" alt="Arb Pro Source full multi-pair board — KEEP-style desk" width="1000" height="560" loading="lazy" decoding="async"/></picture>
         <figcaption>
           <span class="tag" id="g3t">Pro $699 · Source $1,999</span>
           <strong id="g3h">Full arbitrage board</strong>
@@ -1070,14 +1095,14 @@ footer .love{
     </div>
     <div class="flash-gallery">
       <figure>
-        <img src="assets/flash-15k-borrow.png" alt="Solscan — borrow flash loan 15,000 USDC from Kamino lending vault" width="390" height="844" loading="lazy" decoding="async"/>
+        <picture><source srcset="assets/flash-15k-borrow.webp" type="image/webp"/><img src="assets/flash-15k-borrow.png" alt="Solscan — borrow flash loan 15,000 USDC from Kamino lending vault" width="390" height="844" loading="lazy" decoding="async"/></picture>
         <figcaption>
           <strong id="f1h">Borrow · Kamino</strong>
           <span id="f1">Flash loan 15,000 USDC from the Kamino lending vault.</span>
         </figcaption>
       </figure>
       <figure>
-        <img src="assets/flash-15k-loop.png" alt="Solscan key actions — 15k flash borrow, Jupiter swaps, repay to Kamino" width="390" height="844" loading="lazy" decoding="async"/>
+        <picture><source srcset="assets/flash-15k-loop.webp" type="image/webp"/><img src="assets/flash-15k-loop.png" alt="Solscan key actions — 15k flash borrow, Jupiter swaps, repay to Kamino" width="390" height="844" loading="lazy" decoding="async"/></picture>
         <figcaption>
           <strong id="f2h">Loop · Jupiter path</strong>
           <span id="f2">Borrow → Jupiter swaps → repay. Full round-trip in one transaction.</span>
@@ -1095,7 +1120,7 @@ footer .love{
     <div class="seats">
       <article class="seat">
         <figure class="seat-preview">
-          <img src="board-partial-350.png" alt="Starter partial board — 350 seat, pair slice" width="800" height="520" loading="lazy" decoding="async"/>
+          <picture><source srcset="board-partial-350.webp" type="image/webp"/><img src="board-partial-350.png" alt="Starter partial board — 350 seat, pair slice" width="800" height="520" loading="lazy" decoding="async"/></picture>
           <figcaption id="s1cap">350 · partial board · 1–2 pairs · more pairs locked</figcaption>
         </figure>
         <p class="seat-tier" id="s1tier">Starter · 350 partial · $299</p>
@@ -1115,7 +1140,7 @@ footer .love{
       </article>
       <article class="seat featured">
         <figure class="seat-preview">
-          <img src="board-full-arb.png" alt="Pro full arb board — multi-pair KEEP-style desk" width="1000" height="560" loading="lazy" decoding="async"/>
+          <picture><source srcset="board-full-arb.webp" type="image/webp"/><img src="board-full-arb.png" alt="Pro full arb board — multi-pair KEEP-style desk" width="1000" height="560" loading="lazy" decoding="async"/></picture>
           <figcaption id="s2cap">Full arbitrage board · multi-pair · you set slip/tip</figcaption>
         </figure>
         <p class="seat-tier" id="s2tier">Pro · full arbitrage · $699</p>
@@ -1135,7 +1160,7 @@ footer .love{
       </article>
       <article class="seat">
         <figure class="seat-preview">
-          <img src="board-full-arb.png" alt="Source full arb board — same desk as Pro, plus source" width="1000" height="560" loading="lazy" decoding="async"/>
+          <picture><source srcset="board-full-arb.webp" type="image/webp"/><img src="board-full-arb.png" alt="Source full arb board — same desk as Pro, plus source" width="1000" height="560" loading="lazy" decoding="async"/></picture>
           <figcaption id="s3cap">Full arbitrage board + source code</figcaption>
         </figure>
         <p class="seat-tier" id="s3tier">Source · full arbitrage + code · $1,999</p>
@@ -1231,7 +1256,16 @@ footer .love{
     <p id="ctaNote">Pick a seat and send the brief — or write first if you want to talk through which board fits. We answer around the clock.</p>
     <div class="cta-actions">
       <a class="btn btn-primary" href="#seats" id="ctaBtn">Choose your seat</a>
-      <a class="btn btn-ghost" href="mailto:support@elghaly.dev" id="ctaAlt">Ask a question first</a>
+      <a class="btn btn-ghost" href="mailto:support@elghaly.dev?subject=Plumb%20seat%20%E2%80%94%20brief" id="ctaAlt">Ask a question first</a>
+    </div>
+    <div class="cta-brief">
+      <p class="cta-brief-label" id="briefLabel">Put this in your brief</p>
+      <ul>
+        <li id="bi1">Which seat you took</li>
+        <li id="bi2">The pairs you want watched</li>
+        <li id="bi3">Where it will run: VPS or your own box</li>
+        <li id="bi4">Your timezone, for the walkthrough</li>
+      </ul>
     </div>
   </section>
 

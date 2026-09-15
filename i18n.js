@@ -96,7 +96,12 @@ en:{
   barTitle:"Lifetime seat · from $299",
   barNote:"Live desk in 3.35 hours",
   barBtn:"See seats",
-  toTopLabel:"Back to top"
+  toTopLabel:"Back to top",
+  briefLabel:"Put this in your brief",
+  bi1:"Which seat you took",
+  bi2:"The pairs you want watched",
+  bi3:"Where it will run: VPS or your own box",
+  bi4:"Your timezone, for the walkthrough"
 },
 ar:{
   metaTitle:"Plumb — برمجيات مكتب جاهزة",
@@ -190,7 +195,12 @@ ar:{
   barTitle:"مقعد مدى الحياة · من 299$",
   barNote:"مكتب يعمل خلال 3.35 ساعة",
   barBtn:"شاهد المقاعد",
-  toTopLabel:"العودة إلى الأعلى"
+  toTopLabel:"العودة إلى الأعلى",
+  briefLabel:"ضع هذا في موجزك",
+  bi1:"أي مقعد اخترت",
+  bi2:"الأزواج التي تريد مراقبتها",
+  bi3:"أين سيعمل: خادم VPS أو جهازك",
+  bi4:"منطقتك الزمنية، من أجل الجولة"
 },
 ru:{
   metaTitle:"Plumb — Готовое ПО для деска",
@@ -283,7 +293,12 @@ ru:{
   barTitle:"Пожизненное место · от $299",
   barNote:"Рабочий деск за 3.35 часа",
   barBtn:"Смотреть места",
-  toTopLabel:"Наверх"
+  toTopLabel:"Наверх",
+  briefLabel:"Укажите это в брифе",
+  bi1:"Какое место вы взяли",
+  bi2:"Пары, за которыми следить",
+  bi3:"Где он будет работать: VPS или ваша машина",
+  bi4:"Ваш часовой пояс — для разбора"
 },
 zh:{
   metaTitle:"Plumb — 就绪桌面软件",
@@ -377,7 +392,12 @@ zh:{
   barTitle:"终身席位 · $299 起",
   barNote:"3.35 小时内上线",
   barBtn:"查看席位",
-  toTopLabel:"回到顶部"
+  toTopLabel:"回到顶部",
+  briefLabel:"请在需求单中写明",
+  bi1:"你选择了哪个席位",
+  bi2:"希望盯住的交易对",
+  bi3:"将在哪里运行：VPS 或你自己的机器",
+  bi4:"你的时区，便于安排讲解"
 },
 de:{
   metaTitle:"Plumb — Fertige Desk-Software",
@@ -471,7 +491,12 @@ de:{
   barTitle:"Lifetime-Platz · ab 299 $",
   barNote:"Laufendes Desk in 3,35 Stunden",
   barBtn:"Plätze ansehen",
-  toTopLabel:"Nach oben"
+  toTopLabel:"Nach oben",
+  briefLabel:"Das gehört in deinen Brief",
+  bi1:"Welchen Platz du genommen hast",
+  bi2:"Die Paare, die beobachtet werden sollen",
+  bi3:"Wo es laufen wird: VPS oder eigene Maschine",
+  bi4:"Deine Zeitzone für den Walkthrough"
 },
 es:{
   metaTitle:"Plumb — Software de desk lista",
@@ -565,7 +590,12 @@ es:{
   barTitle:"Asiento vitalicio · desde 299 $",
   barNote:"Mesa funcionando en 3.35 horas",
   barBtn:"Ver asientos",
-  toTopLabel:"Volver arriba"
+  toTopLabel:"Volver arriba",
+  briefLabel:"Incluye esto en tu brief",
+  bi1:"Qué asiento tomaste",
+  bi2:"Los pares que quieres vigilar",
+  bi3:"Dónde va a correr: VPS o tu propia máquina",
+  bi4:"Tu zona horaria, para el recorrido"
 }
 };
 
@@ -611,6 +641,7 @@ const KEYS=[
   ['q7','#q7'],['a7','#a7'],
   ['ctaTitle','#ctaTitle'],['ctaNote','#ctaNote'],['ctaBtn','#ctaBtn'],['ctaAlt','#ctaAlt'],
   ['barTitle','#barTitle'],['barNote','#barNote'],['barBtn','#barBtn'],
+  ['briefLabel','#briefLabel'],['bi1','#bi1'],['bi2','#bi2'],['bi3','#bi3'],['bi4','#bi4'],
   ['toTopLabel','#toTop','aria-label','attr']
 ];
 
@@ -658,12 +689,16 @@ function setLang(lang){
   try{localStorage.setItem('plumb-lang',lang);}catch(e){}
 }
 
-document.addEventListener('DOMContentLoaded',()=>{
+function init(){
   document.querySelectorAll('.lang-btn').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
   let lang='en';
   try{lang=localStorage.getItem('plumb-lang')||'en';}catch(e){}
   if(!LANGS.includes(lang))lang='en';
   setLang(lang);
-});
+}
+/* This script sits at the end of <body>, so the DOM is normally ready here.
+   Applying immediately avoids a frame of untranslated copy. */
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);
+else init();
 window.plumbSetLang=setLang;
 })();
