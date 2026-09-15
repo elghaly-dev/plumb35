@@ -1,3 +1,5 @@
+# Deploys static sales site to GitHub Pages.
+# If Actions billing blocks runners, switch Pages source to branch main/(root) — see README.
 name: pages
 on:
   push:

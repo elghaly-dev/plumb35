@@ -3,190 +3,336 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Plumb — desk hunt software</title>
-<meta name="description" content="Self-hosted Solana desk software. Lifetime license. You run the keys. As-is."/>
-<meta name="theme-color" content="#0b0418"/>
-<meta property="og:title" content="Plumb — desk hunt software"/>
-<meta property="og:image" content="https://35.elghaly.dev/IMG_5183.jpeg"/>
+<title>Plumb — Ready Desk Software</title>
+<meta name="description" content="Ready desk bot with Telegram control. We build and walk you through it; you operate after. Paid lifetime seats. Software as-is."/>
+<meta name="theme-color" content="#0a0612"/>
+<link rel="canonical" href="https://plumb.elghaly.dev/"/>
+<meta property="og:title" content="Plumb — Ready Desk Software"/>
+<meta property="og:description" content="Telegram-controlled desk software. Lifetime seats. We deliver; you run it."/>
+<meta property="og:url" content="https://plumb.elghaly.dev/"/>
+<meta property="og:type" content="website"/>
 <link rel="icon" href="favicon.svg" type="image/svg+xml"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <style>
-:root{--bg:#07010f;--ink:#f5f7ff;--dim:#b9b6d3;--p:#9945ff;--g:#14f195;--c:#19fbff;--l:rgba(153,69,255,.28);--card:rgba(18,6,36,.78)}
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:ui-sans-serif,system-ui,sans-serif;background:radial-gradient(900px 500px at 0% -10%,rgba(153,69,255,.3),transparent 50%),radial-gradient(700px 400px at 100% 0%,rgba(20,241,149,.14),transparent 45%),var(--bg);color:var(--ink);line-height:1.55}
-.wrap{max-width:980px;margin:0 auto;padding:24px 18px 80px}
-header{display:flex;justify-content:space-between;align-items:center;gap:12px}
-.mark{width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,var(--p),var(--g));display:grid;place-items:center;font-weight:800;animation:pulse 3s ease-in-out infinite}
-.word{letter-spacing:.34em;font-size:12px;color:var(--dim)}
-.marks{letter-spacing:.16em;font-size:18px;animation:float 4s ease-in-out infinite}
-.hero{position:relative}
-.hero img{width:100%;border-radius:18px;border:1px solid var(--l);margin:22px 0 16px;display:block;animation:rise .8s ease}
-.float-marks{position:absolute;left:16px;top:36px;font-size:22px;animation:float 5s ease-in-out infinite;text-shadow:0 0 18px rgba(20,241,149,.4)}
-.kicker{color:var(--g);font-size:12px;letter-spacing:.18em;text-transform:uppercase}
-h1{font-size:clamp(28px,5vw,48px);letter-spacing:-.03em;margin:8px 0 12px}
-.lede{color:var(--dim);font-size:18px;max-width:38em}
-.cta{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0}
-.cta a,button.buy{border-radius:999px;padding:12px 16px;font-weight:700;text-decoration:none;border:0;cursor:pointer;font-size:14px}
-.primary{background:var(--g);color:#04110a}
-.ghost{border:1px solid var(--l);color:var(--ink);background:transparent}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:28px}
-.card{background:var(--card);border:1px solid var(--l);border-radius:18px;padding:18px;transition:transform .25s,border-color .25s}
-.card:hover{transform:translateY(-4px);border-color:var(--g)}
-.card h3{color:var(--g);font-size:13px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px}
-.price{font-size:28px;margin:8px 0;font-weight:800}
-.price small{font-size:13px;color:var(--dim);font-weight:500}
-.card ul{color:var(--dim);padding-left:18px;font-size:14px}
-.card li{margin:6px 0}
-section{margin-top:42px}
-h2{font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--p);margin-bottom:14px}
-.shots{display:grid;grid-template-columns:1.2fr .8fr;gap:12px}
-.shots img{width:100%;border-radius:16px;border:1px solid var(--l)}
+:root{
+  --bg:#07040e;
+  --bg-elevated:#110a1c;
+  --surface:rgba(22,14,38,.72);
+  --ink:#f4f0fa;
+  --muted:#a89bb8;
+  --accent:#8b6fbf;
+  --accent-soft:rgba(139,111,191,.18);
+  --gold:#c9b896;
+  --gold-soft:rgba(201,184,150,.12);
+  --line:rgba(139,111,191,.22);
+  --serif:"Cormorant Garamond",Georgia,serif;
+  --sans:"Outfit",ui-sans-serif,system-ui,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--sans);
+  font-weight:300;
+  background:
+    radial-gradient(1200px 600px at 15% -8%,rgba(90,55,140,.22),transparent 55%),
+    radial-gradient(900px 500px at 85% 0%,rgba(40,24,68,.35),transparent 50%),
+    var(--bg);
+  color:var(--ink);
+  line-height:1.65;
+  min-height:100vh;
+}
+.wrap{max-width:920px;margin:0 auto;padding:48px 24px 96px}
+a{color:var(--gold);text-decoration:none;transition:color .2s}
+a:hover{color:var(--ink)}
+
+/* Header */
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:24px;
+  padding-bottom:40px;
+  border-bottom:1px solid var(--line);
+}
+.brand{display:flex;align-items:center;gap:14px}
+.logo{
+  width:44px;height:44px;border-radius:12px;
+  background:linear-gradient(145deg,#2a1848,#120a20);
+  border:1px solid var(--line);
+  display:grid;place-items:center;
+  font-family:var(--serif);font-size:22px;font-weight:600;color:var(--gold);
+}
+.brand-text .name{
+  font-family:var(--serif);font-size:28px;font-weight:600;letter-spacing:.08em;
+}
+.brand-text .tag{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--muted)}
+.marks{text-align:right;font-size:20px;line-height:1.8;opacity:.92}
+
+/* Hero */
+.hero{padding:56px 0 48px}
+.eyebrow{
+  font-size:11px;letter-spacing:.32em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:16px;
+}
+.hero h1{
+  font-family:var(--serif);
+  font-size:clamp(36px,6vw,56px);
+  font-weight:600;
+  line-height:1.12;
+  letter-spacing:-.01em;
+  max-width:14ch;
+  margin-bottom:20px;
+}
+.hero .lede{
+  font-size:18px;color:var(--muted);max-width:36em;font-weight:300;
+}
+.byline{margin-top:28px;font-size:13px;color:var(--muted);letter-spacing:.04em}
+
+/* Principles */
+section{margin-top:64px}
+.section-label{
+  font-size:10px;letter-spacing:.34em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:20px;
+}
+.principles{
+  display:grid;gap:1px;
+  background:var(--line);
+  border:1px solid var(--line);
+  border-radius:16px;
+  overflow:hidden;
+}
+.principle{
+  background:var(--surface);
+  padding:24px 28px;
+  backdrop-filter:blur(12px);
+}
+.principle h3{
+  font-family:var(--serif);
+  font-size:22px;font-weight:600;
+  margin-bottom:8px;color:var(--ink);
+}
+.principle p{color:var(--muted);font-size:15px}
+.principle .note{
+  margin-top:10px;font-size:13px;color:var(--gold);font-style:italic;
+}
+
+/* Pricing */
+.seats{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+  margin-top:8px;
+}
+.seat{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:28px 24px;
+  display:flex;flex-direction:column;
+  backdrop-filter:blur(12px);
+  transition:border-color .25s,transform .25s;
+}
+.seat:hover{border-color:var(--accent);transform:translateY(-2px)}
+.seat.featured{border-color:var(--gold);background:linear-gradient(180deg,rgba(201,184,150,.06),var(--surface))}
+.seat-tier{
+  font-size:10px;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:12px;
+}
+.seat.featured .seat-tier{color:var(--gold)}
+.seat-price{
+  font-family:var(--serif);
+  font-size:40px;font-weight:600;line-height:1;
+  margin-bottom:4px;
+}
+.seat-price span{font-size:14px;color:var(--muted);font-family:var(--sans);font-weight:300}
+.seat-desc{color:var(--muted);font-size:14px;margin:16px 0 20px;flex:1}
+.seat ul{list-style:none;color:var(--muted);font-size:13px;margin-bottom:24px}
+.seat li{padding:6px 0;border-top:1px solid var(--line)}
+.seat li:first-child{border-top:0;padding-top:0}
+.btn{
+  display:block;text-align:center;
+  padding:14px 20px;border-radius:999px;
+  font-size:13px;font-weight:500;letter-spacing:.06em;
+  border:1px solid var(--line);
+  background:transparent;color:var(--ink);
+  transition:background .2s,border-color .2s,color .2s;
+}
+.btn:hover{background:var(--accent-soft);border-color:var(--accent);color:var(--ink)}
+.btn-primary{
+  background:var(--gold-soft);
+  border-color:rgba(201,184,150,.35);
+  color:var(--gold);
+}
+.btn-primary:hover{background:rgba(201,184,150,.2);border-color:var(--gold);color:var(--ink)}
+.seat.featured .btn-primary{background:rgba(201,184,150,.15)}
+
+/* Compare table */
+.compare{
+  margin-top:48px;
+  overflow-x:auto;
+  border:1px solid var(--line);
+  border-radius:16px;
+  background:var(--surface);
+}
 table{width:100%;border-collapse:collapse;font-size:14px}
-th,td{border-bottom:1px solid var(--l);padding:10px 8px;text-align:left;vertical-align:top}
-th{color:var(--g);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
-td{color:var(--dim)}
-td.y{color:var(--g)}
-form{display:grid;gap:10px}
-input,select,textarea{width:100%;padding:12px;border-radius:12px;border:1px solid var(--l);background:#11041f;color:var(--ink);font:inherit}
-textarea{min-height:90px}
-.fine{color:var(--dim);font-size:13px}
-footer{margin-top:48px;color:var(--dim);font-size:13px}
-.addr{direction:ltr;unicode-bidi:isolate;margin-top:6px}
-a{color:var(--c)}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
-@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(20,241,149,.35)}50%{box-shadow:0 0 0 8px rgba(20,241,149,0)}}
-@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
-@media(max-width:800px){.grid,.shots{grid-template-columns:1fr}table{font-size:12px}}
+th,td{padding:14px 18px;text-align:left;border-bottom:1px solid var(--line)}
+th{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-weight:500}
+td{color:var(--muted)}
+td:first-child{color:var(--ink);font-weight:400}
+tr:last-child td{border-bottom:0}
+.yes{color:var(--gold)}
+
+/* Disclaimer */
+.disclaimer{
+  margin-top:64px;
+  padding:28px 32px;
+  border:1px solid var(--line);
+  border-radius:16px;
+  background:var(--bg-elevated);
+}
+.disclaimer h3{
+  font-family:var(--serif);font-size:20px;margin-bottom:12px;color:var(--muted);
+}
+.disclaimer p{font-size:14px;color:var(--muted);max-width:52em}
+.disclaimer strong{color:var(--ink);font-weight:500}
+
+/* Footer */
+footer{
+  margin-top:72px;
+  padding-top:32px;
+  border-top:1px solid var(--line);
+  text-align:center;
+}
+footer .marks{font-size:22px;line-height:2;margin-bottom:16px}
+footer p{font-size:13px;color:var(--muted);margin:6px 0}
+footer .addr{direction:ltr;unicode-bidi:isolate}
+
+@media(max-width:768px){
+  .seats{grid-template-columns:1fr}
+  header{flex-direction:column}
+  .marks{text-align:left}
+  .hero h1{max-width:none}
+}
 </style>
 </head>
 <body>
 <div class="wrap">
   <header>
-    <div style="display:flex;gap:10px;align-items:center"><div class="mark">P</div><span class="word">PLUMB</span></div>
-    <span class="marks">✝️ 🧿 🪬</span>
-  </header>
-  <div class="hero">
-    <span class="float-marks">✝️ 🧿 🪬</span>
-    <img src="https://35.elghaly.dev/IMG_5183.jpeg" alt="ElGhaly desk" width="1200" height="806"/>
-    <div class="kicker">Self-hosted desk software</div>
-    <h1>A hunt stack you run.<br/>Keys stay with you.</h1>
-    <p class="lede">Same house as 35 and IRIS. You get a ready desk bot and a walkthrough. Titan / gRPC are extra. Software as-is. You operate it.</p>
-    <div class="cta">
-      <a class="primary" href="#diff">See the difference</a>
-      <a class="ghost" href="mailto:support@elghaly.dev">support@elghaly.dev</a>
+    <div class="brand">
+      <div class="logo">P</div>
+      <div class="brand-text">
+        <div class="name">Plumb</div>
+        <div class="tag">Ready desk software</div>
+      </div>
     </div>
-  </div>
+    <div class="marks" aria-hidden="true">✝️<br/>🧿<br/>🪬</div>
+  </header>
 
-  <section id="diff">
-    <h2>What is different</h2>
-    <div class="card" style="overflow-x:auto">
+  <section class="hero">
+    <p class="eyebrow">Lifetime seats · Paid only</p>
+    <h1>Your desk.<br/>Your keys.<br/>Telegram control.</h1>
+    <p class="lede">We deliver a ready bot and walk you through setup. After handoff, you operate it from Telegram on your own infrastructure. Software as-is — no promises beyond the seat.</p>
+    <p class="byline">Wyndham Heaven · elghaly</p>
+  </section>
+
+  <section id="how">
+    <p class="section-label">How it works</p>
+    <div class="principles">
+      <article class="principle">
+        <h3>Telegram control</h3>
+        <p>You run the desk from Telegram — start, stop, and monitor without sitting at the terminal.</p>
+      </article>
+      <article class="principle">
+        <h3>We build, you continue</h3>
+        <p>We ship a ready bot and a walkthrough. Once you are standing, you operate it. Optional follow-up is billed separately.</p>
+      </article>
+      <article class="principle">
+        <h3>No guarantees</h3>
+        <p>Software sold as-is. No profit promises, no CLEAR claims, no land — nothing beyond the software itself.</p>
+      </article>
+      <article class="principle">
+        <h3>Paid seats only</h3>
+        <p>Every seat is paid. There is no gratis tier, no trial, no comped access.</p>
+      </article>
+      <article class="principle">
+        <h3>35 is a separate door</h3>
+        <p>35 credits are earned-only and never sold here. This page is Plumb desk software only.</p>
+        <p class="note">Not a token sale. Not an investment.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="seats">
+    <p class="section-label">Lifetime seats</p>
+    <div class="seats">
+      <article class="seat">
+        <p class="seat-tier">Starter</p>
+        <p class="seat-price">$299 <span>once</span></p>
+        <p class="seat-desc">First machine. One book to learn the path.</p>
+        <ul>
+          <li>1–2 pairs you name in the brief</li>
+          <li>Ready binary + install walkthrough</li>
+          <li>3 months of updates included</li>
+        </ul>
+        <a class="btn btn-primary" href="https://buy.stripe.com/14A6oB4AD7GBd2g3QN3Ru00">Pay $299</a>
+      </article>
+      <article class="seat featured">
+        <p class="seat-tier">Pro</p>
+        <p class="seat-price">$699 <span>once</span></p>
+        <p class="seat-desc">For operators who already trade and want more control.</p>
+        <ul>
+          <li>Multi-pair board</li>
+          <li>Slippage and tip knobs</li>
+          <li>Private-RPC hook points</li>
+          <li>6 months of updates</li>
+        </ul>
+        <a class="btn btn-primary" href="https://buy.stripe.com/4gM00d4AD2mhfao1IF3Ru01">Pay $699</a>
+      </article>
+      <article class="seat">
+        <p class="seat-tier">Source</p>
+        <p class="seat-price">$1,999 <span>once</span></p>
+        <p class="seat-desc">For desks that want the code and a workshop.</p>
+        <ul>
+          <li>Everything in Pro, plus source</li>
+          <li>Pair workshop on request</li>
+          <li>You own changes after handoff</li>
+          <li>6 months of updates</li>
+        </ul>
+        <a class="btn btn-primary" href="https://buy.stripe.com/5kQ5kx4AD2mh2nC0EB3Ru02">Pay $1,999</a>
+      </article>
+    </div>
+
+    <div class="compare">
       <table>
         <thead>
-          <tr><th></th><th>Starter $299</th><th>Pro $699</th><th>Source $1,999</th></tr>
+          <tr><th></th><th>Starter</th><th>Pro</th><th>Source</th></tr>
         </thead>
         <tbody>
-          <tr><td>Who it is for</td><td>First machine, one book</td><td>Operator who already trades</td><td>Desk that wants the code</td></tr>
-          <tr><td>Pairs you name</td><td>1–2</td><td class="y">Multi-pair board</td><td class="y">Workshop + you change it</td></tr>
-          <tr><td>What you receive</td><td>Ready binary + install path</td><td>Ready binary + controls</td><td class="y">Source + seat</td></tr>
-          <tr><td>Updates included</td><td>3 months</td><td class="y">6 months</td><td class="y">6 months + workshop</td></tr>
-          <tr><td>Trade size</td><td>Capped seat</td><td class="y">No cap from us</td><td class="y">No cap from us</td></tr>
-          <tr><td>Slippage / tip knobs</td><td>Fixed defaults</td><td class="y">You set them</td><td class="y">You change the code</td></tr>
-          <tr><td>Private RPC hook</td><td>—</td><td class="y">Hook points</td><td class="y">Yours to edit</td></tr>
-          <tr><td>Titan / gRPC</td><td colspan="3">Not in any seat. Quote from $400 after the brief.</td></tr>
-          <tr><td>Follow-up after window</td><td colspan="3">$149 / month if you want us on the wire. Mail support@.</td></tr>
+          <tr><td>Pairs</td><td>1–2</td><td class="yes">Multi-pair</td><td class="yes">Workshop + edit</td></tr>
+          <tr><td>Delivery</td><td>Binary + walkthrough</td><td>Binary + controls</td><td class="yes">Source + seat</td></tr>
+          <tr><td>Updates</td><td>3 months</td><td class="yes">6 months</td><td class="yes">6 months</td></tr>
+          <tr><td>Slippage / tips</td><td>Defaults</td><td class="yes">You set</td><td class="yes">You change code</td></tr>
+          <tr><td>Private RPC</td><td>—</td><td class="yes">Hook points</td><td class="yes">Yours to edit</td></tr>
+          <tr><td>Titan / gRPC</td><td colspan="3">Not included. Quoted separately after brief.</td></tr>
+          <tr><td>Follow-up after window</td><td colspan="3">$149 / month if you want us on the wire.</td></tr>
         </tbody>
       </table>
     </div>
   </section>
 
-  <section id="seats">
-    <h2>Lifetime seats</h2>
-    <div class="grid">
-      <article class="card">
-        <h3>Starter</h3>
-        <p class="price">$299 <small>once</small></p>
-        <ul>
-          <li>One book to learn the path</li>
-          <li>1–2 pairs you name in the brief</li>
-          <li>Walkthrough so you can stand it up</li>
-          <li>3 months of updates, then optional follow-up</li>
-        </ul>
-        <p style="margin-top:14px"><a class="primary" href="https://buy.stripe.com/14A6oB4AD7GBd2g3QN3Ru00">Pay $299</a></p>
-      </article>
-      <article class="card">
-        <h3>Pro</h3>
-        <p class="price">$699 <small>once</small></p>
-        <ul>
-          <li>Same ready bot, more pairs on the board</li>
-          <li>You set slippage and tip</li>
-          <li>Private-RPC hook points</li>
-          <li>6 months of updates</li>
-        </ul>
-        <p style="margin-top:14px"><a class="primary" href="https://buy.stripe.com/4gM00d4AD2mhfao1IF3Ru01">Pay $699</a></p>
-      </article>
-      <article class="card">
-        <h3>Source</h3>
-        <p class="price">$1,999 <small>once</small></p>
-        <ul>
-          <li>Everything in Pro, plus the source</li>
-          <li>Pair workshop on your request</li>
-          <li>You own the changes after handoff</li>
-          <li>No usage cap from this desk</li>
-        </ul>
-        <p style="margin-top:14px"><a class="primary" href="https://buy.stripe.com/5kQ5kx4AD2mh2nC0EB3Ru02">Pay $1,999</a></p>
-      </article>
-    </div>
-  </section>
-
-  <section class="shots">
-    <img src="https://35.elghaly.dev/IMG_5183.jpeg" alt="Desk mark 35 IRIS ELGHALY"/>
-    <div class="card">
-      <p class="marks">✝️ 🧿 🪬</p>
-      <h3>House</h3>
-      <p class="fine">ElGhaly desk. Same marks as 35. Software sale, not a token, not a return.</p>
-      <p class="addr">548 Market Street, San Francisco, California 94104</p>
-      <p class="addr"><a href="mailto:support@elghaly.dev">support@elghaly.dev</a></p>
-      <p class="addr"><a href="mailto:35@elghaly.dev">35@elghaly.dev</a></p>
-    </div>
-  </section>
-
-  <section id="brief">
-    <h2>Brief before or after pay</h2>
-    <div class="card">
-      <form action="mailto:support@elghaly.dev?subject=PLUMB%20BRIEF" method="post" enctype="text/plain">
-        <label>Seat
-          <select name="seat">
-            <option>Starter $299</option>
-            <option selected>Pro $699</option>
-            <option>Source $1999</option>
-          </select>
-        </label>
-        <label>How many pairs?
-          <input name="pairs" placeholder="2"/>
-        </label>
-        <label>Which pairs / venues?
-          <input name="book" placeholder="SOL-USDC on Jupiter / Meteora"/>
-        </label>
-        <label>Need Titan / gRPC now?
-          <select name="pipe"><option>No — main path only</option><option>Yes — quote extra</option></select>
-        </label>
-        <label>Follow-up after the window?
-          <select name="retain"><option>No</option><option>Yes — $149/mo</option></select>
-        </label>
-        <label>Notes
-          <textarea name="notes" placeholder="What you already run. What you want the bot to do."></textarea>
-        </label>
-        <button class="buy primary" type="submit">Mail support@</button>
-      </form>
-      <p class="fine" style="margin-top:12px">As-is software. You host it. Titan is extra. Not 35-the-token.</p>
-    </div>
+  <section class="disclaimer">
+    <h3>As-is software</h3>
+    <p><strong>No guarantees.</strong> Plumb is desk software sold without warranty. We make no claims about profit, returns, CLEAR, land, or any outcome. You host it, you hold the keys, you accept the risk. Paid seats only — no gratis. 35 credits are earned elsewhere and are never sold on this page.</p>
   </section>
 
   <footer>
-    <p class="marks">✝️ 🧿 🪬</p>
-    <p>Plumb by ElGhaly</p>
+    <div class="marks" aria-hidden="true">✝️<br/>🧿<br/>🪬</div>
+    <p>Plumb by ElGhaly · Wyndham Heaven</p>
     <p class="addr">548 Market Street, San Francisco, California 94104</p>
-    <p><a href="mailto:support@elghaly.dev">support@elghaly.dev</a> · <a href="mailto:35@elghaly.dev">35@elghaly.dev</a></p>
-    <p>Separate from <a href="https://35.elghaly.dev">35</a> and <a href="https://iris-35.elghaly.dev">IRIS</a>.</p>
+    <p><a href="mailto:support@elghaly.dev">support@elghaly.dev</a></p>
+    <p style="margin-top:16px"><a href="https://35.elghaly.dev">35</a> · separate door · not sold here</p>
   </footer>
 </div>
 </body>
