@@ -343,6 +343,20 @@ footer .fine{
   max-width:44em;margin-left:auto;margin-right:auto;font-weight:400;
 }
 footer .addr{direction:ltr;unicode-bidi:isolate}
+footer .networks{
+  display:flex;flex-wrap:wrap;justify-content:center;align-items:center;
+  gap:10px;margin:var(--space-md) 0;font-size:11px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--muted-soft);font-weight:500;
+}
+footer .networks span{
+  padding:6px 12px;border:1px solid var(--line);border-radius:999px;
+  background:var(--surface);color:var(--muted);
+}
+footer .networks .monad{color:var(--accent-warm);border-color:rgba(201,184,150,.25)}
+footer .love{
+  font-family:var(--serif);font-size:15px;font-style:italic;
+  color:var(--muted);margin:var(--space-sm) 0 var(--space-md);opacity:.9;
+}
 
 @media(max-width:900px){
   .hero-grid{grid-template-columns:1fr;gap:var(--space-lg)}
@@ -638,6 +652,10 @@ footer .addr{direction:ltr;unicode-bidi:isolate}
     <div class="marks desk-marks" aria-hidden="true" style="margin-top:14px">3️⃣<br/>🧿<br/>5️⃣</div>
     <p class="flagship">💭 you dream we build 🧠💡</p>
     <p>Ask us on mail — <a href="mailto:support@elghaly.dev">support@elghaly.dev</a> · We are 24</p>
+    <p class="love">made by love ❤️</p>
+    <p class="networks" aria-label="Supported networks">
+      <span>SOL</span><span>ETH</span><span>BTC</span><span>ARB</span><span class="monad">MONAD</span>
+    </p>
     <p class="addr">548 Market Street, San Francisco, California 94104</p>
     <p style="margin-top:16px"><a href="https://35.elghaly.dev">35</a> · separate door · not sold here</p>
     <p class="fine">Plumb is desk software sold as-is, without warranty or guarantee. We make no claims about profit, returns, CLEAR, land, or any outcome. You host it, you hold the keys, you accept the risk. 35 credits are earned elsewhere and are never sold on this page. Not a token sale. Not an investment.</p>
