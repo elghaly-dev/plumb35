@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 400" role="img" aria-label="35 PLUMB ELGHALY">
+  <defs>
+    <linearGradient id="g35" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#d8fff4"/>
+      <stop offset="0.45" stop-color="#9ee8d4"/>
+      <stop offset="1" stop-color="#9b7dff"/>
+    </linearGradient>
+  </defs>
+  <rect width="720" height="400" fill="#07080c"/>
+  <text x="48" y="210" font-family="Arial Black, Helvetica, sans-serif" font-size="168" font-weight="800" fill="url(#g35)">35</text>
+  <text x="48" y="278" font-family="Helvetica, Arial, sans-serif" font-size="52" font-weight="700" letter-spacing="10" fill="#f4f4f6">PLUMB</text>
+  <text x="48" y="324" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="500" letter-spacing="8" fill="#d0d0d4">— ELGHALY —</text>
+  <g fill="none" stroke="#d8dce4" stroke-width="3" transform="translate(560,46)">
+    <path d="M40 8 V78 M18 28 H62"/>
+    <path d="M40 118 c0-22 18-34 18-52 0-14-8-22-18-22s-18 8-18 22c0 18 18 30 18 52z" transform="translate(0,8)"/>
+    <ellipse cx="40" cy="268" rx="28" ry="16"/>
+    <circle cx="40" cy="268" r="7" fill="#5ec8d8" stroke="none"/>
+    <path d="M40 242 v-10 M40 304 v10 M12 268 h-10 M68 268 h10 M18 250 l-8-8 M62 250 l8-8 M18 286 l-8 8 M62 286 l8 8"/>
+  </g>
+</svg>
