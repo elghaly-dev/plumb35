@@ -1,0 +1,13 @@
+{
+  "name": "Plumb — Ready Desk Software",
+  "short_name": "Plumb",
+  "description": "Self-hosted Solana desk software. Telegram control, Jupiter routes, ready in 3.35 hours.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#050505",
+  "theme_color": "#050505",
+  "icons": [
+    { "src": "favicon.png", "sizes": "32x32", "type": "image/png" },
+    { "src": "logo.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
