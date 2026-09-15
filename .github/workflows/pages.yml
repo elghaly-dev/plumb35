@@ -1,5 +1,5 @@
 # Deploys static sales site to GitHub Pages.
-# If Actions billing blocks runners, switch Pages source to branch main/(root) — see README.
+# If Actions billing blocks runners, switch Pages source to branch main / (root).
 name: pages
 on:
   push:
@@ -22,9 +22,12 @@ jobs:
       - uses: actions/checkout@v5
       - name: Build public site artifact
         run: |
-          mkdir -p _site
-          cp index.html favicon.svg .nojekyll _site/
+          mkdir -p _site/assets
+          cp index.html i18n.js favicon.svg favicon.png .nojekyll _site/
           if [ -f CNAME ]; then cp CNAME _site/; fi
+          if [ -f IMG_5757.jpeg ]; then cp IMG_5757.jpeg _site/logo-plumb-35.png; cp IMG_5757.jpeg _site/IMG_5757.jpeg; fi
+          cp logo-plumb-35.png logo-plumb-35.svg logo-35-brand.png logo.png board-full-arb.png board-partial-350.png hero-desk.jpeg photo-35-desk.jpeg _site/ 2>/dev/null || true
+          cp -R assets/. _site/assets/ 2>/dev/null || true
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
         with:
