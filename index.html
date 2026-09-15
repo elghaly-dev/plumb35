@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>Plumb — Ready Desk Software</title>
 <meta name="description" content="Self-hosted Solana desk hunt software. Telegram control, Jupiter routes, partial or full pair board. Ready in 3.35 hours. Lifetime paid seats."/>
-<meta name="theme-color" content="#0a0612"/>
+<meta name="theme-color" content="#050505"/>
 <link rel="canonical" href="https://plumb.elghaly.dev/"/>
 <meta property="og:title" content="Plumb — Ready Desk Software"/>
 <meta property="og:description" content="Solana desk hunt you run. Partial or full pair board. Pay → ready in 3.35 hours."/>
@@ -16,199 +16,371 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"/>
 <style>
 :root{
-  --bg:#07040e;
-  --bg-elevated:#110a1c;
-  --surface:rgba(22,14,38,.72);
-  --ink:#f4f0fa;
-  --muted:#a89bb8;
-  --accent:#8b6fbf;
-  --accent-soft:rgba(139,111,191,.18);
-  --gold:#c9b896;
-  --gold-soft:rgba(201,184,150,.12);
-  --line:rgba(139,111,191,.22);
-  --serif:"Cormorant Garamond",Georgia,serif;
-  --sans:"Outfit",ui-sans-serif,system-ui,sans-serif;
+  --bg:#050505;
+  --bg-soft:#0c0c0e;
+  --surface:#111113;
+  --surface-hover:#161618;
+  --ink:#f5f5f7;
+  --muted:#86868b;
+  --muted-soft:#6e6e73;
+  --line:rgba(255,255,255,.08);
+  --line-strong:rgba(255,255,255,.14);
+  --accent:#e8e6e1;
+  --accent-warm:#c9b896;
+  --accent-warm-soft:rgba(201,184,150,.08);
+  --serif:"Instrument Serif",Georgia,serif;
+  --sans:"Inter",ui-sans-serif,system-ui,sans-serif;
+  --space-xs:12px;
+  --space-sm:20px;
+  --space-md:32px;
+  --space-lg:56px;
+  --space-xl:88px;
+  --space-2xl:120px;
+  --radius:20px;
+  --radius-sm:14px;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
 body{
   font-family:var(--sans);
-  font-weight:300;
-  background:
-    radial-gradient(1200px 600px at 15% -8%,rgba(90,55,140,.22),transparent 55%),
-    radial-gradient(900px 500px at 85% 0%,rgba(40,24,68,.35),transparent 50%),
-    var(--bg);
+  font-weight:400;
+  font-size:16px;
+  background:var(--bg);
   color:var(--ink);
-  line-height:1.65;
+  line-height:1.6;
   min-height:100vh;
 }
-.wrap{max-width:920px;margin:0 auto;padding:48px 24px 96px}
-a{color:var(--gold);text-decoration:none;transition:color .2s}
-a:hover{color:var(--ink)}
+.wrap{max-width:1080px;margin:0 auto;padding:48px 32px var(--space-2xl)}
+a{color:var(--accent-warm);text-decoration:none;transition:opacity .2s}
+a:hover{opacity:.75}
 
+/* ── Header ── */
 header{
   display:flex;
   justify-content:space-between;
-  align-items:flex-start;
-  gap:24px;
-  padding-bottom:40px;
-  border-bottom:1px solid var(--line);
+  align-items:center;
+  gap:var(--space-md);
+  padding-bottom:var(--space-lg);
 }
-.brand{display:flex;align-items:center;gap:14px}
-.logo-img{width:44px;height:44px;border-radius:12px;object-fit:cover}
-.brand-text .name{font-family:var(--serif);font-size:28px;font-weight:600;letter-spacing:.08em}
-.brand-text .tag{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--muted)}
-.header-right{display:flex;align-items:flex-start;gap:14px}
-.marks{font-size:20px;line-height:1.8;opacity:.92}
-.header-logo{width:72px;height:72px;border-radius:16px;object-fit:cover;box-shadow:0 0 24px rgba(139,111,191,.35)}
+.brand{display:flex;align-items:center;gap:16px}
+.logo-img{width:40px;height:40px;border-radius:10px;object-fit:cover}
+.brand-text .name{
+  font-family:var(--serif);font-size:26px;font-weight:400;
+  letter-spacing:-.01em;color:var(--ink);
+}
+.brand-text .tag{
+  font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--muted);font-weight:500;margin-top:2px;
+}
+.header-right{display:flex;align-items:center;gap:20px}
+.marks{font-size:18px;line-height:1.75;opacity:.88;letter-spacing:.06em}
+.header-logo{width:56px;height:56px;border-radius:12px;object-fit:cover;opacity:.92}
 
-.hero{padding:40px 0 48px}
-.hero-banner{
+/* ── Flagship line ── */
+.flagship{
+  font-family:var(--serif);
+  font-size:clamp(20px,3vw,26px);
+  font-weight:400;
+  font-style:italic;
+  color:var(--accent);
+  letter-spacing:-.01em;
+  margin-bottom:var(--space-md);
+  opacity:.92;
+}
+
+/* ── Hero ── */
+.hero{padding:var(--space-lg) 0 var(--space-xl)}
+.hero-grid{
   display:grid;
-  grid-template-columns:minmax(120px,160px) 1fr;
-  gap:14px;
-  margin-bottom:32px;
+  grid-template-columns:1fr 1.15fr;
+  gap:var(--space-xl);
+  align-items:center;
+  margin-bottom:var(--space-xl);
 }
-.hero-side{
-  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;
-  padding:16px 10px;border-radius:16px;border:1px solid var(--line);
-  background:var(--surface);backdrop-filter:blur(12px);
+.hero-copy{max-width:28em}
+.eyebrow{
+  font-size:11px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--muted);font-weight:500;margin-bottom:var(--space-sm);
 }
-.hero-side .marks{font-size:22px;line-height:1.6;text-align:center}
-.hero-side img{width:72px;height:72px;border-radius:14px}
-.hero-photo{border-radius:16px;overflow:hidden;border:1px solid var(--line);background:var(--bg-elevated);min-height:200px}
-.hero-photo img{display:block;width:100%;height:100%;object-fit:cover;min-height:200px}
-.eyebrow{font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
 .hero h1{
   font-family:var(--serif);
-  font-size:clamp(36px,6vw,56px);
-  font-weight:600;line-height:1.12;letter-spacing:-.01em;
-  max-width:16ch;margin-bottom:20px;
+  font-size:clamp(42px,6.5vw,64px);
+  font-weight:400;line-height:1.05;letter-spacing:-.025em;
+  margin-bottom:var(--space-md);
 }
-.hero .lede{font-size:18px;color:var(--muted);max-width:38em;font-weight:300}
+.hero .lede{
+  font-size:17px;color:var(--muted);font-weight:400;
+  line-height:1.7;max-width:34em;
+}
+.hero .lede strong{color:var(--ink);font-weight:500}
+.hero-photo{
+  border-radius:var(--radius);overflow:hidden;
+  background:var(--surface);aspect-ratio:4/3;
+}
+.hero-photo img{display:block;width:100%;height:100%;object-fit:cover}
+.hero-meta{
+  display:flex;flex-wrap:wrap;align-items:center;gap:var(--space-sm);
+  padding-top:var(--space-md);
+  border-top:1px solid var(--line);
+}
 .delivery{
   display:inline-flex;align-items:center;gap:10px;
-  margin-top:28px;padding:12px 20px;
-  border:1px solid var(--line);border-radius:999px;
-  background:var(--gold-soft);
-  font-size:13px;color:var(--gold);letter-spacing:.04em;
+  padding:10px 18px;border:1px solid var(--line);border-radius:999px;
+  background:var(--surface);font-size:13px;color:var(--muted);
+  font-weight:500;letter-spacing:.02em;
 }
-.delivery time{font-family:var(--serif);font-size:18px;font-weight:600;color:var(--ink)}
+.delivery time{font-family:var(--serif);font-size:17px;color:var(--ink);font-weight:400}
+.hero-help{font-size:14px;color:var(--muted-soft);font-weight:400}
 
-section{margin-top:64px}
-.section-label{font-size:10px;letter-spacing:.34em;text-transform:uppercase;color:var(--accent);margin-bottom:20px}
-.section-note{font-size:14px;color:var(--muted);margin-bottom:16px;max-width:42em}
+/* ── Sections ── */
+section{margin-top:var(--space-2xl)}
+.section-head{margin-bottom:var(--space-lg);max-width:36em}
+.section-label{
+  font-size:11px;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--muted);font-weight:500;margin-bottom:var(--space-xs);
+}
+.section-title{
+  font-family:var(--serif);font-size:clamp(28px,4vw,38px);
+  font-weight:400;letter-spacing:-.02em;line-height:1.15;
+  margin-bottom:var(--space-sm);
+}
+.section-note{font-size:15px;color:var(--muted);line-height:1.65;font-weight:400}
 
-.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+/* ── Timeline ── */
+.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-sm)}
 .timeline-step{
-  background:var(--surface);border:1px solid var(--line);border-radius:16px;
-  padding:16px;text-align:center;backdrop-filter:blur(12px);
+  background:var(--surface);border:1px solid var(--line);
+  border-radius:var(--radius-sm);padding:var(--space-md) var(--space-sm);
+  text-align:center;
 }
-.timeline-step .num{font-family:var(--serif);font-size:22px;font-weight:600;color:var(--gold);margin-bottom:4px}
-.timeline-step p{font-size:13px;color:var(--muted)}
+.timeline-step .num{
+  font-family:var(--serif);font-size:24px;font-weight:400;
+  color:var(--ink);margin-bottom:6px;
+}
+.timeline-step p{font-size:13px;color:var(--muted);line-height:1.45}
 
-.principles{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
-.principle{background:var(--surface);padding:24px 28px;backdrop-filter:blur(12px)}
-.principle h3{font-family:var(--serif);font-size:22px;font-weight:600;margin-bottom:8px;color:var(--ink)}
-.principle p{color:var(--muted);font-size:15px}
-.principle .note{margin-top:10px;font-size:13px;color:var(--gold);font-style:italic}
+/* ── Principles ── */
+.principles{
+  display:grid;gap:1px;background:var(--line);
+  border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
+}
+.principle{background:var(--surface);padding:var(--space-md) var(--space-lg)}
+.principle h3{
+  font-family:var(--serif);font-size:22px;font-weight:400;
+  margin-bottom:10px;color:var(--ink);letter-spacing:-.01em;
+}
+.principle p{color:var(--muted);font-size:15px;line-height:1.65;font-weight:400}
+.principle .note{margin-top:12px;font-size:13px;color:var(--muted-soft);font-style:italic}
 
-.rails{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+/* ── Rails ── */
+.rails{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--space-sm)}
 .rail{
-  background:var(--surface);border:1px solid var(--line);border-radius:16px;
-  padding:22px 24px;backdrop-filter:blur(12px);
+  background:var(--surface);border:1px solid var(--line);
+  border-radius:var(--radius-sm);padding:var(--space-md) var(--space-md);
 }
 .rail-tag{
-  display:inline-block;font-size:10px;letter-spacing:.12em;text-transform:uppercase;
-  color:var(--gold);border:1px solid var(--line);border-radius:999px;padding:3px 8px;margin-bottom:10px;
+  display:inline-block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:14px;font-weight:500;
 }
-.rail-tag.muted{color:var(--muted)}
-.rail h3{font-family:var(--serif);font-size:20px;font-weight:600;margin-bottom:8px;color:var(--ink)}
-.rail p{color:var(--muted);font-size:14px}
+.rail-tag.muted{opacity:.7}
+.rail h3{
+  font-family:var(--serif);font-size:20px;font-weight:400;
+  margin-bottom:10px;color:var(--ink);letter-spacing:-.01em;
+}
+.rail p{color:var(--muted);font-size:14px;line-height:1.6}
 
-.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+/* ── Gallery ── */
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-md)}
 .gallery figure{margin:0}
-.gallery img{width:100%;border-radius:16px;border:1px solid var(--line);display:block;background:var(--bg-elevated)}
+.gallery img{
+  width:100%;border-radius:var(--radius);border:1px solid var(--line);
+  display:block;background:var(--surface);
+}
 .gallery img.brand-shot{aspect-ratio:4/3;object-fit:cover}
-.gallery img.board-shot{aspect-ratio:10/7;object-fit:contain;padding:8px;background:#05050a}
-.gallery figcaption{font-size:12px;color:var(--muted);margin-top:10px;line-height:1.45}
-.gallery figcaption strong{color:var(--ink);display:block;font-size:14px;font-family:var(--serif);font-weight:600;margin-bottom:4px}
+.gallery img.board-shot{aspect-ratio:10/7;object-fit:contain;padding:12px;background:var(--bg-soft)}
+.gallery figcaption{padding-top:var(--space-sm);line-height:1.55}
+.gallery figcaption strong{
+  color:var(--ink);display:block;font-size:16px;
+  font-family:var(--serif);font-weight:400;margin-bottom:6px;
+  letter-spacing:-.01em;
+}
+.gallery figcaption{color:var(--muted);font-size:13px}
 .gallery .tag{
-  display:inline-block;font-size:10px;letter-spacing:.1em;text-transform:uppercase;
-  color:var(--gold);border:1px solid var(--line);border-radius:999px;padding:2px 7px;margin-bottom:6px;
+  display:inline-block;font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--muted-soft);margin-bottom:8px;font-weight:500;
 }
 
-.seats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:8px}
-.seat{
-  background:var(--surface);border:1px solid var(--line);border-radius:16px;
-  padding:24px 22px;display:flex;flex-direction:column;
-  backdrop-filter:blur(12px);transition:border-color .25s,transform .25s;
+/* ── Flash gallery ── */
+.flash-gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--space-lg)}
+.flash-gallery figure{margin:0}
+.flash-gallery img{
+  width:100%;border-radius:var(--radius);border:1px solid var(--line);
+  display:block;background:var(--surface);
+  aspect-ratio:9/16;object-fit:cover;object-position:top center;
 }
-.seat:hover{border-color:var(--accent);transform:translateY(-2px)}
-.seat.featured{border-color:var(--gold);background:linear-gradient(180deg,rgba(201,184,150,.06),var(--surface))}
-.seat-preview{margin:0 0 14px;border-radius:12px;border:1px solid var(--line);overflow:hidden;background:#05050a}
+.flash-gallery figcaption{padding-top:var(--space-sm);line-height:1.55}
+.flash-gallery figcaption strong{
+  color:var(--ink);display:block;font-size:16px;
+  font-family:var(--serif);font-weight:400;margin-bottom:6px;
+}
+.flash-gallery figcaption{color:var(--muted);font-size:13px}
+.flash-caption{
+  margin-top:var(--space-lg);padding:var(--space-md) var(--space-lg);
+  border:1px solid var(--line);border-radius:var(--radius);
+  background:var(--surface);text-align:center;
+}
+.flash-caption em{
+  font-family:var(--serif);font-size:20px;font-style:italic;
+  color:var(--accent);letter-spacing:-.01em;
+}
+.flash-caption span{
+  color:var(--muted);font-size:13px;display:block;
+  margin-top:10px;letter-spacing:.04em;font-weight:400;
+}
+
+/* ── Seats ── */
+.seats{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-md);margin-top:var(--space-sm)}
+.seat{
+  background:var(--surface);border:1px solid var(--line);
+  border-radius:var(--radius);padding:var(--space-md);
+  display:flex;flex-direction:column;
+  transition:border-color .3s,background .3s;
+}
+.seat:hover{border-color:var(--line-strong);background:var(--surface-hover)}
+.seat.featured{
+  border-color:var(--line-strong);
+  background:linear-gradient(180deg,rgba(255,255,255,.03),var(--surface));
+  box-shadow:0 24px 48px rgba(0,0,0,.35);
+}
+.seat-preview{
+  margin:0 0 var(--space-sm);border-radius:var(--radius-sm);
+  border:1px solid var(--line);overflow:hidden;background:var(--bg-soft);
+}
 .seat-preview img{display:block;width:100%;height:auto}
-.seat-preview figcaption{font-size:11px;color:var(--muted);padding:8px 10px;border-top:1px solid var(--line);letter-spacing:.04em}
-.seat-tier{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
-.seat.featured .seat-tier{color:var(--gold)}
-.seat-price{font-family:var(--serif);font-size:40px;font-weight:600;line-height:1;margin-bottom:4px}
-.seat-price span{font-size:14px;color:var(--muted);font-family:var(--sans);font-weight:300}
-.seat-for{font-family:var(--serif);font-size:17px;font-weight:600;color:var(--ink);margin-bottom:10px;line-height:1.3}
-.seat-delivery{font-size:12px;color:var(--gold);letter-spacing:.04em;margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid var(--line)}
-.seat-delivery time{font-family:var(--serif);font-weight:600;font-size:15px;color:var(--ink)}
-.seat ul{list-style:none;color:var(--muted);font-size:13px;margin-bottom:24px;flex:1}
-.seat li{padding:7px 0;border-top:1px solid var(--line);display:flex;gap:8px}
-.seat li::before{content:"·";color:var(--accent);flex-shrink:0}
+.seat-preview figcaption{
+  font-size:11px;color:var(--muted);padding:10px 12px;
+  border-top:1px solid var(--line);letter-spacing:.02em;font-weight:400;
+}
+.seat-tier{
+  font-size:10px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:var(--space-xs);font-weight:500;
+}
+.seat.featured .seat-tier{color:var(--accent-warm)}
+.seat-price{
+  font-family:var(--serif);font-size:44px;font-weight:400;
+  line-height:1;margin-bottom:6px;letter-spacing:-.02em;
+}
+.seat-price span{font-size:14px;color:var(--muted);font-family:var(--sans);font-weight:400}
+.seat-for{
+  font-family:var(--serif);font-size:18px;font-weight:400;
+  color:var(--ink);margin-bottom:var(--space-xs);line-height:1.3;
+  letter-spacing:-.01em;
+}
+.seat-delivery{
+  font-size:12px;color:var(--muted);letter-spacing:.02em;
+  margin-bottom:var(--space-sm);padding-bottom:var(--space-sm);
+  border-bottom:1px solid var(--line);font-weight:400;
+}
+.seat-delivery time{font-family:var(--serif);font-size:16px;color:var(--ink)}
+.seat-help{
+  font-size:12px;color:var(--muted-soft);letter-spacing:.02em;
+  margin-bottom:var(--space-sm);line-height:1.5;font-weight:400;
+}
+.pitch-line{font-size:15px;color:var(--muted);line-height:1.65;margin-top:var(--space-xs);font-weight:400}
+.seat ul{list-style:none;color:var(--muted);font-size:13px;margin-bottom:var(--space-md);flex:1;line-height:1.55}
+.seat li{padding:9px 0;border-top:1px solid var(--line);font-weight:400}
 .seat li:first-child{border-top:0;padding-top:0}
 .seat-all{
-  margin-top:32px;padding:20px 24px;border:1px solid var(--line);border-radius:16px;
-  background:var(--bg-elevated);font-size:14px;color:var(--muted);
+  margin-top:var(--space-lg);padding:var(--space-md) var(--space-lg);
+  border:1px solid var(--line);border-radius:var(--radius);
+  background:var(--bg-soft);font-size:14px;color:var(--muted);line-height:1.65;
 }
 .seat-all strong{color:var(--ink);font-weight:500}
 .btn{
-  display:block;text-align:center;padding:14px 20px;border-radius:999px;
-  font-size:13px;font-weight:500;letter-spacing:.06em;
-  border:1px solid var(--line);background:transparent;color:var(--ink);
-  transition:background .2s,border-color .2s,color .2s;
+  display:block;text-align:center;padding:14px 24px;border-radius:999px;
+  font-size:13px;font-weight:500;letter-spacing:.04em;
+  border:1px solid var(--line-strong);background:var(--ink);color:var(--bg);
+  transition:opacity .2s,transform .2s;
 }
-.btn:hover{background:var(--accent-soft);border-color:var(--accent);color:var(--ink)}
-.btn-primary{background:var(--gold-soft);border-color:rgba(201,184,150,.35);color:var(--gold)}
-.btn-primary:hover{background:rgba(201,184,150,.2);border-color:var(--gold);color:var(--ink)}
-.seat.featured .btn-primary{background:rgba(201,184,150,.15)}
+.btn:hover{opacity:.88;transform:translateY(-1px)}
+.btn-primary{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.seat.featured .btn-primary{background:var(--ink)}
 
-.compare{margin-top:48px;overflow-x:auto;border:1px solid var(--line);border-radius:16px;background:var(--surface)}
+/* ── Compare table ── */
+.compare{
+  margin-top:var(--space-lg);overflow-x:auto;
+  border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);
+}
 table{width:100%;border-collapse:collapse;font-size:14px}
-th,td{padding:14px 18px;text-align:left;border-bottom:1px solid var(--line)}
-th{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-weight:500}
-td{color:var(--muted)}
-td:first-child{color:var(--ink);font-weight:400}
+th,td{padding:16px 20px;text-align:left;border-bottom:1px solid var(--line)}
+th{
+  font-size:10px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--muted);font-weight:500;
+}
+td{color:var(--muted);font-weight:400}
+td:first-child{color:var(--ink)}
 tr:last-child td{border-bottom:0}
-.yes{color:var(--gold)}
-.no{color:var(--muted);opacity:.65}
-.row-all td{background:rgba(139,111,191,.06);font-size:13px}
-.row-all td:first-child{color:var(--accent)}
+.yes{color:var(--accent-warm)}
+.no{color:var(--muted);opacity:.5}
+.row-all td{background:rgba(255,255,255,.02);font-size:13px}
+.row-all td:first-child{color:var(--muted)}
 
-footer{margin-top:72px;padding-top:32px;border-top:1px solid var(--line);text-align:center}
-footer .marks{font-size:22px;line-height:2;margin-bottom:16px}
-footer p{font-size:13px;color:var(--muted);margin:6px 0}
+/* ── Footer ── */
+footer{
+  margin-top:var(--space-2xl);padding-top:var(--space-xl);
+  border-top:1px solid var(--line);text-align:center;
+}
+footer .marks{font-size:20px;line-height:1.85;margin-bottom:var(--space-sm);opacity:.88}
+footer .flagship{margin-top:var(--space-md);margin-bottom:var(--space-md);opacity:.85}
+footer p{font-size:14px;color:var(--muted);margin:8px 0;font-weight:400}
 footer .fine{
-  margin-top:24px;padding-top:20px;border-top:1px solid var(--line);
-  font-size:11px;line-height:1.6;color:var(--muted);opacity:.85;
-  max-width:42em;margin-left:auto;margin-right:auto;
+  margin-top:var(--space-lg);padding-top:var(--space-md);
+  border-top:1px solid var(--line);
+  font-size:11px;line-height:1.7;color:var(--muted-soft);
+  max-width:44em;margin-left:auto;margin-right:auto;font-weight:400;
 }
 footer .addr{direction:ltr;unicode-bidi:isolate}
+footer .networks-block{margin:var(--space-md) 0 var(--space-sm)}
+footer .networks-label{
+  font-size:10px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--muted-soft);margin-bottom:14px;font-weight:500;
+}
+footer .networks-row{
+  display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:18px;
+}
+footer .net{
+  display:inline-flex;flex-direction:column;align-items:center;gap:7px;
+  opacity:.82;transition:opacity .2s;
+}
+footer .net:hover{opacity:1}
+footer .net svg{width:22px;height:22px;display:block}
+footer .net span{
+  font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--muted-soft);font-weight:500;
+}
+footer .net-live span{color:var(--muted)}
+footer .networks-note{
+  font-size:11px;color:var(--muted-soft);margin-top:14px;
+  line-height:1.5;max-width:28em;margin-left:auto;margin-right:auto;opacity:.85;
+}
+footer .love{
+  font-family:var(--serif);font-size:15px;font-style:italic;
+  color:var(--muted);margin:var(--space-md) 0;opacity:.9;
+}
 
-@media(max-width:768px){
-  .seats,.gallery,.rails,.timeline{grid-template-columns:1fr}
-  .hero-banner{grid-template-columns:1fr}
-  .hero-side{flex-direction:row;padding:14px}
-  header{flex-direction:column}
-  .header-right{align-self:flex-end}
-  .header-logo{width:56px;height:56px}
-  .hero h1{max-width:none}
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:var(--space-lg)}
+  .hero-photo{order:-1}
+  .seats,.gallery,.flash-gallery,.rails,.timeline{grid-template-columns:1fr}
+  .wrap{padding:32px 20px var(--space-xl)}
+  header{flex-direction:row;align-items:center}
+}
+@media(max-width:600px){
+  .hero h1{font-size:38px}
+  section{margin-top:var(--space-xl)}
 }
 </style>
 </head>
@@ -216,7 +388,7 @@ footer .addr{direction:ltr;unicode-bidi:isolate}
 <div class="wrap">
   <header>
     <div class="brand">
-      <img class="logo-img" src="logo.png" width="44" height="44" alt="Plumb"/>
+      <img class="logo-img" src="logo.png" width="40" height="40" alt="Plumb"/>
       <div class="brand-text">
         <div class="name">Plumb</div>
         <div class="tag">Ready desk software</div>
@@ -224,39 +396,54 @@ footer .addr{direction:ltr;unicode-bidi:isolate}
     </div>
     <div class="header-right">
       <div class="marks" aria-hidden="true">✝️<br/>🧿<br/>🪬</div>
-      <img class="header-logo" src="logo.png" width="72" height="72" alt="Plumb logo"/>
+      <img class="header-logo" src="logo.png" width="56" height="56" alt="Plumb logo"/>
     </div>
   </header>
 
   <section class="hero">
-    <div class="hero-banner">
-      <div class="hero-side">
-        <div class="marks" aria-hidden="true">✝️<br/>🧿<br/>🪬</div>
-        <img src="logo.png" width="72" height="72" alt="Plumb"/>
+    <p class="flagship">💭 you dream we build 🧠💡</p>
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Lifetime seats · Solana today</p>
+        <h1>Your desk.<br/>Your keys.<br/>Telegram control.</h1>
+        <p class="lede">After you pay, we will help — we will guide. Desk ready in <strong>3.35 hours</strong> → live walkthrough → you continue on Telegram. Same house as <a href="https://35.elghaly.dev">35</a> and <a href="https://iris-35.elghaly.dev">IRIS</a>. You host the bot, you hold the keys.</p>
+        <p class="pitch-line">We build, you continue.</p>
       </div>
       <div class="hero-photo">
-        <img src="hero-desk.jpeg" alt="ElGhaly desk — same house as 35 and IRIS" width="1168" height="784"/>
+        <img src="hero-desk.jpeg" alt="Desk — same house as 35 and IRIS" width="1168" height="784"/>
       </div>
     </div>
-    <p class="eyebrow">Lifetime seats · Solana today</p>
-    <h1>Your desk.<br/>Your keys.<br/>Telegram control.</h1>
-    <p class="lede">Pay → desk ready in <strong>3.35 hours</strong> → live walkthrough → you continue on Telegram. Same house as <a href="https://35.elghaly.dev">35</a> and <a href="https://iris-35.elghaly.dev">IRIS</a>. You host the bot, you hold the keys.</p>
-    <p class="delivery">After pay, ready bot delivered within <time>3.35</time> hours</p>
+    <div class="hero-meta">
+      <p class="delivery">After pay, ready bot delivered within <time>3.35</time> hours</p>
+      <p class="hero-help">Walkthrough &amp; setup help included</p>
+    </div>
   </section>
 
   <section id="timeline">
-    <p class="section-label">From pay to live</p>
+    <div class="section-head">
+      <p class="section-label">From pay to live</p>
+      <h2 class="section-title">After you pay, we will help — we will guide.</h2>
+      <p class="section-note">Ready in 3.35 hours. Live walkthrough and setup help on the wire — then you continue on Telegram. We build, you continue.</p>
+    </div>
     <div class="timeline">
       <div class="timeline-step"><div class="num">1</div><p>Pay seat + mail brief</p></div>
-      <div class="timeline-step"><div class="num">3.35h</div><p>Desk built on your path</p></div>
-      <div class="timeline-step"><div class="num">→</div><p>Walkthrough on the wire</p></div>
-      <div class="timeline-step"><div class="num">✓</div><p>You run it on Telegram</p></div>
+      <div class="timeline-step"><div class="num">3.35h</div><p>We build your desk</p></div>
+      <div class="timeline-step"><div class="num">→</div><p>We guide · walkthrough &amp; setup</p></div>
+      <div class="timeline-step"><div class="num">✓</div><p>You continue on Telegram</p></div>
     </div>
   </section>
 
   <section id="how">
-    <p class="section-label">What the bot does</p>
+    <div class="section-head">
+      <p class="section-label">How it works</p>
+      <h2 class="section-title">Built for operators.</h2>
+      <p class="section-note">After you pay, we will help — we will guide. Walkthrough and setup help included with every seat.</p>
+    </div>
     <div class="principles">
+      <article class="principle">
+        <h3>We help, we guide</h3>
+        <p>After you pay, we will help — we will guide. Your desk is ready in 3.35 hours, then a live walkthrough on the wire. We build, you continue on Telegram.</p>
+      </article>
       <article class="principle">
         <h3>Telegram control</h3>
         <p>Start, pause, size, and read status from Telegram. No browser dashboard required — the desk talks to you where you already are.</p>
@@ -286,7 +473,10 @@ footer .addr{direction:ltr;unicode-bidi:isolate}
   </section>
 
   <section id="rails">
-    <p class="section-label">Execution rails</p>
+    <div class="section-head">
+      <p class="section-label">Execution rails</p>
+      <h2 class="section-title">Your path, your stack.</h2>
+    </div>
     <div class="rails">
       <article class="rail">
         <span class="rail-tag">Included · Solana</span>
@@ -312,15 +502,18 @@ footer .addr{direction:ltr;unicode-bidi:isolate}
   </section>
 
   <section id="gallery">
-    <p class="section-label">Same house · different boards</p>
-    <p class="section-note">Real desk UI. <strong>35</strong> is the brand door (not sold here). <strong>Starter</strong> is a partial board. <strong>Pro / Source</strong> is the full arb board.</p>
+    <div class="section-head">
+      <p class="section-label">Same house · different boards</p>
+      <h2 class="section-title">Three doors. One desk.</h2>
+      <p class="section-note">Real desk UI. <strong>35</strong> is the brand door (not sold here). <strong>Starter</strong> is a partial board. <strong>Pro / Source</strong> is the full arb board.</p>
+    </div>
     <div class="gallery">
       <figure>
-        <img class="brand-shot" src="photo-35-desk.jpeg" alt="35 — ELGHALY brand mark, same house as IRIS, not a Plumb seat" width="1168" height="784"/>
+        <img class="brand-shot" src="photo-35-desk.jpeg" alt="35 — brand mark, same house as IRIS, not a Plumb seat" width="1168" height="784"/>
         <figcaption>
           <span class="tag">Not for sale on Plumb</span>
           <strong>35 · brand / desk</strong>
-          Same-house mark on <a href="https://35.elghaly.dev">35.elghaly.dev</a>. Earned-credits door — not a paid Plumb seat.
+          Same-house mark at <a href="https://35.elghaly.dev">35</a>. Earned-credits door — not a paid Plumb seat.
         </figcaption>
       </figure>
       <figure>
@@ -342,8 +535,36 @@ footer .addr{direction:ltr;unicode-bidi:isolate}
     </div>
   </section>
 
+  <section id="flash-proof">
+    <div class="section-head">
+      <p class="section-label">Flash path · 15k USDC</p>
+      <h2 class="section-title">On-chain proof.</h2>
+      <p class="section-note">Kamino flash borrow and Jupiter swap path. Wallet and profit figures redacted — path only.</p>
+    </div>
+    <div class="flash-gallery">
+      <figure>
+        <img src="assets/flash-15k-borrow.png" alt="Solscan — borrow flash loan 15,000 USDC from Kamino lending vault" width="390" height="844"/>
+        <figcaption>
+          <strong>Borrow · Kamino</strong>
+          Flash loan 15,000 USDC from the Kamino lending vault.
+        </figcaption>
+      </figure>
+      <figure>
+        <img src="assets/flash-15k-loop.png" alt="Solscan key actions — 15k flash borrow, Jupiter swaps, repay to Kamino" width="390" height="844"/>
+        <figcaption>
+          <strong>Loop · Jupiter path</strong>
+          Borrow → Jupiter swaps → repay. Full round-trip in one transaction.
+        </figcaption>
+      </figure>
+    </div>
+    <p class="flash-caption"><em>every mind earn his profit</em><span>flash loan 15,000 USDC (Kamino) · Jupiter path</span></p>
+  </section>
+
   <section id="seats">
-    <p class="section-label">Lifetime seats</p>
+    <div class="section-head">
+      <p class="section-label">Lifetime seats</p>
+      <h2 class="section-title">Choose your board.</h2>
+    </div>
     <div class="seats">
       <article class="seat">
         <figure class="seat-preview">
@@ -354,6 +575,7 @@ footer .addr{direction:ltr;unicode-bidi:isolate}
         <p class="seat-price">$299 <span>once</span></p>
         <p class="seat-for">First machine — learn the path</p>
         <p class="seat-delivery">Ready in <time>3.35</time> hours after pay</p>
+        <p class="seat-help">After pay — we will help, we will guide</p>
         <ul>
           <li>Partial pair board — limited slice, not full desk</li>
           <li>1–2 pairs you name in the brief</li>
@@ -373,6 +595,7 @@ footer .addr{direction:ltr;unicode-bidi:isolate}
         <p class="seat-price">$699 <span>once</span></p>
         <p class="seat-for">Operator who already trades</p>
         <p class="seat-delivery">Ready in <time>3.35</time> hours after pay</p>
+        <p class="seat-help">After pay — we will help, we will guide</p>
         <ul>
           <li>Full multi-pair arb board — KEEP-style desk</li>
           <li>You set slippage &amp; tip</li>
@@ -392,6 +615,7 @@ footer .addr{direction:ltr;unicode-bidi:isolate}
         <p class="seat-price">$1,999 <span>once</span></p>
         <p class="seat-for">Desk that wants the code</p>
         <p class="seat-delivery">Ready in <time>3.35</time> hours after pay</p>
+        <p class="seat-help">After pay — we will help, we will guide</p>
         <ul>
           <li>Everything in Pro, plus the source</li>
           <li>Full board + pair workshop</li>
@@ -406,7 +630,9 @@ footer .addr{direction:ltr;unicode-bidi:isolate}
 
     <p class="seat-all"><strong>Every seat:</strong> Keys stay with you. We build, you continue. Titan / gRPC not included — quoted extra after brief. Optional follow-up $149/mo after the update window.</p>
 
-    <p class="section-label" style="margin-top:48px">Compare seats</p>
+    <div class="section-head" style="margin-top:var(--space-xl)">
+      <p class="section-label">Compare seats</p>
+    </div>
     <div class="compare">
       <table>
         <thead>
@@ -435,10 +661,34 @@ footer .addr{direction:ltr;unicode-bidi:isolate}
   </section>
 
   <footer>
-    <div class="marks" aria-hidden="true">✝️<br/>🧿<br/>🪬</div>
-    <p>Plumb by ElGhaly · Wyndham Heaven</p>
+    <div class="marks owner-marks" aria-hidden="true">✝️<br/>🧿<br/>🪬</div>
+    <div class="marks desk-marks" aria-hidden="true" style="margin-top:14px">3️⃣<br/>🧿<br/>5️⃣</div>
+    <p class="flagship">💭 you dream we build 🧠💡</p>
+    <p>Ask us on mail — <a href="mailto:support@elghaly.dev">support@elghaly.dev</a> · We are 24</p>
+    <div class="networks-block" aria-label="Network family">
+      <p class="networks-label">Networks</p>
+      <div class="networks-row">
+        <span class="net net-live" title="Solana — live desk today">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 16.5l7.5-4.3c.4-.2.8-.2 1.2 0L20 16.5c.6.3.6 1.2 0 1.5l-7.5 4.3c-.4.2-.8.2-1.2 0L4 18c-.6-.3-.6-1.2 0-1.5z" fill="#14f195" opacity=".85"/><path d="M4 12l7.5-4.3c.4-.2.8-.2 1.2 0L20 12c.6.3.6 1.2 0 1.5l-7.5 4.3c-.4.2-.8.2-1.2 0L4 13.5c-.6-.3-.6-1.2 0-1.5z" fill="#9945ff" opacity=".75"/><path d="M4 7.5l7.5-4.3c.4-.2.8-.2 1.2 0L20 7.5c.6.3.6 1.2 0 1.5l-7.5 4.3c-.4.2-.8.2-1.2 0L4 9c-.6-.3-.6-1.2 0-1.5z" fill="#9945ff" opacity=".55"/></svg>
+          <span>SOL</span>
+        </span>
+        <span class="net" title="Ethereum — expansion path">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l-6.5 10.8L12 14l6.5-1.2L12 3z" fill="#627eea" opacity=".55"/><path d="M12 14.5l-6.5 3.5L12 21l6.5-3L12 14.5z" fill="#627eea" opacity=".85"/></svg>
+          <span>ETH</span>
+        </span>
+        <span class="net" title="Bitcoin — expansion path">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="#f7931a" stroke-width="1.5" opacity=".7"/><path d="M10.5 7.5h2.8c1.4 0 2.4.7 2.4 2 0 .8-.4 1.4-1.1 1.7 1 .3 1.6 1 1.6 2.1 0 1.5-1.2 2.2-2.9 2.2H10.5V7.5zm1.2 3.4h1.3c.7 0 1.1-.3 1.1-.9s-.4-.8-1.1-.8h-1.3v1.7zm0 3.5h1.5c.8 0 1.3-.4 1.3-1.1 0-.7-.5-1-1.3-1h-1.5v2.1z" fill="#f7931a" opacity=".85"/></svg>
+          <span>BTC</span>
+        </span>
+        <span class="net" title="Arbitrum — expansion path">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l8.5 5v8L12 21l-8.5-5V8L12 3z" stroke="#28a0f0" stroke-width="1.4" opacity=".65"/><path d="M12 8.5l4.2 2.5v5L12 18.5l-4.2-2.5v-5L12 8.5z" fill="#28a0f0" opacity=".75"/><path d="M9 12.5l3-1.8 3 1.8-3 1.8-3-1.8z" fill="#28a0f0" opacity=".45"/></svg>
+          <span>ARB</span>
+        </span>
+      </div>
+      <p class="networks-note">Solana is the live desk today · ETH · BTC · ARB shown as network family / expansion</p>
+    </div>
+    <p class="love">made by love ❤️</p>
     <p class="addr">548 Market Street, San Francisco, California 94104</p>
-    <p><a href="mailto:support@elghaly.dev">support@elghaly.dev</a> · <a href="mailto:35@elghaly.dev">35@elghaly.dev</a></p>
     <p style="margin-top:16px"><a href="https://35.elghaly.dev">35</a> · separate door · not sold here</p>
     <p class="fine">Plumb is desk software sold as-is, without warranty or guarantee. We make no claims about profit, returns, CLEAR, land, or any outcome. You host it, you hold the keys, you accept the risk. 35 credits are earned elsewhere and are never sold on this page. Not a token sale. Not an investment.</p>
   </footer>
