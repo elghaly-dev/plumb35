@@ -161,10 +161,20 @@ section{margin-top:64px}
   border-bottom:1px solid var(--line);
 }
 .seat-delivery time{font-family:var(--serif);font-weight:600;font-size:15px;color:var(--ink)}
-.seat-desc{color:var(--muted);font-size:14px;margin:16px 0 20px;flex:1}
-.seat ul{list-style:none;color:var(--muted);font-size:13px;margin-bottom:24px}
-.seat li{padding:6px 0;border-top:1px solid var(--line)}
+.seat-for{
+  font-family:var(--serif);font-size:17px;font-weight:600;
+  color:var(--ink);margin-bottom:14px;line-height:1.3;
+}
+.seat ul{list-style:none;color:var(--muted);font-size:13px;margin-bottom:24px;flex:1}
+.seat li{padding:7px 0;border-top:1px solid var(--line);display:flex;gap:8px}
+.seat li::before{content:"·";color:var(--accent);flex-shrink:0}
 .seat li:first-child{border-top:0;padding-top:0}
+.seat-all{
+  margin-top:32px;padding:20px 24px;
+  border:1px solid var(--line);border-radius:16px;
+  background:var(--bg-elevated);font-size:14px;color:var(--muted);
+}
+.seat-all strong{color:var(--ink);font-weight:500}
 .btn{
   display:block;text-align:center;
   padding:14px 20px;border-radius:999px;
@@ -197,6 +207,9 @@ td{color:var(--muted)}
 td:first-child{color:var(--ink);font-weight:400}
 tr:last-child td{border-bottom:0}
 .yes{color:var(--gold)}
+.no{color:var(--muted);opacity:.65}
+.row-all td{background:rgba(139,111,191,.06);font-size:13px}
+.row-all td:first-child{color:var(--accent)}
 
 /* Footer */
 footer{
@@ -271,58 +284,74 @@ footer .addr{direction:ltr;unicode-bidi:isolate}
     <p class="section-label">Lifetime seats</p>
     <div class="seats">
       <article class="seat">
-        <p class="seat-tier">Starter</p>
+        <p class="seat-tier">Starter · $299</p>
         <p class="seat-price">$299 <span>once</span></p>
-        <p class="seat-delivery">Delivered within <time>3.35</time> hours after pay</p>
-        <p class="seat-desc">First machine. One book to learn the path.</p>
+        <p class="seat-for">First machine — learn the path</p>
+        <p class="seat-delivery">Ready in <time>3.35</time> hours after pay</p>
         <ul>
-          <li>1–2 pairs you name in the brief</li>
+          <li>1–2 pairs you name</li>
           <li>Ready binary + install walkthrough</li>
-          <li>3 months of updates included</li>
+          <li>Telegram control</li>
+          <li>3 months of updates</li>
+          <li>Capped seat</li>
+          <li>Fixed slippage &amp; tip defaults</li>
         </ul>
         <a class="btn btn-primary" href="https://buy.stripe.com/14A6oB4AD7GBd2g3QN3Ru00">Pay $299</a>
       </article>
       <article class="seat featured">
-        <p class="seat-tier">Pro</p>
+        <p class="seat-tier">Pro · $699</p>
         <p class="seat-price">$699 <span>once</span></p>
-        <p class="seat-delivery">Delivered within <time>3.35</time> hours after pay</p>
-        <p class="seat-desc">For operators who already trade and want more control.</p>
+        <p class="seat-for">Operator who already trades</p>
+        <p class="seat-delivery">Ready in <time>3.35</time> hours after pay</p>
         <ul>
           <li>Multi-pair board</li>
-          <li>Slippage and tip knobs</li>
-          <li>Private-RPC hook points</li>
+          <li>Ready binary — you set slippage &amp; tip</li>
+          <li>Telegram control</li>
           <li>6 months of updates</li>
+          <li>No size cap from us</li>
+          <li>Private RPC hook points</li>
         </ul>
         <a class="btn btn-primary" href="https://buy.stripe.com/4gM00d4AD2mhfao1IF3Ru01">Pay $699</a>
       </article>
       <article class="seat">
-        <p class="seat-tier">Source</p>
+        <p class="seat-tier">Source · $1,999</p>
         <p class="seat-price">$1,999 <span>once</span></p>
-        <p class="seat-delivery">Delivered within <time>3.35</time> hours after pay</p>
-        <p class="seat-desc">For desks that want the code and a workshop.</p>
+        <p class="seat-for">Desk that wants the code</p>
+        <p class="seat-delivery">Ready in <time>3.35</time> hours after pay</p>
         <ul>
-          <li>Everything in Pro, plus source</li>
-          <li>Pair workshop on request</li>
-          <li>You own changes after handoff</li>
-          <li>6 months of updates</li>
+          <li>Source + seat</li>
+          <li>Pair workshop included</li>
+          <li>You change the code</li>
+          <li>Telegram control</li>
+          <li>6 months of updates + workshop</li>
+          <li>No size cap from us</li>
         </ul>
         <a class="btn btn-primary" href="https://buy.stripe.com/5kQ5kx4AD2mh2nC0EB3Ru02">Pay $1,999</a>
       </article>
     </div>
 
+    <p class="seat-all"><strong>Every seat:</strong> Keys stay with you. We build, you continue. Titan / gRPC not included — quoted extra after brief. Optional follow-up $149/mo after the update window.</p>
+
+    <p class="section-label" style="margin-top:48px">Compare seats</p>
     <div class="compare">
       <table>
         <thead>
-          <tr><th></th><th>Starter</th><th>Pro</th><th>Source</th></tr>
+          <tr><th>Feature</th><th>Starter $299</th><th>Pro $699</th><th>Source $1,999</th></tr>
         </thead>
         <tbody>
-          <tr><td>Pairs</td><td>1–2</td><td class="yes">Multi-pair</td><td class="yes">Workshop + edit</td></tr>
-          <tr><td>Delivery</td><td>Binary + walkthrough</td><td>Binary + controls</td><td class="yes">Source + seat</td></tr>
-          <tr><td>Updates</td><td>3 months</td><td class="yes">6 months</td><td class="yes">6 months</td></tr>
-          <tr><td>Slippage / tips</td><td>Defaults</td><td class="yes">You set</td><td class="yes">You change code</td></tr>
-          <tr><td>Private RPC</td><td>—</td><td class="yes">Hook points</td><td class="yes">Yours to edit</td></tr>
-          <tr><td>Titan / gRPC</td><td colspan="3">Not included. Quoted separately after brief.</td></tr>
-          <tr><td>Follow-up after window</td><td colspan="3">$149 / month if you want us on the wire.</td></tr>
+          <tr><td>Who it is for</td><td>First machine, learn the path</td><td>Operator who already trades</td><td>Desk that wants the code</td></tr>
+          <tr><td>Pairs</td><td>1–2 you name</td><td class="yes">Multi-pair board</td><td class="yes">Workshop + you edit</td></tr>
+          <tr><td>What you receive</td><td>Ready binary + walkthrough</td><td>Ready binary + controls</td><td class="yes">Source + seat</td></tr>
+          <tr><td>Telegram control</td><td class="yes">Yes</td><td class="yes">Yes</td><td class="yes">Yes</td></tr>
+          <tr><td>Ready after pay</td><td class="yes">3.35 hours</td><td class="yes">3.35 hours</td><td class="yes">3.35 hours</td></tr>
+          <tr><td>Updates included</td><td>3 months</td><td class="yes">6 months</td><td class="yes">6 months + workshop</td></tr>
+          <tr><td>Trade size cap</td><td>Capped seat</td><td class="yes">No cap from us</td><td class="yes">No cap from us</td></tr>
+          <tr><td>Slippage &amp; tip</td><td>Fixed defaults</td><td class="yes">You set</td><td class="yes">You change the code</td></tr>
+          <tr><td>Private RPC</td><td class="no">—</td><td class="yes">Hook points</td><td class="yes">Yours to edit</td></tr>
+          <tr><td>Workshop</td><td class="no">—</td><td class="no">—</td><td class="yes">Included</td></tr>
+          <tr class="row-all"><td>Keys</td><td colspan="3">Stay with you — always</td></tr>
+          <tr class="row-all"><td>Handoff</td><td colspan="3">We build → you continue</td></tr>
+          <tr class="row-all"><td>Titan / gRPC</td><td colspan="3">Not included in any seat — extra after brief</td></tr>
         </tbody>
       </table>
     </div>
