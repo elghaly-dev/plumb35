@@ -11,7 +11,7 @@
 <meta property="og:description" content="Solana desk hunt you run. Partial or full pair board. Pay → ready in 3.35 hours."/>
 <meta property="og:url" content="https://plumb.elghaly.dev/"/>
 <meta property="og:type" content="website"/>
-<meta property="og:image" content="hero-desk.jpeg"/>
+<meta property="og:image" content="logo.png"/>
 <link rel="icon" href="favicon.png" type="image/png"/>
 <link rel="icon" href="favicon.svg" type="image/svg+xml"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -53,7 +53,7 @@ body{
   line-height:1.6;
   min-height:100vh;
 }
-.wrap{max-width:1080px;margin:0 auto;padding:48px 32px var(--space-2xl)}
+.wrap{max-width:1080px;margin:0 auto;padding:28px 24px var(--space-xl)}
 a{color:var(--accent-warm);text-decoration:none;transition:opacity .2s}
 a:hover{opacity:.75}
 
@@ -62,8 +62,8 @@ header{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  gap:var(--space-md);
-  padding-bottom:var(--space-lg);
+  gap:var(--space-sm);
+  padding-bottom:var(--space-sm);
 }
 .brand{display:flex;align-items:center;gap:16px}
 .logo-img{width:40px;height:40px;border-radius:10px;object-fit:cover}
@@ -76,8 +76,9 @@ header{
   color:var(--muted);font-weight:500;margin-top:2px;
 }
 .header-right{display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:flex-end}
-.marks{font-size:18px;line-height:1.75;opacity:.88;letter-spacing:.06em}
-.header-logo{width:56px;height:56px;border-radius:12px;object-fit:cover;opacity:.92}
+.marks{font-size:18px;line-height:1;opacity:.88;letter-spacing:.02em;white-space:nowrap}
+.marks-owner{font-size:17px}
+.marks-desk{font-size:20px;margin-bottom:var(--space-sm);letter-spacing:.04em}
 .lang-switch{display:flex;gap:3px;flex-wrap:wrap;max-width:200px;justify-content:flex-end}
 .lang-btn{
   background:transparent;border:1px solid var(--line);color:var(--muted-soft);
@@ -98,20 +99,13 @@ footer .net.monad span{color:var(--accent-warm)}
   font-style:italic;
   color:var(--accent);
   letter-spacing:-.01em;
-  margin-bottom:var(--space-md);
+  margin-bottom:var(--space-sm);
   opacity:.92;
 }
 
 /* ── Hero ── */
-.hero{padding:var(--space-lg) 0 var(--space-xl)}
-.hero-grid{
-  display:grid;
-  grid-template-columns:1fr 1.15fr;
-  gap:var(--space-xl);
-  align-items:center;
-  margin-bottom:var(--space-xl);
-}
-.hero-copy{max-width:28em}
+.hero{padding:var(--space-xs) 0 var(--space-md)}
+.hero-copy{max-width:38em}
 .eyebrow{
   font-size:11px;letter-spacing:.22em;text-transform:uppercase;
   color:var(--muted);font-weight:500;margin-bottom:var(--space-sm);
@@ -127,11 +121,6 @@ footer .net.monad span{color:var(--accent-warm)}
   line-height:1.7;max-width:34em;
 }
 .hero .lede strong{color:var(--ink);font-weight:500}
-.hero-photo{
-  border-radius:var(--radius);overflow:hidden;
-  background:var(--surface);aspect-ratio:4/3;
-}
-.hero-photo img{display:block;width:100%;height:100%;object-fit:cover}
 .hero-meta{
   display:flex;flex-wrap:wrap;align-items:center;gap:var(--space-sm);
   padding-top:var(--space-md);
@@ -145,6 +134,20 @@ footer .net.monad span{color:var(--accent-warm)}
 }
 .delivery time{font-family:var(--serif);font-size:17px;color:var(--ink);font-weight:400}
 .hero-help{font-size:14px;color:var(--muted-soft);font-weight:400}
+.pitch-line{font-size:15px;color:var(--muted);line-height:1.65;margin-top:var(--space-xs);font-weight:400}
+
+/* ── Why arbitrage ── */
+.why-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-sm);
+  border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
+  background:var(--line);
+}
+.why-card{background:var(--surface);padding:var(--space-md) var(--space-lg)}
+.why-card h3{
+  font-family:var(--serif);font-size:20px;font-weight:400;
+  margin-bottom:10px;color:var(--ink);letter-spacing:-.01em;
+}
+.why-card p{color:var(--muted);font-size:14px;line-height:1.65}
 
 /* ── Sections ── */
 section{margin-top:var(--space-2xl)}
@@ -202,9 +205,30 @@ section{margin-top:var(--space-2xl)}
   margin-bottom:10px;color:var(--ink);letter-spacing:-.01em;
 }
 .rail p{color:var(--muted);font-size:14px;line-height:1.6}
+.rail-partners{
+  margin-top:var(--space-md);padding:var(--space-md) var(--space-sm);
+  border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);
+}
+.rail-partners-label{
+  font-size:10px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--muted-soft);text-align:center;margin-bottom:var(--space-sm);font-weight:500;
+}
+.rail-partners-row{
+  display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-start;gap:var(--space-md);
+}
+.partner{
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  min-width:88px;max-width:120px;text-align:center;color:inherit;
+}
+.partner svg{width:28px;height:28px;display:block;color:var(--ink);opacity:.78}
+.partner-name{
+  font-family:var(--serif);font-size:15px;color:var(--ink);letter-spacing:-.01em;
+}
+.partner-note{font-size:10px;color:var(--muted);line-height:1.4;letter-spacing:.02em}
+.partner.partner-rec .partner-note{color:var(--accent-warm);font-weight:500}
 
 /* ── Gallery ── */
-.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-md)}
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--space-md)}
 .gallery figure{margin:0}
 .gallery img{
   width:100%;border-radius:var(--radius);border:1px solid var(--line);
@@ -344,8 +368,7 @@ footer{
   margin-top:var(--space-2xl);padding-top:var(--space-xl);
   border-top:1px solid var(--line);text-align:center;
 }
-footer .marks{font-size:20px;line-height:1.85;margin-bottom:var(--space-sm);opacity:.88}
-footer .flagship{margin-top:var(--space-md);margin-bottom:var(--space-md);opacity:.85}
+footer .marks-desk{font-size:20px;line-height:1;margin-bottom:var(--space-sm);opacity:.88}
 footer p{font-size:14px;color:var(--muted);margin:8px 0;font-weight:400}
 footer .fine{
   margin-top:var(--space-lg);padding-top:var(--space-md);
@@ -383,9 +406,7 @@ footer .love{
 }
 
 @media(max-width:900px){
-  .hero-grid{grid-template-columns:1fr;gap:var(--space-lg)}
-  .hero-photo{order:-1}
-  .seats,.gallery,.flash-gallery,.rails,.timeline{grid-template-columns:1fr}
+  .why-grid,.seats,.gallery,.flash-gallery,.rails,.timeline{grid-template-columns:1fr}
   .wrap{padding:32px 20px var(--space-xl)}
   header{flex-direction:row;align-items:center}
 }
@@ -414,27 +435,43 @@ footer .love{
         <button type="button" class="lang-btn" data-lang="de" aria-pressed="false">DE</button>
         <button type="button" class="lang-btn" data-lang="es" aria-pressed="false">ES</button>
       </nav>
-      <div class="marks" aria-hidden="true">✝️<br/>🧿<br/>🪬</div>
-      <img class="header-logo" src="logo.png" width="56" height="56" alt="Plumb logo"/>
+      <div class="marks marks-owner" aria-hidden="true">✝️🧿🪬</div>
     </div>
   </header>
 
   <section class="hero">
     <p class="flagship brand-lock">💭 you dream we build 🧠💡</p>
-    <div class="hero-grid">
-      <div class="hero-copy">
-        <p class="eyebrow" id="heroEyebrow">Lifetime seats · Solana today</p>
-        <h1 id="heroH1">Your desk.<br/>Your keys.<br/>Telegram control.</h1>
-        <p class="lede" id="heroLede">After you pay, we will help — we will guide. Desk ready in <strong>3.35 hours</strong> → live walkthrough → you continue on Telegram. Same house as <a href="https://35.elghaly.dev">35</a> and <a href="https://iris-35.elghaly.dev">IRIS</a>. You host the bot, you hold the keys.</p>
-        <p class="pitch-line" id="heroPitch">We build, you continue.</p>
-      </div>
-      <div class="hero-photo">
-        <img id="heroImg" src="hero-desk.jpeg" alt="Desk — same house as 35 and IRIS" width="1168" height="784"/>
-      </div>
+    <div class="hero-copy">
+      <p class="eyebrow" id="heroEyebrow">Lifetime seats · Solana today</p>
+      <h1 id="heroH1">Your desk.<br/>Your keys.<br/>Telegram control.</h1>
+      <p class="lede" id="heroLede">After you pay, we will help — we will guide. Desk ready in <strong>3.35 hours</strong> → live walkthrough → you continue on Telegram. Same house as <a href="https://35.elghaly.dev">35</a> and <a href="https://iris-35.elghaly.dev">IRIS</a>. You host the bot, you hold the keys.</p>
+      <p class="pitch-line" id="heroPitch">We build, you continue.</p>
     </div>
     <div class="hero-meta">
       <p class="delivery" id="heroDelivery">After pay, ready bot delivered within <time>3.35</time> hours</p>
       <p class="hero-help" id="heroHelp">Walkthrough &amp; setup help included</p>
+    </div>
+  </section>
+
+  <section id="why-arbitrage">
+    <div class="section-head">
+      <p class="section-label" id="whyLabel">For customers</p>
+      <h2 class="section-title" id="whyTitle">Why try an arbitrage bot?</h2>
+      <p class="section-note" id="whyNote">Arbitrage means catching the same asset at two different prices across venues or routes — then letting software move fast while you stay in control.</p>
+    </div>
+    <div class="why-grid">
+      <article class="why-card">
+        <h3 id="why1h">Two prices, one desk</h3>
+        <p id="why1">Markets do not sync perfectly. A pair can quote differently on two venues or Jupiter routes. Plumb watches those gaps, surfaces them on your board, and can act when your rules pass — on a self-hosted desk you run.</p>
+      </article>
+      <article class="why-card">
+        <h3 id="why2h">Speed, eyes, your keys</h3>
+        <p id="why2">You cannot watch every book by hand. A desk bot brings speed and constant eyes; you bring the rules, the size, and the choice to run live or dry. Keys stay with you. Control stays on Telegram — no browser dashboard required.</p>
+      </article>
+      <article class="why-card">
+        <h3 id="why3h">Ready in 3.35 hours · we help we guide</h3>
+        <p id="why3">After you pay, your seat is ready in 3.35 hours — then a live walkthrough on the wire. We help, we guide; you continue on Telegram. Start small, learn the surfaces, treat early runs as training — not hype, not a promise of profit.</p>
+      </article>
     </div>
   </section>
 
@@ -477,16 +514,15 @@ footer .love{
       </article>
       <article class="principle">
         <h3 id="p5h">Pair board</h3>
-        <p id="p5"><strong>Starter</strong> ships a <em>partial board</em> — 350-style slice, 1–2 pairs. <strong>Pro / Source</strong> ships the <em>full board</em> — arb / KEEP-style multi-pair desk.</p>
+        <p id="p5"><strong>Starter</strong> ships a <em>partial board</em> — 350-style slice, 1–2 pairs. <strong>Pro / Source</strong> ships the <em>full board</em> — multi-pair arbitrage desk.</p>
       </article>
       <article class="principle">
         <h3 id="p6h">Slip / tip &amp; reports</h3>
         <p id="p6">Starter runs fixed defaults. Pro and Source give you slippage and tip knobs. Session summaries and fill notes ping back to Telegram.</p>
       </article>
       <article class="principle">
-        <h3 id="p7h">35 is a separate door</h3>
-        <p id="p7">35 credits are earned-only and never sold here. This page is Plumb desk software only.</p>
-        <p class="note" id="p7n">Not a token sale. Not an investment.</p>
+        <h3 id="p7h">Desk software only</h3>
+        <p id="p7">This page sells lifetime Plumb seats — ready bot software you host. Not a token sale. Not an investment.</p>
       </article>
     </div>
   </section>
@@ -518,23 +554,40 @@ footer .love{
         <p id="r4">Solana is live today. Bitcoin and Ethereum routes are expansion work — discuss on Source or custom brief. We do <em>not</em> claim live BTC/ETH execution on standard seats.</p>
       </article>
     </div>
+    <div class="rail-partners" aria-label="RPC and routing partners">
+      <p class="rail-partners-label" id="partnersLabel">RPC &amp; routing partners</p>
+      <div class="rail-partners-row">
+        <a class="partner partner-rec" href="https://triton.one/" target="_blank" rel="noopener noreferrer" title="Triton One — Solana RPC / gRPC">
+          <svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><circle cx="32" cy="32" r="30" stroke="currentColor" stroke-width="1.5" opacity="0.35"/><path d="M32 8c12 0 22 10 22 22 0 4.2-1.2 8.1-3.2 11.4-8.4-5.2-18.6-4.8-26.4 1.2C22.4 16.8 26.6 8 32 8z" fill="currentColor" opacity="0.22"/><path d="M32 14c8.8 0 16 7.2 16 16 0 3.1-.9 6-2.4 8.5-6.1-3.8-13.5-3.5-19.2.9C28.6 22.2 30 14 32 14z" fill="currentColor" opacity="0.38"/><path d="M32 20c5.5 0 10 4.5 10 10 0 1.9-.5 3.7-1.5 5.3-3.8-2.4-8.5-2.2-12.1.6C30.4 27.6 31 20 32 20z" fill="currentColor" opacity="0.55"/><circle cx="32" cy="32" r="27" stroke="currentColor" stroke-width="1" opacity="0.5"/></svg>
+          <span class="partner-name">Triton</span>
+          <span class="partner-note" id="pTriton">We recommend Triton</span>
+        </a>
+        <span class="partner" title="Titan — private gRPC pipe">
+          <svg viewBox="0 0 47 59" fill="none" aria-hidden="true"><path d="M23.5 4c-8 0-15 6-17 14v28c2 8 9 13 17 13s15-5 17-13V18c-2-8-9-14-17-14z" stroke="currentColor" stroke-width="1.4" opacity="0.5"/><path d="M23.5 14c5 0 9 4 9 9v12c0 5-4 9-9 9s-9-4-9-9V23c0-5 4-9 9-9z" fill="currentColor" opacity="0.35"/></svg>
+          <span class="partner-name">Titan</span>
+          <span class="partner-note" id="pTitan">Quotes · extra after brief</span>
+        </span>
+        <a class="partner" href="https://www.helius.dev/" target="_blank" rel="noopener noreferrer" title="Helius — Solana RPC / API">
+          <svg viewBox="0 0 400 400" fill="none" aria-hidden="true"><path d="M200 40l46 81-92-15 46-66z" fill="currentColor" opacity="0.55"/><path d="M200 360c-20 0-36-16-36-36h72c0 20-16 36-36 36z" fill="currentColor" opacity="0.35"/><path d="M200 80c-72 0-130 58-130 130s58 130 130 130 130-58 130-130-58-130-130-130z" stroke="currentColor" stroke-width="12" opacity="0.25"/></svg>
+          <span class="partner-name">Helius</span>
+          <span class="partner-note" id="pHelius">RPC / API path</span>
+        </a>
+        <span class="partner" title="CoinStuck — routing partner">
+          <svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><circle cx="32" cy="22" r="14" stroke="currentColor" stroke-width="1.5" opacity="0.55"/><circle cx="32" cy="32" r="14" stroke="currentColor" stroke-width="1.5" opacity="0.4"/><circle cx="32" cy="42" r="14" stroke="currentColor" stroke-width="1.5" opacity="0.28"/></svg>
+          <span class="partner-name">CoinStuck</span>
+          <span class="partner-note" id="pCoinStuck">Routing partner</span>
+        </span>
+      </div>
+    </div>
   </section>
 
   <section id="gallery">
     <div class="section-head">
       <p class="section-label" id="galLabel">Same house · different boards</p>
-      <h2 class="section-title" id="galTitle">Three doors. One desk.</h2>
-      <p class="section-note" id="galNote">Real desk UI. <strong>35</strong> is the brand door (not sold here). <strong>Starter</strong> is a partial board. <strong>Pro / Source</strong> is the full arb board.</p>
+      <h2 class="section-title" id="galTitle">Two boards. One desk.</h2>
+      <p class="section-note" id="galNote">Real desk UI. <strong>Starter</strong> is a partial board. <strong>Pro / Source</strong> is the full arbitrage board.</p>
     </div>
     <div class="gallery">
-      <figure>
-        <img class="brand-shot" src="photo-35-desk.jpeg" alt="35 — brand mark, same house as IRIS, not a Plumb seat" width="1168" height="784"/>
-        <figcaption>
-          <span class="tag" id="g1t">Not for sale on Plumb</span>
-          <strong id="g1h">35 · brand / desk</strong>
-          <span id="g1">Same-house mark at <a href="https://35.elghaly.dev">35</a>. Earned-credits door — not a paid Plumb seat.</span>
-        </figcaption>
-      </figure>
       <figure>
         <img class="board-shot" src="board-partial-350.png" alt="350 Starter partial pair board — limited pairs, slice of the desk" width="800" height="520"/>
         <figcaption>
@@ -547,8 +600,8 @@ footer .love{
         <img class="board-shot" src="board-full-arb.png" alt="Arb Pro Source full multi-pair board — KEEP-style desk" width="1000" height="560"/>
         <figcaption>
           <span class="tag" id="g3t">Pro $699 · Source $1,999</span>
-          <strong id="g3h">Arb / KEEP · full board</strong>
-          <span id="g3">Multi-pair desk — you set slip/tip, no size cap from us. Titan + Jupiter routes on the wire.</span>
+          <strong id="g3h">Full arbitrage board</strong>
+          <span id="g3">Multi-pair desk — you set slip/tip, no size cap from us. Jupiter routes on the wire.</span>
         </figcaption>
       </figure>
     </div>
@@ -608,15 +661,15 @@ footer .love{
       <article class="seat featured">
         <figure class="seat-preview">
           <img src="board-full-arb.png" alt="Pro full arb board — multi-pair KEEP-style desk" width="1000" height="560"/>
-          <figcaption id="s2cap">Arb / KEEP · full board · multi-pair · you set slip/tip</figcaption>
+          <figcaption id="s2cap">Full arbitrage board · multi-pair · you set slip/tip</figcaption>
         </figure>
-        <p class="seat-tier" id="s2tier">Pro · arb full · $699</p>
+        <p class="seat-tier" id="s2tier">Pro · full arbitrage · $699</p>
         <p class="seat-price">$699 <span>once</span></p>
         <p class="seat-for" id="s2for">Operator who already trades</p>
         <p class="seat-delivery" id="s2del">Ready in <time>3.35</time> hours after pay</p>
         <p class="seat-help" id="s2help">After pay — we will help, we will guide</p>
         <ul id="s2f">
-          <li>Full multi-pair arb board — KEEP-style desk</li>
+          <li>Full multi-pair arbitrage board</li>
           <li>You set slippage &amp; tip</li>
           <li>Optional Jito / operator bundle</li>
           <li>Telegram control</li>
@@ -628,9 +681,9 @@ footer .love{
       <article class="seat">
         <figure class="seat-preview">
           <img src="board-full-arb.png" alt="Source full arb board — same desk as Pro, plus source" width="1000" height="560"/>
-          <figcaption id="s3cap">Arb / KEEP · full board + source code</figcaption>
+          <figcaption id="s3cap">Full arbitrage board + source code</figcaption>
         </figure>
-        <p class="seat-tier" id="s3tier">Source · arb full + code · $1,999</p>
+        <p class="seat-tier" id="s3tier">Source · full arbitrage + code · $1,999</p>
         <p class="seat-price">$1,999 <span>once</span></p>
         <p class="seat-for" id="s3for">Desk that wants the code</p>
         <p class="seat-delivery" id="s3del">Ready in <time>3.35</time> hours after pay</p>
@@ -658,7 +711,7 @@ footer .love{
           <tr><th id="cmpFeature">Feature</th><th id="cmpS">Starter $299</th><th id="cmpP">Pro $699</th><th id="cmpSo">Source $1,999</th></tr>
         </thead>
         <tbody id="cmpBody">
-          <tr><td>Board shape</td><td class="yes">Partial · 350-style slice</td><td class="yes">Full arb board</td><td class="yes">Full arb board + source</td></tr>
+          <tr><td>Board shape</td><td class="yes">Partial · 350-style slice</td><td class="yes">Full arbitrage board</td><td class="yes">Full arbitrage board + source</td></tr>
           <tr><td>Who it is for</td><td>First machine, learn the path</td><td>Operator who already trades</td><td>Desk that wants the code</td></tr>
           <tr><td>Pairs</td><td>1–2 on partial board</td><td class="yes">Multi-pair full board</td><td class="yes">Workshop + you edit</td></tr>
           <tr><td>What you receive</td><td>Ready binary + walkthrough</td><td>Ready binary + controls</td><td class="yes">Source + seat</td></tr>
@@ -680,9 +733,7 @@ footer .love{
   </section>
 
   <footer>
-    <div class="marks owner-marks" aria-hidden="true">✝️<br/>🧿<br/>🪬</div>
-    <div class="marks desk-marks" aria-hidden="true" style="margin-top:14px">3️⃣<br/>🧿<br/>5️⃣</div>
-    <p class="flagship brand-lock">💭 you dream we build 🧠💡</p>
+    <div class="marks marks-desk" aria-hidden="true">3️⃣🧿5️⃣</div>
     <p id="footContact">Ask us on mail — <a href="mailto:support@elghaly.dev">support@elghaly.dev</a> · We are 24</p>
     <div class="networks-block" aria-label="Network family">
       <p class="networks-label" id="netLabel">Networks</p>
@@ -712,8 +763,7 @@ footer .love{
     </div>
     <p class="love brand-lock">made by love ❤️</p>
     <p class="addr">548 Market Street, San Francisco, California 94104</p>
-    <p style="margin-top:16px"><a href="https://35.elghaly.dev">35</a><span id="foot35Suffix"> · separate door · not sold here</span></p>
-    <p class="fine" id="fine">Plumb is desk software sold as-is, without warranty or guarantee. We make no claims about profit, returns, CLEAR, land, or any outcome. You host it, you hold the keys, you accept the risk. 35 credits are earned elsewhere and are never sold on this page. Not a token sale. Not an investment.</p>
+    <p class="fine" id="fine">Plumb is desk software sold as-is, without warranty or guarantee. We make no claims about profit, returns, CLEAR, land, or any outcome. You host it, you hold the keys, you accept the risk. Not a token sale. Not an investment.</p>
   </footer>
 </div>
 <script src="i18n.js"></script>
