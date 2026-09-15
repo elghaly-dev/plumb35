@@ -152,18 +152,14 @@ footer .net.monad span{color:var(--accent-warm)}
 /* ── Desk modes ── */
 .modes-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--space-sm)}
 .mode-card{
-  background:var(--surface);border:1px solid var(--line);
+  background:var(--surface);border:1px solid var(--line-strong);
   border-radius:var(--radius);padding:var(--space-md) var(--space-lg);
-}
-.mode-card.featured{
-  border-color:var(--line-strong);
-  background:linear-gradient(180deg,rgba(255,255,255,.03),var(--surface));
+  min-height:100%;
 }
 .mode-tag{
   display:inline-block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--muted);margin-bottom:12px;font-weight:500;
+  color:var(--ink);margin-bottom:12px;font-weight:600;
 }
-.mode-card.featured .mode-tag{color:var(--accent-warm)}
 .mode-card h3{
   font-family:var(--serif);font-size:22px;font-weight:400;
   margin-bottom:10px;color:var(--ink);letter-spacing:-.01em;
@@ -476,20 +472,20 @@ footer .love{
 
   <section id="desk-modes">
     <div class="section-head">
-      <p class="section-label" id="modesLabel">Two ways to run</p>
+      <p class="section-label" id="modesLabel">Two doors</p>
       <h2 class="section-title" id="modesTitle">Spot or arbitrage — your desk, your pace.</h2>
-      <p class="section-note" id="modesNote">Every Plumb seat includes both modes. We recommend starting in spot — learn the desk, then step into arbitrage when you are ready.</p>
+      <p class="section-note" id="modesNote">Two doors on one desk — spot and arbitrage are both included. We recommend spot to start: no arbitrage loop, learn the path. Arbitrage is the cross-venue door when you are ready.</p>
     </div>
     <div class="modes-grid">
-      <article class="mode-card featured">
+      <article class="mode-card">
         <span class="mode-tag" id="m1t">Recommended · start here</span>
         <h3 id="m1h">Spot mode</h3>
         <p id="m1">No arbitrage loop. One venue, one path at a time — learn Telegram control, sizing, and Jupiter execution on the pairs you name. A calmer first run on a self-hosted desk you hold.</p>
       </article>
       <article class="mode-card">
-        <span class="mode-tag" id="m2t">When you are ready</span>
+        <span class="mode-tag" id="m2t">Cross-venue · two prices</span>
         <h3 id="m2h">Arbitrage mode</h3>
-        <p id="m2">Cross-venue and cross-route — the desk watches two prices and acts when your rules pass. Full arbitrage board on Pro and Source. Start in spot, then open this door when the path feels familiar.</p>
+        <p id="m2">Arbitrage watches two prices across venues and routes — same asset, different quotes — surfaces the gap on your board, and acts when your rules pass. Full arbitrage board on Pro and Source.</p>
       </article>
     </div>
   </section>
