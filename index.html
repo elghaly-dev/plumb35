@@ -141,6 +141,23 @@ section{margin-top:64px}
   color:var(--gold);border:1px solid var(--line);border-radius:999px;padding:2px 7px;margin-bottom:6px;
 }
 
+.flash-gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.flash-gallery figure{margin:0}
+.flash-gallery img{
+  width:100%;border-radius:16px;border:1px solid var(--line);display:block;
+  background:var(--bg-elevated);aspect-ratio:9/16;object-fit:cover;object-position:top center;
+}
+.flash-gallery figcaption{font-size:12px;color:var(--muted);margin-top:10px;line-height:1.45}
+.flash-gallery figcaption strong{
+  color:var(--ink);display:block;font-size:14px;font-family:var(--serif);font-weight:600;margin-bottom:4px;
+}
+.flash-caption{
+  margin-top:20px;padding:18px 22px;border:1px solid var(--line);border-radius:16px;
+  background:var(--gold-soft);font-family:var(--serif);font-size:17px;font-style:italic;
+  color:var(--gold);text-align:center;line-height:1.5;
+}
+.flash-caption span{color:var(--muted);font-family:var(--sans);font-size:13px;font-style:normal;display:block;margin-top:6px;letter-spacing:.04em}
+
 .seats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:8px}
 .seat{
   background:var(--surface);border:1px solid var(--line);border-radius:16px;
@@ -202,7 +219,7 @@ footer .fine{
 footer .addr{direction:ltr;unicode-bidi:isolate}
 
 @media(max-width:768px){
-  .seats,.gallery,.rails,.timeline{grid-template-columns:1fr}
+  .seats,.gallery,.flash-gallery,.rails,.timeline{grid-template-columns:1fr}
   .hero-banner{grid-template-columns:1fr}
   .hero-side{flex-direction:row;padding:14px}
   header{flex-direction:column}
@@ -342,6 +359,28 @@ footer .addr{direction:ltr;unicode-bidi:isolate}
     </div>
   </section>
 
+  <section id="flash-proof">
+    <p class="section-label">Flash path · 15k USDC</p>
+    <p class="section-note">On-chain proof of the Kamino flash borrow and Jupiter swap path. Wallet and profit figures redacted — path only.</p>
+    <div class="flash-gallery">
+      <figure>
+        <img src="assets/flash-15k-borrow.png" alt="Solscan — borrow flash loan 15,000 USDC from Kamino lending vault" width="390" height="844"/>
+        <figcaption>
+          <strong>Borrow · Kamino</strong>
+          Flash loan 15,000 USDC from the Kamino lending vault.
+        </figcaption>
+      </figure>
+      <figure>
+        <img src="assets/flash-15k-loop.png" alt="Solscan key actions — 15k flash borrow, Jupiter swaps, repay to Kamino" width="390" height="844"/>
+        <figcaption>
+          <strong>Loop · Jupiter path</strong>
+          Borrow → Jupiter swaps → repay. Full round-trip in one transaction.
+        </figcaption>
+      </figure>
+    </div>
+    <p class="flash-caption"><em>every mind earn his profit</em><span>flash loan 15,000 USDC (Kamino) · Jupiter path</span></p>
+  </section>
+
   <section id="seats">
     <p class="section-label">Lifetime seats</p>
     <div class="seats">
@@ -435,7 +474,8 @@ footer .addr{direction:ltr;unicode-bidi:isolate}
   </section>
 
   <footer>
-    <div class="marks" aria-hidden="true">✝️<br/>🧿<br/>🪬</div>
+    <div class="marks owner-marks" aria-hidden="true">✝️<br/>🧿<br/>🪬</div>
+    <div class="marks desk-marks" aria-hidden="true" style="margin-top:14px">3️⃣<br/>🧿<br/>5️⃣</div>
     <p>Plumb by ElGhaly · Wyndham Heaven</p>
     <p class="addr">548 Market Street, San Francisco, California 94104</p>
     <p><a href="mailto:support@elghaly.dev">support@elghaly.dev</a> · <a href="mailto:35@elghaly.dev">35@elghaly.dev</a></p>

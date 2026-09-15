@@ -22,6 +22,8 @@ Support: [support@elghaly.dev](mailto:support@elghaly.dev)
 
 Titan / gRPC quoted separately. Follow-up $149/mo after the update window.
 
+Flash proof gallery on the live page: Kamino 15k USDC borrow + Jupiter loop (redacted Solscan captures).
+
 ## Hosting (GitHub Pages)
 
 DNS is correct (`plumb.elghaly.dev` → `alarm2024.github.io`). The site 404s because **every Actions deploy has failed** — GitHub reports billing must be resolved before runners start.
