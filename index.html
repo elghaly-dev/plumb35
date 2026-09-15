@@ -15,9 +15,12 @@
 body{font-family:ui-sans-serif,system-ui,sans-serif;background:radial-gradient(900px 500px at 0% -10%,rgba(153,69,255,.3),transparent 50%),radial-gradient(700px 400px at 100% 0%,rgba(20,241,149,.14),transparent 45%),var(--bg);color:var(--ink);line-height:1.55}
 .wrap{max-width:980px;margin:0 auto;padding:24px 18px 80px}
 header{display:flex;justify-content:space-between;align-items:center;gap:12px}
-.mark{width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,var(--p),var(--g));display:grid;place-items:center;font-weight:800}
+.mark{width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,var(--p),var(--g));display:grid;place-items:center;font-weight:800;animation:pulse 3s ease-in-out infinite}
 .word{letter-spacing:.34em;font-size:12px;color:var(--dim)}
-.hero img{width:100%;border-radius:18px;border:1px solid var(--l);margin:22px 0 16px;display:block}
+.marks{letter-spacing:.16em;font-size:18px;animation:float 4s ease-in-out infinite}
+.hero{position:relative}
+.hero img{width:100%;border-radius:18px;border:1px solid var(--l);margin:22px 0 16px;display:block;animation:rise .8s ease}
+.float-marks{position:absolute;left:16px;top:36px;font-size:22px;animation:float 5s ease-in-out infinite;text-shadow:0 0 18px rgba(20,241,149,.4)}
 .kicker{color:var(--g);font-size:12px;letter-spacing:.18em;text-transform:uppercase}
 h1{font-size:clamp(28px,5vw,48px);letter-spacing:-.03em;margin:8px 0 12px}
 .lede{color:var(--dim);font-size:18px;max-width:38em}
@@ -26,7 +29,8 @@ h1{font-size:clamp(28px,5vw,48px);letter-spacing:-.03em;margin:8px 0 12px}
 .primary{background:var(--g);color:#04110a}
 .ghost{border:1px solid var(--l);color:var(--ink);background:transparent}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:28px}
-.card{background:var(--card);border:1px solid var(--l);border-radius:18px;padding:18px}
+.card{background:var(--card);border:1px solid var(--l);border-radius:18px;padding:18px;transition:transform .25s,border-color .25s}
+.card:hover{transform:translateY(-4px);border-color:var(--g)}
 .card h3{color:var(--g);font-size:13px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px}
 .price{font-size:28px;margin:8px 0;font-weight:800}
 .price small{font-size:13px;color:var(--dim);font-weight:500}
@@ -36,46 +40,64 @@ section{margin-top:42px}
 h2{font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--p);margin-bottom:14px}
 .shots{display:grid;grid-template-columns:1.2fr .8fr;gap:12px}
 .shots img{width:100%;border-radius:16px;border:1px solid var(--l)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{border-bottom:1px solid var(--l);padding:10px 8px;text-align:left;vertical-align:top}
+th{color:var(--g);font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+td{color:var(--dim)}
+td.y{color:var(--g)}
 form{display:grid;gap:10px}
 input,select,textarea{width:100%;padding:12px;border-radius:12px;border:1px solid var(--l);background:#11041f;color:var(--ink);font:inherit}
 textarea{min-height:90px}
 .fine{color:var(--dim);font-size:13px}
 footer{margin-top:48px;color:var(--dim);font-size:13px}
+.addr{direction:ltr;unicode-bidi:isolate;margin-top:6px}
 a{color:var(--c)}
-@media(max-width:800px){.grid,.shots{grid-template-columns:1fr}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(20,241,149,.35)}50%{box-shadow:0 0 0 8px rgba(20,241,149,0)}}
+@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@media(max-width:800px){.grid,.shots{grid-template-columns:1fr}table{font-size:12px}}
 </style>
 </head>
 <body>
 <div class="wrap">
   <header>
     <div style="display:flex;gap:10px;align-items:center"><div class="mark">P</div><span class="word">PLUMB</span></div>
-    <a class="ghost" href="mailto:35@elghaly.dev?subject=PLUMB">35@elghaly.dev</a>
+    <span class="marks">✝️ 🧿 🪬</span>
   </header>
   <div class="hero">
+    <span class="float-marks">✝️ 🧿 🪬</span>
     <img src="https://35.elghaly.dev/IMG_5183.jpeg" alt="ElGhaly desk" width="1200" height="806"/>
     <div class="kicker">Self-hosted desk software</div>
     <h1>A hunt stack you run.<br/>Keys stay with you.</h1>
-    <p class="lede">Years on Solana desks: routes, memos, pair design, RPC choices, and how a buyer actually wires a machine. You get a ready desk bot and a walkthrough so you can stand it up. Titan, gRPC, and private pipes are extra — named, priced, not hidden inside the seat.</p>
+    <p class="lede">Same house as 35 and IRIS. You get a ready desk bot and a walkthrough. Titan / gRPC are extra. Software as-is. You operate it.</p>
     <div class="cta">
-      <a class="primary" href="#seats">See seats</a>
-      <a class="ghost" href="#brief">Tell us the pairs</a>
+      <a class="primary" href="#diff">See the difference</a>
+      <a class="ghost" href="mailto:support@elghaly.dev">support@elghaly.dev</a>
     </div>
   </div>
-  <section>
-    <h2>What you buy</h2>
-    <div class="grid">
-      <article class="card"><h3>Ready bot</h3><p class="fine">A working desk binary and the path we use to install it. You learn the same steps we take when a new pair goes on the board.</p></article>
-      <article class="card"><h3>Your request</h3><p class="fine">How many pairs. Which mints. Which venue. You write it once. We scope the seat before you pay.</p></article>
-      <article class="card"><h3>You host it</h3><p class="fine">Your server. Your wallet. Your RPC bill. We do not hold keys and we do not run your book.</p></article>
+
+  <section id="diff">
+    <h2>What is different</h2>
+    <div class="card" style="overflow-x:auto">
+      <table>
+        <thead>
+          <tr><th></th><th>Starter $299</th><th>Pro $699</th><th>Source $1,999</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Who it is for</td><td>First machine, one book</td><td>Operator who already trades</td><td>Desk that wants the code</td></tr>
+          <tr><td>Pairs you name</td><td>1–2</td><td class="y">Multi-pair board</td><td class="y">Workshop + you change it</td></tr>
+          <tr><td>What you receive</td><td>Ready binary + install path</td><td>Ready binary + controls</td><td class="y">Source + seat</td></tr>
+          <tr><td>Updates included</td><td>3 months</td><td class="y">6 months</td><td class="y">6 months + workshop</td></tr>
+          <tr><td>Trade size</td><td>Capped seat</td><td class="y">No cap from us</td><td class="y">No cap from us</td></tr>
+          <tr><td>Slippage / tip knobs</td><td>Fixed defaults</td><td class="y">You set them</td><td class="y">You change the code</td></tr>
+          <tr><td>Private RPC hook</td><td>—</td><td class="y">Hook points</td><td class="y">Yours to edit</td></tr>
+          <tr><td>Titan / gRPC</td><td colspan="3">Not in any seat. Quote from $400 after the brief.</td></tr>
+          <tr><td>Follow-up after window</td><td colspan="3">$149 / month if you want us on the wire. Mail support@.</td></tr>
+        </tbody>
+      </table>
     </div>
   </section>
-  <section class="shots">
-    <img src="https://35.elghaly.dev/IMG_5183.jpeg" alt="Desk mark"/>
-    <div class="card">
-      <h3>Desk notes</h3>
-      <p class="fine">Built by operators who already ship public record work at 35.elghaly.dev and IRIS. Same house style: purple / green. Software as-is. Markets move. Fees exist. You decide size.</p>
-    </div>
-  </section>
+
   <section id="seats">
     <h2>Lifetime seats</h2>
     <div class="grid">
@@ -83,10 +105,10 @@ a{color:var(--c)}
         <h3>Starter</h3>
         <p class="price">$299 <small>once</small></p>
         <ul>
-          <li>Ready bot, 1–2 pairs you name</li>
-          <li>Install walkthrough</li>
-          <li>3 months of updates</li>
-          <li>Size cap on the starter seat</li>
+          <li>One book to learn the path</li>
+          <li>1–2 pairs you name in the brief</li>
+          <li>Walkthrough so you can stand it up</li>
+          <li>3 months of updates, then optional follow-up</li>
         </ul>
         <p style="margin-top:14px"><a class="primary" href="https://buy.stripe.com/14A6oB4AD7GBd2g3QN3Ru00">Pay $299</a></p>
       </article>
@@ -94,10 +116,10 @@ a{color:var(--c)}
         <h3>Pro</h3>
         <p class="price">$699 <small>once</small></p>
         <ul>
-          <li>Ready bot, multi-pair board</li>
-          <li>Slippage / tip controls</li>
-          <li>6 months of updates</li>
+          <li>Same ready bot, more pairs on the board</li>
+          <li>You set slippage and tip</li>
           <li>Private-RPC hook points</li>
+          <li>6 months of updates</li>
         </ul>
         <p style="margin-top:14px"><a class="primary" href="https://buy.stripe.com/4gM00d4AD2mhfao1IF3Ru01">Pay $699</a></p>
       </article>
@@ -105,27 +127,32 @@ a{color:var(--c)}
         <h3>Source</h3>
         <p class="price">$1,999 <small>once</small></p>
         <ul>
-          <li>Source + seat</li>
-          <li>Custom pair workshop</li>
-          <li>Change the strategy yourself</li>
-          <li>No usage cap from us</li>
+          <li>Everything in Pro, plus the source</li>
+          <li>Pair workshop on your request</li>
+          <li>You own the changes after handoff</li>
+          <li>No usage cap from this desk</li>
         </ul>
         <p style="margin-top:14px"><a class="primary" href="https://buy.stripe.com/5kQ5kx4AD2mh2nC0EB3Ru02">Pay $1,999</a></p>
       </article>
     </div>
   </section>
-  <section>
-    <h2>Add-ons</h2>
-    <div class="grid">
-      <article class="card"><h3>Titan + gRPC</h3><p class="fine">The seat ships the main path. Titan, Dragon’s Mouth, dedicated gRPC, and land routing are a paid build after the brief. Quote from $400 — mail first, then we send a Stripe invoice.</p></article>
-      <article class="card"><h3>Follow-up</h3><p class="fine">After the update window: $149 / month if you want us on the wire. Cancel any month. Mail 35@ for that invoice.</p></article>
-      <article class="card"><h3>Card</h3><p class="fine">Seats take card on Stripe (live). Complete the brief so we know pairs. No keys to us.</p></article>
+
+  <section class="shots">
+    <img src="https://35.elghaly.dev/IMG_5183.jpeg" alt="Desk mark 35 IRIS ELGHALY"/>
+    <div class="card">
+      <p class="marks">✝️ 🧿 🪬</p>
+      <h3>House</h3>
+      <p class="fine">ElGhaly desk. Same marks as 35. Software sale, not a token, not a return.</p>
+      <p class="addr">548 Market Street, San Francisco, California 94104</p>
+      <p class="addr"><a href="mailto:support@elghaly.dev">support@elghaly.dev</a></p>
+      <p class="addr"><a href="mailto:35@elghaly.dev">35@elghaly.dev</a></p>
     </div>
   </section>
+
   <section id="brief">
-    <h2>Brief</h2>
+    <h2>Brief before or after pay</h2>
     <div class="card">
-      <form action="mailto:35@elghaly.dev?subject=PLUMB%20BRIEF" method="post" enctype="text/plain">
+      <form action="mailto:support@elghaly.dev?subject=PLUMB%20BRIEF" method="post" enctype="text/plain">
         <label>Seat
           <select name="seat">
             <option>Starter $299</option>
@@ -134,10 +161,10 @@ a{color:var(--c)}
           </select>
         </label>
         <label>How many pairs?
-          <input name="pairs" placeholder="2" />
+          <input name="pairs" placeholder="2"/>
         </label>
         <label>Which pairs / venues?
-          <input name="book" placeholder="SOL-USDC on Jupiter / Meteora …" />
+          <input name="book" placeholder="SOL-USDC on Jupiter / Meteora"/>
         </label>
         <label>Need Titan / gRPC now?
           <select name="pipe"><option>No — main path only</option><option>Yes — quote extra</option></select>
@@ -148,14 +175,18 @@ a{color:var(--c)}
         <label>Notes
           <textarea name="notes" placeholder="What you already run. What you want the bot to do."></textarea>
         </label>
-        <button class="buy primary" type="submit">Send brief</button>
+        <button class="buy primary" type="submit">Mail support@</button>
       </form>
-      <p class="fine" style="margin-top:12px">Software sale. Not a return. Not a pool. Not 35-the-token. You operate it.</p>
+      <p class="fine" style="margin-top:12px">As-is software. You host it. Titan is extra. Not 35-the-token.</p>
     </div>
   </section>
+
   <footer>
-    ✝️ 🪬 🧿 · Plumb by ElGhaly · <a href="mailto:35@elghaly.dev">35@elghaly.dev</a><br/>
-    Separate from <a href="https://35.elghaly.dev">35</a> and <a href="https://iris-35.elghaly.dev">IRIS</a>.
+    <p class="marks">✝️ 🧿 🪬</p>
+    <p>Plumb by ElGhaly</p>
+    <p class="addr">548 Market Street, San Francisco, California 94104</p>
+    <p><a href="mailto:support@elghaly.dev">support@elghaly.dev</a> · <a href="mailto:35@elghaly.dev">35@elghaly.dev</a></p>
+    <p>Separate from <a href="https://35.elghaly.dev">35</a> and <a href="https://iris-35.elghaly.dev">IRIS</a>.</p>
   </footer>
 </div>
 </body>
