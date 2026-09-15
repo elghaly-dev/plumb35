@@ -75,9 +75,20 @@ header{
   font-size:11px;letter-spacing:.18em;text-transform:uppercase;
   color:var(--muted);font-weight:500;margin-top:2px;
 }
-.header-right{display:flex;align-items:center;gap:20px}
+.header-right{display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:flex-end}
 .marks{font-size:18px;line-height:1.75;opacity:.88;letter-spacing:.06em}
 .header-logo{width:56px;height:56px;border-radius:12px;object-fit:cover;opacity:.92}
+.lang-switch{display:flex;gap:3px;flex-wrap:wrap;max-width:200px;justify-content:flex-end}
+.lang-btn{
+  background:transparent;border:1px solid var(--line);color:var(--muted-soft);
+  padding:4px 7px;border-radius:6px;font-size:9px;font-weight:500;letter-spacing:.06em;
+  cursor:pointer;font-family:var(--sans);transition:border-color .2s,color .2s;
+}
+.lang-btn:hover,.lang-btn.active{color:var(--ink);border-color:var(--line-strong)}
+html[dir=rtl] .section-head,html[dir=rtl] .hero-copy{text-align:right}
+html[dir=rtl] th,html[dir=rtl] td{text-align:right}
+html[dir=rtl] .lang-switch{justify-content:flex-start}
+footer .net.monad span{color:var(--accent-warm)}
 
 /* ── Flagship line ── */
 .flagship{
@@ -391,145 +402,153 @@ footer .love{
       <img class="logo-img" src="logo.png" width="40" height="40" alt="Plumb"/>
       <div class="brand-text">
         <div class="name">Plumb</div>
-        <div class="tag">Ready desk software</div>
+        <div class="tag" id="brandTag">Ready desk software</div>
       </div>
     </div>
     <div class="header-right">
+      <nav class="lang-switch" aria-label="Language">
+        <button type="button" class="lang-btn active" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" class="lang-btn" data-lang="ar" aria-pressed="false">AR</button>
+        <button type="button" class="lang-btn" data-lang="ru" aria-pressed="false">RU</button>
+        <button type="button" class="lang-btn" data-lang="zh" aria-pressed="false">ZH</button>
+        <button type="button" class="lang-btn" data-lang="de" aria-pressed="false">DE</button>
+        <button type="button" class="lang-btn" data-lang="es" aria-pressed="false">ES</button>
+      </nav>
       <div class="marks" aria-hidden="true">✝️<br/>🧿<br/>🪬</div>
       <img class="header-logo" src="logo.png" width="56" height="56" alt="Plumb logo"/>
     </div>
   </header>
 
   <section class="hero">
-    <p class="flagship">💭 you dream we build 🧠💡</p>
+    <p class="flagship brand-lock">💭 you dream we build 🧠💡</p>
     <div class="hero-grid">
       <div class="hero-copy">
-        <p class="eyebrow">Lifetime seats · Solana today</p>
-        <h1>Your desk.<br/>Your keys.<br/>Telegram control.</h1>
-        <p class="lede">After you pay, we will help — we will guide. Desk ready in <strong>3.35 hours</strong> → live walkthrough → you continue on Telegram. Same house as <a href="https://35.elghaly.dev">35</a> and <a href="https://iris-35.elghaly.dev">IRIS</a>. You host the bot, you hold the keys.</p>
-        <p class="pitch-line">We build, you continue.</p>
+        <p class="eyebrow" id="heroEyebrow">Lifetime seats · Solana today</p>
+        <h1 id="heroH1">Your desk.<br/>Your keys.<br/>Telegram control.</h1>
+        <p class="lede" id="heroLede">After you pay, we will help — we will guide. Desk ready in <strong>3.35 hours</strong> → live walkthrough → you continue on Telegram. Same house as <a href="https://35.elghaly.dev">35</a> and <a href="https://iris-35.elghaly.dev">IRIS</a>. You host the bot, you hold the keys.</p>
+        <p class="pitch-line" id="heroPitch">We build, you continue.</p>
       </div>
       <div class="hero-photo">
-        <img src="hero-desk.jpeg" alt="Desk — same house as 35 and IRIS" width="1168" height="784"/>
+        <img id="heroImg" src="hero-desk.jpeg" alt="Desk — same house as 35 and IRIS" width="1168" height="784"/>
       </div>
     </div>
     <div class="hero-meta">
-      <p class="delivery">After pay, ready bot delivered within <time>3.35</time> hours</p>
-      <p class="hero-help">Walkthrough &amp; setup help included</p>
+      <p class="delivery" id="heroDelivery">After pay, ready bot delivered within <time>3.35</time> hours</p>
+      <p class="hero-help" id="heroHelp">Walkthrough &amp; setup help included</p>
     </div>
   </section>
 
   <section id="timeline">
     <div class="section-head">
-      <p class="section-label">From pay to live</p>
-      <h2 class="section-title">After you pay, we will help — we will guide.</h2>
-      <p class="section-note">Ready in 3.35 hours. Live walkthrough and setup help on the wire — then you continue on Telegram. We build, you continue.</p>
+      <p class="section-label" id="tlLabel">From pay to live</p>
+      <h2 class="section-title" id="tlTitle">After you pay, we will help — we will guide.</h2>
+      <p class="section-note" id="tlNote">Ready in 3.35 hours. Live walkthrough and setup help on the wire — then you continue on Telegram. We build, you continue.</p>
     </div>
     <div class="timeline">
-      <div class="timeline-step"><div class="num">1</div><p>Pay seat + mail brief</p></div>
-      <div class="timeline-step"><div class="num">3.35h</div><p>We build your desk</p></div>
-      <div class="timeline-step"><div class="num">→</div><p>We guide · walkthrough &amp; setup</p></div>
-      <div class="timeline-step"><div class="num">✓</div><p>You continue on Telegram</p></div>
+      <div class="timeline-step"><div class="num">1</div><p id="tl1">Pay seat + mail brief</p></div>
+      <div class="timeline-step"><div class="num">3.35h</div><p id="tl2">We build your desk</p></div>
+      <div class="timeline-step"><div class="num">→</div><p id="tl3">We guide · walkthrough &amp; setup</p></div>
+      <div class="timeline-step"><div class="num">✓</div><p id="tl4">You continue on Telegram</p></div>
     </div>
   </section>
 
   <section id="how">
     <div class="section-head">
-      <p class="section-label">How it works</p>
-      <h2 class="section-title">Built for operators.</h2>
-      <p class="section-note">After you pay, we will help — we will guide. Walkthrough and setup help included with every seat.</p>
+      <p class="section-label" id="howLabel">How it works</p>
+      <h2 class="section-title" id="howTitle">Built for operators.</h2>
+      <p class="section-note" id="howNote">After you pay, we will help — we will guide. Walkthrough and setup help included with every seat.</p>
     </div>
     <div class="principles">
       <article class="principle">
-        <h3>We help, we guide</h3>
-        <p>After you pay, we will help — we will guide. Your desk is ready in 3.35 hours, then a live walkthrough on the wire. We build, you continue on Telegram.</p>
+        <h3 id="p1h">We help, we guide</h3>
+        <p id="p1">After you pay, we will help — we will guide. Your desk is ready in 3.35 hours, then a live walkthrough on the wire. We build, you continue on Telegram.</p>
       </article>
       <article class="principle">
-        <h3>Telegram control</h3>
-        <p>Start, pause, size, and read status from Telegram. No browser dashboard required — the desk talks to you where you already are.</p>
+        <h3 id="p2h">Telegram control</h3>
+        <p id="p2">Start, pause, size, and read status from Telegram. No browser dashboard required — the desk talks to you where you already are.</p>
       </article>
       <article class="principle">
-        <h3>Solana desk hunt</h3>
-        <p>Watches your named pairs on Solana, surfaces spreads, and fires when your rules pass. Built for operators who want a machine on the book.</p>
+        <h3 id="p3h">Solana desk hunt</h3>
+        <p id="p3">Watches your named pairs on Solana, surfaces spreads, and fires when your rules pass. Built for operators who want a machine on the book.</p>
       </article>
       <article class="principle">
-        <h3>Jupiter routes</h3>
-        <p>Routes through Jupiter for swap execution. You see the path the bot took and what landed on chain.</p>
+        <h3 id="p4h">Jupiter routes</h3>
+        <p id="p4">Routes through Jupiter for swap execution. You see the path the bot took and what landed on chain.</p>
       </article>
       <article class="principle">
-        <h3>Pair board</h3>
-        <p><strong>Starter</strong> ships a <em>partial board</em> — 350-style slice, 1–2 pairs. <strong>Pro / Source</strong> ships the <em>full board</em> — arb / KEEP-style multi-pair desk.</p>
+        <h3 id="p5h">Pair board</h3>
+        <p id="p5"><strong>Starter</strong> ships a <em>partial board</em> — 350-style slice, 1–2 pairs. <strong>Pro / Source</strong> ships the <em>full board</em> — arb / KEEP-style multi-pair desk.</p>
       </article>
       <article class="principle">
-        <h3>Slip / tip &amp; reports</h3>
-        <p>Starter runs fixed defaults. Pro and Source give you slippage and tip knobs. Session summaries and fill notes ping back to Telegram.</p>
+        <h3 id="p6h">Slip / tip &amp; reports</h3>
+        <p id="p6">Starter runs fixed defaults. Pro and Source give you slippage and tip knobs. Session summaries and fill notes ping back to Telegram.</p>
       </article>
       <article class="principle">
-        <h3>35 is a separate door</h3>
-        <p>35 credits are earned-only and never sold here. This page is Plumb desk software only.</p>
-        <p class="note">Not a token sale. Not an investment.</p>
+        <h3 id="p7h">35 is a separate door</h3>
+        <p id="p7">35 credits are earned-only and never sold here. This page is Plumb desk software only.</p>
+        <p class="note" id="p7n">Not a token sale. Not an investment.</p>
       </article>
     </div>
   </section>
 
   <section id="rails">
     <div class="section-head">
-      <p class="section-label">Execution rails</p>
-      <h2 class="section-title">Your path, your stack.</h2>
+      <p class="section-label" id="railsLabel">Execution rails</p>
+      <h2 class="section-title" id="railsTitle">Your path, your stack.</h2>
     </div>
     <div class="rails">
       <article class="rail">
-        <span class="rail-tag">Included · Solana</span>
-        <h3>Jupiter rail</h3>
-        <p>Default execution path on Solana through Jupiter. This is what ships and what we walk you through on day one.</p>
+        <span class="rail-tag" id="r1t">Included · Solana</span>
+        <h3 id="r1h">Jupiter rail</h3>
+        <p id="r1">Default execution path on Solana through Jupiter. This is what ships and what we walk you through on day one.</p>
       </article>
       <article class="rail">
-        <span class="rail-tag">Optional · not default</span>
-        <h3>Jito / operator bundle</h3>
-        <p>Jito and operator-style bundles are available on request — not turned on for every seat by default.</p>
+        <span class="rail-tag" id="r2t">Optional · not default</span>
+        <h3 id="r2h">Jito / operator bundle</h3>
+        <p id="r2">Jito and operator-style bundles are available on request — not turned on for every seat by default.</p>
       </article>
       <article class="rail">
-        <span class="rail-tag muted">Extra · quote</span>
-        <h3>Titan / gRPC</h3>
-        <p>Private pipe for lower latency. Not bundled in any seat — quote from $400 after the brief.</p>
+        <span class="rail-tag muted" id="r3t">Extra · quote</span>
+        <h3 id="r3h">Titan / gRPC</h3>
+        <p id="r3">Private pipe for lower latency. Not bundled in any seat — quote from $400 after the brief.</p>
       </article>
       <article class="rail">
-        <span class="rail-tag muted">Expansion · brief</span>
-        <h3>BTC / ETH paths</h3>
-        <p>Solana is live today. Bitcoin and Ethereum routes are expansion work — discuss on Source or custom brief. We do <em>not</em> claim live BTC/ETH execution on standard seats.</p>
+        <span class="rail-tag muted" id="r4t">Expansion · brief</span>
+        <h3 id="r4h">BTC / ETH paths</h3>
+        <p id="r4">Solana is live today. Bitcoin and Ethereum routes are expansion work — discuss on Source or custom brief. We do <em>not</em> claim live BTC/ETH execution on standard seats.</p>
       </article>
     </div>
   </section>
 
   <section id="gallery">
     <div class="section-head">
-      <p class="section-label">Same house · different boards</p>
-      <h2 class="section-title">Three doors. One desk.</h2>
-      <p class="section-note">Real desk UI. <strong>35</strong> is the brand door (not sold here). <strong>Starter</strong> is a partial board. <strong>Pro / Source</strong> is the full arb board.</p>
+      <p class="section-label" id="galLabel">Same house · different boards</p>
+      <h2 class="section-title" id="galTitle">Three doors. One desk.</h2>
+      <p class="section-note" id="galNote">Real desk UI. <strong>35</strong> is the brand door (not sold here). <strong>Starter</strong> is a partial board. <strong>Pro / Source</strong> is the full arb board.</p>
     </div>
     <div class="gallery">
       <figure>
         <img class="brand-shot" src="photo-35-desk.jpeg" alt="35 — brand mark, same house as IRIS, not a Plumb seat" width="1168" height="784"/>
         <figcaption>
-          <span class="tag">Not for sale on Plumb</span>
-          <strong>35 · brand / desk</strong>
-          Same-house mark at <a href="https://35.elghaly.dev">35</a>. Earned-credits door — not a paid Plumb seat.
+          <span class="tag" id="g1t">Not for sale on Plumb</span>
+          <strong id="g1h">35 · brand / desk</strong>
+          <span id="g1">Same-house mark at <a href="https://35.elghaly.dev">35</a>. Earned-credits door — not a paid Plumb seat.</span>
         </figcaption>
       </figure>
       <figure>
         <img class="board-shot" src="board-partial-350.png" alt="350 Starter partial pair board — limited pairs, slice of the desk" width="800" height="520"/>
         <figcaption>
-          <span class="tag">Starter $299</span>
-          <strong>350 · partial board</strong>
-          Pair slice — 1–2 pairs, capped, fixed defaults. A limited slice, not the full desk.
+          <span class="tag" id="g2t">Starter $299</span>
+          <strong id="g2h">350 · partial board</strong>
+          <span id="g2">Pair slice — 1–2 pairs, capped, fixed defaults. A limited slice, not the full desk.</span>
         </figcaption>
       </figure>
       <figure>
         <img class="board-shot" src="board-full-arb.png" alt="Arb Pro Source full multi-pair board — KEEP-style desk" width="1000" height="560"/>
         <figcaption>
-          <span class="tag">Pro $699 · Source $1,999</span>
-          <strong>Arb / KEEP · full board</strong>
-          Multi-pair desk — you set slip/tip, no size cap from us. Titan + Jupiter routes on the wire.
+          <span class="tag" id="g3t">Pro $699 · Source $1,999</span>
+          <strong id="g3h">Arb / KEEP · full board</strong>
+          <span id="g3">Multi-pair desk — you set slip/tip, no size cap from us. Titan + Jupiter routes on the wire.</span>
         </figcaption>
       </figure>
     </div>
@@ -537,46 +556,46 @@ footer .love{
 
   <section id="flash-proof">
     <div class="section-head">
-      <p class="section-label">Flash path · 15k USDC</p>
-      <h2 class="section-title">On-chain proof.</h2>
-      <p class="section-note">Kamino flash borrow and Jupiter swap path. Wallet and profit figures redacted — path only.</p>
+      <p class="section-label" id="flashLabel">Flash path · 15k USDC</p>
+      <h2 class="section-title" id="flashTitle">On-chain proof.</h2>
+      <p class="section-note" id="flashNote">Kamino flash borrow and Jupiter swap path. Wallet and profit figures redacted — path only.</p>
     </div>
     <div class="flash-gallery">
       <figure>
         <img src="assets/flash-15k-borrow.png" alt="Solscan — borrow flash loan 15,000 USDC from Kamino lending vault" width="390" height="844"/>
         <figcaption>
-          <strong>Borrow · Kamino</strong>
-          Flash loan 15,000 USDC from the Kamino lending vault.
+          <strong id="f1h">Borrow · Kamino</strong>
+          <span id="f1">Flash loan 15,000 USDC from the Kamino lending vault.</span>
         </figcaption>
       </figure>
       <figure>
         <img src="assets/flash-15k-loop.png" alt="Solscan key actions — 15k flash borrow, Jupiter swaps, repay to Kamino" width="390" height="844"/>
         <figcaption>
-          <strong>Loop · Jupiter path</strong>
-          Borrow → Jupiter swaps → repay. Full round-trip in one transaction.
+          <strong id="f2h">Loop · Jupiter path</strong>
+          <span id="f2">Borrow → Jupiter swaps → repay. Full round-trip in one transaction.</span>
         </figcaption>
       </figure>
     </div>
-    <p class="flash-caption"><em>every mind earn his profit</em><span>flash loan 15,000 USDC (Kamino) · Jupiter path</span></p>
+    <p class="flash-caption"><em class="brand-lock">every mind earn his profit</em><span id="flashSub">flash loan 15,000 USDC (Kamino) · Jupiter path</span></p>
   </section>
 
   <section id="seats">
     <div class="section-head">
-      <p class="section-label">Lifetime seats</p>
-      <h2 class="section-title">Choose your board.</h2>
+      <p class="section-label" id="seatsLabel">Lifetime seats</p>
+      <h2 class="section-title" id="seatsTitle">Choose your board.</h2>
     </div>
     <div class="seats">
       <article class="seat">
         <figure class="seat-preview">
           <img src="board-partial-350.png" alt="Starter partial board — 350 seat, pair slice" width="800" height="520"/>
-          <figcaption>350 · partial board · 1–2 pairs · more pairs locked</figcaption>
+          <figcaption id="s1cap">350 · partial board · 1–2 pairs · more pairs locked</figcaption>
         </figure>
-        <p class="seat-tier">Starter · 350 partial · $299</p>
+        <p class="seat-tier" id="s1tier">Starter · 350 partial · $299</p>
         <p class="seat-price">$299 <span>once</span></p>
-        <p class="seat-for">First machine — learn the path</p>
-        <p class="seat-delivery">Ready in <time>3.35</time> hours after pay</p>
-        <p class="seat-help">After pay — we will help, we will guide</p>
-        <ul>
+        <p class="seat-for" id="s1for">First machine — learn the path</p>
+        <p class="seat-delivery" id="s1del">Ready in <time>3.35</time> hours after pay</p>
+        <p class="seat-help" id="s1help">After pay — we will help, we will guide</p>
+        <ul id="s1f">
           <li>Partial pair board — limited slice, not full desk</li>
           <li>1–2 pairs you name in the brief</li>
           <li>Telegram control + Jupiter rail</li>
@@ -584,19 +603,19 @@ footer .love{
           <li>3 months of updates</li>
           <li>Capped seat</li>
         </ul>
-        <a class="btn btn-primary" href="https://buy.stripe.com/14A6oB4AD7GBd2g3QN3Ru00">Pay $299</a>
+        <a class="btn btn-primary" id="s1btn" href="https://buy.stripe.com/14A6oB4AD7GBd2g3QN3Ru00">Pay $299</a>
       </article>
       <article class="seat featured">
         <figure class="seat-preview">
           <img src="board-full-arb.png" alt="Pro full arb board — multi-pair KEEP-style desk" width="1000" height="560"/>
-          <figcaption>Arb / KEEP · full board · multi-pair · you set slip/tip</figcaption>
+          <figcaption id="s2cap">Arb / KEEP · full board · multi-pair · you set slip/tip</figcaption>
         </figure>
-        <p class="seat-tier">Pro · arb full · $699</p>
+        <p class="seat-tier" id="s2tier">Pro · arb full · $699</p>
         <p class="seat-price">$699 <span>once</span></p>
-        <p class="seat-for">Operator who already trades</p>
-        <p class="seat-delivery">Ready in <time>3.35</time> hours after pay</p>
-        <p class="seat-help">After pay — we will help, we will guide</p>
-        <ul>
+        <p class="seat-for" id="s2for">Operator who already trades</p>
+        <p class="seat-delivery" id="s2del">Ready in <time>3.35</time> hours after pay</p>
+        <p class="seat-help" id="s2help">After pay — we will help, we will guide</p>
+        <ul id="s2f">
           <li>Full multi-pair arb board — KEEP-style desk</li>
           <li>You set slippage &amp; tip</li>
           <li>Optional Jito / operator bundle</li>
@@ -604,19 +623,19 @@ footer .love{
           <li>6 months of updates</li>
           <li>No size cap from us · Private RPC hooks</li>
         </ul>
-        <a class="btn btn-primary" href="https://buy.stripe.com/4gM00d4AD2mhfao1IF3Ru01">Pay $699</a>
+        <a class="btn btn-primary" id="s2btn" href="https://buy.stripe.com/4gM00d4AD2mhfao1IF3Ru01">Pay $699</a>
       </article>
       <article class="seat">
         <figure class="seat-preview">
           <img src="board-full-arb.png" alt="Source full arb board — same desk as Pro, plus source" width="1000" height="560"/>
-          <figcaption>Arb / KEEP · full board + source code</figcaption>
+          <figcaption id="s3cap">Arb / KEEP · full board + source code</figcaption>
         </figure>
-        <p class="seat-tier">Source · arb full + code · $1,999</p>
+        <p class="seat-tier" id="s3tier">Source · arb full + code · $1,999</p>
         <p class="seat-price">$1,999 <span>once</span></p>
-        <p class="seat-for">Desk that wants the code</p>
-        <p class="seat-delivery">Ready in <time>3.35</time> hours after pay</p>
-        <p class="seat-help">After pay — we will help, we will guide</p>
-        <ul>
+        <p class="seat-for" id="s3for">Desk that wants the code</p>
+        <p class="seat-delivery" id="s3del">Ready in <time>3.35</time> hours after pay</p>
+        <p class="seat-help" id="s3help">After pay — we will help, we will guide</p>
+        <ul id="s3f">
           <li>Everything in Pro, plus the source</li>
           <li>Full board + pair workshop</li>
           <li>BTC/ETH expansion discussed here — not fake live claims</li>
@@ -624,21 +643,21 @@ footer .love{
           <li>6 months of updates + workshop</li>
           <li>No size cap from us</li>
         </ul>
-        <a class="btn btn-primary" href="https://buy.stripe.com/5kQ5kx4AD2mh2nC0EB3Ru02">Pay $1,999</a>
+        <a class="btn btn-primary" id="s3btn" href="https://buy.stripe.com/5kQ5kx4AD2mh2nC0EB3Ru02">Pay $1,999</a>
       </article>
     </div>
 
-    <p class="seat-all"><strong>Every seat:</strong> Keys stay with you. We build, you continue. Titan / gRPC not included — quoted extra after brief. Optional follow-up $149/mo after the update window.</p>
+    <p class="seat-all" id="seatAll"><strong>Every seat:</strong> Keys stay with you. We build, you continue. Titan / gRPC not included — quoted extra after brief. Optional follow-up $149/mo after the update window.</p>
 
     <div class="section-head" style="margin-top:var(--space-xl)">
-      <p class="section-label">Compare seats</p>
+      <p class="section-label" id="cmpLabel">Compare seats</p>
     </div>
     <div class="compare">
       <table>
         <thead>
-          <tr><th>Feature</th><th>Starter $299</th><th>Pro $699</th><th>Source $1,999</th></tr>
+          <tr><th id="cmpFeature">Feature</th><th id="cmpS">Starter $299</th><th id="cmpP">Pro $699</th><th id="cmpSo">Source $1,999</th></tr>
         </thead>
-        <tbody>
+        <tbody id="cmpBody">
           <tr><td>Board shape</td><td class="yes">Partial · 350-style slice</td><td class="yes">Full arb board</td><td class="yes">Full arb board + source</td></tr>
           <tr><td>Who it is for</td><td>First machine, learn the path</td><td>Operator who already trades</td><td>Desk that wants the code</td></tr>
           <tr><td>Pairs</td><td>1–2 on partial board</td><td class="yes">Multi-pair full board</td><td class="yes">Workshop + you edit</td></tr>
@@ -663,35 +682,40 @@ footer .love{
   <footer>
     <div class="marks owner-marks" aria-hidden="true">✝️<br/>🧿<br/>🪬</div>
     <div class="marks desk-marks" aria-hidden="true" style="margin-top:14px">3️⃣<br/>🧿<br/>5️⃣</div>
-    <p class="flagship">💭 you dream we build 🧠💡</p>
-    <p>Ask us on mail — <a href="mailto:support@elghaly.dev">support@elghaly.dev</a> · We are 24</p>
+    <p class="flagship brand-lock">💭 you dream we build 🧠💡</p>
+    <p id="footContact">Ask us on mail — <a href="mailto:support@elghaly.dev">support@elghaly.dev</a> · We are 24</p>
     <div class="networks-block" aria-label="Network family">
-      <p class="networks-label">Networks</p>
+      <p class="networks-label" id="netLabel">Networks</p>
       <div class="networks-row">
-        <span class="net net-live" title="Solana — live desk today">
+        <span class="net net-live" id="netSolTitle" title="Solana — live desk today">
           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 16.5l7.5-4.3c.4-.2.8-.2 1.2 0L20 16.5c.6.3.6 1.2 0 1.5l-7.5 4.3c-.4.2-.8.2-1.2 0L4 18c-.6-.3-.6-1.2 0-1.5z" fill="#14f195" opacity=".85"/><path d="M4 12l7.5-4.3c.4-.2.8-.2 1.2 0L20 12c.6.3.6 1.2 0 1.5l-7.5 4.3c-.4.2-.8.2-1.2 0L4 13.5c-.6-.3-.6-1.2 0-1.5z" fill="#9945ff" opacity=".75"/><path d="M4 7.5l7.5-4.3c.4-.2.8-.2 1.2 0L20 7.5c.6.3.6 1.2 0 1.5l-7.5 4.3c-.4.2-.8.2-1.2 0L4 9c-.6-.3-.6-1.2 0-1.5z" fill="#9945ff" opacity=".55"/></svg>
           <span>SOL</span>
         </span>
-        <span class="net" title="Ethereum — expansion path">
+        <span class="net" id="netEthTitle" title="Ethereum — expansion path">
           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l-6.5 10.8L12 14l6.5-1.2L12 3z" fill="#627eea" opacity=".55"/><path d="M12 14.5l-6.5 3.5L12 21l6.5-3L12 14.5z" fill="#627eea" opacity=".85"/></svg>
           <span>ETH</span>
         </span>
-        <span class="net" title="Bitcoin — expansion path">
+        <span class="net" id="netBtcTitle" title="Bitcoin — expansion path">
           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="#f7931a" stroke-width="1.5" opacity=".7"/><path d="M10.5 7.5h2.8c1.4 0 2.4.7 2.4 2 0 .8-.4 1.4-1.1 1.7 1 .3 1.6 1 1.6 2.1 0 1.5-1.2 2.2-2.9 2.2H10.5V7.5zm1.2 3.4h1.3c.7 0 1.1-.3 1.1-.9s-.4-.8-1.1-.8h-1.3v1.7zm0 3.5h1.5c.8 0 1.3-.4 1.3-1.1 0-.7-.5-1-1.3-1h-1.5v2.1z" fill="#f7931a" opacity=".85"/></svg>
           <span>BTC</span>
         </span>
-        <span class="net" title="Arbitrum — expansion path">
+        <span class="net" id="netArbTitle" title="Arbitrum — expansion path">
           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3l8.5 5v8L12 21l-8.5-5V8L12 3z" stroke="#28a0f0" stroke-width="1.4" opacity=".65"/><path d="M12 8.5l4.2 2.5v5L12 18.5l-4.2-2.5v-5L12 8.5z" fill="#28a0f0" opacity=".75"/><path d="M9 12.5l3-1.8 3 1.8-3 1.8-3-1.8z" fill="#28a0f0" opacity=".45"/></svg>
           <span>ARB</span>
         </span>
+        <span class="net monad" id="netMonadTitle" title="Monad — expansion path">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="#836ef9" stroke-width="1.4" opacity=".7"/><path d="M8 12h8M12 8v8" stroke="#836ef9" stroke-width="1.2" opacity=".55"/><circle cx="12" cy="12" r="2.5" fill="#836ef9" opacity=".75"/></svg>
+          <span>MONAD</span>
+        </span>
       </div>
-      <p class="networks-note">Solana is the live desk today · ETH · BTC · ARB shown as network family / expansion</p>
+      <p class="networks-note" id="netNote">Solana is the live desk today · ETH · BTC · ARB · MONAD shown as network family / expansion</p>
     </div>
-    <p class="love">made by love ❤️</p>
+    <p class="love brand-lock">made by love ❤️</p>
     <p class="addr">548 Market Street, San Francisco, California 94104</p>
-    <p style="margin-top:16px"><a href="https://35.elghaly.dev">35</a> · separate door · not sold here</p>
-    <p class="fine">Plumb is desk software sold as-is, without warranty or guarantee. We make no claims about profit, returns, CLEAR, land, or any outcome. You host it, you hold the keys, you accept the risk. 35 credits are earned elsewhere and are never sold on this page. Not a token sale. Not an investment.</p>
+    <p style="margin-top:16px"><a href="https://35.elghaly.dev">35</a><span id="foot35Suffix"> · separate door · not sold here</span></p>
+    <p class="fine" id="fine">Plumb is desk software sold as-is, without warranty or guarantee. We make no claims about profit, returns, CLEAR, land, or any outcome. You host it, you hold the keys, you accept the risk. 35 credits are earned elsewhere and are never sold on this page. Not a token sale. Not an investment.</p>
   </footer>
 </div>
+<script src="i18n.js"></script>
 </body>
 </html>
