@@ -29,7 +29,7 @@ jobs:
           cp index.html 404.html i18n.js app.js .nojekyll _site/
           cp favicon.png favicon.svg logo.png robots.txt sitemap.xml site.webmanifest _site/
           cp brand-35-plumb.jpg brand-35-plumb.webp _site/
-          cp logo-plumb-35.png logo-plumb-35.svg _site/
+          cp logo-plumb-35.png _site/   # 404.html
           cp board-full-arb.png board-full-arb.webp _site/
           cp board-partial-350.png board-partial-350.webp _site/
           cp -R assets _site/assets
