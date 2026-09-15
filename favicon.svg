@@ -1,1 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="8" fill="#07040e"/><path d="M16 7c-2.5 3.2-5 5.8-5 9.5a5 5 0 1 0 10 0c0-3.7-2.5-6.3-5-9.5z" fill="none" stroke="#c9b896" stroke-width="1.2"/><circle cx="16" cy="16.5" r="2" fill="#8b6fbf"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+<defs><linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" stop-color="#9945ff"/><stop offset="100%" stop-color="#14f195"/>
+</linearGradient></defs>
+<rect width="32" height="32" rx="8" fill="url(#g)"/>
+<text x="16" y="23" text-anchor="middle" font-family="Georgia,serif" font-size="20" font-weight="700" fill="#fff">P</text>
+</svg>
