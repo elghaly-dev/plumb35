@@ -11,7 +11,7 @@
 <meta property="og:description" content="Solana desk hunt you run. Partial or full pair board. Pay → ready in 3.35 hours."/>
 <meta property="og:url" content="https://plumb.elghaly.dev/"/>
 <meta property="og:type" content="website"/>
-<meta property="og:image" content="logo.png"/>
+<meta property="og:image" content="logo-plumb-35.png"/>
 <link rel="icon" href="favicon.png" type="image/png"/>
 <link rel="icon" href="favicon.svg" type="image/svg+xml"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -65,19 +65,13 @@ header{
   gap:var(--space-sm);
   padding-bottom:var(--space-sm);
 }
-.brand{display:flex;align-items:center;gap:12px;min-width:0}
-.logo-stack{display:flex;align-items:center;gap:8px;flex-shrink:0}
-.logo-link{display:block;line-height:0;transition:opacity .2s}
-.logo-link:hover{opacity:.85}
-.logo-img{width:40px;height:40px;border-radius:10px;object-fit:cover;display:block;flex-shrink:0}
-.logo-35-brand{height:40px;width:auto;max-width:132px;object-fit:contain;display:block;flex-shrink:0}
-.brand-text .name{
-  font-family:var(--serif);font-size:26px;font-weight:400;
-  letter-spacing:-.01em;color:var(--ink);
+.brand{display:flex;align-items:center;min-width:0;flex-shrink:1}
+.brand-logo{
+  display:block;line-height:0;transition:opacity .2s;flex-shrink:0;
 }
-.brand-text .tag{
-  font-size:11px;letter-spacing:.18em;text-transform:uppercase;
-  color:var(--muted);font-weight:500;margin-top:2px;
+.brand-logo:hover{opacity:.88}
+.brand-logo img{
+  height:56px;width:auto;display:block;object-fit:contain;
 }
 .header-right{display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:flex-end}
 .marks{font-size:18px;line-height:1;opacity:.88;letter-spacing:.02em;white-space:nowrap}
@@ -437,10 +431,7 @@ footer .love{
 @media(max-width:600px){
   .hero h1{font-size:38px}
   section{margin-top:var(--space-xl)}
-  .brand{gap:10px}
-  .logo-stack{gap:6px}
-  .logo-img{width:36px;height:36px;border-radius:9px}
-  .logo-35-brand{height:34px;max-width:108px}
+  .brand-logo img{height:48px}
 }
 </style>
 </head>
@@ -448,16 +439,9 @@ footer .love{
 <div class="wrap">
   <header>
     <div class="brand">
-      <div class="logo-stack" aria-label="Plumb and 35">
-        <img class="logo-img" src="logo.png" width="40" height="40" alt="Plumb"/>
-        <a href="https://35.elghaly.dev/" class="logo-link" target="_blank" rel="noopener noreferrer">
-          <img class="logo-35-brand" src="logo-35-brand.png" width="132" height="40" alt="35 ELGHALY"/>
-        </a>
-      </div>
-      <div class="brand-text">
-        <div class="name">Plumb</div>
-        <div class="tag" id="brandTag">Ready desk software</div>
-      </div>
+      <a href="https://plumb.elghaly.dev/" class="brand-logo" aria-label="Plumb 35 — Elghaly">
+        <img src="logo-plumb-35.png" width="178" height="112" alt="35 Plumb Elghaly"/>
+      </a>
     </div>
     <div class="header-right">
       <nav class="lang-switch" aria-label="Language">

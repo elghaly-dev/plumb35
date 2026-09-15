@@ -331,7 +331,6 @@ es:{
 
 const LANGS=['en','ar','ru','zh','de','es'];
 const KEYS=[
-  ['brandTag','.brand-text .tag'],
   ['heroEyebrow','#heroEyebrow'],['heroH1','#heroH1','html'],['heroLede','#heroLede','html'],
   ['heroPitch','#heroPitch'],['heroDelivery','#heroDelivery','html'],['heroHelp','#heroHelp'],
   ['modesLabel','#modesLabel'],['modesTitle','#modesTitle'],['modesNote','#modesNote'],
