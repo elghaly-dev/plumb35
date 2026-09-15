@@ -22,6 +22,28 @@ Titan / gRPC quoted separately. Follow-up $149/mo after the update window.
 
 Flash proof gallery on the live page: Kamino 15k USDC borrow + Jupiter loop (redacted Solscan captures).
 
+## Files
+
+| File | What it is |
+|------|------------|
+| `index.html` | The whole sales page — markup plus inline CSS |
+| `i18n.js` | Copy for all six languages (`en ar ru zh de es`) and the language switcher |
+| `app.js` | Sticky header, scroll reveal, FAQ accordion, mobile seat bar — all optional enhancement |
+| `brand-35-plumb.{jpg,webp}` | The 35 house mark, featured below the hero |
+| `board-*.{png,webp}` | Desk screenshots used in the gallery and seat cards |
+| `assets/flash-15k-*.{png,webp}` | Redacted Solscan captures for the on-chain proof section |
+| `404.html`, `robots.txt`, `sitemap.xml`, `site.webmanifest` | Crawler and browser support files |
+
+### Editing copy
+
+Text lives in **two** places and both must be changed together: the English
+in `index.html` and the same key in the `en` block of `i18n.js`. `i18n.js`
+overwrites the markup on load, so editing only the HTML has no visible effect.
+Each translatable element carries an `id` that matches its key.
+
+Images are served as WebP with the original PNG/JPEG kept as a `<picture>`
+fallback. If you replace one, regenerate both files or drop the `<source>`.
+
 ## Hosting (GitHub Pages)
 
 DNS is correct (`plumb.elghaly.dev` → `alarm2024.github.io`). The site 404s because **every Actions deploy has failed** — GitHub reports billing must be resolved before runners start.

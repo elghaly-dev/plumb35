@@ -6,16 +6,31 @@
 <title>Plumb — Ready Desk Software</title>
 <meta name="description" content="Self-hosted Solana desk hunt software. Telegram control, Jupiter routes, partial or full pair board. Ready in 3.35 hours. Lifetime paid seats."/>
 <meta name="theme-color" content="#050505"/>
+<meta name="color-scheme" content="dark"/>
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1"/>
+<meta name="author" content="Elghaly"/>
 <link rel="canonical" href="https://plumb.elghaly.dev/"/>
+<meta property="og:site_name" content="Plumb — Elghaly"/>
 <meta property="og:title" content="Plumb — Ready Desk Software"/>
 <meta property="og:description" content="Solana desk hunt you run. Partial or full pair board. Pay → ready in 3.35 hours."/>
 <meta property="og:url" content="https://plumb.elghaly.dev/"/>
 <meta property="og:type" content="website"/>
-<meta property="og:image" content="logo-plumb-35.png"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:image" content="https://plumb.elghaly.dev/brand-35-plumb.jpg"/>
+<meta property="og:image:width" content="1168"/>
+<meta property="og:image:height" content="784"/>
+<meta property="og:image:alt" content="35 Plumb Elghaly — house mark"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Plumb — Ready Desk Software"/>
+<meta name="twitter:description" content="Solana desk hunt you run. Partial or full pair board. Pay → ready in 3.35 hours."/>
+<meta name="twitter:image" content="https://plumb.elghaly.dev/brand-35-plumb.jpg"/>
 <link rel="icon" href="favicon.png" type="image/png"/>
 <link rel="icon" href="favicon.svg" type="image/svg+xml"/>
+<link rel="apple-touch-icon" href="logo.png"/>
+<link rel="manifest" href="site.webmanifest"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="preload" as="image" href="brand-35-plumb.webp" type="image/webp" fetchpriority="high"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"/>
 <style>
 :root{
@@ -24,8 +39,8 @@
   --surface:#111113;
   --surface-hover:#161618;
   --ink:#f5f5f7;
-  --muted:#86868b;
-  --muted-soft:#6e6e73;
+  --muted:#9b9ba1;      /* 6.54:1 min — WCAG AA on every surface */
+  --muted-soft:#808086; /* 4.60:1 min — used on 10-12px labels */
   --line:rgba(255,255,255,.08);
   --line-strong:rgba(255,255,255,.14);
   --accent:#e8e6e1;
@@ -53,7 +68,7 @@ body{
   line-height:1.6;
   min-height:100vh;
 }
-.wrap{max-width:1080px;margin:0 auto;padding:28px 24px var(--space-xl)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px var(--space-xl)}
 a{color:var(--accent-warm);text-decoration:none;transition:opacity .2s}
 a:hover{opacity:.75}
 
@@ -63,22 +78,42 @@ header{
   justify-content:space-between;
   align-items:center;
   gap:var(--space-sm);
-  padding-bottom:var(--space-sm);
+  position:sticky;
+  top:0;
+  z-index:50;
+  margin:0 -24px var(--space-sm);
+  padding:14px 24px;
+  background:rgba(5,5,5,.72);
+  backdrop-filter:blur(16px) saturate(140%);
+  -webkit-backdrop-filter:blur(16px) saturate(140%);
+  border-bottom:1px solid transparent;
+  transition:background .3s,border-color .3s;
 }
-.brand{display:flex;align-items:center;gap:10px;min-width:0;flex-shrink:1}
-.brand-mark{
-  height:56px;display:block;flex-shrink:0;
-}
+header.is-stuck{background:rgba(5,5,5,.9);border-bottom-color:var(--line)}
+section[id]{scroll-margin-top:96px}
+.brand{display:flex;align-items:center;gap:11px;min-width:0;flex-shrink:1}
 .brand-p{
-  width:56px;object-fit:cover;border-radius:14px;
+  /* Sized to the live-text lockup beside it rather than the old 56px raster. */
+  height:44px;width:44px;display:block;flex-shrink:0;
+  object-fit:cover;border-radius:12px;
 }
 .brand-logo{
-  display:block;line-height:0;transition:opacity .2s;flex-shrink:0;
+  display:flex;align-items:center;gap:11px;line-height:1;
+  transition:opacity .2s;flex-shrink:0;
 }
-.brand-logo:hover{opacity:.88}
-.brand-wordmark{
-  width:auto;object-fit:contain;
+.brand-logo:hover{opacity:.85}
+.bl-35{
+  font-family:var(--sans);font-weight:600;font-size:30px;letter-spacing:-.03em;
+  background:linear-gradient(135deg,#d8fff4 0%,#6fe0c4 44%,#9b7dff 100%);
+  -webkit-background-clip:text;background-clip:text;
+  color:transparent;-webkit-text-fill-color:transparent;
 }
+.bl-stack{
+  display:flex;flex-direction:column;gap:4px;
+  padding-left:11px;border-left:1px solid var(--line-strong);
+}
+.bl-name{font-size:13px;font-weight:600;letter-spacing:.26em;color:var(--ink)}
+.bl-sub{font-size:8px;font-weight:500;letter-spacing:.3em;color:var(--muted)}
 .header-right{display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:flex-end}
 .marks{font-size:18px;line-height:1;opacity:.88;letter-spacing:.02em;white-space:nowrap}
 .marks-owner{font-size:17px}
@@ -108,7 +143,7 @@ footer .net.monad span{color:var(--accent-warm)}
 }
 
 /* ── Hero ── */
-.hero{padding:var(--space-xs) 0 var(--space-md)}
+.hero{padding:0 0 var(--space-md);margin-top:var(--space-md)}
 .hero-copy{max-width:38em}
 .eyebrow{
   font-size:11px;letter-spacing:.22em;text-transform:uppercase;
@@ -254,6 +289,7 @@ section{margin-top:var(--space-2xl)}
 
 /* ── Gallery ── */
 .gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--space-md)}
+picture{display:block;line-height:0}
 .gallery figure{margin:0}
 .gallery img{
   width:100%;border-radius:var(--radius);border:1px solid var(--line);
@@ -429,28 +465,379 @@ footer .love{
   color:var(--muted);margin:var(--space-md) 0;opacity:.9;
 }
 
+
+/* ── Accessibility ── */
+.skip-link{
+  /* Parked above the viewport rather than at a negative inline offset:
+     off-screen positioning would create a 10,000px scroll area in RTL. */
+  position:absolute;top:0;inset-inline-start:0;z-index:100;
+  background:var(--ink);color:var(--bg);padding:12px 20px;border-radius:0 0 12px 12px;
+  font-size:13px;font-weight:500;letter-spacing:.04em;
+  transform:translateY(-130%);transition:transform .2s;
+}
+.skip-link:focus{transform:translateY(0);opacity:1}
+:focus-visible{outline:2px solid var(--accent-warm);outline-offset:3px;border-radius:4px}
+.sr-only{
+  position:absolute;width:1px;height:1px;padding:0;margin:-1px;
+  overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;
+}
+
+/* ── Site nav ── */
+.site-nav{display:flex;align-items:center;gap:22px}
+.site-nav a{
+  font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--muted);font-weight:500;transition:color .2s;
+}
+.site-nav a:hover{color:var(--ink);opacity:1}
+.nav-cta{
+  padding:8px 16px;border:1px solid var(--line-strong);border-radius:999px;
+  color:var(--ink)!important;background:rgba(255,255,255,.04);
+}
+.nav-cta:hover{background:rgba(255,255,255,.1)}
+
+/* ── Brand plate ── */
+.brand-plate{margin-top:var(--space-lg);scroll-margin-top:96px}
+.brand-plate-inner{
+  display:grid;grid-template-columns:1.15fr .85fr;gap:var(--space-lg);
+  align-items:center;
+  border:1px solid var(--line-strong);border-radius:calc(var(--radius) + 6px);
+  background:linear-gradient(140deg,rgba(158,232,212,.05),rgba(5,5,5,0) 42%,rgba(155,125,255,.06));
+  padding:var(--space-md);
+}
+.brand-plate-figure{position:relative;margin:0;border-radius:var(--radius);overflow:hidden}
+.brand-plate-figure::before{
+  content:"";position:absolute;inset:-18%;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(42% 52% at 16% 22%,rgba(155,125,255,.34),transparent 70%),
+    radial-gradient(46% 48% at 88% 82%,rgba(94,200,216,.28),transparent 70%);
+  filter:blur(26px);
+}
+.brand-plate-figure img{
+  position:relative;z-index:1;display:block;width:100%;height:auto;
+  border-radius:var(--radius);border:1px solid var(--line-strong);
+  box-shadow:0 30px 70px rgba(0,0,0,.55);
+}
+.brand-plate-copy .section-label{margin-bottom:var(--space-xs)}
+.brand-plate-copy .section-title{margin-bottom:var(--space-xs);font-size:clamp(26px,3.2vw,34px)}
+.brand-plate-copy .section-note{margin-bottom:var(--space-md)}
+.brand-glyphs{list-style:none;display:grid;gap:var(--space-xs)}
+.brand-glyphs li{
+  display:flex;align-items:flex-start;gap:14px;
+  padding-top:var(--space-xs);border-top:1px solid var(--line);
+}
+.brand-glyphs li:first-child{border-top:0;padding-top:0}
+.brand-glyphs .glyph{
+  font-size:18px;line-height:1.4;flex-shrink:0;width:26px;text-align:center;opacity:.9;
+}
+.brand-glyphs strong{
+  display:block;font-family:var(--serif);font-size:16px;font-weight:400;
+  color:var(--ink);letter-spacing:-.01em;margin-bottom:2px;
+}
+.brand-glyphs span.glyph-note{font-size:13px;color:var(--muted);line-height:1.55}
+
+/* ── FAQ ── */
+.faq{
+  display:grid;gap:1px;background:var(--line);
+  border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
+}
+.faq details{background:var(--surface);transition:background .2s}
+.faq details[open]{background:var(--surface-hover)}
+.faq summary{
+  cursor:pointer;list-style:none;padding:var(--space-sm) var(--space-md);
+  display:flex;align-items:center;justify-content:space-between;gap:var(--space-sm);
+  font-family:var(--serif);font-size:18px;font-weight:400;color:var(--ink);
+  letter-spacing:-.01em;line-height:1.4;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{
+  content:"+";font-family:var(--sans);font-size:18px;color:var(--muted);
+  flex-shrink:0;transition:transform .25s,color .2s;
+}
+.faq details[open] summary::after{transform:rotate(45deg);color:var(--ink)}
+.faq summary:hover{color:var(--accent)}
+.faq .faq-body{
+  padding:0 var(--space-md) var(--space-sm);
+  color:var(--muted);font-size:14px;line-height:1.7;max-width:56em;
+}
+
+/* ── Closing CTA ── */
+.cta-band{
+  margin-top:var(--space-2xl);padding:var(--space-lg) var(--space-md);
+  border:1px solid var(--line-strong);border-radius:calc(var(--radius) + 6px);
+  background:linear-gradient(140deg,rgba(155,125,255,.07),rgba(5,5,5,0) 48%,rgba(94,200,216,.07));
+  text-align:center;
+}
+.cta-band h2{
+  font-family:var(--serif);font-size:clamp(26px,3.6vw,34px);font-weight:400;
+  letter-spacing:-.02em;line-height:1.2;margin-bottom:var(--space-xs);
+}
+.cta-band p{color:var(--muted);font-size:15px;line-height:1.65;max-width:34em;margin:0 auto var(--space-md)}
+.cta-actions{display:flex;flex-wrap:wrap;gap:var(--space-xs);justify-content:center}
+.cta-actions .btn{display:inline-block;min-width:200px}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--line-strong)}
+.btn-ghost:hover{background:rgba(255,255,255,.06)}
+
+.cta-brief{
+  margin:var(--space-lg) auto 0;max-width:40em;
+  padding-top:var(--space-md);border-top:1px solid var(--line);
+}
+.cta-brief-label{
+  font-size:10px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--muted-soft);font-weight:500;margin-bottom:var(--space-xs);
+}
+.cta-brief ul{
+  list-style:none;display:flex;flex-wrap:wrap;justify-content:center;
+  gap:10px var(--space-sm);
+}
+.cta-brief li{
+  font-size:13px;color:var(--muted);line-height:1.5;
+  display:flex;align-items:baseline;gap:8px;
+}
+.cta-brief li::before{content:"\2014";color:var(--accent-warm);opacity:.75}
+
+/* ── Sticky mobile CTA ── */
+.mobile-cta{
+  display:none;position:fixed;left:0;right:0;bottom:0;z-index:60;
+  padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));
+  background:rgba(5,5,5,.92);backdrop-filter:blur(14px);
+  border-top:1px solid var(--line);
+  align-items:center;justify-content:space-between;gap:12px;
+  transform:translateY(110%);transition:transform .3s ease;
+}
+.mobile-cta.is-visible{transform:translateY(0)}
+.mobile-cta span{font-size:12px;color:var(--muted);line-height:1.4}
+.mobile-cta strong{display:block;color:var(--ink);font-size:13px;font-weight:500}
+.mobile-cta .btn{padding:11px 20px;font-size:12px;flex-shrink:0}
+
+/* ── Back to top ── */
+.to-top{
+  position:fixed;right:20px;bottom:20px;z-index:55;
+  width:42px;height:42px;border-radius:50%;
+  border:1px solid var(--line-strong);background:rgba(17,17,19,.9);
+  backdrop-filter:blur(10px);color:var(--ink);cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;visibility:hidden;transform:translateY(8px);
+  transition:opacity .25s,transform .25s,visibility .25s,border-color .2s;
+}
+.to-top.is-visible{opacity:1;visibility:visible;transform:translateY(0)}
+.to-top:hover{border-color:var(--accent-warm)}
+.to-top svg{width:16px;height:16px}
+
+/* ── Scroll reveal ── */
+.js .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.js .reveal.is-in{opacity:1;transform:none}
+
 @media(max-width:900px){
   .why-grid,.modes-grid,.seats,.gallery,.flash-gallery,.rails,.timeline{grid-template-columns:1fr}
-  .wrap{padding:32px 20px var(--space-xl)}
-  header{flex-direction:row;align-items:center}
+  .wrap{padding:0 20px var(--space-xl)}
+  header{flex-direction:row;align-items:center;margin:0 -20px;padding:12px 20px}
+  .site-nav{display:none}
+  .brand-plate-inner{grid-template-columns:1fr;gap:var(--space-md);padding:var(--space-sm)}
+  .mobile-cta{display:flex}
+  body{padding-bottom:72px}
+  .to-top{display:none}
 }
 @media(max-width:600px){
   .hero h1{font-size:38px}
   section{margin-top:var(--space-xl)}
-  .brand-mark{height:48px}
-  .brand-p{width:48px;border-radius:12px}
+  .marks-owner{display:none}
+  .brand-p{height:38px;width:38px;border-radius:10px}
+  .bl-35{font-size:25px}
+  .bl-name{font-size:11px;letter-spacing:.2em}
+  .bl-sub{font-size:7px}
+  .why-card,.mode-card,.principle{padding:var(--space-md) var(--space-sm)}
+  .faq summary{font-size:16px;padding:var(--space-sm)}
+  .faq .faq-body{padding:0 var(--space-sm) var(--space-sm)}
+  .cta-actions .btn{min-width:100%}
+  th,td{padding:12px 14px}
+}
+
+/* ── Motion & print ── */
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{
+    animation-duration:.01ms!important;animation-iteration-count:1!important;
+    transition-duration:.01ms!important;scroll-behavior:auto!important;
+  }
+  .js .reveal{opacity:1;transform:none}
+}
+@media print{
+  .skip-link,.site-nav,.lang-switch,.mobile-cta,.to-top{display:none!important}
+  header{position:static;background:none;border:0}
+  body{background:#fff;color:#000}
+  .js .reveal{opacity:1;transform:none}
+  a[href^="http"]::after{content:" (" attr(href) ")";font-size:10px;color:#555}
 }
 </style>
+<script>
+/* Set the js flag and the saved language direction before first paint, so a
+   returning Arabic reader never sees an English LTR frame flip to RTL. */
+(function(){var d=document.documentElement;d.className+=' js';
+try{var l=localStorage.getItem('plumb-lang');
+if(l&&/^(en|ar|ru|zh|de|es)$/.test(l)){d.lang=l;d.dir=l==='ar'?'rtl':'ltr';}}catch(e){}})();
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "Organization",
+   "@id": "https://plumb.elghaly.dev/#org",
+   "name": "Elghaly",
+   "url": "https://plumb.elghaly.dev/",
+   "logo": "https://plumb.elghaly.dev/brand-35-plumb.jpg",
+   "email": "support@elghaly.dev",
+   "sameAs": [
+    "https://35.elghaly.dev",
+    "https://iris-35.elghaly.dev"
+   ]
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://plumb.elghaly.dev/#site",
+   "url": "https://plumb.elghaly.dev/",
+   "name": "Plumb — Ready Desk Software",
+   "publisher": {
+    "@id": "https://plumb.elghaly.dev/#org"
+   },
+   "inLanguage": [
+    "en",
+    "ar",
+    "ru",
+    "zh",
+    "de",
+    "es"
+   ]
+  },
+  {
+   "@type": "SoftwareApplication",
+   "@id": "https://plumb.elghaly.dev/#app",
+   "name": "Plumb",
+   "applicationCategory": "FinanceApplication",
+   "operatingSystem": "Linux",
+   "description": "Self-hosted Solana desk software. Telegram control, Jupiter routes, partial or full arbitrage pair board. Delivered ready within 3.35 hours of payment. You host it and hold your own keys.",
+   "url": "https://plumb.elghaly.dev/",
+   "image": "https://plumb.elghaly.dev/brand-35-plumb.jpg",
+   "publisher": {
+    "@id": "https://plumb.elghaly.dev/#org"
+   },
+   "offers": [
+    {
+     "@type": "Offer",
+     "name": "Starter seat",
+     "price": "299",
+     "priceCurrency": "USD",
+     "description": "Partial pair board, 1–2 pairs, Telegram control and Jupiter rail, fixed slippage and tip defaults, 3 months of updates.",
+     "url": "https://buy.stripe.com/14A6oB4AD7GBd2g3QN3Ru00",
+     "availability": "https://schema.org/InStock"
+    },
+    {
+     "@type": "Offer",
+     "name": "Pro seat",
+     "price": "699",
+     "priceCurrency": "USD",
+     "description": "Full multi-pair arbitrage board, you set slippage and tip, optional Jito bundle, private RPC hooks, 6 months of updates.",
+     "url": "https://buy.stripe.com/4gM00d4AD2mhfao1IF3Ru01",
+     "availability": "https://schema.org/InStock"
+    },
+    {
+     "@type": "Offer",
+     "name": "Source seat",
+     "price": "1999",
+     "priceCurrency": "USD",
+     "description": "Everything in Pro plus the source code, pair workshop and 6 months of updates.",
+     "url": "https://buy.stripe.com/5kQ5kx4AD2mh2nC0EB3Ru02",
+     "availability": "https://schema.org/InStock"
+    }
+   ]
+  },
+  {
+   "@type": "FAQPage",
+   "@id": "https://plumb.elghaly.dev/#faq",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Do you ever hold my keys, my wallet, or my funds?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. Plumb runs on your machine with your keys and your wallet. We do not custody funds, do not take a cut of fills, and have no access to your balance at any point."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What exactly do I get after I pay?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "A ready bot built for the pairs you name in the brief, delivered within 3.35 hours, plus a live walkthrough to get it running. Starter and Pro ship the running binary; Source ships the source code as well. Every seat is controlled from Telegram."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Will this make me money?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "We make no promise of profit. Plumb is a tool that gives you speed and constant eyes on the book, but the rules, the size and the risk are yours. Markets can move against you and you can lose money."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What do I need on my side to run it?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "A machine that stays online such as a small VPS, a Solana RPC endpoint, a Telegram bot token, and a funded wallet you control. We walk through each of these on the handover call."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Which seat should I start on?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Starter if this is your first desk bot. Pro if you already trade actively and want the multi-pair arbitrage board with your own slippage and tip settings. Source only if you intend to edit the code yourself."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "What happens when the update window ends?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Nothing breaks. The seat is a lifetime licence and the desk keeps running. Updates are included for 3 months on Starter and 6 months on Pro and Source; continued updates afterwards are an optional $149/mo."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Is this a token, a fund, or an investment?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "No. You are buying software once and running it yourself. There is no token, no pooled capital, no managed account and nothing to deposit with us."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
 </head>
 <body>
+<a class="skip-link" href="#main" id="skipLink">Skip to content</a>
 <div class="wrap">
   <header>
-    <div class="brand" aria-label="Plumb and 35">
-      <img class="brand-mark brand-p" src="logo.png" width="56" height="56" alt="Plumb"/>
-      <a href="https://plumb.elghaly.dev/" class="brand-logo" aria-label="35 Plumb Elghaly">
-        <img class="brand-mark brand-wordmark" src="logo-plumb-35.png" width="178" height="112" alt="35 Plumb Elghaly"/>
+    <div class="brand">
+      <img class="brand-p" src="logo.png" width="56" height="56" alt="" aria-hidden="true"/>
+      <a href="#top" class="brand-logo" aria-label="Plumb 35 — Elghaly, back to top">
+        <span class="bl-35" aria-hidden="true">35</span>
+        <span class="bl-stack" aria-hidden="true">
+          <span class="bl-name">PLUMB</span>
+          <span class="bl-sub">ELGHALY</span>
+        </span>
       </a>
     </div>
+    <nav class="site-nav" aria-label="Sections">
+      <a href="#desk-modes" id="navModes">Modes</a>
+      <a href="#rails" id="navRails">Rails</a>
+      <a href="#gallery" id="navBoards">Boards</a>
+      <a href="#faq" id="navFaq">FAQ</a>
+      <a href="#seats" class="nav-cta" id="navSeats">Seats</a>
+    </nav>
     <div class="header-right">
       <nav class="lang-switch" aria-label="Language">
         <button type="button" class="lang-btn active" data-lang="en" aria-pressed="true">EN</button>
@@ -464,25 +851,54 @@ footer .love{
     </div>
   </header>
 
-  <section class="hero">
+  <main id="main">
+  <section class="hero" id="top">
     <p class="flagship brand-lock">💭 you dream we build 🧠💡</p>
     <div class="hero-copy">
-      <p class="eyebrow" id="heroEyebrow">Lifetime seats · Solana today</p>
-      <h1 id="heroH1">Your desk.<br/>Your keys.<br/>Telegram control.</h1>
-      <p class="lede" id="heroLede">After you pay, we will help — we will guide. Desk ready in <strong>3.35 hours</strong> → live walkthrough → you continue on Telegram. Same house as <a href="https://35.elghaly.dev">35</a> and <a href="https://iris-35.elghaly.dev">IRIS</a>. You host the bot, you hold the keys.</p>
-      <p class="pitch-line" id="heroPitch">We build, you continue.</p>
+      <p class="eyebrow" id="heroEyebrow">Lifetime seat · Solana live today</p>
+      <h1 id="heroH1">Your machine.<br/>Your keys.<br/>Live in 3.35 hours.</h1>
+      <p class="lede" id="heroLede">You pay, we build, you run it. A self-hosted Solana desk that watches your pairs, surfaces the gap, and fires on <strong>your</strong> rules — driven entirely from Telegram. Same house as <a href="https://35.elghaly.dev">35</a> and <a href="https://iris-35.elghaly.dev">IRIS</a>. We hand over the keys and walk you through it live. Nobody here ever touches your funds.</p>
+      <p class="pitch-line" id="heroPitch">We build it. You run it. You keep it.</p>
     </div>
     <div class="hero-meta">
-      <p class="delivery" id="heroDelivery">After pay, ready bot delivered within <time>3.35</time> hours</p>
-      <p class="hero-help" id="heroHelp">Walkthrough &amp; setup help included</p>
+      <p class="delivery" id="heroDelivery">Paid → running desk in <time>3.35</time> hours</p>
+      <p class="hero-help" id="heroHelp">Live walkthrough and setup included · no subscription to start</p>
     </div>
   </section>
 
-  <section id="desk-modes">
+  <section class="brand-plate reveal" id="brand" aria-labelledby="bpTitle">
+    <div class="brand-plate-inner">
+      <figure class="brand-plate-figure">
+        <picture><source srcset="brand-35-plumb.webp" type="image/webp"/><img src="brand-35-plumb.jpg" width="1168" height="784" fetchpriority="high" decoding="async"
+             alt="35 Plumb Elghaly house mark — the numerals 35 in a teal-to-violet gradient over PLUMB and ELGHALY, beside the star, hamsa and eye marks"/></picture>
+      </figure>
+      <div class="brand-plate-copy">
+        <p class="section-label" id="bpLabel">The house mark</p>
+        <h2 class="section-title" id="bpTitle">35 · Plumb · Elghaly</h2>
+        <p class="section-note" id="bpNote">One house, one mark. Plumb is the desk software; 35 is the house that builds it. The same hands ship <a href="https://35.elghaly.dev">35</a> and <a href="https://iris-35.elghaly.dev">IRIS</a> — you are not buying from a storefront, you are buying from the people who wrote it.</p>
+        <ul class="brand-glyphs">
+          <li>
+            <span class="glyph" aria-hidden="true">✦</span>
+            <div><strong id="bg1h">The star</strong><span class="glyph-note" id="bg1">Direction. You name the pairs and the rules — the machine follows them, not us.</span></div>
+          </li>
+          <li>
+            <span class="glyph" aria-hidden="true">🪬</span>
+            <div><strong id="bg2h">The hamsa</strong><span class="glyph-note" id="bg2">Protection. Keys stay in your hands. You host it, you hold it, we never touch funds.</span></div>
+          </li>
+          <li>
+            <span class="glyph" aria-hidden="true">🧿</span>
+            <div><strong id="bg3h">The eye</strong><span class="glyph-note" id="bg3">Watch. Constant eyes on the book so you do not have to sit on the chart.</span></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="desk-modes" class="reveal">
     <div class="section-head">
-      <p class="section-label" id="modesLabel">Two doors</p>
-      <h2 class="section-title" id="modesTitle">Spot or arbitrage — your desk, your pace.</h2>
-      <p class="section-note" id="modesNote">Two doors on one desk — spot and arbitrage are both included. We recommend spot to start: no arbitrage loop, learn the path. Arbitrage is the cross-venue door when you are ready.</p>
+      <p class="section-label" id="modesLabel">Two ways to run it</p>
+      <h2 class="section-title" id="modesTitle">Start on spot. Open arbitrage when you are ready.</h2>
+      <p class="section-note" id="modesNote">Both doors ship on every seat — you are not upsold into the second one later. Run spot first to learn the controls with one path at a time, then switch on the cross-venue loop when the desk feels like yours.</p>
     </div>
     <div class="modes-grid">
       <article class="mode-card">
@@ -498,11 +914,11 @@ footer .love{
     </div>
   </section>
 
-  <section id="why-arbitrage">
+  <section id="why-arbitrage" class="reveal">
     <div class="section-head">
-      <p class="section-label" id="whyLabel">For customers</p>
-      <h2 class="section-title" id="whyTitle">Why try an arbitrage bot?</h2>
-      <p class="section-note" id="whyNote">Arbitrage means catching the same asset at two different prices across venues or routes — then letting software move fast while you stay in control.</p>
+      <p class="section-label" id="whyLabel">Why a desk bot</p>
+      <h2 class="section-title" id="whyTitle">Same asset. Two prices. One machine watching both.</h2>
+      <p class="section-note" id="whyNote">Books do not sync. The gap opens for seconds and closes before a human finishes reading it. Software is the only thing fast enough to be there — so you set the rules and let it hold the watch.</p>
     </div>
     <div class="why-grid">
       <article class="why-card">
@@ -520,11 +936,11 @@ footer .love{
     </div>
   </section>
 
-  <section id="timeline">
+  <section id="timeline" class="reveal">
     <div class="section-head">
-      <p class="section-label" id="tlLabel">From pay to live</p>
-      <h2 class="section-title" id="tlTitle">After you pay, we will help — we will guide.</h2>
-      <p class="section-note" id="tlNote">Ready in 3.35 hours. Live walkthrough and setup help on the wire — then you continue on Telegram. We build, you continue.</p>
+      <p class="section-label" id="tlLabel">From payment to live</p>
+      <h2 class="section-title" id="tlTitle">Four steps. One afternoon.</h2>
+      <p class="section-note" id="tlNote">No onboarding queue, no ticket system, no waiting on a release. You pay, we build your desk, we walk you through it on the wire, and you take it from there on Telegram.</p>
     </div>
     <div class="timeline">
       <div class="timeline-step"><div class="num">1</div><p id="tl1">Pay seat + mail brief</p></div>
@@ -534,11 +950,11 @@ footer .love{
     </div>
   </section>
 
-  <section id="how">
+  <section id="how" class="reveal">
     <div class="section-head">
       <p class="section-label" id="howLabel">How it works</p>
-      <h2 class="section-title" id="howTitle">Built for operators.</h2>
-      <p class="section-note" id="howNote">After you pay, we will help — we will guide. Walkthrough and setup help included with every seat.</p>
+      <h2 class="section-title" id="howTitle">Everything stays on your side of the line.</h2>
+      <p class="section-note" id="howNote">You host the binary. You hold the keys. You set the size. We build it, hand it over, and stay reachable — we never sit between you and your wallet.</p>
     </div>
     <div class="principles">
       <article class="principle">
@@ -572,10 +988,10 @@ footer .love{
     </div>
   </section>
 
-  <section id="rails">
+  <section id="rails" class="reveal">
     <div class="section-head">
       <p class="section-label" id="railsLabel">Execution rails</p>
-      <h2 class="section-title" id="railsTitle">Your path, your stack.</h2>
+      <h2 class="section-title" id="railsTitle">Run it on rails you choose.</h2>
       <p class="section-note" id="railsNote">We recommend <strong>Triton</strong> for your Solana RPC and gRPC path — reads, streaming, and stable subscriptions on the wire. For quote rails, <strong>Titan</strong> is the fast routing eye on the desk: quick quotes and path visibility before you act. Titan / gRPC is not bundled in every seat by default — hook points on Pro and Source, or quoted from $400 after the brief.</p>
     </div>
     <div class="rails">
@@ -629,22 +1045,22 @@ footer .love{
       <p class="rail-partners-label" id="toolsRecLabel">We recommend</p>
       <div class="rail-partners-row">
         <a class="partner partner-rec partner-lead" href="https://grok.com/" target="_blank" rel="noopener noreferrer" title="Grok — xAI assistant">
-          <img class="partner-logo" src="assets/grok-logomark.svg" width="28" height="28" alt=""/>
+          <img class="partner-logo" src="assets/grok-logomark.svg" width="28" height="28" alt="" loading="lazy" decoding="async"/>
           <span class="partner-name">Grok Bot</span>
           <span class="partner-note" id="pGrok">We recommend</span>
         </a>
         <a class="partner partner-rec" href="https://solana.org/grants-funding" target="_blank" rel="noopener noreferrer" title="Solana Foundation — builder grants">
-          <img class="partner-logo" src="assets/grants-logomark.svg" width="28" height="28" alt=""/>
+          <img class="partner-logo" src="assets/grants-logomark.svg" width="28" height="28" alt="" loading="lazy" decoding="async"/>
           <span class="partner-name">Grants</span>
           <span class="partner-note" id="pGrants">Builder grants · we recommend</span>
         </a>
         <a class="partner partner-rec partner-cursor" href="https://cursor.com/" target="_blank" rel="noopener noreferrer" title="Cursor — AI code editor">
-          <img class="partner-logo" src="assets/cursor-logomark.svg" width="28" height="28" alt=""/>
+          <img class="partner-logo" src="assets/cursor-logomark.svg" width="28" height="28" alt="" loading="lazy" decoding="async"/>
           <span class="partner-name">Cursor</span>
           <span class="partner-note" id="pCursor">We recommend · very hard worker</span>
         </a>
         <a class="partner partner-rec" href="https://claude.ai/" target="_blank" rel="noopener noreferrer" title="Claude — Anthropic assistant">
-          <img class="partner-logo" src="assets/claude-logomark.svg" width="28" height="28" alt=""/>
+          <img class="partner-logo" src="assets/claude-logomark.svg" width="28" height="28" alt="" loading="lazy" decoding="async"/>
           <span class="partner-name">Claude</span>
           <span class="partner-note" id="pClaude">We recommend</span>
         </a>
@@ -652,15 +1068,15 @@ footer .love{
     </div>
   </section>
 
-  <section id="gallery">
+  <section id="gallery" class="reveal">
     <div class="section-head">
       <p class="section-label" id="galLabel">Same house · different boards</p>
-      <h2 class="section-title" id="galTitle">Two boards. One desk.</h2>
-      <p class="section-note" id="galNote">Real desk UI. <strong>Starter</strong> is a partial board. <strong>Pro / Source</strong> is the full arbitrage board.</p>
+      <h2 class="section-title" id="galTitle">This is the actual desk.</h2>
+      <p class="section-note" id="galNote">Not a mockup — screenshots of the running board. <strong>Starter</strong> ships the partial slice. <strong>Pro / Source</strong> ships the full arbitrage board.</p>
     </div>
     <div class="gallery">
       <figure>
-        <img class="board-shot" src="board-partial-350.png" alt="350 Starter partial pair board — limited pairs, slice of the desk" width="800" height="520"/>
+        <picture><source srcset="board-partial-350.webp" type="image/webp"/><img class="board-shot" src="board-partial-350.png" alt="350 Starter partial pair board — limited pairs, slice of the desk" width="800" height="520" loading="lazy" decoding="async"/></picture>
         <figcaption>
           <span class="tag" id="g2t">Starter $299</span>
           <strong id="g2h">350 · partial board</strong>
@@ -668,7 +1084,7 @@ footer .love{
         </figcaption>
       </figure>
       <figure>
-        <img class="board-shot" src="board-full-arb.png" alt="Arb Pro Source full multi-pair board — KEEP-style desk" width="1000" height="560"/>
+        <picture><source srcset="board-full-arb.webp" type="image/webp"/><img class="board-shot" src="board-full-arb.png" alt="Arb Pro Source full multi-pair board — KEEP-style desk" width="1000" height="560" loading="lazy" decoding="async"/></picture>
         <figcaption>
           <span class="tag" id="g3t">Pro $699 · Source $1,999</span>
           <strong id="g3h">Full arbitrage board</strong>
@@ -678,22 +1094,22 @@ footer .love{
     </div>
   </section>
 
-  <section id="flash-proof">
+  <section id="flash-proof" class="reveal">
     <div class="section-head">
       <p class="section-label" id="flashLabel">Flash path · 15k USDC</p>
-      <h2 class="section-title" id="flashTitle">On-chain proof.</h2>
-      <p class="section-note" id="flashNote">Kamino flash borrow and Jupiter swap path. Wallet and profit figures redacted — path only.</p>
+      <h2 class="section-title" id="flashTitle">Signed on chain. Not a screenshot of a spreadsheet.</h2>
+      <p class="section-note" id="flashNote">A real Kamino flash borrow routed through Jupiter and repaid in one transaction. Wallets and figures are redacted — we are showing the path, not selling a number.</p>
     </div>
     <div class="flash-gallery">
       <figure>
-        <img src="assets/flash-15k-borrow.png" alt="Solscan — borrow flash loan 15,000 USDC from Kamino lending vault" width="390" height="844"/>
+        <picture><source srcset="assets/flash-15k-borrow.webp" type="image/webp"/><img src="assets/flash-15k-borrow.png" alt="Solscan — borrow flash loan 15,000 USDC from Kamino lending vault" width="390" height="844" loading="lazy" decoding="async"/></picture>
         <figcaption>
           <strong id="f1h">Borrow · Kamino</strong>
           <span id="f1">Flash loan 15,000 USDC from the Kamino lending vault.</span>
         </figcaption>
       </figure>
       <figure>
-        <img src="assets/flash-15k-loop.png" alt="Solscan key actions — 15k flash borrow, Jupiter swaps, repay to Kamino" width="390" height="844"/>
+        <picture><source srcset="assets/flash-15k-loop.webp" type="image/webp"/><img src="assets/flash-15k-loop.png" alt="Solscan key actions — 15k flash borrow, Jupiter swaps, repay to Kamino" width="390" height="844" loading="lazy" decoding="async"/></picture>
         <figcaption>
           <strong id="f2h">Loop · Jupiter path</strong>
           <span id="f2">Borrow → Jupiter swaps → repay. Full round-trip in one transaction.</span>
@@ -703,15 +1119,15 @@ footer .love{
     <p class="flash-caption"><em class="brand-lock">every mind earn his profit</em><span id="flashSub">flash loan 15,000 USDC (Kamino) · Jupiter path</span></p>
   </section>
 
-  <section id="seats">
+  <section id="seats" class="reveal">
     <div class="section-head">
       <p class="section-label" id="seatsLabel">Lifetime seats</p>
-      <h2 class="section-title" id="seatsTitle">Choose your board.</h2>
+      <h2 class="section-title" id="seatsTitle">Pay once. Keep the seat.</h2>
     </div>
     <div class="seats">
       <article class="seat">
         <figure class="seat-preview">
-          <img src="board-partial-350.png" alt="Starter partial board — 350 seat, pair slice" width="800" height="520"/>
+          <picture><source srcset="board-partial-350.webp" type="image/webp"/><img src="board-partial-350.png" alt="Starter partial board — 350 seat, pair slice" width="800" height="520" loading="lazy" decoding="async"/></picture>
           <figcaption id="s1cap">350 · partial board · 1–2 pairs · more pairs locked</figcaption>
         </figure>
         <p class="seat-tier" id="s1tier">Starter · 350 partial · $299</p>
@@ -731,7 +1147,7 @@ footer .love{
       </article>
       <article class="seat featured">
         <figure class="seat-preview">
-          <img src="board-full-arb.png" alt="Pro full arb board — multi-pair KEEP-style desk" width="1000" height="560"/>
+          <picture><source srcset="board-full-arb.webp" type="image/webp"/><img src="board-full-arb.png" alt="Pro full arb board — multi-pair KEEP-style desk" width="1000" height="560" loading="lazy" decoding="async"/></picture>
           <figcaption id="s2cap">Full arbitrage board · multi-pair · you set slip/tip</figcaption>
         </figure>
         <p class="seat-tier" id="s2tier">Pro · full arbitrage · $699</p>
@@ -751,7 +1167,7 @@ footer .love{
       </article>
       <article class="seat">
         <figure class="seat-preview">
-          <img src="board-full-arb.png" alt="Source full arb board — same desk as Pro, plus source" width="1000" height="560"/>
+          <picture><source srcset="board-full-arb.webp" type="image/webp"/><img src="board-full-arb.png" alt="Source full arb board — same desk as Pro, plus source" width="1000" height="560" loading="lazy" decoding="async"/></picture>
           <figcaption id="s3cap">Full arbitrage board + source code</figcaption>
         </figure>
         <p class="seat-tier" id="s3tier">Source · full arbitrage + code · $1,999</p>
@@ -803,6 +1219,65 @@ footer .love{
     </div>
   </section>
 
+
+  <section id="faq" class="reveal">
+    <div class="section-head">
+      <p class="section-label" id="faqLabel">Before you buy</p>
+      <h2 class="section-title" id="faqTitle">The questions operators actually ask.</h2>
+      <p class="section-note" id="faqNote">Straight answers, including the ones that cost us sales.</p>
+    </div>
+    <div class="faq">
+      <details>
+        <summary id="q1">Do you ever hold my keys, my wallet, or my funds?</summary>
+        <div class="faq-body" id="a1">No — never, on any seat. Plumb runs on your machine with your keys and your wallet. We do not custody funds, we do not take a cut of fills, and we have no access to your balance at any point. If anyone selling desk software asks you to deposit with them, walk away.</div>
+      </details>
+      <details>
+        <summary id="q2">What exactly do I get after I pay?</summary>
+        <div class="faq-body" id="a2">A ready bot built for the pairs you name in the brief, delivered within 3.35 hours, plus a live walkthrough on the wire to get it running. Starter and Pro ship the running binary; Source ships the source code as well. Every seat is controlled from Telegram — no browser dashboard to keep open.</div>
+      </details>
+      <details>
+        <summary id="q3">Will this make me money?</summary>
+        <div class="faq-body" id="a3">We will not promise that, and you should distrust anyone who does. Plumb is a tool: it gives you speed and constant eyes on the book, but the rules, the size, and the risk are yours. Markets can move against you and you can lose money. Start small, run dry first, and treat early sessions as training.</div>
+      </details>
+      <details>
+        <summary id="q4">What do I need on my side to run it?</summary>
+        <div class="faq-body" id="a4">A machine that stays online (a small VPS is plenty), a Solana RPC endpoint, a Telegram bot token, and a funded wallet you control. We walk through every one of these on the handover call — you do not need to have them ready before you pay.</div>
+      </details>
+      <details>
+        <summary id="q5">Which seat should I start on?</summary>
+        <div class="faq-body" id="a5">If this is your first desk bot, take Starter and learn the surfaces on a partial board. If you already trade actively and want the multi-pair arbitrage board with your own slippage and tip settings, take Pro — that is the seat most operators end up on. Take Source only if you intend to edit the code yourself.</div>
+      </details>
+      <details>
+        <summary id="q6">What happens when the update window ends?</summary>
+        <div class="faq-body" id="a6">Nothing breaks. Your seat is a lifetime licence and your desk keeps running exactly as it is. Updates are included for 3 months on Starter and 6 months on Pro and Source; after that, continued updates and support are an optional $149/mo. You are never forced onto a subscription to keep what you bought.</div>
+      </details>
+      <details>
+        <summary id="q7">Is this a token, a fund, or an investment?</summary>
+        <div class="faq-body" id="a7">None of those. You are buying a piece of software, once, and running it yourself. There is no token, no pooled capital, no managed account, and nothing to deposit with us.</div>
+      </details>
+    </div>
+  </section>
+
+  <section class="cta-band reveal" aria-labelledby="ctaTitle">
+    <h2 id="ctaTitle">Tell us your pairs. Run your desk tonight.</h2>
+    <p id="ctaNote">Pick a seat and send the brief — or write first if you want to talk through which board fits. We answer around the clock.</p>
+    <div class="cta-actions">
+      <a class="btn btn-primary" href="#seats" id="ctaBtn">Choose your seat</a>
+      <a class="btn btn-ghost" href="mailto:support@elghaly.dev?subject=Plumb%20seat%20%E2%80%94%20brief" id="ctaAlt">Ask a question first</a>
+    </div>
+    <div class="cta-brief">
+      <p class="cta-brief-label" id="briefLabel">Put this in your brief</p>
+      <ul>
+        <li id="bi1">Which seat you took</li>
+        <li id="bi2">The pairs you want watched</li>
+        <li id="bi3">Where it will run: VPS or your own box</li>
+        <li id="bi4">Your timezone, for the walkthrough</li>
+      </ul>
+    </div>
+  </section>
+
+  </main>
+
   <footer>
     <div class="marks marks-desk" aria-hidden="true">3️⃣🧿5️⃣</div>
     <p id="footContact">Ask us on mail — <a href="mailto:support@elghaly.dev">support@elghaly.dev</a> · We are 24</p>
@@ -837,6 +1312,17 @@ footer .love{
     <p class="fine" id="fine">Plumb is desk software sold as-is, without warranty or guarantee. We make no claims about profit, returns, CLEAR, land, or any outcome. You host it, you hold the keys, you accept the risk. Not a token sale. Not an investment.</p>
   </footer>
 </div>
+
+<div class="mobile-cta" id="mobileCta" hidden>
+  <span><strong id="barTitle">Lifetime seat · from $299</strong><span id="barNote">Live desk in 3.35 hours</span></span>
+  <a class="btn btn-primary" href="#seats" id="barBtn">See seats</a>
+</div>
+
+<button type="button" class="to-top" id="toTop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+
 <script src="i18n.js"></script>
+<script src="app.js" defer></script>
 </body>
 </html>
