@@ -66,10 +66,11 @@ header{
   padding-bottom:var(--space-sm);
 }
 .brand{display:flex;align-items:center;gap:12px;min-width:0}
-.logo-stack{display:flex;align-items:center;gap:6px;flex-shrink:0}
+.logo-stack{display:flex;align-items:center;gap:8px;flex-shrink:0}
 .logo-link{display:block;line-height:0;transition:opacity .2s}
 .logo-link:hover{opacity:.85}
-.logo-img{width:40px;height:40px;border-radius:10px;object-fit:cover;display:block}
+.logo-img{width:40px;height:40px;border-radius:10px;object-fit:cover;display:block;flex-shrink:0}
+.logo-35-brand{height:40px;width:auto;max-width:132px;object-fit:contain;display:block;flex-shrink:0}
 .brand-text .name{
   font-family:var(--serif);font-size:26px;font-weight:400;
   letter-spacing:-.01em;color:var(--ink);
@@ -240,7 +241,10 @@ section{margin-top:var(--space-2xl)}
   display:flex;flex-direction:column;align-items:center;gap:8px;
   min-width:88px;max-width:120px;text-align:center;color:inherit;
 }
-.partner svg{width:28px;height:28px;display:block;color:var(--ink);opacity:.78}
+.partner svg,.partner .partner-logo{width:28px;height:28px;display:block;color:var(--ink);opacity:.78}
+.partner.partner-lead .partner-note{font-weight:600}
+.partner.partner-cursor .partner-note{max-width:11em;line-height:1.35}
+.recommend-tools{margin-top:var(--space-sm)}
 .partner-name{
   font-family:var(--serif);font-size:15px;color:var(--ink);letter-spacing:-.01em;
 }
@@ -434,8 +438,9 @@ footer .love{
   .hero h1{font-size:38px}
   section{margin-top:var(--space-xl)}
   .brand{gap:10px}
-  .logo-stack{gap:5px}
+  .logo-stack{gap:6px}
   .logo-img{width:36px;height:36px;border-radius:9px}
+  .logo-35-brand{height:34px;max-width:108px}
 }
 </style>
 </head>
@@ -446,7 +451,7 @@ footer .love{
       <div class="logo-stack" aria-label="Plumb and 35">
         <img class="logo-img" src="logo.png" width="40" height="40" alt="Plumb"/>
         <a href="https://35.elghaly.dev/" class="logo-link" target="_blank" rel="noopener noreferrer">
-          <img class="logo-img" src="logo-35.png" width="40" height="40" alt="35"/>
+          <img class="logo-35-brand" src="logo-35-brand.png" width="132" height="40" alt="35 ELGHALY"/>
         </a>
       </div>
       <div class="brand-text">
@@ -626,6 +631,31 @@ footer .love{
           <span class="partner-name">CoinStuck</span>
           <span class="partner-note" id="pCoinStuck">Routing partner</span>
         </span>
+      </div>
+    </div>
+    <div class="rail-partners recommend-tools" aria-label="Tools we recommend">
+      <p class="rail-partners-label" id="toolsRecLabel">We recommend</p>
+      <div class="rail-partners-row">
+        <a class="partner partner-rec partner-lead" href="https://grok.com/" target="_blank" rel="noopener noreferrer" title="Grok — xAI assistant">
+          <img class="partner-logo" src="assets/grok-logomark.svg" width="28" height="28" alt=""/>
+          <span class="partner-name">Grok Bot</span>
+          <span class="partner-note" id="pGrok">We recommend</span>
+        </a>
+        <a class="partner partner-rec" href="https://solana.org/grants-funding" target="_blank" rel="noopener noreferrer" title="Solana Foundation — builder grants">
+          <img class="partner-logo" src="assets/grants-logomark.svg" width="28" height="28" alt=""/>
+          <span class="partner-name">Grants</span>
+          <span class="partner-note" id="pGrants">Builder grants · we recommend</span>
+        </a>
+        <a class="partner partner-rec partner-cursor" href="https://cursor.com/" target="_blank" rel="noopener noreferrer" title="Cursor — AI code editor">
+          <img class="partner-logo" src="assets/cursor-logomark.svg" width="28" height="28" alt=""/>
+          <span class="partner-name">Cursor</span>
+          <span class="partner-note" id="pCursor">We recommend · very hard worker</span>
+        </a>
+        <a class="partner partner-rec" href="https://claude.ai/" target="_blank" rel="noopener noreferrer" title="Claude — Anthropic assistant">
+          <img class="partner-logo" src="assets/claude-logomark.svg" width="28" height="28" alt=""/>
+          <span class="partner-name">Claude</span>
+          <span class="partner-note" id="pClaude">We recommend</span>
+        </a>
       </div>
     </div>
   </section>
