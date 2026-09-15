@@ -91,7 +91,12 @@ header{
 }
 header.is-stuck{background:rgba(5,5,5,.9);border-bottom-color:var(--line)}
 section[id]{scroll-margin-top:96px}
-.brand{display:flex;align-items:center;min-width:0;flex-shrink:1}
+.brand{display:flex;align-items:center;gap:11px;min-width:0;flex-shrink:1}
+.brand-p{
+  /* Sized to the live-text lockup beside it rather than the old 56px raster. */
+  height:44px;width:44px;display:block;flex-shrink:0;
+  object-fit:cover;border-radius:12px;
+}
 .brand-logo{
   display:flex;align-items:center;gap:11px;line-height:1;
   transition:opacity .2s;flex-shrink:0;
@@ -636,6 +641,7 @@ footer .love{
   .hero h1{font-size:38px}
   section{margin-top:var(--space-xl)}
   .marks-owner{display:none}
+  .brand-p{height:38px;width:38px;border-radius:10px}
   .bl-35{font-size:25px}
   .bl-name{font-size:11px;letter-spacing:.2em}
   .bl-sub{font-size:7px}
@@ -816,6 +822,7 @@ if(l&&/^(en|ar|ru|zh|de|es)$/.test(l)){d.lang=l;d.dir=l==='ar'?'rtl':'ltr';}}cat
 <div class="wrap">
   <header>
     <div class="brand">
+      <img class="brand-p" src="logo.png" width="56" height="56" alt="" aria-hidden="true"/>
       <a href="#top" class="brand-logo" aria-label="Plumb 35 — Elghaly, back to top">
         <span class="bl-35" aria-hidden="true">35</span>
         <span class="bl-stack" aria-hidden="true">
