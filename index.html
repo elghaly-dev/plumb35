@@ -88,7 +88,15 @@ header{
 .hero .lede{
   font-size:18px;color:var(--muted);max-width:36em;font-weight:300;
 }
-.byline{margin-top:28px;font-size:13px;color:var(--muted);letter-spacing:.04em}
+.delivery{
+  display:inline-flex;align-items:center;gap:10px;
+  margin-top:28px;padding:12px 20px;
+  border:1px solid var(--line);border-radius:999px;
+  background:var(--gold-soft);
+  font-size:13px;color:var(--gold);letter-spacing:.04em;
+}
+.delivery time{font-family:var(--serif);font-size:18px;font-weight:600;color:var(--ink)}
+.byline{margin-top:20px;font-size:13px;color:var(--muted);letter-spacing:.04em}
 
 /* Principles */
 section{margin-top:64px}
@@ -147,6 +155,12 @@ section{margin-top:64px}
   margin-bottom:4px;
 }
 .seat-price span{font-size:14px;color:var(--muted);font-family:var(--sans);font-weight:300}
+.seat-delivery{
+  font-size:12px;color:var(--gold);letter-spacing:.04em;
+  margin-bottom:12px;padding-bottom:12px;
+  border-bottom:1px solid var(--line);
+}
+.seat-delivery time{font-family:var(--serif);font-weight:600;font-size:15px;color:var(--ink)}
 .seat-desc{color:var(--muted);font-size:14px;margin:16px 0 20px;flex:1}
 .seat ul{list-style:none;color:var(--muted);font-size:13px;margin-bottom:24px}
 .seat li{padding:6px 0;border-top:1px solid var(--line)}
@@ -234,6 +248,7 @@ footer .addr{direction:ltr;unicode-bidi:isolate}
     <p class="eyebrow">Lifetime seats · Paid only</p>
     <h1>Your desk.<br/>Your keys.<br/>Telegram control.</h1>
     <p class="lede">We deliver a ready bot and walk you through setup. After handoff, you operate it from Telegram on your own infrastructure. Software as-is — no promises beyond the seat.</p>
+    <p class="delivery">After pay, ready bot delivered within <time>3.35</time> hours</p>
     <p class="byline">Wyndham Heaven · elghaly</p>
   </section>
 
@@ -270,6 +285,7 @@ footer .addr{direction:ltr;unicode-bidi:isolate}
       <article class="seat">
         <p class="seat-tier">Starter</p>
         <p class="seat-price">$299 <span>once</span></p>
+        <p class="seat-delivery">Delivered within <time>3.35</time> hours after pay</p>
         <p class="seat-desc">First machine. One book to learn the path.</p>
         <ul>
           <li>1–2 pairs you name in the brief</li>
@@ -281,6 +297,7 @@ footer .addr{direction:ltr;unicode-bidi:isolate}
       <article class="seat featured">
         <p class="seat-tier">Pro</p>
         <p class="seat-price">$699 <span>once</span></p>
+        <p class="seat-delivery">Delivered within <time>3.35</time> hours after pay</p>
         <p class="seat-desc">For operators who already trade and want more control.</p>
         <ul>
           <li>Multi-pair board</li>
@@ -293,6 +310,7 @@ footer .addr{direction:ltr;unicode-bidi:isolate}
       <article class="seat">
         <p class="seat-tier">Source</p>
         <p class="seat-price">$1,999 <span>once</span></p>
+        <p class="seat-delivery">Delivered within <time>3.35</time> hours after pay</p>
         <p class="seat-desc">For desks that want the code and a workshop.</p>
         <ul>
           <li>Everything in Pro, plus source</li>
