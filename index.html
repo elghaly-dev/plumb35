@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Plumb — desk hunt software</title>
+<meta name="description" content="Self-hosted Solana desk software. Lifetime license. You run the keys. As-is."/>
+<meta name="theme-color" content="#0b0418"/>
+<meta property="og:title" content="Plumb — desk hunt software"/>
+<meta property="og:image" content="https://35.elghaly.dev/IMG_5183.jpeg"/>
+<link rel="icon" href="favicon.svg" type="image/svg+xml"/>
+<style>
+:root{--bg:#07010f;--ink:#f5f7ff;--dim:#b9b6d3;--p:#9945ff;--g:#14f195;--c:#19fbff;--l:rgba(153,69,255,.28);--card:rgba(18,6,36,.78)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:ui-sans-serif,system-ui,sans-serif;background:radial-gradient(900px 500px at 0% -10%,rgba(153,69,255,.3),transparent 50%),radial-gradient(700px 400px at 100% 0%,rgba(20,241,149,.14),transparent 45%),var(--bg);color:var(--ink);line-height:1.55}
+.wrap{max-width:980px;margin:0 auto;padding:24px 18px 80px}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.mark{width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,var(--p),var(--g));display:grid;place-items:center;font-weight:800}
+.word{letter-spacing:.34em;font-size:12px;color:var(--dim)}
+.hero img{width:100%;border-radius:18px;border:1px solid var(--l);margin:22px 0 16px;display:block}
+.kicker{color:var(--g);font-size:12px;letter-spacing:.18em;text-transform:uppercase}
+h1{font-size:clamp(28px,5vw,48px);letter-spacing:-.03em;margin:8px 0 12px}
+.lede{color:var(--dim);font-size:18px;max-width:38em}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0}
+.cta a,button.buy{border-radius:999px;padding:12px 16px;font-weight:700;text-decoration:none;border:0;cursor:pointer;font-size:14px}
+.primary{background:var(--g);color:#04110a}
+.ghost{border:1px solid var(--l);color:var(--ink);background:transparent}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:28px}
+.card{background:var(--card);border:1px solid var(--l);border-radius:18px;padding:18px}
+.card h3{color:var(--g);font-size:13px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px}
+.price{font-size:28px;margin:8px 0;font-weight:800}
+.price small{font-size:13px;color:var(--dim);font-weight:500}
+.card ul{color:var(--dim);padding-left:18px;font-size:14px}
+.card li{margin:6px 0}
+section{margin-top:42px}
+h2{font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--p);margin-bottom:14px}
+.shots{display:grid;grid-template-columns:1.2fr .8fr;gap:12px}
+.shots img{width:100%;border-radius:16px;border:1px solid var(--l)}
+form{display:grid;gap:10px}
+input,select,textarea{width:100%;padding:12px;border-radius:12px;border:1px solid var(--l);background:#11041f;color:var(--ink);font:inherit}
+textarea{min-height:90px}
+.fine{color:var(--dim);font-size:13px}
+footer{margin-top:48px;color:var(--dim);font-size:13px}
+a{color:var(--c)}
+@media(max-width:800px){.grid,.shots{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div style="display:flex;gap:10px;align-items:center"><div class="mark">P</div><span class="word">PLUMB</span></div>
+    <a class="ghost" href="mailto:35@elghaly.dev?subject=PLUMB">35@elghaly.dev</a>
+  </header>
+  <div class="hero">
+    <img src="https://35.elghaly.dev/IMG_5183.jpeg" alt="ElGhaly desk" width="1200" height="806"/>
+    <div class="kicker">Self-hosted desk software</div>
+    <h1>A hunt stack you run.<br/>Keys stay with you.</h1>
+    <p class="lede">Years on Solana desks: routes, memos, pair design, RPC choices, and how a buyer actually wires a machine. You get a ready desk bot and a walkthrough so you can stand it up. Titan, gRPC, and private pipes are extra — named, priced, not hidden inside the seat.</p>
+    <div class="cta">
+      <a class="primary" href="#seats">See seats</a>
+      <a class="ghost" href="#brief">Tell us the pairs</a>
+    </div>
+  </div>
+
+  <section>
+    <h2>What you buy</h2>
+    <div class="grid">
+      <article class="card"><h3>Ready bot</h3><p class="fine">A working desk binary and the path we use to install it. You learn the same steps we take when a new pair goes on the board.</p></article>
+      <article class="card"><h3>Your request</h3><p class="fine">How many pairs. Which mints. Which venue. You write it once. We scope the seat before Stripe.</p></article>
+      <article class="card"><h3>You host it</h3><p class="fine">Your server. Your wallet. Your RPC bill. We do not hold keys and we do not run your book.</p></article>
+    </div>
+  </section>
+
+  <section class="shots">
+    <img src="https://35.elghaly.dev/IMG_5183.jpeg" alt="Desk mark"/>
+    <div class="card">
+      <h3>Desk notes</h3>
+      <p class="fine">Built by operators who already ship public record work at 35.elghaly.dev and IRIS. Same house style: purple / green, no neon promises. Software as-is. Markets move. Fees exist. You decide size.</p>
+    </div>
+  </section>
+
+  <section id="seats">
+    <h2>Lifetime seats</h2>
+    <div class="grid">
+      <article class="card">
+        <h3>Starter</h3>
+        <p class="price">$299 <small>once</small></p>
+        <ul>
+          <li>Ready bot, 1–2 pairs you name</li>
+          <li>Install walkthrough</li>
+          <li>3 months of updates</li>
+          <li>Size cap on the starter seat</li>
+        </ul>
+        <p style="margin-top:14px"><a class="primary" href="mailto:35@elghaly.dev?subject=PLUMB%20STARTER%20%24299">Pay — Starter</a></p>
+      </article>
+      <article class="card">
+        <h3>Pro</h3>
+        <p class="price">$699 <small>once</small></p>
+        <ul>
+          <li>Ready bot, multi-pair board</li>
+          <li>Slippage / tip controls</li>
+          <li>6 months of updates</li>
+          <li>Private-RPC hook points</li>
+        </ul>
+        <p style="margin-top:14px"><a class="primary" href="mailto:35@elghaly.dev?subject=PLUMB%20PRO%20%24699">Pay — Pro</a></p>
+      </article>
+      <article class="card">
+        <h3>Source</h3>
+        <p class="price">$1,999 <small>once</small></p>
+        <ul>
+          <li>Source + seat</li>
+          <li>Custom pair workshop</li>
+          <li>Change the strategy yourself</li>
+          <li>No usage cap from us</li>
+        </ul>
+        <p style="margin-top:14px"><a class="primary" href="mailto:35@elghaly.dev?subject=PLUMB%20SOURCE%20%241999">Pay — Source</a></p>
+      </article>
+    </div>
+  </section>
+
+  <section>
+    <h2>Add-ons</h2>
+    <div class="grid">
+      <article class="card"><h3>Titan + gRPC</h3><p class="fine">The seat ships the main path. Titan, Dragon’s Mouth, dedicated gRPC, and land routing are a paid build after the brief. Quote from $400.</p></article>
+      <article class="card"><h3>Follow-up</h3><p class="fine">After the update window: $149 / month if you want us on the wire. Cancel any month.</p></article>
+      <article class="card"><h3>Stripe</h3><p class="fine">Mail the seat. We send a Stripe invoice for that exact brief (pairs + add-ons). Card or USDC by arrangement. No chargeback theater on delivered source.</p></article>
+    </div>
+  </section>
+
+  <section id="brief">
+    <h2>Brief</h2>
+    <div class="card">
+      <form action="mailto:35@elghaly.dev?subject=PLUMB%20BRIEF" method="post" enctype="text/plain">
+        <label>Seat
+          <select name="seat">
+            <option>Starter $299</option>
+            <option selected>Pro $699</option>
+            <option>Source $1999</option>
+          </select>
+        </label>
+        <label>How many pairs?
+          <input name="pairs" placeholder="2" />
+        </label>
+        <label>Which pairs / venues?
+          <input name="book" placeholder="SOL-USDC on Jupiter / Meteora …" />
+        </label>
+        <label>Need Titan / gRPC now?
+          <select name="pipe"><option>No — main path only</option><option>Yes — quote extra</option></select>
+        </label>
+        <label>Follow-up after the window?
+          <select name="retain"><option>No</option><option>Yes — $149/mo</option></select>
+        </label>
+        <label>Notes
+          <textarea name="notes" placeholder="What you already run. What you want the bot to do."></textarea>
+        </label>
+        <button class="buy primary" type="submit">Send brief</button>
+      </form>
+      <p class="fine" style="margin-top:12px">Software sale. Not a return. Not a pool. Not 35-the-token. You operate it.</p>
+    </div>
+  </section>
+
+  <footer>
+    ✝️ 🪬 🧿 · Plumb by ElGhaly · <a href="mailto:35@elghaly.dev">35@elghaly.dev</a><br/>
+    Separate from <a href="https://35.elghaly.dev">35</a> and <a href="https://iris-35.elghaly.dev">IRIS</a>.
+  </footer>
+</div>
+</body>
+</html>
