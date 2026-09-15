@@ -65,13 +65,19 @@ header{
   gap:var(--space-sm);
   padding-bottom:var(--space-sm);
 }
-.brand{display:flex;align-items:center;min-width:0;flex-shrink:1}
+.brand{display:flex;align-items:center;gap:10px;min-width:0;flex-shrink:1}
+.brand-mark{
+  height:56px;display:block;flex-shrink:0;
+}
+.brand-p{
+  width:56px;object-fit:cover;border-radius:14px;
+}
 .brand-logo{
   display:block;line-height:0;transition:opacity .2s;flex-shrink:0;
 }
 .brand-logo:hover{opacity:.88}
-.brand-logo img{
-  height:56px;width:auto;display:block;object-fit:contain;
+.brand-wordmark{
+  width:auto;object-fit:contain;
 }
 .header-right{display:flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:flex-end}
 .marks{font-size:18px;line-height:1;opacity:.88;letter-spacing:.02em;white-space:nowrap}
@@ -431,16 +437,18 @@ footer .love{
 @media(max-width:600px){
   .hero h1{font-size:38px}
   section{margin-top:var(--space-xl)}
-  .brand-logo img{height:48px}
+  .brand-mark{height:48px}
+  .brand-p{width:48px;border-radius:12px}
 }
 </style>
 </head>
 <body>
 <div class="wrap">
   <header>
-    <div class="brand">
-      <a href="https://plumb.elghaly.dev/" class="brand-logo" aria-label="Plumb 35 — Elghaly">
-        <img src="logo-plumb-35.png" width="178" height="112" alt="35 Plumb Elghaly"/>
+    <div class="brand" aria-label="Plumb and 35">
+      <img class="brand-mark brand-p" src="logo.png" width="56" height="56" alt="Plumb"/>
+      <a href="https://plumb.elghaly.dev/" class="brand-logo" aria-label="35 Plumb Elghaly">
+        <img class="brand-mark brand-wordmark" src="logo-plumb-35.png" width="178" height="112" alt="35 Plumb Elghaly"/>
       </a>
     </div>
     <div class="header-right">
