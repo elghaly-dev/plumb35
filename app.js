@@ -99,24 +99,25 @@ function stamp(sel, src, name){
 function paint(){
   var recBox=document.querySelector('.recommend-tools');
   if(recBox){
-    recBox.innerHTML='<p class="rail-partners-label" id="toolsRecLabel">We recommend</p><div class="rec-frames"><div class="rec-frame"><p class="rail-partners-label">The AI</p><div class="rail-partners-row">'+tile('https://claude.ai/',srcOf('claude','assets/claude-logomark.svg'),'Claude','')+'</div></div><div class="rec-frame"><p class="rail-partners-label">Grok Bot \u00b7 Cursor</p><div class="rec-stack">'+tile('https://grok.com/',srcOf('grok','assets/grok-logomark.svg'),'Grok Bot','We recommend')+tile('https://cursor.com/','assets/cursor-logomark.svg','Cursor','We recommend')+'</div></div></div>';
+    recBox.innerHTML='<p class="rail-partners-label" id="toolsRecLabel">We recommend</p><div class="rec-frames"><div class="rec-frame"><p class="rail-partners-label">The AI</p><div class="rail-partners-row">'+tile('https://claude.ai/',srcOf('claude','assets/claude-logomark.svg'),'Claude','')+tile('https://grok.com/',srcOf('grok','assets/grok-logomark.svg'),'Grok','')+'</div></div><div class="rec-frame"><p class="rail-partners-label">Grok Bot \u00b7 Cursor</p><div class="rec-stack">'+tile('https://grok.com/',srcOf('grok','assets/grok-logomark.svg'),'Grok Bot','We recommend')+tile('https://cursor.com/',srcOf('cursor','assets/cursor-logomark.svg'),'Cursor','We recommend')+'</div></div></div>';
   }
   var rpcBox=null;
   document.querySelectorAll('.rail-partners').forEach(function(box){ if(!box.classList.contains('recommend-tools')) rpcBox=box; });
   if(rpcBox){
-    rpcBox.innerHTML='<p class="rail-partners-label">RPC</p><div class="rail-partners-row">'+tile('https://triton.one/',srcOf('triton','assets/triton-logomark.svg'),'Triton','We recommend')+tile('https://www.helius.dev/',srcOf('helius','assets/logo-helius.svg'),'Helius','')+tile('https://www.quicknode.com/',srcOf('quicknode',''),'QuickNode','')+'</div><p class="rail-partners-label">Routing</p><div class="rail-partners-row">'+tile('https://www.titan.exchange/',srcOf('titan','assets/logo-titan.svg'),'Titan','Quote rail')+tile('https://kamino.finance/',srcOf('kamino',''),'Kamino','Flash path')+tile('https://squads.so/',srcOf('squads','assets/logo-squads.svg'),'Squads','Multisig')+tile('https://chainstack.com/',srcOf('chainstack',''),'Chainstack','')+'</div>';
+    rpcBox.innerHTML='<p class="rail-partners-label">RPC</p><div class="rail-partners-row">'+tile('https://triton.one/',srcOf('triton','assets/triton-logomark.svg'),'Triton','We recommend')+tile('https://www.helius.dev/',srcOf('helius','assets/logo-helius.svg'),'Helius','')+tile('https://www.quicknode.com/',srcOf('quicknode',''),'QuickNode','')+tile('https://orbitflare.com/',srcOf('orbitflare'),'OrbitFlare','')+tile('https://chainstack.com/',srcOf('chainstack'),'Chainstack','')+'</div><p class="rail-partners-label">Routing</p><div class="rail-partners-row">'+tile('https://www.titan.exchange/',srcOf('titan','assets/logo-titan.svg'),'Titan','Quote rail')+'</div>';
   }
   stamp('#r1h', srcOf('jupiter'), 'Jupiter');
   stamp('#r2h', srcOf('jito'), 'Jito');
   stamp('#p4h', srcOf('jupiter'), 'Jupiter');
   stamp('#p2h', srcOf('telegram'), 'Telegram');
+  stamp('#r3h', srcOf('titan'), 'Titan');
 }
 function loadLogos(){
-  var keys=['titan','claude','helius','triton','quicknode','jupiter','jito','kamino','squads','telegram','chainstack','grok'];
+  var keys=['titan','claude','helius','triton','quicknode','jupiter','jito','telegram','chainstack','grok','cursor','orbitflare'];
   paint();
   keys.forEach(function(k){
     var l=document.createElement('script');
-    l.src='assets/real-'+k+'.js?v=brands8';
+    l.src='assets/real-'+k+'.js?v=brands9';
     l.onload=l.onerror=function(){ paint(); };
     document.head.appendChild(l);
   });
