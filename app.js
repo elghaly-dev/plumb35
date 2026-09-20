@@ -1,16 +1,20 @@
 /* Plumb */
 (function(){
 'use strict';
-var s=document.createElement('script'); s.src='themes.js?v=menu14'; document.head.appendChild(s);
+var s=document.createElement('script'); s.src='themes.js?v=menu15'; document.head.appendChild(s);
 var PAY350='https://buy.stripe.com/dRm9ANc357GB6DS0EB3Ru03';
 
 var style=document.createElement('style');
 style.textContent=[
-  'header{display:flex;align-items:center;flex-wrap:nowrap;gap:8px}',
-  '.brand{display:flex;align-items:center;gap:8px}',
-  '.brand-p{display:none !important}',
-  '.bl-35,.bl-stack,.marks-owner,.site-nav{display:none !important}',
-  '.brand-35-letter,.brand-p-letter{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:12px;background:#2ee6c7;color:#04110a !important;font:800 16px ui-sans-serif,system-ui;line-height:1}',
+  'header{display:flex;align-items:center;flex-wrap:nowrap;gap:10px}',
+  '.brand{display:flex;align-items:center;gap:10px;min-width:0}',
+  '.brand-35-letter,.brand-p-letter{display:none !important}',
+  '.brand-p{display:block !important;height:44px;width:44px;border-radius:12px;object-fit:cover;flex-shrink:0}',
+  '.bl-35,.bl-stack{display:flex !important}',
+  '.bl-stack{display:flex !important;flex-direction:column}',
+  '.brand-logo{display:flex !important;align-items:center;gap:11px}',
+  '.marks-owner{display:none !important}',
+  '.site-nav{display:none !important}',
   '.header-right{display:flex;align-items:center;gap:6px;flex:1;justify-content:flex-end}',
   '.lang-switch{display:flex!important;flex-wrap:nowrap!important;gap:3px!important}',
   '.lang-btn{padding:5px 7px!important;font-size:10px!important}',
@@ -32,17 +36,10 @@ style.textContent=[
   '.tg-menu{margin:14px 0 0;border-radius:18px;overflow:hidden;border:1px solid var(--line,#1e2a28)}',
   '.tg-menu img{width:100%;height:auto;object-fit:contain !important;display:block}',
   '.seat-preview img,.gallery img:not(.board-shot),.desk-live img{width:100% !important;height:auto !important;max-height:280px !important;object-fit:cover !important;object-position:center 78% !important;display:block}',
+  '.brand-plate{margin-top:20px}',
   '@media (max-width:720px){.rec-frames{grid-template-columns:1fr}}'
 ].join('\n');
 document.head.appendChild(style);
-
-var brand=document.querySelector('.brand');
-if(brand && !brand.querySelector('.brand-35-letter')){
-  var t=document.createElement('span'); t.className='brand-35-letter'; t.textContent='35'; brand.insertBefore(t, brand.firstChild);
-}
-if(brand && !brand.querySelector('.brand-p-letter')){
-  var p=document.createElement('span'); p.className='brand-p-letter'; p.textContent='P'; brand.appendChild(p);
-}
 
 function money(){
   function walk(n){
@@ -58,8 +55,10 @@ function money(){
   walk(document.body);
   var btn=document.getElementById('s1btn');
   if(btn){ btn.textContent='Pay $350'; btn.href=PAY350; }
+  var bar=document.getElementById('barTitle');
+  if(bar) bar.textContent='Lifetime seat \u00b7 from $350';
 }
-money(); setTimeout(money,300); setTimeout(money,1200);
+money(); setTimeout(money,200); setTimeout(money,800); setTimeout(money,2000);
 
 function srcOf(key, fallback){
   var L=window.PLUMB_LOGOS||{};
@@ -94,10 +93,9 @@ function paint(){
     recBox.innerHTML=
       '<p class="rail-partners-label" id="toolsRecLabel">We recommend</p>'+
       '<div class="rec-frames">'+
-        '<div class="rec-frame" aria-label="Grok Bot and Cursor">'+
-          '<p class="rail-partners-label">Grok Bot · Cursor</p>'+
+        '<div class="rec-frame" aria-label="Cursor">'+
+          '<p class="rail-partners-label">Cursor</p>'+
           '<div class="rail-partners-row">'+
-            tile('https://grok.com/',srcOf('grok','assets/grok-logomark.svg'),'Grok Bot','We recommend')+
             tile('https://cursor.com/','assets/cursor-logomark.svg','Cursor','We recommend')+
           '</div>'+
         '</div>'+
@@ -135,13 +133,12 @@ function paint(){
   stamp('#p2h', srcOf('telegram'), 'Telegram');
 }
 function loadLogos(){
-  var keys=['grok','titan','claude','helius','triton','quicknode','jupiter','jito','kamino','squads','telegram','chainstack'];
-  var left=keys.length;
+  var keys=['titan','claude','helius','triton','quicknode','jupiter','jito','kamino','squads','telegram','chainstack'];
   paint();
   keys.forEach(function(k){
     var l=document.createElement('script');
-    l.src='assets/real-'+k+'.js?v=brands3';
-    l.onload=l.onerror=function(){ left--; paint(); };
+    l.src='assets/real-'+k+'.js?v=brands4';
+    l.onload=l.onerror=function(){ paint(); };
     document.head.appendChild(l);
   });
 }
@@ -183,4 +180,11 @@ function onScroll(){
 window.addEventListener('scroll', onScroll, {passive:true});
 onScroll();
 document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('is-in'); });
+
+var main=document.getElementById('main');
+var hero=document.querySelector('.hero');
+var plate=document.getElementById('brand');
+if(main && hero && plate && hero.previousElementSibling!==plate){
+  main.insertBefore(plate, hero);
+}
 })();
