@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 560" role="img" aria-label="Telegram hunt menu">
+  <rect width="390" height="560" rx="28" fill="#1a1024"/>
+  <rect x="14" y="14" width="362" height="532" rx="22" fill="#c9a8e8"/>
+  <g font-family="ui-sans-serif,system-ui,sans-serif" font-size="16" font-weight="700" fill="#1b1028">
+    <rect x="22" y="28" width="110" height="52" rx="12" fill="#efe4fb"/><text x="36" y="60">Tips</text>
+    <rect x="140" y="28" width="110" height="52" rx="12" fill="#efe4fb"/><text x="154" y="60">Hunt</text>
+    <rect x="258" y="28" width="110" height="52" rx="12" fill="#efe4fb"/><text x="272" y="60">Mux</text>
+    <rect x="22" y="90" width="110" height="52" rx="12" fill="#efe4fb"/><text x="36" y="122">Target</text>
+    <rect x="140" y="90" width="110" height="52" rx="12" fill="#efe4fb"/><text x="154" y="122">Math</text>
+    <rect x="258" y="90" width="110" height="52" rx="12" fill="#efe4fb"/><text x="272" y="122">Needs</text>
+    <rect x="22" y="152" width="110" height="52" rx="12" fill="#efe4fb"/><text x="36" y="184">Speed</text>
+    <rect x="140" y="152" width="110" height="52" rx="12" fill="#efe4fb"/><text x="154" y="184">Titan</text>
+    <rect x="258" y="152" width="110" height="52" rx="12" fill="#efe4fb"/><text x="272" y="184">Router</text>
+    <rect x="22" y="214" width="110" height="52" rx="12" fill="#efe4fb"/><text x="36" y="246">gRPC</text>
+    <rect x="140" y="214" width="110" height="52" rx="12" fill="#efe4fb"/><text x="154" y="246">Pause</text>
+    <rect x="258" y="214" width="110" height="52" rx="12" fill="#efe4fb"/><text x="272" y="246">Resume</text>
+    <rect x="22" y="276" width="110" height="52" rx="12" fill="#efe4fb"/><text x="36" y="308">Desk</text>
+    <rect x="140" y="276" width="110" height="52" rx="12" fill="#efe4fb"/><text x="154" y="308">Pulse</text>
+    <rect x="258" y="276" width="110" height="52" rx="12" fill="#efe4fb"/><text x="272" y="308">Hold</text>
+  </g>
+  <rect x="22" y="348" width="166" height="56" rx="16" fill="#2b1a3c"/>
+  <text x="44" y="384" fill="#f4e9ff" font-size="20" font-weight="700" font-family="ui-sans-serif,system-ui,sans-serif">Home</text>
+  <rect x="198" y="348" width="166" height="56" rx="16" fill="#2b1a3c"/>
+  <text x="220" y="384" fill="#f4e9ff" font-size="20" font-weight="700" font-family="ui-sans-serif,system-ui,sans-serif">Menu</text>
+  <rect x="22" y="420" width="342" height="56" rx="16" fill="#efe4fb"/>
+  <text x="140" y="456" fill="#1b1028" font-size="20" font-weight="700" font-family="ui-sans-serif,system-ui,sans-serif">Glance</text>
+  <text x="28" y="516" font-size="15" fill="#3a244f" font-family="ui-sans-serif,system-ui,sans-serif">Telegram control · your keys stay home</text>
+</svg>
