@@ -17,9 +17,9 @@ style.textContent=[
   '.theme-wrap{display:block!important}',
   '.board-shot,.gallery img.board-shot{display:none !important}',
   '.rail-partners-row{display:flex!important;flex-wrap:wrap!important;justify-content:center!important;gap:22px 28px!important}',
-  '.ai-wrap,.rpc-wrap{display:flex;flex-direction:column;align-items:center;gap:8px;width:92px;text-align:center;text-decoration:none;color:inherit}',
-  '.ai-tile,.rpc-tile{width:72px;height:72px;border-radius:18px;overflow:hidden;background:transparent;display:flex;align-items:center;justify-content:center}',
-  '.ai-tile img,.rpc-tile img{width:64px;height:64px;object-fit:contain;display:block}',
+  '.ai-wrap,.rpc-wrap{display:flex;flex-direction:column;align-items:center;gap:8px;width:100px;text-align:center;text-decoration:none;color:inherit}',
+  '.ai-tile,.rpc-tile{width:80px;height:80px;border-radius:18px;overflow:hidden;background:transparent;display:flex;align-items:center;justify-content:center}',
+  '.ai-tile img,.rpc-tile img{width:72px;height:72px;object-fit:contain;display:block}',
   '.ai-name,.rpc-name{font-size:13px;line-height:1.2;color:var(--ink,#e8fbf6)}',
   '.ai-note{font-size:11px;color:#2ee6c7;letter-spacing:.04em}',
   '.partner svg,.partner .partner-logo{display:none !important}',
@@ -107,12 +107,14 @@ function paint(){
 }
 
 function loadLogos(){
-  if(window.PLUMB_LOGOS){ paint(); return; }
-  var l=document.createElement('script');
-  l.src='logos.js?v=real96';
-  l.onload=paint;
-  l.onerror=paint;
-  document.head.appendChild(l);
+  var keys=['grok','titan','claude','phantom','squads','helius','triton','quicknode','jupiter','jito','solana'];
+  var left=keys.length;
+  keys.forEach(function(k){
+    var l=document.createElement('script');
+    l.src='assets/real-'+k+'.js?v=96';
+    l.onload=l.onerror=function(){ left--; if(left<=0) paint(); };
+    document.head.appendChild(l);
+  });
 }
 loadLogos();
 
