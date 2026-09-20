@@ -33,7 +33,7 @@ style.textContent=[
   '.rec-frame{border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:18px 14px 20px;background:rgba(255,255,255,.02)}',
   '.rec-frame .rail-partners-label{margin:0 0 14px;text-align:center}',
   '.rec-stack{display:flex;flex-direction:column;align-items:center;gap:18px}',
-  '.rail-brand{width:36px;height:36px;object-fit:contain;display:inline-block;vertical-align:middle;margin-right:10px;border-radius:10px;background:transparent}',
+  '.rail-brand{width:40px;height:40px;object-fit:contain;display:inline-block;vertical-align:middle;margin-right:10px;border-radius:10px;background:transparent}',
   '.principle h3,.rail h3{display:flex;align-items:center;gap:10px}',
   '.tg-menu{margin:14px 0 0;border-radius:18px;overflow:hidden;border:1px solid var(--line,#1e2a28)}',
   '.tg-menu img{width:100%;height:auto;object-fit:contain !important;display:block}',
@@ -93,30 +93,39 @@ function stamp(sel, src, name){
   if(!h || !src) return;
   if(h.querySelector('.rail-brand')){ h.querySelector('.rail-brand').src=src; return; }
   var img=document.createElement('img');
-  img.className='rail-brand'; img.src=src; img.alt=name; img.width=36; img.height=36;
+  img.className='rail-brand'; img.src=src; img.alt=name; img.width=40; img.height=40;
   h.insertBefore(img, h.firstChild);
+}
+function hideTitan(){
+  ['#r3h','#r3'].forEach(function(sel){
+    var el=document.querySelector(sel);
+    if(!el) return;
+    var card=el.closest('.rail')||el.closest('article')||el.closest('section')||el.parentElement;
+    if(card) card.style.display='none';
+  });
 }
 function paint(){
   var recBox=document.querySelector('.recommend-tools');
   if(recBox){
-    recBox.innerHTML='<p class="rail-partners-label" id="toolsRecLabel">We recommend</p><div class="rec-frames"><div class="rec-frame"><p class="rail-partners-label">The AI</p><div class="rail-partners-row">'+tile('https://claude.ai/',srcOf('claude','assets/claude-logomark.svg'),'Claude','')+tile('https://grok.com/','assets/mark-grok.svg','Grok','')+'</div></div><div class="rec-frame"><p class="rail-partners-label">Grok Bot \u00b7 Cursor</p><div class="rec-stack">'+tile('https://grok.com/','assets/mark-grok.svg','Grok Bot','We recommend')+tile('https://cursor.com/','assets/mark-cursor.svg','Cursor','We recommend')+'</div></div></div>';
+    recBox.innerHTML='<p class="rail-partners-label" id="toolsRecLabel">We recommend</p><div class="rec-frames"><div class="rec-frame"><p class="rail-partners-label">The AI</p><div class="rail-partners-row">'+tile('https://claude.ai/',srcOf('claude','assets/claude-logomark.svg'),'Claude','')+tile('https://grok.com/',srcOf('grok','assets/mark-grok.svg'),'Grok','')+'</div></div><div class="rec-frame"><p class="rail-partners-label">Grok Bot \u00b7 Cursor</p><div class="rec-stack">'+tile('https://grok.com/',srcOf('grok','assets/mark-grok.svg'),'Grok Bot','We recommend')+tile('https://cursor.com/','assets/mark-cursor.svg','Cursor','We recommend')+'</div></div></div>';
   }
   var rpcBox=null;
   document.querySelectorAll('.rail-partners').forEach(function(box){ if(!box.classList.contains('recommend-tools')) rpcBox=box; });
   if(rpcBox){
-    rpcBox.innerHTML='<p class="rail-partners-label">RPC</p><div class="rail-partners-row">'+tile('https://triton.one/',srcOf('triton','assets/triton-logomark.svg'),'Triton','We recommend')+tile('https://www.helius.dev/',srcOf('helius','assets/logo-helius.svg'),'Helius','')+tile('https://www.quicknode.com/',srcOf('quicknode',''),'QuickNode','')+tile('https://orbitflare.com/','assets/mark-orbitflare.svg','OrbitFlare','')+tile('https://chainstack.com/','assets/mark-chainstack.svg','Chainstack','')+'</div><p class="rail-partners-label">Routing</p><div class="rail-partners-row">'+tile('https://www.titan.exchange/','','Titan','Quote rail')+'</div>';
+    rpcBox.innerHTML='<p class="rail-partners-label">RPC</p><div class="rail-partners-row">'+tile('https://triton.one/',srcOf('triton','assets/triton-logomark.svg'),'Triton','We recommend')+tile('https://www.helius.dev/',srcOf('helius','assets/logo-helius.svg'),'Helius','')+tile('https://www.quicknode.com/',srcOf('quicknode',''),'QuickNode','')+tile('https://orbitflare.com/','assets/mark-orbitflare.svg','OrbitFlare','')+tile('https://chainstack.com/',srcOf('chainstack','assets/mark-chainstack.svg'),'Chainstack','')+tile('https://rpcfast.com/',srcOf('fastrpc'),'FastRPC','')+'</div>';
   }
   stamp('#r1h', srcOf('jupiter'), 'Jupiter');
   stamp('#r2h', srcOf('jito'), 'Jito');
   stamp('#p4h', srcOf('jupiter'), 'Jupiter');
   stamp('#p2h', srcOf('telegram'), 'Telegram');
+  hideTitan();
 }
 function loadLogos(){
-  var keys=['claude','helius','triton','quicknode','jupiter','jito','telegram'];
+  var keys=['claude','helius','triton','quicknode','jupiter','jito','telegram','chainstack','fastrpc','grok'];
   paint();
   keys.forEach(function(k){
     var l=document.createElement('script');
-    l.src='assets/real-'+k+'.js?v=brands10';
+    l.src='assets/real-'+k+'.js?v=brands11';
     l.onload=l.onerror=function(){ paint(); };
     document.head.appendChild(l);
   });
