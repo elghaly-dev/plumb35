@@ -47,7 +47,14 @@ style.textContent=[
   '.cp-addr{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13px;word-break:break-all;color:var(--ink,#f5f5f7)}',
   '.cp-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}',
   '.cp-actions button,.cp-actions a{background:transparent;border:1px solid var(--line,#1e2a28);color:var(--ink,#f5f5f7);border-radius:999px;padding:8px 14px;font-size:12px;cursor:pointer;text-decoration:none}',
-  '@media (max-width:720px){.rec-frames{grid-template-columns:1fr}.ai-tile{width:88px;height:88px}.bl-stack{display:none !important}}'
+  'footer .networks-row{gap:16px 18px!important;align-items:flex-start!important}',
+  'footer .net{width:80px!important;opacity:1!important}',
+  'footer .net svg{display:none!important}',
+  'footer .net-tile{width:72px;height:72px;border-radius:20px;overflow:hidden;background:#0b0c0b;border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 18px rgba(0,0,0,.28)}',
+  'footer .net-tile img{width:100%;height:100%;object-fit:cover;display:block}',
+  'footer .net > span:last-child{font-size:11px!important;letter-spacing:.14em!important;color:var(--ink,#f5f5f7)!important}',
+  'footer .net-live .net-tile{box-shadow:0 0 0 1px rgba(46,230,199,.35),0 8px 18px rgba(0,0,0,.28)}',
+  '@media (max-width:720px){.rec-frames{grid-template-columns:1fr}.ai-tile{width:88px;height:88px}.bl-stack{display:none !important}footer .net-tile{width:64px;height:64px}footer .net{width:72px!important}}'
 ].join('\n');
 document.head.appendChild(style);
 function money(){
@@ -115,6 +122,24 @@ function loadLogos(){
   });
 }
 loadLogos();
+function paintNets(){
+  var row=document.querySelector('.networks-row');
+  if(!row) return;
+  var N=window.PLUMB_NETS||{};
+  function net(cls,id,title,key,label){
+    var src=N[key]||'';
+    return '<span class="net '+cls+'" id="'+id+'" title="'+title+'"><span class="net-tile">'+(src?'<img src="'+src+'" alt="'+label+'"/>':'')+'</span><span>'+label+'</span></span>';
+  }
+  row.innerHTML=net('net-live','netSolTitle','Solana \u2014 live desk today','sol','SOL')+net('','netEthTitle','Ethereum \u2014 expansion path','eth','ETH')+net('','netBtcTitle','Bitcoin \u2014 expansion path','btc','BTC')+net('','netArbTitle','Arbitrum \u2014 expansion path','arb','ARB')+net('monad','netMonadTitle','Monad \u2014 expansion path','monad','MONAD');
+}
+window.PLUMB_NETS={
+  sol:'https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/solana/info/logo.png',
+  eth:'https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/info/logo.png',
+  btc:'https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/bitcoin/info/logo.png',
+  arb:'https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/arbitrum/info/logo.png',
+  monad:'https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/monad/info/logo.png'
+};
+paintNets();
 function addMenus(seat, items){
   if(!seat) return;
   items.forEach(function(it){
