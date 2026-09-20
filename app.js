@@ -1,7 +1,7 @@
 /* Plumb */
 (function(){
 'use strict';
-var s=document.createElement('script'); s.src='themes.js?v=menu8'; document.head.appendChild(s);
+var s=document.createElement('script'); s.src='themes.js?v=menu9'; document.head.appendChild(s);
 var PAY350='https://buy.stripe.com/dRm9ANc357GB6DS0EB3Ru03';
 
 var style=document.createElement('style');
@@ -10,7 +10,7 @@ style.textContent=[
   '.brand{display:flex;align-items:center;gap:10px}',
   '.brand-p{height:44px !important;width:44px !important;border-radius:12px !important}',
   '.bl-35,.bl-stack,.marks-owner,.site-nav{display:none !important}',
-  '.brand-p-letter{font:800 20px ui-sans-serif,system-ui;color:#2ee6c7 !important;margin-left:10px;line-height:1}',
+  '.brand-p-letter{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;margin-left:16px;border-radius:10px;background:#2ee6c7;color:#04110a !important;font:800 18px ui-sans-serif,system-ui;line-height:1}',
   '.header-right{display:flex;align-items:center;gap:6px;flex:1;justify-content:flex-end}',
   '.lang-switch{display:flex!important;flex-wrap:nowrap!important;gap:3px!important}',
   '.lang-btn{padding:5px 7px!important;font-size:10px!important}',
