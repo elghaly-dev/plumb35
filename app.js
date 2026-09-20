@@ -1,16 +1,16 @@
 /* Plumb */
 (function(){
 'use strict';
-var s=document.createElement('script'); s.src='themes.js?v=menu9'; document.head.appendChild(s);
+var s=document.createElement('script'); s.src='themes.js?v=menu11'; document.head.appendChild(s);
 var PAY350='https://buy.stripe.com/dRm9ANc357GB6DS0EB3Ru03';
 
 var style=document.createElement('style');
 style.textContent=[
   'header{display:flex;align-items:center;flex-wrap:nowrap;gap:8px}',
-  '.brand{display:flex;align-items:center;gap:10px}',
-  '.brand-p{height:44px !important;width:44px !important;border-radius:12px !important}',
+  '.brand{display:flex;align-items:center;gap:8px}',
+  '.brand-p{display:none !important}',
   '.bl-35,.bl-stack,.marks-owner,.site-nav{display:none !important}',
-  '.brand-p-letter{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;margin-left:16px;border-radius:10px;background:#2ee6c7;color:#04110a !important;font:800 18px ui-sans-serif,system-ui;line-height:1}',
+  '.brand-35-letter,.brand-p-letter{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:12px;background:#2ee6c7;color:#04110a !important;font:800 16px ui-sans-serif,system-ui;line-height:1}',
   '.header-right{display:flex;align-items:center;gap:6px;flex:1;justify-content:flex-end}',
   '.lang-switch{display:flex!important;flex-wrap:nowrap!important;gap:3px!important}',
   '.lang-btn{padding:5px 7px!important;font-size:10px!important}',
@@ -27,14 +27,18 @@ style.textContent=[
 ].join('\n');
 document.head.appendChild(style);
 
-var mark=document.querySelector('.brand-p');
-if(mark){ mark.src='mark-35.svg'; mark.alt='35'; }
 var brand=document.querySelector('.brand');
+if(brand && !brand.querySelector('.brand-35-letter')){
+  var t=document.createElement('span');
+  t.className='brand-35-letter';
+  t.textContent='35';
+  brand.insertBefore(t, brand.firstChild);
+}
 if(brand && !brand.querySelector('.brand-p-letter')){
   var p=document.createElement('span');
   p.className='brand-p-letter';
   p.textContent='P';
-  mark ? mark.after(p) : brand.appendChild(p);
+  brand.appendChild(p);
 }
 
 function money(){
