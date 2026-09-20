@@ -1,13 +1,16 @@
 /* Plumb */
 (function(){
 'use strict';
-var s=document.createElement('script'); s.src='themes.js?v=menu4'; document.head.appendChild(s);
+var s=document.createElement('script'); s.src='themes.js?v=menu5'; document.head.appendChild(s);
+var PAY350='https://buy.stripe.com/dRm9ANc357GB6DS0EB3Ru03';
 
 var style=document.createElement('style');
 style.textContent=[
   'header{display:flex;align-items:center;flex-wrap:nowrap;gap:8px}',
+  '.brand{display:flex;align-items:center;gap:8px}',
   '.brand-p{height:44px !important;width:44px !important;border-radius:12px !important}',
   '.bl-35,.bl-stack,.marks-owner,.site-nav{display:none !important}',
+  '.brand-p-letter{font:700 22px ui-sans-serif,system-ui;color:var(--ink);letter-spacing:.04em;line-height:1}',
   '.header-right{display:flex;align-items:center;gap:6px;flex:1;justify-content:flex-end;flex-wrap:nowrap}',
   '.lang-switch{display:flex!important;flex-wrap:nowrap!important;gap:3px!important;max-width:none!important}',
   '.lang-btn{padding:5px 7px!important;font-size:10px!important}',
@@ -22,6 +25,13 @@ document.head.appendChild(style);
 
 var mark=document.querySelector('.brand-p');
 if(mark){ mark.src='mark-35.svg'; mark.alt='35'; }
+var brand=document.querySelector('.brand');
+if(brand && !brand.querySelector('.brand-p-letter')){
+  var p=document.createElement('span');
+  p.className='brand-p-letter';
+  p.textContent='P';
+  mark ? mark.after(p) : brand.appendChild(p);
+}
 
 function money(n){
   if(n.nodeType===3){
@@ -34,6 +44,16 @@ function money(n){
   for(var i=0;i<kids.length;i++) money(kids[i]);
 }
 money(document.body);
+
+document.querySelectorAll('a[href*="14A6oB4AD7GBd2g3QN3Ru00"], a[href*="buy.stripe.com"]').forEach(function(a){
+  if(/14A6oB4AD7GBd2g3QN3Ru00/.test(a.href) || /Pay \$299|Starter|s1btn|seat/.test((a.textContent||'')+(a.id||'')+(a.className||''))){
+    if(/14A6oB4AD7GBd2g3QN3Ru00/.test(a.href)) a.href=PAY350;
+  }
+});
+document.querySelectorAll('a').forEach(function(a){
+  if(/14A6oB4AD7GBd2g3QN3Ru00/.test(a.getAttribute('href')||'')) a.href=PAY350;
+  if((a.textContent||'').indexOf('Pay $299')!==-1){ a.textContent='Pay $350'; a.href=PAY350; }
+});
 
 function tile(href,src,name){
   return '<a class="ai-wrap" href="'+href+'" target="_blank" rel="noopener noreferrer"><span class="ai-tile"><img src="'+src+'?v=2" alt="'+name+'"/></span><span>'+name+'</span></a>';
