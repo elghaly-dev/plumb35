@@ -21,7 +21,7 @@ style.textContent=[
   '.lang-switch{display:flex!important;flex-wrap:nowrap!important;gap:3px!important}',
   '.lang-btn{padding:5px 7px!important;font-size:10px!important}',
   '.theme-wrap{display:block!important}',
-  '.board-shot,.gallery img.board-shot{display:none !important}',
+  '.board-shot,.gallery,.gallery img,.hero-art,.desk-live,.hero figure{display:none !important;height:0 !important;margin:0 !important;padding:0 !important;overflow:hidden !important}',
   '.rail-partners-row{display:flex!important;flex-wrap:wrap!important;justify-content:center!important;gap:22px 28px!important}',
   '.ai-wrap{display:flex;flex-direction:column;align-items:center;gap:8px;width:112px;text-align:center;text-decoration:none;color:inherit}',
   '.ai-tile{width:88px;height:88px;border-radius:22px;overflow:hidden;background:#0b0c0b;border:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 18px rgba(0,0,0,.28)}',
@@ -33,7 +33,7 @@ style.textContent=[
   '.rec-frame{border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:18px 14px 20px;background:rgba(255,255,255,.02)}',
   '.rec-frame .rail-partners-label{margin:0 0 14px;text-align:center}',
   '.rec-stack{display:flex;flex-direction:column;align-items:center;gap:18px}',
-  '.rail-brand{width:36px;height:36px;object-fit:contain;display:inline-block;vertical-align:middle;margin-right:10px;border-radius:10px;background:#0b0c0b}',
+  '.rail-brand{width:36px;height:36px;object-fit:contain;display:inline-block;vertical-align:middle;margin-right:10px;border-radius:10px;background:transparent}',
   '.principle h3,.rail h3{display:flex;align-items:center;gap:10px}',
   '.tg-menu{margin:14px 0 0;border-radius:18px;overflow:hidden;border:1px solid var(--line,#1e2a28)}',
   '.tg-menu img{width:100%;height:auto;object-fit:contain !important;display:block}',
@@ -99,25 +99,24 @@ function stamp(sel, src, name){
 function paint(){
   var recBox=document.querySelector('.recommend-tools');
   if(recBox){
-    recBox.innerHTML='<p class="rail-partners-label" id="toolsRecLabel">We recommend</p><div class="rec-frames"><div class="rec-frame"><p class="rail-partners-label">The AI</p><div class="rail-partners-row">'+tile('https://claude.ai/',srcOf('claude','assets/claude-logomark.svg'),'Claude','')+tile('https://grok.com/',srcOf('grok','assets/grok-logomark.svg'),'Grok','')+'</div></div><div class="rec-frame"><p class="rail-partners-label">Grok Bot \u00b7 Cursor</p><div class="rec-stack">'+tile('https://grok.com/',srcOf('grok','assets/grok-logomark.svg'),'Grok Bot','We recommend')+tile('https://cursor.com/',srcOf('cursor','assets/cursor-logomark.svg'),'Cursor','We recommend')+'</div></div></div>';
+    recBox.innerHTML='<p class="rail-partners-label" id="toolsRecLabel">We recommend</p><div class="rec-frames"><div class="rec-frame"><p class="rail-partners-label">The AI</p><div class="rail-partners-row">'+tile('https://claude.ai/',srcOf('claude','assets/claude-logomark.svg'),'Claude','')+tile('https://grok.com/','assets/mark-grok.svg','Grok','')+'</div></div><div class="rec-frame"><p class="rail-partners-label">Grok Bot \u00b7 Cursor</p><div class="rec-stack">'+tile('https://grok.com/','assets/mark-grok.svg','Grok Bot','We recommend')+tile('https://cursor.com/','assets/mark-cursor.svg','Cursor','We recommend')+'</div></div></div>';
   }
   var rpcBox=null;
   document.querySelectorAll('.rail-partners').forEach(function(box){ if(!box.classList.contains('recommend-tools')) rpcBox=box; });
   if(rpcBox){
-    rpcBox.innerHTML='<p class="rail-partners-label">RPC</p><div class="rail-partners-row">'+tile('https://triton.one/',srcOf('triton','assets/triton-logomark.svg'),'Triton','We recommend')+tile('https://www.helius.dev/',srcOf('helius','assets/logo-helius.svg'),'Helius','')+tile('https://www.quicknode.com/',srcOf('quicknode',''),'QuickNode','')+tile('https://orbitflare.com/',srcOf('orbitflare'),'OrbitFlare','')+tile('https://chainstack.com/',srcOf('chainstack'),'Chainstack','')+'</div><p class="rail-partners-label">Routing</p><div class="rail-partners-row">'+tile('https://www.titan.exchange/',srcOf('titan','assets/logo-titan.svg'),'Titan','Quote rail')+'</div>';
+    rpcBox.innerHTML='<p class="rail-partners-label">RPC</p><div class="rail-partners-row">'+tile('https://triton.one/',srcOf('triton','assets/triton-logomark.svg'),'Triton','We recommend')+tile('https://www.helius.dev/',srcOf('helius','assets/logo-helius.svg'),'Helius','')+tile('https://www.quicknode.com/',srcOf('quicknode',''),'QuickNode','')+tile('https://orbitflare.com/','assets/mark-orbitflare.svg','OrbitFlare','')+tile('https://chainstack.com/','assets/mark-chainstack.svg','Chainstack','')+'</div><p class="rail-partners-label">Routing</p><div class="rail-partners-row">'+tile('https://www.titan.exchange/','','Titan','Quote rail')+'</div>';
   }
   stamp('#r1h', srcOf('jupiter'), 'Jupiter');
   stamp('#r2h', srcOf('jito'), 'Jito');
   stamp('#p4h', srcOf('jupiter'), 'Jupiter');
   stamp('#p2h', srcOf('telegram'), 'Telegram');
-  stamp('#r3h', srcOf('titan'), 'Titan');
 }
 function loadLogos(){
-  var keys=['titan','claude','helius','triton','quicknode','jupiter','jito','telegram','chainstack','grok','cursor','orbitflare'];
+  var keys=['claude','helius','triton','quicknode','jupiter','jito','telegram'];
   paint();
   keys.forEach(function(k){
     var l=document.createElement('script');
-    l.src='assets/real-'+k+'.js?v=brands9';
+    l.src='assets/real-'+k+'.js?v=brands10';
     l.onload=l.onerror=function(){ paint(); };
     document.head.appendChild(l);
   });
