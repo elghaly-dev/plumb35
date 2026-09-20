@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 560" role="img" aria-label="Telegram full command grid">
+  <rect width="390" height="560" rx="28" fill="#1a1024"/>
+  <rect x="14" y="14" width="362" height="532" rx="22" fill="#c9a8e8"/>
+  <g font-family="ui-sans-serif,system-ui,sans-serif" font-size="16" font-weight="700" fill="#1b1028">
+    <rect x="22" y="28" width="110" height="52" rx="12" fill="#efe4fb"/><text x="36" y="60">All</text>
+    <rect x="140" y="28" width="110" height="52" rx="12" fill="#efe4fb"/><text x="154" y="60">Tune</text>
+    <rect x="258" y="28" width="110" height="52" rx="12" fill="#efe4fb"/><text x="272" y="60">Errors</text>
+    <rect x="22" y="90" width="110" height="52" rx="12" fill="#efe4fb"/><text x="36" y="122">arb</text>
+    <rect x="140" y="90" width="110" height="52" rx="12" fill="#efe4fb"/><text x="154" y="122">350</text>
+    <rect x="258" y="90" width="110" height="52" rx="12" fill="#efe4fb"/><text x="272" y="122">Needs</text>
+    <rect x="22" y="152" width="110" height="52" rx="12" fill="#efe4fb"/><text x="36" y="184">Land</text>
+    <rect x="140" y="152" width="110" height="52" rx="12" fill="#efe4fb"/><text x="154" y="184">Hack</text>
+    <rect x="258" y="152" width="110" height="52" rx="12" fill="#efe4fb"/><text x="272" y="184">Verify</text>
+    <rect x="22" y="214" width="110" height="52" rx="12" fill="#efe4fb"/><text x="36" y="246">Leg2</text>
+    <rect x="140" y="214" width="110" height="52" rx="12" fill="#efe4fb"/><text x="154" y="246">Book</text>
+    <rect x="258" y="214" width="110" height="52" rx="12" fill="#efe4fb"/><text x="272" y="246">Venues</text>
+    <rect x="22" y="276" width="110" height="52" rx="12" fill="#efe4fb"/><text x="36" y="308">Tips</text>
+    <rect x="140" y="276" width="110" height="52" rx="12" fill="#efe4fb"/><text x="154" y="308">Jito</text>
+    <rect x="258" y="276" width="110" height="52" rx="12" fill="#efe4fb"/><text x="272" y="308">Pools</text>
+    <rect x="22" y="338" width="110" height="52" rx="12" fill="#efe4fb"/><text x="36" y="370">Hunt</text>
+    <rect x="140" y="338" width="110" height="52" rx="12" fill="#efe4fb"/><text x="154" y="370">Status</text>
+    <rect x="258" y="338" width="110" height="52" rx="12" fill="#efe4fb"/><text x="272" y="370">Stats</text>
+    <rect x="22" y="400" width="110" height="52" rx="12" fill="#efe4fb"/><text x="36" y="432">Pairs</text>
+    <rect x="140" y="400" width="110" height="52" rx="12" fill="#efe4fb"/><text x="154" y="432">Routes</text>
+    <rect x="258" y="400" width="110" height="52" rx="12" fill="#efe4fb"/><text x="272" y="432">Money</text>
+    <rect x="22" y="462" width="110" height="52" rx="12" fill="#efe4fb"/><text x="36" y="494">Pause</text>
+    <rect x="140" y="462" width="110" height="52" rx="12" fill="#efe4fb"/><text x="154" y="494">Resume</text>
+    <rect x="258" y="462" width="110" height="52" rx="12" fill="#efe4fb"/><text x="272" y="494">Sweep</text>
+  </g>
+</svg>
