@@ -1,7 +1,7 @@
 /* Plumb */
 (function(){
 'use strict';
-var s=document.createElement('script'); s.src='themes.js?v=menu12'; document.head.appendChild(s);
+var s=document.createElement('script'); s.src='themes.js?v=menu13'; document.head.appendChild(s);
 var PAY350='https://buy.stripe.com/dRm9ANc357GB6DS0EB3Ru03';
 
 var style=document.createElement('style');
@@ -16,13 +16,14 @@ style.textContent=[
   '.lang-btn{padding:5px 7px!important;font-size:10px!important}',
   '.theme-wrap{display:block!important}',
   '.board-shot,.gallery img.board-shot{display:none !important}',
-  '.rail-partners-row{display:flex!important;flex-wrap:wrap!important;justify-content:center!important;gap:18px 22px!important}',
-  '.ai-wrap,.rpc-wrap{display:flex;flex-direction:column;align-items:center;gap:6px;width:76px;text-align:center;text-decoration:none;color:inherit}',
-  '.ai-tile,.rpc-tile{width:36px;height:36px;border-radius:8px;overflow:hidden;background:#0b1214;display:flex;align-items:center;justify-content:center;border:1px solid rgba(46,230,199,.18)}',
-  '.ai-tile img,.rpc-tile img{width:36px;height:36px;object-fit:contain;display:block}',
-  '.ai-name,.rpc-name{font-size:12px;line-height:1.2;color:var(--ink,#e8fbf6)}',
-  '.ai-note{font-size:10px;color:#2ee6c7;letter-spacing:.04em}',
-  '.partner svg{display:none !important}',
+  '.rail-partners-row{display:flex!important;flex-wrap:wrap!important;justify-content:center!important;gap:22px 28px!important}',
+  '.ai-wrap,.rpc-wrap{display:flex;flex-direction:column;align-items:center;gap:8px;width:92px;text-align:center;text-decoration:none;color:inherit}',
+  '.ai-tile,.rpc-tile{width:72px;height:72px;border-radius:18px;overflow:hidden;background:transparent;display:flex;align-items:center;justify-content:center}',
+  '.ai-tile img,.rpc-tile img{width:64px;height:64px;object-fit:contain;display:block}',
+  '.ai-name,.rpc-name{font-size:13px;line-height:1.2;color:var(--ink,#e8fbf6)}',
+  '.ai-note{font-size:11px;color:#2ee6c7;letter-spacing:.04em}',
+  '.partner svg,.partner .partner-logo{display:none !important}',
+  '.rail-partners-label{margin-top:10px}',
   '.tg-menu{margin:14px 0 0;border-radius:18px;overflow:hidden;border:1px solid var(--line,#1e2a28)}',
   '.tg-menu img{width:100%;height:auto;max-height:none !important;object-fit:contain !important;display:block}',
   '.tg-menu figcaption{padding:8px 4px 0;font-size:13px;color:var(--dim)}',
@@ -63,38 +64,57 @@ money();
 setTimeout(money,300); setTimeout(money,1200);
 
 function tile(href,src,name,note){
+  if(!src) return '';
   return '<a class="ai-wrap" href="'+href+'" target="_blank" rel="noopener noreferrer">'
-    +'<span class="ai-tile"><img src="'+src+'?v=real1" alt="'+name+'"/></span>'
+    +'<span class="ai-tile"><img src="'+src+'" alt="'+name+'"/></span>'
     +'<span class="ai-name">'+name+'</span>'
     +(note?'<span class="ai-note">'+note+'</span>':'')
     +'</a>';
 }
-var rec=document.querySelector('.recommend-tools .rail-partners-row');
-if(rec){
-  rec.innerHTML=
-    tile('https://grok.com/','assets/logo-grok.svg','Grok Bot','We recommend')+
-    tile('https://cursor.com/','assets/cursor-logomark.svg','Cursor','')+
-    tile('https://grok.com/','assets/logo-grok.svg','Grok','')+
-    tile('https://claude.ai/','assets/logo-claude.svg','Claude','');
-}
-var rpcRow=null;
-document.querySelectorAll('.rail-partners').forEach(function(box){
-  if(!box.classList.contains('recommend-tools')){
-    rpcRow=box.querySelector('.rail-partners-row');
+
+function paint(){
+  var L=window.PLUMB_LOGOS||{};
+  var rec=document.querySelector('.recommend-tools .rail-partners-row');
+  if(rec){
+    rec.innerHTML=
+      tile('https://grok.com/',L.grok,'Grok Bot','We recommend')+
+      tile('https://cursor.com/','assets/cursor-logomark.svg','Cursor','')+
+      tile('https://grok.com/',L.grok,'Grok','')+
+      tile('https://claude.ai/',L.claude,'Claude','');
   }
-});
-if(rpcRow){
-  rpcRow.innerHTML=
-    tile('https://solana.com/','assets/logo-solana.svg','Solana','')+
-    tile('https://triton.one/','assets/logo-triton.svg','Triton','')+
-    tile('https://www.helius.dev/','assets/logo-helius.svg','Helius','')+
-    tile('https://www.jito.wtf/','assets/logo-jito.svg','Jito','')+
-    tile('https://www.quicknode.com/','assets/logo-quicknode.svg','QuickNode','')+
-    tile('https://www.titan.exchange/','assets/logo-titan.svg','Titan','')+
-    tile('https://jup.ag/','assets/logo-jupiter.svg','Jupiter','')+
-    tile('https://phantom.com/','assets/logo-phantom.svg','Phantom','')+
-    tile('https://squads.so/','assets/logo-squads.svg','Squads','');
+  var rpcBox=null;
+  document.querySelectorAll('.rail-partners').forEach(function(box){
+    if(!box.classList.contains('recommend-tools')) rpcBox=box;
+  });
+  if(rpcBox){
+    rpcBox.innerHTML=
+      '<p class="rail-partners-label">RPC</p>'+
+      '<div class="rail-partners-row">'+
+        tile('https://solana.com/',L.solana,'Solana','')+
+        tile('https://triton.one/',L.triton,'Triton','')+
+        tile('https://www.helius.dev/',L.helius,'Helius','')+
+        tile('https://www.quicknode.com/',L.quicknode,'QuickNode','')+
+      '</div>'+
+      '<p class="rail-partners-label">Routing</p>'+
+      '<div class="rail-partners-row">'+
+        tile('https://www.jito.wtf/',L.jito,'Jito','')+
+        tile('https://jup.ag/',L.jupiter,'Jupiter','')+
+        tile('https://www.titan.exchange/',L.titan,'Titan','')+
+        tile('https://phantom.com/',L.phantom,'Phantom','')+
+        tile('https://squads.so/',L.squads,'Squads','')+
+      '</div>';
+  }
 }
+
+function loadLogos(){
+  if(window.PLUMB_LOGOS){ paint(); return; }
+  var l=document.createElement('script');
+  l.src='logos.js?v=real96';
+  l.onload=paint;
+  l.onerror=paint;
+  document.head.appendChild(l);
+}
+loadLogos();
 
 function addMenus(seat, items){
   if(!seat) return;
