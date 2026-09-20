@@ -3,7 +3,10 @@
 'use strict';
 var s=document.createElement('script'); s.src='themes.js?v=menu16'; document.head.appendChild(s);
 var PAY350='https://buy.stripe.com/dRm9ANc357GB6DS0EB3Ru03';
-var ETH_PAY='0xfde3b1fdc2a5d7cc6a956a2cd25cdf6af3d67133';
+var ETH_PAY='0x379F62A4EFFDAE688c5963B44667501f481CFE6D';
+var SOL_PAY='4vsXfhPXgwmP2cDdypGf9QrmdpMUhxCxRJ5aDDPxfsYo';
+var BTC_PAY='bc1qgtc26k0vuu8j3uhpvpsevgladug5n6en4jzm00';
+var BASE_PAY='0x379F62A4EFFDAE688c5963B44667501f481CFE6D';
 var style=document.createElement('style');
 style.textContent=[
   'header{display:flex;align-items:center;flex-wrap:nowrap;gap:10px}',
@@ -126,6 +129,9 @@ var seatsAll=document.querySelectorAll('.seat');
 addMenus(seatsAll[0], [{src:'IMG_6723.jpeg', cap:'Starter Telegram menu'}]);
 addMenus(seatsAll[1], [{src:'IMG_6724.jpeg', cap:'Pro Telegram menu'}]);
 addMenus(seatsAll[2], [{src:'IMG_6727.jpeg', cap:'Source menu 1'},{src:'IMG_6726.jpeg', cap:'Source menu 2'},{src:'IMG_6728.jpeg', cap:'Source menu 3'}]);
+function row(chain,addr,btnId,btnLabel,href,linkLabel){
+  return '<div class="cp-row"><div class="cp-chain">'+chain+'</div><div class="cp-addr">'+addr+'</div><div class="cp-actions"><button type="button" id="'+btnId+'">'+btnLabel+'</button><a href="'+href+'" target="_blank" rel="noopener">'+linkLabel+'</a></div></div>';
+}
 function cryptoBox(){
   if(document.getElementById('cryptoPay')) return;
   var seats=document.getElementById('seats');
@@ -133,13 +139,21 @@ function cryptoBox(){
   var box=document.createElement('section');
   box.id='cryptoPay';
   box.className='reveal is-in';
-  box.innerHTML='<p class="section-label">Pay by crypto</p><h2>Solana + ETH</h2><p class="cp-note">Same seat price. Send, then mail the transaction hash to 35@elghaly.dev so the desk can match it.</p><div class="cp-row"><div class="cp-chain">ETH \u00b7 Ethereum</div><div class="cp-addr">'+ETH_PAY+'</div><div class="cp-actions"><button type="button" id="copyEth">Copy ETH</button><a href="https://etherscan.io/address/'+ETH_PAY+'" target="_blank" rel="noopener">Etherscan</a></div></div><div class="cp-row"><div class="cp-chain">Solana</div><div class="cp-addr">Mail 35@elghaly.dev for the live SOL receive address before you send.</div><div class="cp-actions"><a href="mailto:35@elghaly.dev?subject=Plumb%20SOL%20pay">Mail SOL pay</a></div></div>';
+  box.innerHTML='<p class="section-label">Pay by crypto</p><h2>SOL \u00b7 ETH \u00b7 BTC \u00b7 Base</h2><p class="cp-note">Same seat price. Send, then mail the transaction hash to 35@elghaly.dev so the desk can match it.</p>'+row('Solana',SOL_PAY,'copySol','Copy SOL','https://solscan.io/account/'+SOL_PAY,'Solscan')+row('ETH \u00b7 Ethereum',ETH_PAY,'copyEth','Copy ETH','https://etherscan.io/address/'+ETH_PAY,'Etherscan')+row('BTC \u00b7 Bitcoin',BTC_PAY,'copyBtc','Copy BTC','https://mempool.space/address/'+BTC_PAY,'Mempool')+row('Base',BASE_PAY,'copyBase','Copy Base','https://basescan.org/address/'+BASE_PAY,'Basescan');
   seats.parentNode.insertBefore(box, seats.nextSibling);
-  var c=document.getElementById('copyEth');
-  if(c) c.onclick=function(){
-    if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(ETH_PAY).then(function(){ c.textContent='Copied'; setTimeout(function(){ c.textContent='Copy ETH'; },1200); }); }
-    else window.prompt('Copy ETH', ETH_PAY);
-  };
+  function bindCopy(id, addr, label){
+    var c=document.getElementById(id);
+    if(!c) return;
+    c.onclick=function(){
+      function ok(){ c.textContent='Copied'; setTimeout(function(){ c.textContent=label; },1200); }
+      if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(addr).then(ok).catch(function(){ window.prompt(label, addr); }); }
+      else window.prompt(label, addr);
+    };
+  }
+  bindCopy('copySol', SOL_PAY, 'Copy SOL');
+  bindCopy('copyEth', ETH_PAY, 'Copy ETH');
+  bindCopy('copyBtc', BTC_PAY, 'Copy BTC');
+  bindCopy('copyBase', BASE_PAY, 'Copy Base');
 }
 cryptoBox();
 var header=document.querySelector('header');
