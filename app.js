@@ -1,8 +1,9 @@
-/* Plumb lockup350 */
+/* Plumb lockup350 + crypto */
 (function(){
 'use strict';
 var s=document.createElement('script'); s.src='themes.js?v=menu16'; document.head.appendChild(s);
 var PAY350='https://buy.stripe.com/dRm9ANc357GB6DS0EB3Ru03';
+var ETH_PAY='0xfde3b1fdc2a5d7cc6a956a2cd25cdf6af3d67133';
 var style=document.createElement('style');
 style.textContent=[
   'header{display:flex;align-items:center;flex-wrap:nowrap;gap:10px}',
@@ -35,6 +36,14 @@ style.textContent=[
   '.tg-menu img{width:100%;height:auto;object-fit:contain !important;display:block}',
   '.seat-preview img,.gallery img:not(.board-shot),.desk-live img{width:100% !important;height:auto !important;max-height:280px !important;object-fit:cover !important;object-position:center 78% !important;display:block}',
   '.brand-plate{margin-top:20px}',
+  '#cryptoPay{margin-top:28px;padding:22px 20px;border:1px solid var(--line,#1e2a28);border-radius:20px;background:rgba(255,255,255,.02)}',
+  '#cryptoPay h2{font-family:Instrument Serif,Georgia,serif;font-size:28px;font-weight:400;margin:0 0 8px}',
+  '#cryptoPay .cp-note{color:var(--muted,#9b9ba1);font-size:14px;margin:0 0 16px;line-height:1.55}',
+  '.cp-row{display:flex;flex-direction:column;gap:8px;padding:14px 0;border-top:1px solid var(--line,#1e2a28)}',
+  '.cp-chain{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#2ee6c7}',
+  '.cp-addr{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13px;word-break:break-all;color:var(--ink,#f5f5f7)}',
+  '.cp-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}',
+  '.cp-actions button,.cp-actions a{background:transparent;border:1px solid var(--line,#1e2a28);color:var(--ink,#f5f5f7);border-radius:999px;padding:8px 14px;font-size:12px;cursor:pointer;text-decoration:none}',
   '@media (max-width:720px){.rec-frames{grid-template-columns:1fr}.ai-tile{width:88px;height:88px}.bl-stack{display:none !important}}'
 ].join('\n');
 document.head.appendChild(style);
@@ -117,6 +126,22 @@ var seatsAll=document.querySelectorAll('.seat');
 addMenus(seatsAll[0], [{src:'IMG_6723.jpeg', cap:'Starter Telegram menu'}]);
 addMenus(seatsAll[1], [{src:'IMG_6724.jpeg', cap:'Pro Telegram menu'}]);
 addMenus(seatsAll[2], [{src:'IMG_6727.jpeg', cap:'Source menu 1'},{src:'IMG_6726.jpeg', cap:'Source menu 2'},{src:'IMG_6728.jpeg', cap:'Source menu 3'}]);
+function cryptoBox(){
+  if(document.getElementById('cryptoPay')) return;
+  var seats=document.getElementById('seats');
+  if(!seats) return;
+  var box=document.createElement('section');
+  box.id='cryptoPay';
+  box.className='reveal is-in';
+  box.innerHTML='<p class="section-label">Pay by crypto</p><h2>Solana + ETH</h2><p class="cp-note">Same seat price. Send, then mail the transaction hash to 35@elghaly.dev so the desk can match it.</p><div class="cp-row"><div class="cp-chain">ETH \u00b7 Ethereum</div><div class="cp-addr">'+ETH_PAY+'</div><div class="cp-actions"><button type="button" id="copyEth">Copy ETH</button><a href="https://etherscan.io/address/'+ETH_PAY+'" target="_blank" rel="noopener">Etherscan</a></div></div><div class="cp-row"><div class="cp-chain">Solana</div><div class="cp-addr">Mail 35@elghaly.dev for the live SOL receive address before you send.</div><div class="cp-actions"><a href="mailto:35@elghaly.dev?subject=Plumb%20SOL%20pay">Mail SOL pay</a></div></div>';
+  seats.parentNode.insertBefore(box, seats.nextSibling);
+  var c=document.getElementById('copyEth');
+  if(c) c.onclick=function(){
+    if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(ETH_PAY).then(function(){ c.textContent='Copied'; setTimeout(function(){ c.textContent='Copy ETH'; },1200); }); }
+    else window.prompt('Copy ETH', ETH_PAY);
+  };
+}
+cryptoBox();
 var header=document.querySelector('header');
 var toTop=document.getElementById('toTop');
 var bar=document.getElementById('mobileCta');
