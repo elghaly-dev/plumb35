@@ -89,7 +89,7 @@ function stamp(sel, src, name){
 function paint(){
   var recBox=document.querySelector('.recommend-tools');
   if(recBox){
-    recBox.innerHTML='<p class="rail-partners-label" id="toolsRecLabel">We recommend</p><div class="rec-frames"><div class="rec-frame"><p class="rail-partners-label">Grok Bot \u00b7 Cursor</p><div class="rec-stack">'+tile('https://grok.com/',srcOf('grok','assets/grok-logomark.svg'),'Grok Bot','We recommend')+tile('https://cursor.com/','assets/cursor-logomark.svg','Cursor','We recommend')+'</div></div><div class="rec-frame"><p class="rail-partners-label">The AI</p><div class="rail-partners-row">'+tile('https://claude.ai/',srcOf('claude','assets/claude-logomark.svg'),'Claude','')+'</div></div></div>';
+    recBox.innerHTML='<p class="rail-partners-label" id="toolsRecLabel">We recommend</p><div class="rec-frames"><div class="rec-frame"><p class="rail-partners-label">The AI</p><div class="rail-partners-row">'+tile('https://claude.ai/',srcOf('claude','assets/claude-logomark.svg'),'Claude','')+'</div></div><div class="rec-frame"><p class="rail-partners-label">Grok Bot \u00b7 Cursor</p><div class="rec-stack">'+tile('https://grok.com/',srcOf('grok','assets/grok-logomark.svg'),'Grok Bot','We recommend')+tile('https://cursor.com/','assets/cursor-logomark.svg','Cursor','We recommend')+'</div></div></div>';
   }
   var rpcBox=null;
   document.querySelectorAll('.rail-partners').forEach(function(box){ if(!box.classList.contains('recommend-tools')) rpcBox=box; });
@@ -106,7 +106,7 @@ function loadLogos(){
   paint();
   keys.forEach(function(k){
     var l=document.createElement('script');
-    l.src='assets/real-'+k+'.js?v=brands7';
+    l.src='assets/real-'+k+'.js?v=brands8';
     l.onload=l.onerror=function(){ paint(); };
     document.head.appendChild(l);
   });
