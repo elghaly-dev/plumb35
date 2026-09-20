@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 520" role="img" aria-label="Telegram Glance board">
+  <rect width="390" height="520" rx="28" fill="#1a1024"/>
+  <rect x="14" y="14" width="362" height="492" rx="22" fill="#c9a8e8"/>
+  <text x="28" y="48" font-family="ui-sans-serif,system-ui,sans-serif" font-size="20" font-weight="700" fill="#2a1638">Quote</text>
+  <text x="200" y="48" font-family="ui-sans-serif,system-ui,sans-serif" font-size="20" font-weight="700" fill="#2a1638">Venues</text>
+  <g font-family="ui-sans-serif,system-ui,sans-serif" font-size="18" font-weight="700" fill="#1b1028">
+    <rect x="24" y="64" width="164" height="58" rx="14" fill="#efe4fb"/><text x="40" y="100">Talent</text>
+    <rect x="202" y="64" width="164" height="58" rx="14" fill="#efe4fb"/><text x="218" y="100">Now</text>
+    <rect x="24" y="132" width="164" height="58" rx="14" fill="#efe4fb"/><text x="40" y="168">Money</text>
+    <rect x="202" y="132" width="164" height="58" rx="14" fill="#efe4fb"/><text x="218" y="168">Needs</text>
+    <rect x="24" y="200" width="164" height="58" rx="14" fill="#efe4fb"/><text x="40" y="236">Pause</text>
+    <rect x="202" y="200" width="164" height="58" rx="14" fill="#efe4fb"/><text x="218" y="236">Rest</text>
+    <rect x="24" y="268" width="342" height="58" rx="14" fill="#efe4fb"/><text x="40" y="304">Resume</text>
+  </g>
+  <rect x="24" y="344" width="164" height="52" rx="16" fill="#2b1a3c"/><text x="48" y="376" fill="#f4e9ff" font-size="18" font-weight="700" font-family="ui-sans-serif,system-ui,sans-serif">Home</text>
+  <rect x="202" y="344" width="164" height="52" rx="16" fill="#2b1a3c"/><text x="218" y="376" fill="#f4e9ff" font-size="18" font-weight="700" font-family="ui-sans-serif,system-ui,sans-serif">Hunt tab</text>
+  <rect x="24" y="410" width="164" height="52" rx="16" fill="#efe4fb"/><text x="56" y="442" fill="#1b1028" font-size="18" font-weight="700" font-family="ui-sans-serif,system-ui,sans-serif">Why</text>
+  <rect x="202" y="410" width="164" height="52" rx="16" fill="#2b1a3c"/><text x="248" y="442" fill="#f4e9ff" font-size="18" font-weight="700" font-family="ui-sans-serif,system-ui,sans-serif">Land</text>
+  <text x="28" y="492" font-size="14" fill="#3a244f" font-family="ui-sans-serif,system-ui,sans-serif">Glance · live Telegram desk</text>
+</svg>
