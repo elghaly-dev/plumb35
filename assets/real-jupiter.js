@@ -1,1 +1,1 @@
-window.PLUMB_LOGOS=window.PLUMB_LOGOS||{};window.PLUMB_LOGOS.jupiter='data:image/png;base64,PLACEHOLDER_JUP';
+window.PLUMB_LOGOS=window.PLUMB_LOGOS||{};window.PLUMB_LOGOS.jupiter='assets/mark-jupiter.svg';
