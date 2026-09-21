@@ -2,7 +2,7 @@
 
 Ready desk software — lifetime paid seats.
 
-**Homepage:** https://plumb.elghaly.dev/
+**Homepage:** https://plumb-35.elghaly.dev/
 
 ✝️🧿🪬
 
