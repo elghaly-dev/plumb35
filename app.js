@@ -2,6 +2,7 @@
 (function(){
 'use strict';
 var s=document.createElement('script'); s.src='themes.js?v=menu16'; document.head.appendChild(s);
+var STARTER_PAY='https://buy.stripe.com/dRm9ANc357GB6DS0EB3Ru03';
 var ETH_PAY='0x379F62A4EFFDAE688c5963B44667501f481CFE6D';
 var SOL_PAY='4vsXfhPXgwmP2cDdypGf9QrmdpMUhxCxRJ5aDDPxfsYo';
 var BTC_PAY='bc1qgtc26k0vuu8j3uhpvpsevgladug5n6en4jzm00';
@@ -165,6 +166,13 @@ function cryptoBox(){
   bindCopy('copyBase', BASE_PAY, 'Copy Base');
 }
 cryptoBox();
+function wireStarter(){
+  var btn=document.getElementById('s1btn');
+  if(btn) btn.href=STARTER_PAY;
+}
+wireStarter();
+var _setLang=window.plumbSetLang;
+window.plumbSetLang=function(lang){ if(_setLang) _setLang(lang); wireStarter(); };
 var header=document.querySelector('header');
 var toTop=document.getElementById('toTop');
 var bar=document.getElementById('mobileCta');
