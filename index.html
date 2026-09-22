@@ -4,7 +4,7 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>Plumb — Ready Desk Software</title>
-<meta name="description" content="Self-hosted Solana desk hunt software. Telegram control, Jupiter routes, partial or full pair board. Ready in 3.35 hours. Lifetime paid seats."/>
+<meta name="description" content="Self-hosted Solana desk software. Ships dry/HOLD. Telegram control, Jupiter routes, partial or full pair board. Delivered in 3.35 hours after payment and brief. Lifetime seats."/>
 <meta name="theme-color" content="#050505"/>
 <meta name="color-scheme" content="dark"/>
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1"/>
@@ -12,7 +12,7 @@
 <link rel="canonical" href="https://plumb.elghaly.dev/"/>
 <meta property="og:site_name" content="Plumb — Elghaly"/>
 <meta property="og:title" content="Plumb — Ready Desk Software"/>
-<meta property="og:description" content="Solana desk hunt you run. Partial or full pair board. Pay → ready in 3.35 hours."/>
+<meta property="og:description" content="Self-hosted Solana desk. Ships dry/HOLD. Partial or full pair board. Delivered in 3.35 hours after payment and brief."/>
 <meta property="og:url" content="https://plumb.elghaly.dev/"/>
 <meta property="og:type" content="website"/>
 <meta property="og:locale" content="en_US"/>
@@ -22,7 +22,7 @@
 <meta property="og:image:alt" content="35 Plumb Elghaly — house mark"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="Plumb — Ready Desk Software"/>
-<meta name="twitter:description" content="Solana desk hunt you run. Partial or full pair board. Pay → ready in 3.35 hours."/>
+<meta name="twitter:description" content="Self-hosted Solana desk. Ships dry/HOLD. Partial or full pair board. Delivered in 3.35 hours after payment and brief."/>
 <meta name="twitter:image" content="https://plumb.elghaly.dev/brand-35-plumb.jpg"/>
 <link rel="icon" href="favicon.png" type="image/png"/>
 <link rel="icon" href="favicon.svg" type="image/svg+xml"/>
@@ -172,7 +172,38 @@ footer .net.monad span{color:var(--accent-warm)}
   font-weight:500;letter-spacing:.02em;
 }
 .delivery time{font-family:var(--serif);font-size:17px;color:var(--ink);font-weight:400}
+.delivery-note{font-size:11px;color:var(--muted-soft);font-weight:400;margin-left:4px}
 .hero-help{font-size:14px;color:var(--muted-soft);font-weight:400}
+.trust-band{
+  margin-top:var(--space-md);padding:var(--space-md) var(--space-lg);
+  border:1px solid var(--line-strong);border-radius:var(--radius);
+  background:var(--surface);
+}
+.trust-band p{font-size:14px;color:var(--muted);line-height:1.65;margin:0}
+.trust-band p+p{margin-top:10px}
+.trust-band strong{color:var(--ink);font-weight:500}
+.fixture-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--space-md);margin-top:var(--space-sm)}
+.fixture-grid figure{margin:0}
+.fixture-grid img,.fixture-grid object{
+  width:100%;border-radius:var(--radius);border:1px solid var(--line);
+  display:block;background:var(--surface);
+}
+.fixture-grid figcaption{padding-top:var(--space-sm);font-size:13px;color:var(--muted);line-height:1.55}
+.fixture-grid figcaption strong{
+  display:block;font-family:var(--serif);font-size:16px;color:var(--ink);
+  font-weight:400;margin-bottom:6px;
+}
+.delivery-terms{
+  display:grid;gap:1px;background:var(--line);
+  border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
+  margin-top:var(--space-sm);
+}
+.delivery-term{background:var(--surface);padding:var(--space-md) var(--space-lg)}
+.delivery-term h3{
+  font-family:var(--serif);font-size:20px;font-weight:400;
+  margin-bottom:8px;color:var(--ink);
+}
+.delivery-term p{color:var(--muted);font-size:14px;line-height:1.65}
 .pitch-line{font-size:15px;color:var(--muted);line-height:1.65;margin-top:var(--space-xs);font-weight:400}
 
 /* ── Why arbitrage ── */
@@ -628,7 +659,7 @@ footer .love{
 .js .reveal.is-in{opacity:1;transform:none}
 
 @media(max-width:900px){
-  .why-grid,.modes-grid,.seats,.gallery,.flash-gallery,.rails,.timeline{grid-template-columns:1fr}
+  .why-grid,.modes-grid,.seats,.gallery,.flash-gallery,.fixture-grid,.rails,.timeline{grid-template-columns:1fr}
   .wrap{padding:0 20px var(--space-xl)}
   header{flex-direction:row;align-items:center;margin:0 -20px;padding:12px 20px}
   .site-nav{display:none}
@@ -715,7 +746,7 @@ if(l&&/^(en|ar|ru|zh|de|es)$/.test(l)){d.lang=l;d.dir=l==='ar'?'rtl':'ltr';}}cat
    "name": "Plumb",
    "applicationCategory": "FinanceApplication",
    "operatingSystem": "Linux",
-   "description": "Self-hosted Solana desk software. Telegram control, Jupiter routes, partial or full arbitrage pair board. Delivered ready within 3.35 hours of payment. You host it and hold your own keys.",
+   "description": "Self-hosted Solana desk software. Ships dry/HOLD. Telegram control, Jupiter routes, partial or full arbitrage pair board. Delivered within 3.35 hours of confirmed payment and brief. You host it and hold your own keys.",
    "url": "https://plumb.elghaly.dev/",
    "image": "https://plumb.elghaly.dev/brand-35-plumb.jpg",
    "publisher": {
@@ -768,7 +799,7 @@ if(l&&/^(en|ar|ru|zh|de|es)$/.test(l)){d.lang=l;d.dir=l==='ar'?'rtl':'ltr';}}cat
      "name": "What exactly do I get after I pay?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "A ready bot built for the pairs you name in the brief, delivered within 3.35 hours, plus a live walkthrough to get it running. Starter and Pro ship the running binary; Source ships the source code as well. Every seat is controlled from Telegram."
+      "text": "A ready bot built for the pairs you name in the brief, delivered within 3.35 hours of confirmed payment and brief, plus a handover call to get it running on your host. Starter and Pro ship the running binary; Source ships the source code as well. Every seat is controlled from Telegram. Ships dry/HOLD by default."
      }
     },
     {
@@ -832,9 +863,10 @@ if(l&&/^(en|ar|ru|zh|de|es)$/.test(l)){d.lang=l;d.dir=l==='ar'?'rtl':'ltr';}}cat
       </a>
     </div>
     <nav class="site-nav" aria-label="Sections">
-      <a href="#desk-modes" id="navModes">Modes</a>
-      <a href="#rails" id="navRails">Rails</a>
-      <a href="#gallery" id="navBoards">Boards</a>
+      <a href="#what" id="navWhat">What</a>
+      <a href="#evidence" id="navEvidence">Evidence</a>
+      <a href="#custody" id="navCustody">Custody</a>
+      <a href="#delivery" id="navDelivery">Delivery</a>
       <a href="#faq" id="navFaq">FAQ</a>
       <a href="#seats" class="nav-cta" id="navSeats">Seats</a>
     </nav>
@@ -855,46 +887,22 @@ if(l&&/^(en|ar|ru|zh|de|es)$/.test(l)){d.lang=l;d.dir=l==='ar'?'rtl':'ltr';}}cat
   <section class="hero" id="top">
     <p class="flagship brand-lock">💭 you dream we build 🧠💡</p>
     <div class="hero-copy">
-      <p class="eyebrow" id="heroEyebrow">Lifetime seat · Solana live today</p>
-      <h1 id="heroH1">Your machine.<br/>Your keys.<br/>Live in 3.35 hours.</h1>
-      <p class="lede" id="heroLede">You pay, we build, you run it. A self-hosted Solana desk that watches your pairs, surfaces the gap, and fires on <strong>your</strong> rules — driven entirely from Telegram. Same house as <a href="https://35.elghaly.dev">35</a> and <a href="https://iris-35.elghaly.dev">IRIS</a>. We hand over the keys and walk you through it live. Nobody here ever touches your funds.</p>
+      <p class="eyebrow" id="heroEyebrow">Lifetime seat · ships dry · HOLD until you arm it</p>
+      <h1 id="heroH1">Your machine.<br/>Your keys.<br/>Delivered in 3.35 hours.</h1>
+      <p class="lede" id="heroLede">Self-hosted Solana desk software you run on your hardware. Watches your named pairs, surfaces gaps on your board, and evaluates against <strong>your</strong> rules — controlled from Telegram. Default posture is dry/HOLD: nothing sends until you explicitly arm it. Same house as <a href="https://35.elghaly.dev">35</a> and <a href="https://iris-35.elghaly.dev">IRIS</a>. We build, hand over, and stay reachable — we never touch your funds.</p>
       <p class="pitch-line" id="heroPitch">We build it. You run it. You keep it.</p>
     </div>
     <div class="hero-meta">
-      <p class="delivery" id="heroDelivery">Paid → running desk in <time>3.35</time> hours</p>
-      <p class="hero-help" id="heroHelp">Live walkthrough and setup included · no subscription to start</p>
+      <p class="delivery" id="heroDelivery">Payment confirmed + brief received → binary on your side in <time>3.35</time> hours <span class="delivery-note" id="heroDeliveryNote">(conditions in Delivery)</span></p>
+      <p class="hero-help" id="heroHelp">Handover call and setup included · no subscription to start</p>
     </div>
+    <aside class="trust-band reveal" aria-labelledby="trustTitle">
+      <p class="section-label" id="trustLabel">Before you pay</p>
+      <p id="trustTitle"><strong id="trustStrong">No profit promise.</strong> <span id="trustNote">Plumb is desk software sold as-is. Start small, run dry first. We make no claims about profit, returns, CLEAR, land, or any outcome. Not a token sale. Not an investment.</span></p>
+    </aside>
   </section>
 
-  <section class="brand-plate reveal" id="brand" aria-labelledby="bpTitle">
-    <div class="brand-plate-inner">
-      <figure class="brand-plate-figure">
-        <picture><source srcset="brand-35-plumb.webp" type="image/webp"/><img src="brand-35-plumb.jpg" width="1168" height="784" fetchpriority="high" decoding="async"
-             alt="35 Plumb Elghaly house mark — the numerals 35 in a teal-to-violet gradient over PLUMB and ELGHALY, beside the star, hamsa and eye marks"/></picture>
-      </figure>
-      <div class="brand-plate-copy">
-        <p class="section-label" id="bpLabel">The house mark</p>
-        <h2 class="section-title" id="bpTitle">35 · Plumb · Elghaly</h2>
-        <p class="section-note" id="bpNote">One house, one mark. Plumb is the desk software; 35 is the house that builds it. The same hands ship <a href="https://35.elghaly.dev">35</a> and <a href="https://iris-35.elghaly.dev">IRIS</a> — you are not buying from a storefront, you are buying from the people who wrote it.</p>
-        <ul class="brand-glyphs">
-          <li>
-            <span class="glyph" aria-hidden="true">✦</span>
-            <div><strong id="bg1h">The star</strong><span class="glyph-note" id="bg1">Direction. You name the pairs and the rules — the machine follows them, not us.</span></div>
-          </li>
-          <li>
-            <span class="glyph" aria-hidden="true">🪬</span>
-            <div><strong id="bg2h">The hamsa</strong><span class="glyph-note" id="bg2">Protection. Keys stay in your hands. You host it, you hold it, we never touch funds.</span></div>
-          </li>
-          <li>
-            <span class="glyph" aria-hidden="true">🧿</span>
-            <div><strong id="bg3h">The eye</strong><span class="glyph-note" id="bg3">Watch. Constant eyes on the book so you do not have to sit on the chart.</span></div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section id="desk-modes" class="reveal">
+  <section id="what" class="reveal" aria-labelledby="modesTitle">
     <div class="section-head">
       <p class="section-label" id="modesLabel">Two ways to run it</p>
       <h2 class="section-title" id="modesTitle">Start on spot. Open arbitrage when you are ready.</h2>
@@ -909,7 +917,7 @@ if(l&&/^(en|ar|ru|zh|de|es)$/.test(l)){d.lang=l;d.dir=l==='ar'?'rtl':'ltr';}}cat
       <article class="mode-card">
         <span class="mode-tag" id="m2t">Cross-venue · two prices</span>
         <h3 id="m2h">Arbitrage mode</h3>
-        <p id="m2">Arbitrage watches two prices across venues and routes — same asset, different quotes — surfaces the gap on your board, and acts when your rules pass. Full arbitrage board on Pro and Source.</p>
+        <p id="m2">Arbitrage watches two prices across venues and routes — same asset, different quotes — surfaces the gap on your board, and evaluates against your rules in dry/HOLD until you arm it. Full arbitrage board on Pro and Source.</p>
       </article>
     </div>
   </section>
@@ -923,63 +931,123 @@ if(l&&/^(en|ar|ru|zh|de|es)$/.test(l)){d.lang=l;d.dir=l==='ar'?'rtl':'ltr';}}cat
     <div class="why-grid">
       <article class="why-card">
         <h3 id="why1h">Two prices, one desk</h3>
-        <p id="why1">Markets do not sync perfectly. A pair can quote differently on two venues or Jupiter routes. Plumb watches those gaps, surfaces them on your board, and can act when your rules pass — on a self-hosted desk you run.</p>
+        <p id="why1">Markets do not sync perfectly. A pair can quote differently on two venues or Jupiter routes. Plumb watches those gaps, surfaces them on your board, and evaluates them against your rules — on a self-hosted desk you run in dry/HOLD until you choose to arm.</p>
       </article>
       <article class="why-card">
         <h3 id="why2h">Speed, eyes, your keys</h3>
-        <p id="why2">You cannot watch every book by hand. A desk bot brings speed and constant eyes; you bring the rules, the size, and the choice to run live or dry. Keys stay with you. Control stays on Telegram — no browser dashboard required.</p>
+        <p id="why2">You cannot watch every book by hand. A desk bot brings speed and constant eyes; you bring the rules, the size, and the choice to stay dry or arm when ready. Keys stay with you. Control stays on Telegram — no browser dashboard required.</p>
       </article>
       <article class="why-card">
-        <h3 id="why3h">Ready in 3.35 hours · we help we guide</h3>
-        <p id="why3">After you pay, your seat is ready in 3.35 hours — then a live walkthrough on the wire. We help, we guide; you continue on Telegram. Start small, learn the surfaces, treat early runs as training — not hype, not a promise of profit.</p>
+        <h3 id="why3h">Delivered in 3.35 hours · we help we guide</h3>
+        <p id="why3">After payment and brief, your binary is on your side within 3.35 hours — then a handover call. We help, we guide; you continue on Telegram. Start small, run dry first, treat early sessions as training — not hype, not a promise of profit.</p>
       </article>
     </div>
   </section>
 
-  <section id="timeline" class="reveal">
+  <section id="evidence" class="reveal" aria-labelledby="evTitle">
     <div class="section-head">
-      <p class="section-label" id="tlLabel">From payment to live</p>
-      <h2 class="section-title" id="tlTitle">Four steps. One afternoon.</h2>
-      <p class="section-note" id="tlNote">No onboarding queue, no ticket system, no waiting on a release. You pay, we build your desk, we walk you through it on the wire, and you take it from there on Telegram.</p>
+      <p class="section-label" id="evLabel">Check before you pay</p>
+      <h2 class="section-title" id="evTitle">Evidence you can verify yourself.</h2>
+      <p class="section-note" id="evNote">Fixtures you can open locally, on-chain path screenshots, and UI reference images — each labeled for what it is. None of this is a profit claim.</p>
     </div>
-    <div class="timeline">
-      <div class="timeline-step"><div class="num">1</div><p id="tl1">Pay seat + mail brief</p></div>
-      <div class="timeline-step"><div class="num">3.35h</div><p id="tl2">We build your desk</p></div>
-      <div class="timeline-step"><div class="num">→</div><p id="tl3">We guide · walkthrough &amp; setup</p></div>
-      <div class="timeline-step"><div class="num">✓</div><p id="tl4">You continue on Telegram</p></div>
+    <div class="section-head" style="margin-top:var(--space-lg)">
+      <p class="section-label" id="glanceLabel">Glance fixtures</p>
+      <h3 class="section-title" id="glanceTitle" style="font-size:clamp(22px,3vw,28px)">Synthetic Telegram boards you can open now.</h3>
+      <p class="section-note" id="glanceNote">Static SVG fixtures — not a running desk, not proof of fills. Use them to see menu layout and control surfaces before you buy.</p>
+    </div>
+    <div class="fixture-grid">
+      <figure>
+        <a href="desk-glance.svg" target="_blank" rel="noopener"><img src="desk-glance.svg" alt="Glance fixture — Telegram desk control layout" width="390" height="520" loading="lazy" decoding="async"/></a>
+        <figcaption>
+          <strong id="gf1h">Glance board</strong>
+          <span id="gf1">Open the SVG — inspect control layout. Dry/HOLD posture; no live execution implied.</span>
+        </figcaption>
+      </figure>
+      <figure>
+        <a href="desk-menu.svg" target="_blank" rel="noopener"><img src="desk-menu.svg" alt="Menu fixture — Telegram desk menu with Hold control" width="390" height="520" loading="lazy" decoding="async"/></a>
+        <figcaption>
+          <strong id="gf2h">Menu fixture</strong>
+          <span id="gf2">Hold control visible in the menu tree. Same file ships with the desk for local inspection.</span>
+        </figcaption>
+      </figure>
+    </div>
+    <div class="section-head" style="margin-top:var(--space-xl)">
+      <p class="section-label" id="flashLabel">Flash path · 15k USDC</p>
+      <h3 class="section-title" id="flashTitle" style="font-size:clamp(22px,3vw,28px)">Signed on chain. Not a screenshot of a spreadsheet.</h3>
+      <p class="section-note" id="flashNote">A Kamino flash borrow routed through Jupiter and repaid in one transaction. Wallets and figures are redacted — we are showing the path shape, not selling a number or return.</p>
+    </div>
+    <div class="flash-gallery">
+      <figure>
+        <picture><source srcset="assets/flash-15k-borrow.webp" type="image/webp"/><img src="assets/flash-15k-borrow.png" alt="Solscan — borrow flash loan 15,000 USDC from Kamino lending vault" width="390" height="844" loading="lazy" decoding="async"/></picture>
+        <figcaption>
+          <strong id="f1h">Borrow · Kamino</strong>
+          <span id="f1">Flash loan 15,000 USDC from the Kamino lending vault.</span>
+        </figcaption>
+      </figure>
+      <figure>
+        <picture><source srcset="assets/flash-15k-loop.webp" type="image/webp"/><img src="assets/flash-15k-loop.png" alt="Solscan key actions — 15k flash borrow, Jupiter swaps, repay to Kamino" width="390" height="844" loading="lazy" decoding="async"/></picture>
+        <figcaption>
+          <strong id="f2h">Loop · Jupiter path</strong>
+          <span id="f2">Borrow → Jupiter swaps → repay. Full round-trip in one transaction.</span>
+        </figcaption>
+      </figure>
+    </div>
+    <p class="flash-caption"><span id="flashSub">flash loan 15,000 USDC (Kamino) · Jupiter path · historical on-chain example</span></p>
+    <div class="section-head" style="margin-top:var(--space-xl)">
+      <p class="section-label" id="galLabel">Board UI reference</p>
+      <h3 class="section-title" id="galTitle" style="font-size:clamp(22px,3vw,28px)">Desk screenshots — UI reference only.</h3>
+      <p class="section-note" id="galNote">These are labeled screenshots of board layouts, not reproducible proof and not a promise of current market behavior. <strong>Starter</strong> ships the partial slice. <strong>Pro / Source</strong> ships the full arbitrage board.</p>
+    </div>
+    <div class="gallery">
+      <figure>
+        <picture><source srcset="board-partial-350.webp" type="image/webp"/><img class="board-shot" src="board-partial-350.png" alt="Starter partial pair board — UI reference, limited pairs" width="800" height="520" loading="lazy" decoding="async"/></picture>
+        <figcaption>
+          <span class="tag" id="g2t">Starter $299 · UI reference</span>
+          <strong id="g2h">350 · partial board</strong>
+          <span id="g2">Pair slice — 1–2 pairs, capped, fixed defaults. A limited slice, not the full desk.</span>
+        </figcaption>
+      </figure>
+      <figure>
+        <picture><source srcset="board-full-arb.webp" type="image/webp"/><img class="board-shot" src="board-full-arb.png" alt="Pro Source full multi-pair board — UI reference" width="1000" height="560" loading="lazy" decoding="async"/></picture>
+        <figcaption>
+          <span class="tag" id="g3t">Pro $699 · Source $1,999 · UI reference</span>
+          <strong id="g3h">Full arbitrage board</strong>
+          <span id="g3">Multi-pair desk layout — you set slip/tip, no size cap from us.</span>
+        </figcaption>
+      </figure>
     </div>
   </section>
 
-  <section id="how" class="reveal">
+  <section id="custody" class="reveal">
     <div class="section-head">
-      <p class="section-label" id="howLabel">How it works</p>
+      <p class="section-label" id="howLabel">Custody &amp; boundaries</p>
       <h2 class="section-title" id="howTitle">Everything stays on your side of the line.</h2>
-      <p class="section-note" id="howNote">You host the binary. You hold the keys. You set the size. We build it, hand it over, and stay reachable — we never sit between you and your wallet.</p>
+      <p class="section-note" id="howNote">Exact boundaries: what we hold, what we never hold, what we can see, and what we cannot.</p>
     </div>
     <div class="principles">
       <article class="principle">
-        <h3 id="p1h">We help, we guide</h3>
-        <p id="p1">After you pay, we will help — we will guide. Your desk is ready in 3.35 hours, then a live walkthrough on the wire. We build, you continue on Telegram.</p>
+        <h3 id="c1h">What you hold</h3>
+        <p id="c1">Your wallet keys, your funded wallet, your VPS or host, your RPC credentials, your Telegram bot token, and the running binary after handoff. You host it; you arm it; you accept the risk.</p>
+      </article>
+      <article class="principle">
+        <h3 id="c2h">What we never hold</h3>
+        <p id="c2">We do not custody funds, do not take a cut of fills, and have no access to your balance at any point. No pooled capital, no managed account, nothing to deposit with us.</p>
+      </article>
+      <article class="principle">
+        <h3 id="c3h">What we can see</h3>
+        <p id="c3">What you put in the brief, what you share on the handover call, and support messages you send us. During build we configure the binary for your named pairs — we do not run it on our infrastructure.</p>
+      </article>
+      <article class="principle">
+        <h3 id="c4h">What we cannot see</h3>
+        <p id="c4">Your private keys, your wallet balance, your live fills, or your RPC traffic after handoff. We are not in the signing path unless you explicitly share logs for support.</p>
       </article>
       <article class="principle">
         <h3 id="p2h">Telegram control</h3>
         <p id="p2">Start, pause, size, and read status from Telegram. No browser dashboard required — the desk talks to you where you already are.</p>
       </article>
       <article class="principle">
-        <h3 id="p3h">Solana desk hunt</h3>
-        <p id="p3">Watches your named pairs on Solana, surfaces spreads, and fires when your rules pass. Built for operators who want a machine on the book.</p>
-      </article>
-      <article class="principle">
-        <h3 id="p4h">Jupiter routes</h3>
-        <p id="p4">Routes through Jupiter for swap execution. You see the path the bot took and what landed on chain.</p>
-      </article>
-      <article class="principle">
-        <h3 id="p5h">Pair board</h3>
-        <p id="p5"><strong>Starter</strong> ships a <em>partial board</em> — 350-style slice, 1–2 pairs. <strong>Pro / Source</strong> ships the <em>full board</em> — multi-pair arbitrage desk.</p>
-      </article>
-      <article class="principle">
-        <h3 id="p6h">Slip / tip &amp; reports</h3>
-        <p id="p6">Starter runs fixed defaults. Pro and Source give you slippage and tip knobs. Session summaries and fill notes ping back to Telegram.</p>
+        <h3 id="p3h">Solana desk · dry/HOLD default</h3>
+        <p id="p3">Watches your named pairs on Solana, surfaces spreads, and evaluates against your rules while in dry/HOLD. Nothing sends until you explicitly arm it on your machine.</p>
       </article>
       <article class="principle">
         <h3 id="p7h">Desk software only</h3>
@@ -988,17 +1056,58 @@ if(l&&/^(en|ar|ru|zh|de|es)$/.test(l)){d.lang=l;d.dir=l==='ar'?'rtl':'ltr';}}cat
     </div>
   </section>
 
+  <section id="delivery" class="reveal">
+    <div class="section-head">
+      <p class="section-label" id="delLabel">Delivery &amp; support</p>
+      <h2 class="section-title" id="delTitle">What 3.35 hours means — and what happens if it slips.</h2>
+      <p class="section-note" id="delNote">Measured from confirmed payment plus a complete brief, to the binary delivered on your side and ready for handover. Not a promise of armed trading.</p>
+    </div>
+    <div class="delivery-terms">
+      <article class="delivery-term">
+        <h3 id="dt1h">Clock starts when</h3>
+        <p id="dt1">Payment is confirmed and your brief includes seat tier, 1–2 pairs (Starter) or named pairs (Pro/Source), and a reachable email. Standard build scope only.</p>
+      </article>
+      <article class="delivery-term">
+        <h3 id="dt2h">Delivered means</h3>
+        <p id="dt2">Binary configured for your brief, transferred to your host or sent for you to install, plus handover call scheduled within 24 hours of delivery. You run dry/HOLD first.</p>
+      </article>
+      <article class="delivery-term">
+        <h3 id="dt3h">You supply</h3>
+        <p id="dt3">A machine that stays online (VPS is fine), a Solana RPC endpoint, a Telegram bot token, and a wallet you control. We walk through each on the handover call — they need not be ready before you pay.</p>
+      </article>
+      <article class="delivery-term">
+        <h3 id="dt4h">If it takes longer</h3>
+        <p id="dt4">Incomplete brief, scope expansion, or missing host access pauses the clock. We agree a new window before you pay extra. If we miss an agreed window, contact <a href="mailto:support@elghaly.dev">support@elghaly.dev</a> — resolution case by case, not a performance guarantee.</p>
+      </article>
+      <article class="delivery-term">
+        <h3 id="dt5h">Updates &amp; follow-up</h3>
+        <p id="dt5">Starter includes 3 months of updates; Pro and Source include 6 months. After that, optional follow-up is $149/mo — never required to keep what you bought. Lifetime licence; nothing breaks when the window ends.</p>
+      </article>
+    </div>
+    <div class="section-head" style="margin-top:var(--space-xl)">
+      <p class="section-label" id="tlLabel">Handoff steps</p>
+      <h3 class="section-title" id="tlTitle" style="font-size:clamp(22px,3vw,28px)">Four steps after payment.</h3>
+      <p class="section-note" id="tlNote">No onboarding queue, no ticket system. You pay, we build your desk, we walk you through it on a handover call, and you continue on Telegram.</p>
+    </div>
+    <div class="timeline">
+      <div class="timeline-step"><div class="num">1</div><p id="tl1">Pay seat + mail brief</p></div>
+      <div class="timeline-step"><div class="num">3.35h</div><p id="tl2">Binary on your side</p></div>
+      <div class="timeline-step"><div class="num">→</div><p id="tl3">Handover call &amp; setup</p></div>
+      <div class="timeline-step"><div class="num">✓</div><p id="tl4">You continue on Telegram</p></div>
+    </div>
+  </section>
+
   <section id="rails" class="reveal">
     <div class="section-head">
       <p class="section-label" id="railsLabel">Execution rails</p>
       <h2 class="section-title" id="railsTitle">Run it on rails you choose.</h2>
-      <p class="section-note" id="railsNote">We recommend <strong>Triton</strong> for your Solana RPC and gRPC path — reads, streaming, and stable subscriptions on the wire. For quote rails, <strong>Titan</strong> is the fast routing eye on the desk: quick quotes and path visibility before you act. Titan / gRPC is not bundled in every seat by default — hook points on Pro and Source, or quoted from $400 after the brief.</p>
+      <p class="section-note" id="railsNote">We run on third-party RPC and routing infrastructure — not partnerships or endorsements. We recommend <strong>Triton</strong> for Solana RPC/gRPC; <strong>Titan</strong> is an optional quote-rail integration. Titan / gRPC is not bundled in every seat — hook points on Pro and Source, or quoted from $400 after the brief.</p>
     </div>
     <div class="rails">
       <article class="rail">
         <span class="rail-tag" id="r1t">Included · Solana</span>
         <h3 id="r1h">Jupiter rail</h3>
-        <p id="r1">Default execution path on Solana through Jupiter. This is what ships and what we walk you through on day one.</p>
+        <p id="r1">Default execution path on Solana through Jupiter. This is what ships and what we cover on the handover call.</p>
       </article>
       <article class="rail">
         <span class="rail-tag" id="r2t">Optional · not default</span>
@@ -1008,36 +1117,36 @@ if(l&&/^(en|ar|ru|zh|de|es)$/.test(l)){d.lang=l;d.dir=l==='ar'?'rtl':'ltr';}}cat
       <article class="rail">
         <span class="rail-tag muted" id="r3t">Quote rail · not default</span>
         <h3 id="r3h">Titan · quote &amp; routing eye</h3>
-        <p id="r3">Titan is the fast quote rail on the desk — routing visibility and path checks before you fire. Not turned on for Starter by default. Pro and Source include hook points; full Titan / gRPC pipe quoted from $400 after the brief.</p>
+        <p id="r3">Titan is an optional quote-rail integration — routing visibility and path checks in dry/HOLD before you arm. Not turned on for Starter by default. Pro and Source include hook points; full Titan / gRPC pipe quoted from $400 after the brief.</p>
       </article>
       <article class="rail">
         <span class="rail-tag muted" id="r4t">Expansion · brief</span>
         <h3 id="r4h">BTC / ETH paths</h3>
-        <p id="r4">Solana is live today. Bitcoin and Ethereum routes are expansion work — discuss on Source or custom brief. We do <em>not</em> claim live BTC/ETH execution on standard seats.</p>
+        <p id="r4">Solana is the supported network on standard seats. Bitcoin and Ethereum routes are expansion work — discuss on Source or custom brief. We do <em>not</em> claim BTC/ETH execution on standard seats.</p>
       </article>
     </div>
-    <div class="rail-partners" aria-label="RPC and routing partners">
-      <p class="rail-partners-label" id="partnersLabel">RPC &amp; routing partners</p>
+    <div class="rail-partners" aria-label="RPC and routing dependencies">
+      <p class="rail-partners-label" id="partnersLabel">Infrastructure we run on</p>
       <div class="rail-partners-row">
         <a class="partner partner-rec" href="https://triton.one/" target="_blank" rel="noopener noreferrer" title="Triton One — Solana RPC / gRPC">
           <svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><circle cx="32" cy="32" r="30" stroke="currentColor" stroke-width="1.5" opacity="0.35"/><path d="M32 8c12 0 22 10 22 22 0 4.2-1.2 8.1-3.2 11.4-8.4-5.2-18.6-4.8-26.4 1.2C22.4 16.8 26.6 8 32 8z" fill="currentColor" opacity="0.22"/><path d="M32 14c8.8 0 16 7.2 16 16 0 3.1-.9 6-2.4 8.5-6.1-3.8-13.5-3.5-19.2.9C28.6 22.2 30 14 32 14z" fill="currentColor" opacity="0.38"/><path d="M32 20c5.5 0 10 4.5 10 10 0 1.9-.5 3.7-1.5 5.3-3.8-2.4-8.5-2.2-12.1.6C30.4 27.6 31 20 32 20z" fill="currentColor" opacity="0.55"/><circle cx="32" cy="32" r="27" stroke="currentColor" stroke-width="1" opacity="0.5"/></svg>
           <span class="partner-name">Triton</span>
-          <span class="partner-note" id="pTriton">RPC / gRPC · we recommend</span>
+          <span class="partner-note" id="pTriton">RPC dependency · we run on</span>
         </a>
         <span class="partner partner-quote" title="Titan — fast quote rail for the desk">
           <svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><circle cx="32" cy="32" r="26" stroke="currentColor" stroke-width="1.5" opacity="0.45"/><path d="M32 14v36M20 32h24" stroke="currentColor" stroke-width="1.2" opacity="0.35"/><circle cx="32" cy="32" r="6" fill="currentColor" opacity="0.5"/></svg>
           <span class="partner-name">Titan</span>
-          <span class="partner-note" id="pTitan">Quote rails · after brief</span>
+          <span class="partner-note" id="pTitan">Optional integration · not bundled</span>
         </span>
         <a class="partner" href="https://www.helius.dev/" target="_blank" rel="noopener noreferrer" title="Helius — Solana RPC / API">
           <svg viewBox="0 0 400 400" fill="none" aria-hidden="true"><path d="M200 40l46 81-92-15 46-66z" fill="currentColor" opacity="0.55"/><path d="M200 360c-20 0-36-16-36-36h72c0 20-16 36-36 36z" fill="currentColor" opacity="0.35"/><path d="M200 80c-72 0-130 58-130 130s58 130 130 130 130-58 130-130-58-130-130-130z" stroke="currentColor" stroke-width="12" opacity="0.25"/></svg>
           <span class="partner-name">Helius</span>
-          <span class="partner-note" id="pHelius">RPC / API path</span>
+          <span class="partner-note" id="pHelius">RPC dependency · we run on</span>
         </a>
-        <span class="partner" title="CoinStuck — routing partner">
+        <span class="partner" title="CoinStuck — routing reference">
           <svg viewBox="0 0 64 64" fill="none" aria-hidden="true"><circle cx="32" cy="22" r="14" stroke="currentColor" stroke-width="1.5" opacity="0.55"/><circle cx="32" cy="32" r="14" stroke="currentColor" stroke-width="1.5" opacity="0.4"/><circle cx="32" cy="42" r="14" stroke="currentColor" stroke-width="1.5" opacity="0.28"/></svg>
           <span class="partner-name">CoinStuck</span>
-          <span class="partner-note" id="pCoinStuck">Routing partner</span>
+          <span class="partner-note" id="pCoinStuck">Named reference · no partnership</span>
         </span>
       </div>
     </div>
@@ -1068,55 +1177,32 @@ if(l&&/^(en|ar|ru|zh|de|es)$/.test(l)){d.lang=l;d.dir=l==='ar'?'rtl':'ltr';}}cat
     </div>
   </section>
 
-  <section id="gallery" class="reveal">
-    <div class="section-head">
-      <p class="section-label" id="galLabel">Same house · different boards</p>
-      <h2 class="section-title" id="galTitle">This is the actual desk.</h2>
-      <p class="section-note" id="galNote">Not a mockup — screenshots of the running board. <strong>Starter</strong> ships the partial slice. <strong>Pro / Source</strong> ships the full arbitrage board.</p>
-    </div>
-    <div class="gallery">
-      <figure>
-        <picture><source srcset="board-partial-350.webp" type="image/webp"/><img class="board-shot" src="board-partial-350.png" alt="350 Starter partial pair board — limited pairs, slice of the desk" width="800" height="520" loading="lazy" decoding="async"/></picture>
-        <figcaption>
-          <span class="tag" id="g2t">Starter $299</span>
-          <strong id="g2h">350 · partial board</strong>
-          <span id="g2">Pair slice — 1–2 pairs, capped, fixed defaults. A limited slice, not the full desk.</span>
-        </figcaption>
+  <section class="brand-plate reveal" id="brand" aria-labelledby="bpTitle">
+    <div class="brand-plate-inner">
+      <figure class="brand-plate-figure">
+        <picture><source srcset="brand-35-plumb.webp" type="image/webp"/><img src="brand-35-plumb.jpg" width="1168" height="784" loading="lazy" decoding="async"
+             alt="35 Plumb Elghaly house mark — the numerals 35 in a teal-to-violet gradient over PLUMB and ELGHALY, beside the star, hamsa and eye marks"/></picture>
       </figure>
-      <figure>
-        <picture><source srcset="board-full-arb.webp" type="image/webp"/><img class="board-shot" src="board-full-arb.png" alt="Arb Pro Source full multi-pair board — KEEP-style desk" width="1000" height="560" loading="lazy" decoding="async"/></picture>
-        <figcaption>
-          <span class="tag" id="g3t">Pro $699 · Source $1,999</span>
-          <strong id="g3h">Full arbitrage board</strong>
-          <span id="g3">Multi-pair desk — you set slip/tip, no size cap from us. Jupiter routes on the wire.</span>
-        </figcaption>
-      </figure>
+      <div class="brand-plate-copy">
+        <p class="section-label" id="bpLabel">The house mark</p>
+        <h2 class="section-title" id="bpTitle">35 · Plumb · Elghaly</h2>
+        <p class="section-note" id="bpNote">One house, one mark. Plumb is the desk software; 35 is the house that builds it. The same hands ship <a href="https://35.elghaly.dev">35</a> and <a href="https://iris-35.elghaly.dev">IRIS</a> — you are not buying from a storefront, you are buying from the people who wrote it.</p>
+        <ul class="brand-glyphs">
+          <li>
+            <span class="glyph" aria-hidden="true">✦</span>
+            <div><strong id="bg1h">The star</strong><span class="glyph-note" id="bg1">Direction. You name the pairs and the rules — the machine follows them, not us.</span></div>
+          </li>
+          <li>
+            <span class="glyph" aria-hidden="true">🪬</span>
+            <div><strong id="bg2h">The hamsa</strong><span class="glyph-note" id="bg2">Protection. Keys stay in your hands. You host it, you hold it, we never touch funds.</span></div>
+          </li>
+          <li>
+            <span class="glyph" aria-hidden="true">🧿</span>
+            <div><strong id="bg3h">The eye</strong><span class="glyph-note" id="bg3">Watch. Constant eyes on the book so you do not have to sit on the chart.</span></div>
+          </li>
+        </ul>
+      </div>
     </div>
-  </section>
-
-  <section id="flash-proof" class="reveal">
-    <div class="section-head">
-      <p class="section-label" id="flashLabel">Flash path · 15k USDC</p>
-      <h2 class="section-title" id="flashTitle">Signed on chain. Not a screenshot of a spreadsheet.</h2>
-      <p class="section-note" id="flashNote">A real Kamino flash borrow routed through Jupiter and repaid in one transaction. Wallets and figures are redacted — we are showing the path, not selling a number.</p>
-    </div>
-    <div class="flash-gallery">
-      <figure>
-        <picture><source srcset="assets/flash-15k-borrow.webp" type="image/webp"/><img src="assets/flash-15k-borrow.png" alt="Solscan — borrow flash loan 15,000 USDC from Kamino lending vault" width="390" height="844" loading="lazy" decoding="async"/></picture>
-        <figcaption>
-          <strong id="f1h">Borrow · Kamino</strong>
-          <span id="f1">Flash loan 15,000 USDC from the Kamino lending vault.</span>
-        </figcaption>
-      </figure>
-      <figure>
-        <picture><source srcset="assets/flash-15k-loop.webp" type="image/webp"/><img src="assets/flash-15k-loop.png" alt="Solscan key actions — 15k flash borrow, Jupiter swaps, repay to Kamino" width="390" height="844" loading="lazy" decoding="async"/></picture>
-        <figcaption>
-          <strong id="f2h">Loop · Jupiter path</strong>
-          <span id="f2">Borrow → Jupiter swaps → repay. Full round-trip in one transaction.</span>
-        </figcaption>
-      </figure>
-    </div>
-    <p class="flash-caption"><em class="brand-lock">every mind earn his profit</em><span id="flashSub">flash loan 15,000 USDC (Kamino) · Jupiter path</span></p>
   </section>
 
   <section id="seats" class="reveal">
@@ -1133,8 +1219,8 @@ if(l&&/^(en|ar|ru|zh|de|es)$/.test(l)){d.lang=l;d.dir=l==='ar'?'rtl':'ltr';}}cat
         <p class="seat-tier" id="s1tier">Starter · 350 partial · $299</p>
         <p class="seat-price">$299 <span>once</span></p>
         <p class="seat-for" id="s1for">First machine — learn the path</p>
-        <p class="seat-delivery" id="s1del">Ready in <time>3.35</time> hours after pay</p>
-        <p class="seat-help" id="s1help">After pay — we will help, we will guide</p>
+        <p class="seat-delivery" id="s1del">Binary on your side in <time>3.35</time> hours after pay + brief</p>
+        <p class="seat-help" id="s1help">Handover call included · ships dry/HOLD</p>
         <ul id="s1f">
           <li>Partial pair board — limited slice, not full desk</li>
           <li>1–2 pairs you name in the brief</li>
@@ -1153,8 +1239,8 @@ if(l&&/^(en|ar|ru|zh|de|es)$/.test(l)){d.lang=l;d.dir=l==='ar'?'rtl':'ltr';}}cat
         <p class="seat-tier" id="s2tier">Pro · full arbitrage · $699</p>
         <p class="seat-price">$699 <span>once</span></p>
         <p class="seat-for" id="s2for">Operator who already trades</p>
-        <p class="seat-delivery" id="s2del">Ready in <time>3.35</time> hours after pay</p>
-        <p class="seat-help" id="s2help">After pay — we will help, we will guide</p>
+        <p class="seat-delivery" id="s2del">Binary on your side in <time>3.35</time> hours after pay + brief</p>
+        <p class="seat-help" id="s2help">Handover call included · ships dry/HOLD</p>
         <ul id="s2f">
           <li>Full multi-pair arbitrage board</li>
           <li>You set slippage &amp; tip</li>
@@ -1173,12 +1259,12 @@ if(l&&/^(en|ar|ru|zh|de|es)$/.test(l)){d.lang=l;d.dir=l==='ar'?'rtl':'ltr';}}cat
         <p class="seat-tier" id="s3tier">Source · full arbitrage + code · $1,999</p>
         <p class="seat-price">$1,999 <span>once</span></p>
         <p class="seat-for" id="s3for">Desk that wants the code</p>
-        <p class="seat-delivery" id="s3del">Ready in <time>3.35</time> hours after pay</p>
-        <p class="seat-help" id="s3help">After pay — we will help, we will guide</p>
+        <p class="seat-delivery" id="s3del">Binary on your side in <time>3.35</time> hours after pay + brief</p>
+        <p class="seat-help" id="s3help">Handover call included · ships dry/HOLD</p>
         <ul id="s3f">
           <li>Everything in Pro, plus the source</li>
           <li>Full board + pair workshop</li>
-          <li>BTC/ETH expansion discussed here — not fake live claims</li>
+          <li>BTC/ETH expansion discussed here — not claimed on standard seats</li>
           <li>You own the changes after handoff</li>
           <li>6 months of updates + workshop</li>
           <li>No size cap from us</li>
@@ -1201,10 +1287,10 @@ if(l&&/^(en|ar|ru|zh|de|es)$/.test(l)){d.lang=l;d.dir=l==='ar'?'rtl':'ltr';}}cat
           <tr><td>Board shape</td><td class="yes">Partial · 350-style slice</td><td class="yes">Full arbitrage board</td><td class="yes">Full arbitrage board + source</td></tr>
           <tr><td>Who it is for</td><td>First machine, learn the path</td><td>Operator who already trades</td><td>Desk that wants the code</td></tr>
           <tr><td>Pairs</td><td>1–2 on partial board</td><td class="yes">Multi-pair full board</td><td class="yes">Workshop + you edit</td></tr>
-          <tr><td>What you receive</td><td>Ready binary + walkthrough</td><td>Ready binary + controls</td><td class="yes">Source + seat</td></tr>
+          <tr><td>What you receive</td><td>Ready binary + handover call</td><td>Ready binary + controls</td><td class="yes">Source + seat</td></tr>
           <tr><td>Telegram control</td><td class="yes">Yes</td><td class="yes">Yes</td><td class="yes">Yes</td></tr>
-          <tr><td>Ready after pay</td><td class="yes">3.35 hours</td><td class="yes">3.35 hours</td><td class="yes">3.35 hours</td></tr>
-          <tr><td>Network today</td><td colspan="3">Solana live · BTC/ETH expansion via Source / custom brief only</td></tr>
+          <tr><td>Delivered after pay</td><td class="yes">3.35 hours + brief</td><td class="yes">3.35 hours + brief</td><td class="yes">3.35 hours + brief</td></tr>
+          <tr><td>Default posture</td><td colspan="3">Dry/HOLD until you arm · Solana on standard seats · BTC/ETH via Source / custom brief only</td></tr>
           <tr><td>Updates included</td><td>3 months</td><td class="yes">6 months</td><td class="yes">6 months + workshop</td></tr>
           <tr><td>Trade size cap</td><td>Capped seat</td><td class="yes">No cap from us</td><td class="yes">No cap from us</td></tr>
           <tr><td>Slippage &amp; tip</td><td>Fixed defaults</td><td class="yes">You set</td><td class="yes">You change the code</td></tr>
@@ -1212,7 +1298,7 @@ if(l&&/^(en|ar|ru|zh|de|es)$/.test(l)){d.lang=l;d.dir=l==='ar'?'rtl':'ltr';}}cat
           <tr><td>Private RPC</td><td class="no">—</td><td class="yes">Hook points</td><td class="yes">Yours to edit</td></tr>
           <tr><td>Workshop</td><td class="no">—</td><td class="no">—</td><td class="yes">Included</td></tr>
           <tr class="row-all"><td>Keys</td><td colspan="3">Stay with you — always</td></tr>
-          <tr class="row-all"><td>Handoff</td><td colspan="3">We build → walkthrough → you continue on Telegram</td></tr>
+          <tr class="row-all"><td>Handoff</td><td colspan="3">We build → handover call → you continue on Telegram</td></tr>
           <tr class="row-all"><td>Titan / gRPC</td><td colspan="3">Not included in any seat — extra after brief</td></tr>
         </tbody>
       </table>
@@ -1233,7 +1319,7 @@ if(l&&/^(en|ar|ru|zh|de|es)$/.test(l)){d.lang=l;d.dir=l==='ar'?'rtl':'ltr';}}cat
       </details>
       <details>
         <summary id="q2">What exactly do I get after I pay?</summary>
-        <div class="faq-body" id="a2">A ready bot built for the pairs you name in the brief, delivered within 3.35 hours, plus a live walkthrough on the wire to get it running. Starter and Pro ship the running binary; Source ships the source code as well. Every seat is controlled from Telegram — no browser dashboard to keep open.</div>
+        <div class="faq-body" id="a2">A ready bot built for the pairs you name in the brief, delivered within 3.35 hours of confirmed payment and brief, plus a handover call to get it running on your host. Starter and Pro ship the running binary; Source ships the source code as well. Every seat is controlled from Telegram — no browser dashboard to keep open. Ships dry/HOLD by default.</div>
       </details>
       <details>
         <summary id="q3">Will this make me money?</summary>
@@ -1259,11 +1345,11 @@ if(l&&/^(en|ar|ru|zh|de|es)$/.test(l)){d.lang=l;d.dir=l==='ar'?'rtl':'ltr';}}cat
   </section>
 
   <section class="cta-band reveal" aria-labelledby="ctaTitle">
-    <h2 id="ctaTitle">Tell us your pairs. Run your desk tonight.</h2>
-    <p id="ctaNote">Pick a seat and send the brief — or write first if you want to talk through which board fits. We answer around the clock.</p>
+    <h2 id="ctaTitle">Questions before you pay?</h2>
+    <p id="ctaNote">Write with your pairs and host plan — or pick a seat above if you are ready. We answer around the clock.</p>
     <div class="cta-actions">
-      <a class="btn btn-primary" href="#seats" id="ctaBtn">Choose your seat</a>
-      <a class="btn btn-ghost" href="mailto:support@elghaly.dev?subject=Plumb%20seat%20%E2%80%94%20brief" id="ctaAlt">Ask a question first</a>
+      <a class="btn btn-primary" href="mailto:support@elghaly.dev?subject=Plumb%20seat%20%E2%80%94%20brief" id="ctaBtn">Mail us first</a>
+      <a class="btn btn-ghost" href="#seats" id="ctaAlt">Review seats again</a>
     </div>
     <div class="cta-brief">
       <p class="cta-brief-label" id="briefLabel">Put this in your brief</p>
@@ -1271,7 +1357,7 @@ if(l&&/^(en|ar|ru|zh|de|es)$/.test(l)){d.lang=l;d.dir=l==='ar'?'rtl':'ltr';}}cat
         <li id="bi1">Which seat you took</li>
         <li id="bi2">The pairs you want watched</li>
         <li id="bi3">Where it will run: VPS or your own box</li>
-        <li id="bi4">Your timezone, for the walkthrough</li>
+        <li id="bi4">Your timezone, for the handover call</li>
       </ul>
     </div>
   </section>
@@ -1284,7 +1370,7 @@ if(l&&/^(en|ar|ru|zh|de|es)$/.test(l)){d.lang=l;d.dir=l==='ar'?'rtl':'ltr';}}cat
     <div class="networks-block" aria-label="Network family">
       <p class="networks-label" id="netLabel">Networks</p>
       <div class="networks-row">
-        <span class="net net-live" id="netSolTitle" title="Solana — live desk today">
+        <span class="net net-live" id="netSolTitle" title="Solana — supported network">
           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 16.5l7.5-4.3c.4-.2.8-.2 1.2 0L20 16.5c.6.3.6 1.2 0 1.5l-7.5 4.3c-.4.2-.8.2-1.2 0L4 18c-.6-.3-.6-1.2 0-1.5z" fill="#14f195" opacity=".85"/><path d="M4 12l7.5-4.3c.4-.2.8-.2 1.2 0L20 12c.6.3.6 1.2 0 1.5l-7.5 4.3c-.4.2-.8.2-1.2 0L4 13.5c-.6-.3-.6-1.2 0-1.5z" fill="#9945ff" opacity=".75"/><path d="M4 7.5l7.5-4.3c.4-.2.8-.2 1.2 0L20 7.5c.6.3.6 1.2 0 1.5l-7.5 4.3c-.4.2-.8.2-1.2 0L4 9c-.6-.3-.6-1.2 0-1.5z" fill="#9945ff" opacity=".55"/></svg>
           <span>SOL</span>
         </span>
@@ -1305,7 +1391,7 @@ if(l&&/^(en|ar|ru|zh|de|es)$/.test(l)){d.lang=l;d.dir=l==='ar'?'rtl':'ltr';}}cat
           <span>MONAD</span>
         </span>
       </div>
-      <p class="networks-note" id="netNote">Solana is the live desk today · ETH · BTC · ARB · MONAD shown as network family / expansion</p>
+      <p class="networks-note" id="netNote">Solana is the supported network on standard seats · ETH · BTC · ARB · MONAD shown as expansion paths only</p>
     </div>
     <p class="love brand-lock">made by love ❤️</p>
     <p class="addr">548 Market Street, San Francisco, California 94104</p>
@@ -1314,7 +1400,7 @@ if(l&&/^(en|ar|ru|zh|de|es)$/.test(l)){d.lang=l;d.dir=l==='ar'?'rtl':'ltr';}}cat
 </div>
 
 <div class="mobile-cta" id="mobileCta" hidden>
-  <span><strong id="barTitle">Lifetime seat · from $299</strong><span id="barNote">Live desk in 3.35 hours</span></span>
+  <span><strong id="barTitle">Lifetime seat · from $299</strong><span id="barNote">Delivered in 3.35 hours · dry/HOLD</span></span>
   <a class="btn btn-primary" href="#seats" id="barBtn">See seats</a>
 </div>
 

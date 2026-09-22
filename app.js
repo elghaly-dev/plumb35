@@ -2,7 +2,6 @@
 (function(){
 'use strict';
 var s=document.createElement('script'); s.src='themes.js?v=menu16'; document.head.appendChild(s);
-var PAY350='https://buy.stripe.com/dRm9ANc357GB6DS0EB3Ru03';
 var ETH_PAY='0x379F62A4EFFDAE688c5963B44667501f481CFE6D';
 var SOL_PAY='4vsXfhPXgwmP2cDdypGf9QrmdpMUhxCxRJ5aDDPxfsYo';
 var BTC_PAY='bc1qgtc26k0vuu8j3uhpvpsevgladug5n6en4jzm00';
@@ -57,29 +56,6 @@ style.textContent=[
   '@media (max-width:720px){.rec-frames{grid-template-columns:1fr}.ai-tile{width:88px;height:88px}.bl-stack{display:none !important}footer .net-tile{width:64px;height:64px}footer .net{width:72px!important}}'
 ].join('\n');
 document.head.appendChild(style);
-function money(){
-  function walk(n){
-    if(n.nodeType===3){
-      if(n.nodeValue && n.nodeValue.indexOf('299')!==-1){
-        n.nodeValue=n.nodeValue.replace(/\$299/g,'$350').replace(/\b299\b/g,'350');
-      }
-      return;
-    }
-    var kids=n.childNodes||[];
-    for(var i=0;i<kids.length;i++) walk(kids[i]);
-  }
-  walk(document.body);
-  var btn=document.getElementById('s1btn');
-  if(btn){ btn.textContent='Pay $350'; btn.href=PAY350; }
-  var bar=document.getElementById('barTitle');
-  if(bar) bar.textContent='Lifetime seat \u00b7 from $350';
-}
-money(); setTimeout(money,200); setTimeout(money,800); setTimeout(money,2000);
-var _set=window.plumbSetLang;
-window.plumbSetLang=function(lang){ if(_set) _set(lang); money(); };
-document.querySelectorAll('.lang-btn').forEach(function(b){
-  b.addEventListener('click', function(){ setTimeout(money,0); setTimeout(money,50); });
-});
 function srcOf(key, fallback){
   var L=window.PLUMB_LOGOS||{};
   return L[key] || fallback || '';
@@ -112,11 +88,10 @@ function paint(){
   var rpcBox=null;
   document.querySelectorAll('.rail-partners').forEach(function(box){ if(!box.classList.contains('recommend-tools')) rpcBox=box; });
   if(rpcBox){
-    rpcBox.innerHTML='<p class="rail-partners-label">RPC</p><div class="rail-partners-row">'+tile('https://triton.one/',srcOf('triton','assets/triton-logomark.svg'),'Triton','We recommend')+tile('https://www.helius.dev/',srcOf('helius','assets/logo-helius.svg'),'Helius','')+tile('https://www.quicknode.com/',srcOf('quicknode',''),'QuickNode','')+tile('https://orbitflare.com/','assets/mark-orbitflare.svg','OrbitFlare','')+tile('https://chainstack.com/',srcOf('chainstack','assets/mark-chainstack.svg'),'Chainstack','')+tile('https://rpcfast.com/',srcOf('fastrpc'),'FastRPC','')+'</div>';
+    rpcBox.innerHTML='<p class="rail-partners-label">Infrastructure we run on</p><div class="rail-partners-row">'+tile('https://triton.one/',srcOf('triton','assets/triton-logomark.svg'),'Triton','RPC dependency')+tile('https://www.helius.dev/',srcOf('helius','assets/logo-helius.svg'),'Helius','RPC dependency')+tile('https://www.quicknode.com/',srcOf('quicknode',''),'QuickNode','RPC option')+tile('https://orbitflare.com/','assets/mark-orbitflare.svg','OrbitFlare','RPC option')+tile('https://chainstack.com/',srcOf('chainstack','assets/mark-chainstack.svg'),'Chainstack','RPC option')+tile('https://rpcfast.com/',srcOf('fastrpc'),'FastRPC','RPC option')+'</div>';
   }
   stamp('#r1h', srcOf('jupiter'), 'Jupiter');
   stamp('#r2h', srcOf('jito'), 'Jito');
-  stamp('#p4h', srcOf('jupiter'), 'Jupiter');
   stamp('#p2h', srcOf('telegram'), 'Telegram');
   hideTitan();
 }
@@ -139,7 +114,7 @@ function paintNets(){
     var src=N[key]||'';
     return '<span class="net '+cls+'" id="'+id+'" title="'+title+'"><span class="net-tile">'+(src?'<img src="'+src+'" alt="'+label+'"/>':'')+'</span><span>'+label+'</span></span>';
   }
-  row.innerHTML=net('net-live','netSolTitle','Solana \u2014 live desk today','sol','SOL')+net('','netEthTitle','Ethereum \u2014 expansion path','eth','ETH')+net('','netBtcTitle','Bitcoin \u2014 expansion path','btc','BTC')+net('','netArbTitle','Arbitrum \u2014 expansion path','arb','ARB')+net('monad','netMonadTitle','Monad \u2014 expansion path','monad','MONAD');
+  row.innerHTML=net('net-live','netSolTitle','Solana \u2014 supported network','sol','SOL')+net('','netEthTitle','Ethereum \u2014 expansion path','eth','ETH')+net('','netBtcTitle','Bitcoin \u2014 expansion path','btc','BTC')+net('','netArbTitle','Arbitrum \u2014 expansion path','arb','ARB')+net('monad','netMonadTitle','Monad \u2014 expansion path','monad','MONAD');
 }
 window.PLUMB_NETS={
   sol:'https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/solana/info/logo.png',
@@ -207,8 +182,4 @@ function onScroll(){
 window.addEventListener('scroll', onScroll, {passive:true});
 onScroll();
 document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('is-in'); });
-var main=document.getElementById('main');
-var hero=document.querySelector('.hero');
-var plate=document.getElementById('brand');
-if(main && hero && plate && hero.previousElementSibling!==plate){ main.insertBefore(plate, hero); }
 })();
