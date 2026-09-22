@@ -193,6 +193,26 @@ footer .net.monad span{color:var(--accent-warm)}
   display:block;font-family:var(--serif);font-size:16px;color:var(--ink);
   font-weight:400;margin-bottom:6px;
 }
+.proof-links{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:var(--space-sm);
+  margin-top:var(--space-md);margin-bottom:var(--space-xl);
+}
+.proof-link{
+  display:block;padding:var(--space-md);border:1px solid var(--line);
+  border-radius:var(--radius-sm);background:var(--surface);
+  transition:border-color .2s,opacity .2s;
+}
+.proof-link:hover{border-color:var(--line-strong);opacity:1}
+.proof-link strong{
+  display:block;font-family:var(--serif);font-size:18px;font-weight:400;
+  color:var(--ink);margin-bottom:6px;
+}
+.proof-link span{font-size:13px;color:var(--muted);line-height:1.5}
+.proof-flash-note{
+  font-size:13px;color:var(--muted);margin-top:var(--space-sm);
+  padding:var(--space-sm) var(--space-md);border:1px solid var(--line);
+  border-radius:var(--radius-sm);background:var(--bg-soft);line-height:1.55;
+}
 .delivery-terms{
   display:grid;gap:1px;background:var(--line);
   border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
@@ -659,7 +679,7 @@ footer .love{
 .js .reveal.is-in{opacity:1;transform:none}
 
 @media(max-width:900px){
-  .why-grid,.modes-grid,.seats,.gallery,.flash-gallery,.fixture-grid,.rails,.timeline{grid-template-columns:1fr}
+  .why-grid,.modes-grid,.seats,.gallery,.flash-gallery,.fixture-grid,.proof-links,.rails,.timeline{grid-template-columns:1fr}
   .wrap{padding:0 20px var(--space-xl)}
   header{flex-direction:row;align-items:center;margin:0 -20px;padding:12px 20px}
   .site-nav{display:none}
@@ -950,6 +970,24 @@ if(l&&/^(en|ar|ru|zh|de|es)$/.test(l)){d.lang=l;d.dir=l==='ar'?'rtl':'ltr';}}cat
       <h2 class="section-title" id="evTitle">Evidence you can verify yourself.</h2>
       <p class="section-note" id="evNote">Fixtures you can open locally, on-chain path screenshots, and UI reference images — each labeled for what it is. None of this is a profit claim.</p>
     </div>
+    <nav class="proof-links" aria-label="Proof pages">
+      <a class="proof-link" href="proof/fixtures/">
+        <strong id="proofFixturesT">Fixtures</strong>
+        <span id="proofFixturesD">Open SVGs · SHA-256 check · verifiable alone</span>
+      </a>
+      <a class="proof-link" href="proof/claims/">
+        <strong id="proofClaimsT">Claims ledger</strong>
+        <span id="proofClaimsD">Every sales-page claim · how a stranger checks it</span>
+      </a>
+      <a class="proof-link" href="proof/limits/">
+        <strong id="proofLimitsT">Limits</strong>
+        <span id="proofLimitsD">What we cannot show — read before you pay</span>
+      </a>
+      <a class="proof-link" href="proof/onchain/">
+        <strong id="proofOnchainT">On-chain</strong>
+        <span id="proofOnchainD">Transaction path · signature or illustrations only</span>
+      </a>
+    </nav>
     <div class="section-head" style="margin-top:var(--space-lg)">
       <p class="section-label" id="glanceLabel">Glance fixtures</p>
       <h3 class="section-title" id="glanceTitle" style="font-size:clamp(22px,3vw,28px)">Synthetic Telegram boards you can open now.</h3>
@@ -993,6 +1031,7 @@ if(l&&/^(en|ar|ru|zh|de|es)$/.test(l)){d.lang=l;d.dir=l==='ar'?'rtl':'ltr';}}cat
       </figure>
     </div>
     <p class="flash-caption"><span id="flashSub">flash loan 15,000 USDC (Kamino) · Jupiter path · historical on-chain example</span></p>
+    <p class="proof-flash-note" id="proofFlashNote">Illustrations only — no publishable transaction signature in repo. <a href="proof/onchain/">On-chain proof page</a> explains what would count as evidence.</p>
     <div class="section-head" style="margin-top:var(--space-xl)">
       <p class="section-label" id="galLabel">Board UI reference</p>
       <h3 class="section-title" id="galTitle" style="font-size:clamp(22px,3vw,28px)">Desk screenshots — UI reference only.</h3>

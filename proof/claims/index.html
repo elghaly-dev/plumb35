@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Claims ledger · Plumb proof</title>
+<meta name="description" content="Every claim on the Plumb sales page — quoted verbatim — with how a stranger checks it: verifiable, our word, or not a claim."/>
+<meta name="robots" content="index,follow"/>
+<meta name="theme-color" content="#050505"/>
+<link rel="icon" href="../../favicon.png" type="image/png"/>
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../proof.css"/>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <img class="brand-p" src="../../logo.png" width="40" height="40" alt="" aria-hidden="true"/>
+      <a href="../../" class="brand-logo" aria-label="Plumb — home">
+        <span class="bl-35">35</span>
+        <span class="bl-stack"><span class="bl-name">PLUMB</span><span class="bl-sub">PROOF</span></span>
+      </a>
+    </div>
+    <div class="header-right">
+      <nav class="lang-switch" aria-label="Language">
+        <button type="button" class="lang-btn active" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" class="lang-btn" data-lang="ar" aria-pressed="false">AR</button>
+        <button type="button" class="lang-btn" data-lang="ru" aria-pressed="false">RU</button>
+        <button type="button" class="lang-btn" data-lang="zh" aria-pressed="false">ZH</button>
+        <button type="button" class="lang-btn" data-lang="de" aria-pressed="false">DE</button>
+        <button type="button" class="lang-btn" data-lang="es" aria-pressed="false">ES</button>
+      </nav>
+      <a href="../../" id="proofBackHome">← Plumb home</a>
+    </div>
+  </header>
+
+  <nav class="proof-nav" aria-label="Proof pages">
+    <a href="../onchain/" id="navOnchain">On-chain</a>
+    <a href="../fixtures/" id="navFixtures">Fixtures</a>
+    <a href="../claims/" id="navClaims" aria-current="page">Claims</a>
+    <a href="../limits/" id="navLimits">Limits</a>
+  </nav>
+
+  <p class="locale-notice" id="proofLocaleNote" hidden></p>
+
+  <p class="section-label">Claims ledger</p>
+  <h1>What the sales page says — and how you check it</h1>
+  <p class="lead">Claims are quoted verbatim from the live page at plumb-35.elghaly.dev. Three categories only: <strong>verifiable</strong> (you check alone), <strong>our word</strong> (a commitment, not a fact), <strong>not a claim</strong> (illustration or scope description).</p>
+
+  <div class="claims-table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Claim (quoted from page)</th>
+          <th scope="col">Category</th>
+          <th scope="col">Backed by / how you check</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="quote">“Delivered in 3.35 hours.”</span> <span style="color:var(--muted-soft);font-size:12px">(hero)</span></td>
+          <td><span class="tag tag-word">Our word</span></td>
+          <td>Delivery commitment — clock starts on confirmed payment + complete brief; conditions in <a href="../../#delivery">Delivery</a>. You cannot verify timing before you buy; read the terms and decide if you accept them.</td>
+        </tr>
+        <tr>
+          <td><span class="quote">“Handover call included · ships dry/HOLD”</span> <span style="color:var(--muted-soft);font-size:12px">(seats)</span></td>
+          <td><span class="tag tag-word">Our word</span></td>
+          <td>Default posture commitment — binary ships in dry/HOLD; nothing sends until you arm on your machine. Verifiable only after handoff on your host, not before purchase.</td>
+        </tr>
+        <tr>
+          <td><span class="quote">“Your machine. Your keys.”</span> <span style="color:var(--muted-soft);font-size:12px">(hero)</span></td>
+          <td><span class="tag tag-word">Our word</span></td>
+          <td>Architecture commitment — self-hosted desk; we do not custody keys or funds. Stated in <a href="../../#custody">Custody</a>; not independently auditable before you run the binary.</td>
+        </tr>
+        <tr>
+          <td><span class="quote">“A Kamino flash borrow routed through Jupiter and repaid in one transaction. Wallets and figures are redacted — we are showing the path shape, not selling a number or return.”</span> <span style="color:var(--muted-soft);font-size:12px">(evidence)</span></td>
+          <td><span class="tag tag-not">Not a claim</span></td>
+          <td>Illustration only — no publishable transaction signature in repo. See <a href="../onchain/">On-chain</a>. Treat as a picture until a signature is published with two explorer links.</td>
+        </tr>
+        <tr>
+          <td><span class="quote">“These are labeled screenshots of board layouts, not reproducible proof and not a promise of current market behavior.”</span> <span style="color:var(--muted-soft);font-size:12px">(evidence)</span></td>
+          <td><span class="tag tag-not">Not a claim</span></td>
+          <td>UI reference images on the sales page — layout illustration only. See board images under <a href="../../#evidence">Evidence</a>.</td>
+        </tr>
+        <tr>
+          <td><span class="quote">“Static SVG fixtures — not a running desk, not proof of fills”</span> <span style="color:var(--muted-soft);font-size:12px">(evidence)</span></td>
+          <td><span class="tag tag-verifiable">Verifiable</span></td>
+          <td><a href="../fixtures/">Fixtures page</a> — open <a href="../../desk-glance.svg">desk-glance.svg</a> and <a href="../../desk-menu.svg">desk-menu.svg</a>; run <code>curl -sL … | sha256sum</code> and match published hashes. Proves file bytes, not desk behaviour.</td>
+        </tr>
+        <tr>
+          <td><span class="quote">“We are not in the signing path unless you explicitly share logs for support.”</span> <span style="color:var(--muted-soft);font-size:12px">(custody · c4)</span></td>
+          <td><span class="tag tag-word">Our word</span></td>
+          <td>Boundary commitment in <a href="../../#custody">Custody</a>. You can inspect your own stack after handoff; we cannot prove a negative to a stranger before purchase.</td>
+        </tr>
+        <tr>
+          <td><span class="quote">“Starter includes 3 months of updates; Pro and Source include 6 months. After that, optional follow-up is $149/mo — never required to keep what you bought. Lifetime licence; nothing breaks when the window ends.”</span> <span style="color:var(--muted-soft);font-size:12px">(delivery · dt5)</span></td>
+          <td><span class="tag tag-word">Our word</span></td>
+          <td>Update-window and licence policy — stated in <a href="../../#delivery">Delivery</a>. Check your receipt and handover terms at purchase; not verifiable in advance on chain or in code.</td>
+        </tr>
+        <tr>
+          <td><span class="quote">“Pay once. Keep the seat.”</span> <span style="color:var(--muted-soft);font-size:12px">(seats)</span></td>
+          <td><span class="tag tag-word">Our word</span></td>
+          <td>Lifetime licence commitment — one-time seat purchase, no subscription required to keep the software. Policy statement; confirm in your purchase correspondence.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="prose">
+    <p>If a statement cannot fit verifiable, our word, or not a claim, it should not be on the sales page. See <a href="../limits/">Limits</a> for what we cannot show at all.</p>
+  </div>
+
+  <footer>
+    <p class="addr">548 Market Street, San Francisco, California 94104</p>
+    <p class="fine">Plumb is desk software sold as-is, without warranty or guarantee. We make no claims about profit, returns, CLEAR, land, or any outcome. You host it, you hold the keys, you accept the risk. Not a token sale. Not an investment.</p>
+  </footer>
+</div>
+<script src="../proof-i18n.js"></script>
+</body>
+</html>

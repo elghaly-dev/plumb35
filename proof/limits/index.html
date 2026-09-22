@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Limits · Plumb proof</title>
+<meta name="description" content="What Plumb cannot show before you buy — fills, balance, RPC traffic, profit, and why screenshots are not proof."/>
+<meta name="robots" content="index,follow"/>
+<meta name="theme-color" content="#050505"/>
+<link rel="icon" href="../../favicon.png" type="image/png"/>
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../proof.css"/>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <img class="brand-p" src="../../logo.png" width="40" height="40" alt="" aria-hidden="true"/>
+      <a href="../../" class="brand-logo" aria-label="Plumb — home">
+        <span class="bl-35">35</span>
+        <span class="bl-stack"><span class="bl-name">PLUMB</span><span class="bl-sub">PROOF</span></span>
+      </a>
+    </div>
+    <div class="header-right">
+      <nav class="lang-switch" aria-label="Language">
+        <button type="button" class="lang-btn active" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" class="lang-btn" data-lang="ar" aria-pressed="false">AR</button>
+        <button type="button" class="lang-btn" data-lang="ru" aria-pressed="false">RU</button>
+        <button type="button" class="lang-btn" data-lang="zh" aria-pressed="false">ZH</button>
+        <button type="button" class="lang-btn" data-lang="de" aria-pressed="false">DE</button>
+        <button type="button" class="lang-btn" data-lang="es" aria-pressed="false">ES</button>
+      </nav>
+      <a href="../../" id="proofBackHome">← Plumb home</a>
+    </div>
+  </header>
+
+  <nav class="proof-nav" aria-label="Proof pages">
+    <a href="../onchain/" id="navOnchain">On-chain</a>
+    <a href="../fixtures/" id="navFixtures">Fixtures</a>
+    <a href="../claims/" id="navClaims">Claims</a>
+    <a href="../limits/" id="navLimits" aria-current="page">Limits</a>
+  </nav>
+
+  <p class="locale-notice" id="proofLocaleNote" hidden></p>
+
+  <p class="section-label">Limits</p>
+  <h1>What we cannot show you</h1>
+  <p class="lead">Read this before you pay. If you need proof we cannot provide, do not buy on hope.</p>
+
+  <ul class="limits-list">
+    <li>
+      <strong>Your fills, your balance, your RPC traffic</strong>
+      After handoff we are not in the signing path and cannot see your private keys, wallet balance, live fills, or RPC traffic unless you explicitly share logs for support (see <a href="../../#custody">Custody · c4</a>). We cannot show a stranger your desk operating on their capital before purchase.
+    </li>
+    <li>
+      <strong>Profit</strong>
+      We cannot show profit, and we do not claim any. Plumb is desk software sold as-is. Markets can move against you; you can lose money. Start small, run dry first.
+    </li>
+    <li>
+      <strong>Screenshots are not proof</strong>
+      A screenshot is an image we produced. Only a transaction signature — copyable, checkable on two independent explorers — is on-chain evidence. Our Kamino 15k flash captures have no publishable signature in this repo; they are illustrations. See <a href="../onchain/">On-chain</a>.
+    </li>
+    <li>
+      <strong>Fixtures prove layout, not behaviour</strong>
+      Static SVG fixtures — not a running desk, not proof of fills. SHA-256 confirms file bytes, not that the desk behaves as the picture suggests. See <a href="../fixtures/">Fixtures</a>.
+    </li>
+    <li>
+      <strong>Nothing here predicts what your desk will earn</strong>
+      No statement on the sales page or proof pages is a forecast, return, CLEAR claim, or land claim. Board screenshots are UI reference only.
+    </li>
+    <li>
+      <strong>No landed arbitrage claim</strong>
+      We have never claimed a landed arbitrage on this page, and we are not claiming one now.
+    </li>
+    <li>
+      <strong>If you need proof of profitability before you buy</strong>
+      We do not have it. Do not buy on hope.
+    </li>
+  </ul>
+
+  <div class="prose">
+    <p>What you <em>can</em> check alone in under two minutes: open the Glance SVG fixtures and match their SHA-256 hashes (<a href="../fixtures/">Fixtures</a>); read which sales-page statements are verifiable vs our word (<a href="../claims/">Claims</a>).</p>
+    <p>Pay controls stay below this on the home page — you can read all of this before any seat price.</p>
+  </div>
+
+  <footer>
+    <p class="addr">548 Market Street, San Francisco, California 94104</p>
+    <p class="fine">Plumb is desk software sold as-is, without warranty or guarantee. We make no claims about profit, returns, CLEAR, land, or any outcome. You host it, you hold the keys, you accept the risk. Not a token sale. Not an investment.</p>
+  </footer>
+</div>
+<script src="../proof-i18n.js"></script>
+</body>
+</html>
