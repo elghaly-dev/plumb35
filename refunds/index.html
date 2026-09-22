@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Refunds — Plumb</title>
+<meta name="description" content="Plumb refund policy: full refund before brief acceptance, before delivery, on missed delivery windows, and when we cannot build your brief. No refund after delivery."/>
+<meta name="theme-color" content="#050505"/>
+<meta name="color-scheme" content="dark"/>
+<meta name="robots" content="index,follow"/>
+<link rel="canonical" href="https://plumb-35.elghaly.dev/refunds/"/>
+<meta property="og:site_name" content="Plumb — Elghaly"/>
+<meta property="og:title" content="Refunds — Plumb"/>
+<meta property="og:description" content="Full refund before brief acceptance, before delivery, on missed windows, and when we cannot build your brief. No refund after delivery."/>
+<meta property="og:url" content="https://plumb-35.elghaly.dev/refunds/"/>
+<meta property="og:type" content="website"/>
+<link rel="icon" href="../favicon.png" type="image/png"/>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#050505;
+  --surface:#111113;
+  --ink:#f5f5f7;
+  --muted:#9b9ba1;
+  --muted-soft:#808086;
+  --line:rgba(255,255,255,.08);
+  --line-strong:rgba(255,255,255,.14);
+  --accent-warm:#c9b896;
+  --serif:"Instrument Serif",Georgia,serif;
+  --sans:"Inter",ui-sans-serif,system-ui,sans-serif;
+  --space-sm:20px;
+  --space-md:32px;
+  --space-lg:56px;
+  --space-xl:88px;
+  --radius:20px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{
+  font-family:var(--sans);
+  font-size:16px;
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.6;
+  min-height:100vh;
+}
+.wrap{max-width:720px;margin:0 auto;padding:0 24px var(--space-xl)}
+a{color:var(--accent-warm);text-decoration:none;transition:opacity .2s}
+a:hover{opacity:.75}
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:var(--space-sm);
+  padding:14px 0 var(--space-md);
+  border-bottom:1px solid var(--line);
+  margin-bottom:var(--space-lg);
+}
+.brand{display:flex;align-items:center;gap:11px}
+.bl-35{
+  font-family:var(--sans);font-weight:600;font-size:26px;letter-spacing:-.03em;
+  background:linear-gradient(135deg,#d8fff4 0%,#6fe0c4 44%,#9b7dff 100%);
+  -webkit-background-clip:text;background-clip:text;
+  color:transparent;-webkit-text-fill-color:transparent;
+}
+.bl-stack{
+  display:flex;flex-direction:column;gap:3px;
+  padding-left:11px;border-left:1px solid var(--line-strong);
+}
+.bl-name{font-size:12px;font-weight:600;letter-spacing:.26em;color:var(--ink)}
+.bl-sub{font-size:8px;font-weight:500;letter-spacing:.3em;color:var(--muted)}
+.back{
+  font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--muted);font-weight:500;
+}
+.back:hover{color:var(--ink);opacity:1}
+.eyebrow{
+  font-size:11px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--muted);font-weight:500;margin-bottom:var(--space-sm);
+}
+h1{
+  font-family:var(--serif);
+  font-size:clamp(36px,6vw,52px);
+  font-weight:400;
+  letter-spacing:-.025em;
+  line-height:1.05;
+  margin-bottom:var(--space-md);
+}
+.lede{color:var(--muted);font-size:15px;line-height:1.65;margin-bottom:var(--space-lg)}
+.policy-block{margin-bottom:var(--space-lg)}
+.policy-block h2{
+  font-family:var(--serif);
+  font-size:clamp(22px,3.5vw,28px);
+  font-weight:400;
+  letter-spacing:-.01em;
+  margin-bottom:var(--space-sm);
+  color:var(--ink);
+}
+.policy-block p,.policy-block li{
+  color:var(--muted);
+  font-size:15px;
+  line-height:1.7;
+}
+.policy-block p+p{margin-top:12px}
+.policy-block ul{
+  list-style:none;
+  margin-top:var(--space-sm);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  overflow:hidden;
+}
+.policy-block li{
+  padding:16px 20px;
+  border-bottom:1px solid var(--line);
+  background:var(--surface);
+}
+.policy-block li:last-child{border-bottom:0}
+.policy-block li::before{
+  content:"—";
+  color:var(--accent-warm);
+  margin-right:10px;
+}
+.policy-grid{
+  display:grid;
+  gap:1px;
+  background:var(--line);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  overflow:hidden;
+  margin-top:var(--space-sm);
+}
+.policy-term{background:var(--surface);padding:20px 24px}
+.policy-term h3{
+  font-family:var(--serif);
+  font-size:18px;
+  font-weight:400;
+  margin-bottom:8px;
+  color:var(--ink);
+}
+.policy-term p{font-size:14px;color:var(--muted);line-height:1.65;margin:0}
+.closer{
+  margin-top:var(--space-lg);
+  padding:var(--space-md);
+  border:1px solid var(--line-strong);
+  border-radius:var(--radius);
+  background:rgba(255,255,255,.02);
+}
+.closer p{color:var(--muted);font-size:14px;line-height:1.65;margin:0}
+footer{
+  margin-top:var(--space-xl);
+  padding-top:var(--space-lg);
+  border-top:1px solid var(--line);
+  text-align:center;
+}
+footer p{font-size:13px;color:var(--muted-soft);margin:8px 0}
+footer .marks{font-size:18px;opacity:.75;margin-bottom:var(--space-sm)}
+footer .links{font-size:13px;margin-bottom:var(--space-sm)}
+footer .links a{margin:0 10px}
+:focus-visible{outline:2px solid var(--accent-warm);outline-offset:3px;border-radius:4px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a href="../" class="brand" aria-label="Plumb — back to home">
+      <span class="bl-35" aria-hidden="true">35</span>
+      <span class="bl-stack" aria-hidden="true">
+        <span class="bl-name">PLUMB</span>
+        <span class="bl-sub">ELGHALY</span>
+      </span>
+    </a>
+    <a class="back" href="../">← Plumb seats</a>
+  </header>
+
+  <main>
+    <p class="eyebrow">Policy</p>
+    <h1>Refunds</h1>
+    <p class="lede">Plain terms before you pay. If you need a guarantee we do not offer, tell us and do not buy.</p>
+
+    <section class="policy-block" aria-labelledby="full-refund">
+      <h2 id="full-refund">Full refund, no questions</h2>
+      <div class="policy-grid">
+        <article class="policy-term">
+          <h3>Before we accept your brief</h3>
+          <p>Mail <a href="mailto:35@elghaly.dev">35@elghaly.dev</a> before we accept your brief and the payment goes back in full.</p>
+        </article>
+        <article class="policy-term">
+          <h3>After brief acceptance, before delivery</h3>
+          <p>Full refund if you cancel, minus nothing. We have not shipped you anything yet.</p>
+        </article>
+        <article class="policy-term">
+          <h3>Missed delivery window</h3>
+          <p>If we miss the agreed delivery window and you do not want to wait — full refund, on request, even if we are mid-build.</p>
+        </article>
+        <article class="policy-term">
+          <h3>We cannot build your brief</h3>
+          <p>If we tell you we cannot build what your brief asks — full refund. We would rather return the money than ship something that does not do what you asked.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="policy-block" aria-labelledby="no-refund">
+      <h2 id="no-refund">After delivery — no refund</h2>
+      <p>You have the binary and the source where the seat includes it. Software that has been handed over cannot be returned.</p>
+    </section>
+
+    <section class="policy-block" aria-labelledby="not-refund">
+      <h2 id="not-refund">Not refund reasons</h2>
+      <p>Stated plainly so nobody is surprised:</p>
+      <ul>
+        <li>The desk did not earn money. We never claimed it would, and <a href="/proof/limits/">/proof/limits/</a> says so before you reach a price.</li>
+        <li>The market changed.</li>
+        <li>You changed your mind after delivery.</li>
+        <li>You could not supply a host, an RPC endpoint, or a wallet.</li>
+      </ul>
+    </section>
+
+    <section class="policy-block" aria-labelledby="how-refund">
+      <h2 id="how-refund">How a refund reaches you</h2>
+      <div class="policy-grid">
+        <article class="policy-term">
+          <h3>Card via Stripe</h3>
+          <p>Back to the same card. Allow 5–10 business days.</p>
+        </article>
+        <article class="policy-term">
+          <h3>Wallet transfer</h3>
+          <p>Back to the address it came from, in the same asset, on the same network, within 3 business days. Network fees are deducted. Send from an address you control; we cannot refund an exchange deposit address.</p>
+        </article>
+      </div>
+    </section>
+
+    <aside class="closer">
+      <p>Ask before you buy, not after. Questions: <a href="mailto:35@elghaly.dev">35@elghaly.dev</a> · <a href="mailto:support@elghaly.dev">support@elghaly.dev</a></p>
+    </aside>
+  </main>
+
+  <footer>
+    <div class="marks" aria-hidden="true">3️⃣🧿5️⃣</div>
+    <p class="links">
+      <a href="../">Plumb seats</a>
+      <a href="../#delivery">Delivery</a>
+      <a href="../#seats">Pricing</a>
+    </p>
+    <p>548 Market Street, San Francisco, California 94104</p>
+    <p>Plumb is desk software sold as-is, without warranty or guarantee.</p>
+  </footer>
+</div>
+</body>
+</html>

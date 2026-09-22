@@ -2,6 +2,7 @@
 const LINK35='<a href="https://35.elghaly.dev">35</a>';
 const LINKIRIS='<a href="https://iris-35.elghaly.dev">IRIS</a>';
 const LINKMAIL='<a href="mailto:support@elghaly.dev">support@elghaly.dev</a>';
+const LINKREFUNDS='<a href="refunds/">Refunds</a>';
 
 const T={
 en:{
@@ -46,7 +47,7 @@ en:{
   dt1h:"Clock starts when",dt1:"Payment is confirmed and your brief includes seat tier, 1–2 pairs (Starter) or named pairs (Pro/Source), and a reachable email. Standard build scope only.",
   dt2h:"Delivered means",dt2:"Binary configured for your brief, transferred to your host or sent for you to install, plus handover call scheduled within 24 hours of delivery. You run dry/HOLD first.",
   dt3h:"You supply",dt3:"A machine that stays online (VPS is fine), a Solana RPC endpoint, a Telegram bot token, and a wallet you control. We walk through each on the handover call — they need not be ready before you pay.",
-  dt4h:"If it takes longer",dt4:"Incomplete brief, scope expansion, or missing host access pauses the clock. We agree a new window before you pay extra. If we miss an agreed window, contact "+LINKMAIL+" — resolution case by case, not a performance guarantee.",
+  dt4h:"If it takes longer",dt4:"Incomplete brief, scope expansion, or missing host access pauses the clock. We agree a new window before you pay extra. If we miss an agreed window and you do not want to wait — full refund on request. See "+LINKREFUNDS+".",
   dt5h:"Updates & follow-up",dt5:"Starter includes 3 months of updates; Pro and Source include 6 months. After that, optional follow-up is $149/mo — never required to keep what you bought. Lifetime licence; nothing breaks when the window ends.",
   tlLabel:"Handoff steps",tlTitle:"Four steps after payment.",tlNote:"No onboarding queue, no ticket system. You pay, we build your desk, we walk you through it on a handover call, and you continue on Telegram.",
   tl1:"Pay seat + mail brief",tl2:"Binary on your side",tl3:"Handover call & setup",tl4:"You continue on Telegram",
@@ -69,7 +70,7 @@ en:{
   cmpRows:[["Board shape","Partial · 350-style slice","Full arbitrage board","Full arbitrage board + source"],["Who it is for","First machine, learn the path","Operator who already trades","Desk that wants the code"],["Pairs","1–2 on partial board","Multi-pair full board","Workshop + you edit"],["What you receive","Ready binary + handover call","Ready binary + controls","Source + seat"],["Telegram control","Yes","Yes","Yes"],["Delivered after pay","3.35 hours + brief","3.35 hours + brief","3.35 hours + brief"],["Default posture","Dry/HOLD until you arm · Solana on standard seats · BTC/ETH via Source / custom brief only","",""],["Updates included","3 months","6 months","6 months + workshop"],["Trade size cap","Capped seat","No cap from us","No cap from us"],["Slippage & tip","Fixed defaults","You set","You change the code"],["Jito / operator","—","Optional · ask in brief","Yours to edit"],["Private RPC","—","Hook points","Yours to edit"],["Workshop","—","—","Included"],["Keys","Stay with you — always","",""],["Handoff","We build → handover call → you continue on Telegram","",""],["Titan / gRPC","Not included in any seat — extra after brief","",""]],
   footContact:"Ask us on mail — "+LINKMAIL+" · We are 24",
   netLabel:"Networks",netNote:"Solana is the supported network on standard seats · ETH · BTC · ARB · MONAD shown as expansion paths only",
-  fine:"Plumb is desk software sold as-is, without warranty or guarantee. We make no claims about profit, returns, CLEAR, land, or any outcome. You host it, you hold the keys, you accept the risk. Not a token sale. Not an investment.",
+  fine:"Plumb is desk software sold as-is, without warranty or guarantee. We make no claims about profit, returns, CLEAR, land, or any outcome. You host it, you hold the keys, you accept the risk. Not a token sale. Not an investment. "+LINKREFUNDS+".",
   once:"once",netSol:"Solana — supported network",netEth:"Ethereum — expansion path",netBtc:"Bitcoin — expansion path",netArb:"Arbitrum — expansion path",netMonad:"Monad — expansion path",
   skipLink:"Skip to content",
   navWhat:"What",
@@ -169,7 +170,7 @@ ar:{
   cmpRows:[["شكل اللوحة","جزئية · 350","لوحة arb كاملة","لوحة + مصدر"],["لمن","أول آلة","مشغّل","مكتب يريد الكود"],["الأزواج","1–2","متعدد","ورشة + تحرير"],["ما تستلم","ثنائي جاهز + مكالمة تسليم","ثنائي جاهز + تحكم","مصدر + مقعد"],["Telegram","نعم","نعم","نعم"],["يُسلَّم بعد الدفع","3.35 ساعة + موجز","3.35 ساعة + موجز","3.35 ساعة + موجز"],["الوضع الافتراضي","Dry/HOLD حتى التفعيل · Solana على المقاعد القياسية · BTC/ETH عبر Source / موجز مخصص فقط","",""],["التحديثات","3 أشهر","6 أشهر","6 + ورشة"],["حد الحجم","محدود","بدون حد","بدون حد"],["Slip & tip","ثابت","أنت","في الكود"],["Jito","—","اختياري","تحرير"],["Private RPC","—","خطافات","تحرير"],["ورشة","—","—","مشمولة"],["المفاتيح","معك دائماً","",""],["التسليم","نبني → مكالمة تسليم → Telegram","",""],["Titan / gRPC","إضافي","",""]],
   footContact:"راسلنا — "+LINKMAIL+" · We are 24",
   netLabel:"Networks",netNote:"Solana الشبكة المدعومة على المقاعد القياسية · ETH · BTC · ARB · MONAD مسارات توسع فقط",
-  fine:"Plumb برمجيات مكتب تُباع كما هي، بدون ضمان. لا ادعاءات بأرباح أو عوائد. أنت تستضيف، أنت تحمل المفاتيح، أنت تقبل المخاطر. ليس بيع رمز. ليس استثمار.",
+  fine:"Plumb برمجيات مكتب تُباع كما هي، بدون ضمان. لا ادعاءات بأرباح أو عوائد. أنت تستضيف، أنت تحمل المفاتيح، أنت تقبل المخاطر. ليس بيع رمز. ليس استثمار. "+LINKREFUNDS+".",
   once:"مرة",netSol:"Solana — شبكة مدعومة",netEth:"Ethereum — مسار توسع",netBtc:"Bitcoin — مسار توسع",netArb:"Arbitrum — مسار توسع",netMonad:"Monad — مسار توسع",
   skipLink:"تخطَّ إلى المحتوى",
   navModes:"الأوضاع",
@@ -267,7 +268,7 @@ ru:{
   cmpRows:[["Board","Partial 350","Full arb","Full + source"],["Для кого","First machine","Operator","Desk + code"],["Pairs","1–2","Multi","Workshop"],["Получаете","Ready binary + передача","Ready binary + controls","Source"],["Telegram","Yes","Yes","Yes"],["Доставка после оплаты","3.35 h + brief","3.35 h + brief","3.35 h + brief"],["Default posture","Dry/HOLD до активации · Solana на стандартных seats · BTC/ETH только Source / custom brief","",""],["Updates","3 mo","6 mo","6 + workshop"],["Cap","Capped","No cap","No cap"],["Slip/tip","Fixed","You set","You code"],["Jito","—","Optional","Edit"],["RPC","—","Hooks","Edit"],["Workshop","—","—","Yes"],["Keys","Yours always","",""],["Handoff","Build → передача → Telegram","",""],["Titan","Extra","",""]],
   footContact:"Пишите — "+LINKMAIL+" · We are 24",
   netLabel:"Networks",netNote:"Solana — поддерживаемая сеть на стандартных seats · ETH · BTC · ARB · MONAD только expansion paths",
-  fine:"Plumb — ПО as-is, без гарантий. Нет claims о profit. Вы host, вы keys, вы risk. Не token sale.",
+  fine:"Plumb — ПО as-is, без гарантий. Нет claims о profit. Вы host, вы keys, вы risk. Не token sale. "+LINKREFUNDS+".",
   once:"раз",netSol:"Solana — поддерживаемая сеть",netEth:"Ethereum — expansion path",netBtc:"Bitcoin — expansion path",netArb:"Arbitrum — expansion path",netMonad:"Monad — expansion path",
   skipLink:"Перейти к содержанию",
   navModes:"Режимы",
@@ -366,7 +367,7 @@ zh:{
   cmpRows:[["Board","Partial 350","Full arb","Full + source"],["适合","首台","Operator","要代码"],["Pairs","1–2","Multi","Workshop"],["交付","就绪二进制 + 交接通话","就绪二进制 + 控制","Source"],["Telegram","是","是","是"],["付款后交付","3.35 小时 + brief","3.35 小时 + brief","3.35 小时 + brief"],["默认状态","Dry/HOLD 直至启用 · 标准席位 Solana · BTC/ETH 仅 Source / custom brief","",""],["更新","3 月","6 月","6 月 + workshop"],["Cap","Capped","无 cap","无 cap"],["Slip/tip","固定","你设","改代码"],["Jito","—","可选","可改"],["RPC","—","Hooks","可改"],["Workshop","—","—","含"],["Keys","始终在你","",""],["Handoff","构建 → 交接通话 → Telegram","",""],["Titan","不含","",""]],
   footContact:"邮件联系 — "+LINKMAIL+" · We are 24",
   netLabel:"Networks",netNote:"Solana 是标准席位支持的网络 · ETH · BTC · ARB · MONAD 仅显示为扩展路径",
-  fine:"Plumb 软件按原样出售，无保证。不承诺 profit 或回报。你 host、你 keys、你承担风险。非 token 销售。",
+  fine:"Plumb 软件按原样出售，无保证。不承诺 profit 或回报。你 host、你 keys、你承担风险。非 token 销售。 "+LINKREFUNDS+".",
   once:"一次",netSol:"Solana — 支持的网络",netEth:"Ethereum — 扩展路径",netBtc:"Bitcoin — 扩展路径",netArb:"Arbitrum — 扩展路径",netMonad:"Monad — 扩展路径",
   skipLink:"跳到正文",
   navModes:"模式",
@@ -465,7 +466,7 @@ de:{
   cmpRows:[["Board","Partial 350","Full arb","Full + Source"],["Für wen","Erste Maschine","Operator","Desk + Code"],["Pairs","1–2","Multi","Workshop"],["Erhalten","Fertiges Binary + Übergabegespräch","Fertiges Binary + Controls","Source"],["Telegram","Ja","Ja","Ja"],["Geliefert nach Zahlung","3,35 h + Brief","3,35 h + Brief","3,35 h + Brief"],["Standard","Dry/HOLD bis Aktivierung · Solana auf Standard-Seats · BTC/ETH nur Source / Custom-Brief","",""],["Updates","3 Mon.","6 Mon.","6 + Workshop"],["Cap","Capped","Kein Cap","Kein Cap"],["Slip/Tip","Fest","Du setzt","Im Code"],["Jito","—","Optional","Edit"],["RPC","—","Hooks","Edit"],["Workshop","—","—","Inkl."],["Keys","Immer bei dir","",""],["Handoff","Build → Übergabegespräch → Telegram","",""],["Titan","Extra","",""]],
   footContact:"Mail uns — "+LINKMAIL+" · We are 24",
   netLabel:"Networks",netNote:"Solana ist das unterstützte Netzwerk auf Standard-Seats · ETH · BTC · ARB · MONAD nur als Expansionspfade",
-  fine:"Plumb Software as-is, ohne Garantie. Keine Profit-Claims. Du hostest, du keys, du Risiko. Kein Token-Verkauf.",
+  fine:"Plumb Software as-is, ohne Garantie. Keine Profit-Claims. Du hostest, du keys, du Risiko. Kein Token-Verkauf. "+LINKREFUNDS+".",
   once:"einmal",netSol:"Solana — unterstütztes Netzwerk",netEth:"Ethereum — Expansionspfad",netBtc:"Bitcoin — Expansionspfad",netArb:"Arbitrum — Expansionspfad",netMonad:"Monad — Expansionspfad",
   skipLink:"Zum Inhalt springen",
   navModes:"Modi",
@@ -564,7 +565,7 @@ es:{
   cmpRows:[["Board","Partial 350","Full arb","Full + source"],["Para quién","Primera máquina","Operador","Desk + código"],["Pairs","1–2","Multi","Workshop"],["Recibes","Binario listo + llamada de entrega","Binario listo + controls","Source"],["Telegram","Sí","Sí","Sí"],["Entregado tras pagar","3,35 h + brief","3,35 h + brief","3,35 h + brief"],["Postura por defecto","Dry/HOLD hasta activar · Solana en seats estándar · BTC/ETH solo Source / brief custom","",""],["Updates","3 meses","6 meses","6 + workshop"],["Cap","Capped","Sin cap","Sin cap"],["Slip/tip","Fijos","Tú","En código"],["Jito","—","Opcional","Edit"],["RPC","—","Hooks","Edit"],["Workshop","—","—","Incl."],["Keys","Siempre tuyas","",""],["Handoff","Build → llamada de entrega → Telegram","",""],["Titan","Extra","",""]],
   footContact:"Escríbenos — "+LINKMAIL+" · We are 24",
   netLabel:"Networks",netNote:"Solana es la red soportada en seats estándar · ETH · BTC · ARB · MONAD solo como rutas de expansión",
-  fine:"Plumb software as-is, sin garantía. Sin claims de profit. Tú host, tú keys, tú riesgo. No token sale.",
+  fine:"Plumb software as-is, sin garantía. Sin claims de profit. Tú host, tú keys, tú riesgo. No token sale. "+LINKREFUNDS+".",
   once:"una vez",netSol:"Solana — red soportada",netEth:"Ethereum — ruta de expansión",netBtc:"Bitcoin — ruta de expansión",netArb:"Arbitrum — ruta de expansión",netMonad:"Monad — ruta de expansión",
   skipLink:"Saltar al contenido",
   navModes:"Modos",
@@ -650,7 +651,7 @@ const KEYS=[
   ['seatAll','#seatAll','html'],['cmpLabel','#cmpLabel'],['cmpFeature','#cmpFeature'],
   ['cmpS','#cmpS'],['cmpP','#cmpP'],['cmpSo','#cmpSo'],
   ['footContact','#footContact','html'],['netLabel','#netLabel'],['netNote','#netNote'],
-  ['fine','#fine'],
+  ['fine','#fine','html'],
   ['skipLink','#skipLink'],
   ['navWhat','#navWhat'],['navEvidence','#navEvidence'],['navCustody','#navCustody'],['navDelivery','#navDelivery'],
   ['navFaq','#navFaq'],['navSeats','#navSeats'],
