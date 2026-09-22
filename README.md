@@ -12,7 +12,7 @@ Ready desk software — lifetime paid seats.
 
 | Seat | Price | Stripe |
 |------|-------|--------|
-| Starter | $299 | [Pay](https://buy.stripe.com/14A6oB4AD7GBd2g3QN3Ru00) |
+| Starter | $350 | [Pay](https://buy.stripe.com/dRm9ANc357GB6DS0EB3Ru03) |
 | Pro | $699 | [Pay](https://buy.stripe.com/4gM00d4AD2mhfao1IF3Ru01) |
 | Source | $1,999 | [Pay](https://buy.stripe.com/5kQ5kx4AD2mh2nC0EB3Ru02) |
 
