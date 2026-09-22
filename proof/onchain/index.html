@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>On-chain · Plumb proof</title>
+<meta name="description" content="On-chain flash-borrow illustrations for Plumb. No publishable transaction signature — screenshots are pictures, not proof."/>
+<meta name="robots" content="index,follow"/>
+<meta name="theme-color" content="#050505"/>
+<link rel="icon" href="../../favicon.png" type="image/png"/>
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../proof.css"/>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <img class="brand-p" src="../../logo.png" width="40" height="40" alt="" aria-hidden="true"/>
+      <a href="../../" class="brand-logo" aria-label="Plumb — home">
+        <span class="bl-35">35</span>
+        <span class="bl-stack"><span class="bl-name">PLUMB</span><span class="bl-sub">PROOF</span></span>
+      </a>
+    </div>
+    <div class="header-right">
+      <nav class="lang-switch" aria-label="Language">
+        <button type="button" class="lang-btn active" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" class="lang-btn" data-lang="ar" aria-pressed="false">AR</button>
+        <button type="button" class="lang-btn" data-lang="ru" aria-pressed="false">RU</button>
+        <button type="button" class="lang-btn" data-lang="zh" aria-pressed="false">ZH</button>
+        <button type="button" class="lang-btn" data-lang="de" aria-pressed="false">DE</button>
+        <button type="button" class="lang-btn" data-lang="es" aria-pressed="false">ES</button>
+      </nav>
+      <a href="../../" id="proofBackHome">← Plumb home</a>
+    </div>
+  </header>
+
+  <nav class="proof-nav" aria-label="Proof pages">
+    <a href="../onchain/" id="navOnchain" aria-current="page">On-chain</a>
+    <a href="../fixtures/" id="navFixtures">Fixtures</a>
+    <a href="../claims/" id="navClaims">Claims</a>
+    <a href="../limits/" id="navLimits">Limits</a>
+  </nav>
+
+  <p class="locale-notice" id="proofLocaleNote" hidden></p>
+
+  <p class="section-label">Transaction path</p>
+  <h1>On-chain illustrations — not verifiable proof</h1>
+  <p class="lead">A buyer can verify on-chain activity only with a transaction <strong>signature</strong> they can paste into independent explorers. We searched this repository and found no publishable signature for the Kamino 15k USDC flash-borrow captures below. Until one is published, these images are illustrations only.</p>
+
+  <div class="callout callout-warn">
+    <strong>Owner flag:</strong> No transaction signature for these screenshots exists in the repo. If you have the signature, publish it here as copyable text with links to at least two explorers (e.g. solscan.io and explorer.solana.com), plus slot and UTC timestamp. Do not buy based on screenshots alone.
+  </div>
+
+  <div class="prose">
+    <h2>Illustrations</h2>
+    <p>Screenshot from our own testing. We cannot give you a signature for this one, so treat it as a picture, not proof.</p>
+  </div>
+
+  <article class="illus-block">
+    <p class="section-label">Borrow · Kamino</p>
+    <picture>
+      <source srcset="../../assets/flash-15k-borrow.webp" type="image/webp"/>
+      <img src="../../assets/flash-15k-borrow.png" alt="Solscan screenshot — borrow flash loan 15,000 USDC from Kamino lending vault (redacted)" width="390" height="844" loading="lazy" decoding="async"/>
+    </picture>
+    <p><strong>Screenshot from our own testing.</strong> We cannot give you a signature for this one, so treat it as a picture, not proof.</p>
+    <p class="prose" style="margin:0">Flash loan 15,000 USDC from the Kamino lending vault — as shown in our redacted Solscan capture. Wallets and figures are redacted.</p>
+  </article>
+
+  <article class="illus-block">
+    <p class="section-label">Loop · Jupiter path</p>
+    <picture>
+      <source srcset="../../assets/flash-15k-loop.webp" type="image/webp"/>
+      <img src="../../assets/flash-15k-loop.png" alt="Solscan screenshot — 15k flash borrow, Jupiter swaps, repay to Kamino (redacted)" width="390" height="844" loading="lazy" decoding="async"/>
+    </picture>
+    <p><strong>Screenshot from our own testing.</strong> We cannot give you a signature for this one, so treat it as a picture, not proof.</p>
+    <p class="prose" style="margin:0">Borrow → Jupiter swaps → repay. Full round-trip in one transaction — path shape only, as captured in our testing.</p>
+  </article>
+
+  <div class="prose">
+    <h2>What a real on-chain artifact would show</h2>
+    <p>When a signature <em>is</em> published, a stranger can paste it into two independent explorers and read the same instruction path. That would show a flash borrow and repay path executing on chain.</p>
+    <p>It would <strong>not</strong> show a profit, not a fill at any particular price, and not a claim about what your desk will earn. A screenshot alone proves none of that — only the signature does.</p>
+    <p>See also: <a href="../fixtures/">Fixtures</a> (verifiable files), <a href="../claims/">Claims ledger</a>, <a href="../limits/">Limits</a>.</p>
+  </div>
+
+  <footer>
+    <p class="addr">548 Market Street, San Francisco, California 94104</p>
+    <p class="fine">Plumb is desk software sold as-is, without warranty or guarantee. We make no claims about profit, returns, CLEAR, land, or any outcome. You host it, you hold the keys, you accept the risk. Not a token sale. Not an investment.</p>
+  </footer>
+</div>
+<script src="../proof-i18n.js"></script>
+</body>
+</html>
