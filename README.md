@@ -46,7 +46,7 @@ fallback. If you replace one, regenerate both files or drop the `<source>`.
 
 ## Hosting (GitHub Pages)
 
-DNS is correct (`plumb.elghaly.dev` → `alarm2024.github.io`). The site 404s because **every Actions deploy has failed** — GitHub reports billing must be resolved before runners start.
+DNS is correct (`plumb-35.elghaly.dev` → `alarm2024.github.io`). The site 404s because **every Actions deploy has failed** — GitHub reports billing must be resolved before runners start.
 
 **Fix A (recommended if billing is blocked):** In repo **Settings → Pages**, switch source from *GitHub Actions* to **Deploy from branch `main` / `(root)`**. Static files (`index.html`, `CNAME`, `.nojekyll`) need no build step.
 
