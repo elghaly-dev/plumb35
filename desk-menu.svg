@@ -1,20 +1,20 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 560" role="img" aria-label="Telegram hunt menu">
   <defs>
     <linearGradient id="kbGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#c8a8e0"/>
-      <stop offset="1" stop-color="#b088cc"/>
+      <stop offset="0" stop-color="#141a1f"/>
+      <stop offset="1" stop-color="#0e1317"/>
     </linearGradient>
     <pattern id="doodle" x="0" y="0" width="72" height="72" patternUnits="userSpaceOnUse">
-      <circle cx="10" cy="14" r="2.5" fill="#fff" opacity="0.07"/>
-      <circle cx="48" cy="22" r="1.8" fill="#fff" opacity="0.05"/>
-      <path d="M34 8 l1.5 3 3 1.5-3 1.5-1.5 3-1.5-3-3-1.5 3-1.5z" fill="#fff" opacity="0.06"/>
-      <path d="M58 52 q4-6 8 0-4 6-8 0" fill="none" stroke="#fff" stroke-width="1" opacity="0.05"/>
-      <circle cx="22" cy="58" r="4" fill="none" stroke="#fff" stroke-width="1" opacity="0.05"/>
-      <path d="M62 38 c0 3-2 5-4 5s-4-2-4-5 2-5 4-5 4 2 4 5" fill="#fff" opacity="0.04"/>
-      <path d="M6 42 l8 0" stroke="#fff" stroke-width="1" opacity="0.04"/>
+      <circle cx="10" cy="14" r="2.5" fill="#fff" opacity="0.035"/>
+      <circle cx="48" cy="22" r="1.8" fill="#fff" opacity="0.025"/>
+      <path d="M34 8 l1.5 3 3 1.5-3 1.5-1.5 3-1.5-3-3-1.5 3-1.5z" fill="#fff" opacity="0.03"/>
+      <path d="M58 52 q4-6 8 0-4 6-8 0" fill="none" stroke="#fff" stroke-width="1" opacity="0.025"/>
+      <circle cx="22" cy="58" r="4" fill="none" stroke="#fff" stroke-width="1" opacity="0.025"/>
+      <path d="M62 38 c0 3-2 5-4 5s-4-2-4-5 2-5 4-5 4 2 4 5" fill="#fff" opacity="0.02"/>
+      <path d="M6 42 l8 0" stroke="#fff" stroke-width="1" opacity="0.02"/>
     </pattern>
     <filter id="btnShadow" x="-8%" y="-8%" width="116%" height="130%">
-      <feDropShadow dx="0" dy="1" stdDeviation="0.6" flood-color="#5a3a72" flood-opacity="0.25"/>
+      <feDropShadow dx="0" dy="1" stdDeviation="0.6" flood-color="#000000" flood-opacity="0.45"/>
     </filter>
   </defs>
 
@@ -29,46 +29,46 @@
 
   <g font-family="ui-sans-serif,system-ui,sans-serif" font-size="11.5" font-weight="600" fill="#fff" filter="url(#btnShadow)">
     <g>
-      <rect x="22" y="88" width="82" height="38" rx="10" fill="#9d6fc6" opacity="0.92"/><text x="30" y="112">📊 Status</text>
-      <rect x="109" y="88" width="82" height="38" rx="10" fill="#9d6fc6" opacity="0.92"/><text x="117" y="112">📝 Exam</text>
-      <rect x="196" y="88" width="82" height="38" rx="10" fill="#9d6fc6" opacity="0.92"/><text x="204" y="112">🚪 Gates</text>
-      <rect x="283" y="88" width="82" height="38" rx="10" fill="#9d6fc6" opacity="0.92"/><text x="291" y="112">🩺 Diag</text>
+      <rect x="22" y="88" width="82" height="38" rx="10" fill="#2a2f33" opacity="0.92"/><text x="30" y="112">📊 Status</text>
+      <rect x="109" y="88" width="82" height="38" rx="10" fill="#2a2f33" opacity="0.92"/><text x="117" y="112">📝 Exam</text>
+      <rect x="196" y="88" width="82" height="38" rx="10" fill="#2a2f33" opacity="0.92"/><text x="204" y="112">🚪 Gates</text>
+      <rect x="283" y="88" width="82" height="38" rx="10" fill="#2a2f33" opacity="0.92"/><text x="291" y="112">🩺 Diag</text>
     </g>
     <g>
-      <rect x="22" y="133" width="82" height="38" rx="10" fill="#9d6fc6" opacity="0.92"/><text x="30" y="157">📈 Quote</text>
-      <rect x="109" y="133" width="82" height="38" rx="10" fill="#9d6fc6" opacity="0.92"/><text x="117" y="157">🏛 Venues</text>
-      <rect x="196" y="133" width="82" height="38" rx="10" fill="#9d6fc6" opacity="0.92"/><text x="204" y="157">❓ Why</text>
-      <rect x="283" y="133" width="82" height="38" rx="10" fill="#9d6fc6" opacity="0.92"/><text x="291" y="157">📋 All</text>
+      <rect x="22" y="133" width="82" height="38" rx="10" fill="#2a2f33" opacity="0.92"/><text x="30" y="157">📈 Quote</text>
+      <rect x="109" y="133" width="82" height="38" rx="10" fill="#2a2f33" opacity="0.92"/><text x="117" y="157">🏛 Venues</text>
+      <rect x="196" y="133" width="82" height="38" rx="10" fill="#2a2f33" opacity="0.92"/><text x="204" y="157">❓ Why</text>
+      <rect x="283" y="133" width="82" height="38" rx="10" fill="#2a2f33" opacity="0.92"/><text x="291" y="157">📋 All</text>
     </g>
     <g>
-      <rect x="22" y="178" width="82" height="38" rx="10" fill="#9d6fc6" opacity="0.92"/><text x="30" y="202">💡 Tips</text>
-      <rect x="109" y="178" width="82" height="38" rx="10" fill="#9d6fc6" opacity="0.92"/><text x="117" y="202">🔭 Hunt</text>
-      <rect x="196" y="178" width="82" height="38" rx="10" fill="#9d6fc6" opacity="0.92"/><text x="204" y="202">🔌 Mux</text>
-      <rect x="283" y="178" width="82" height="38" rx="10" fill="#9d6fc6" opacity="0.92"/><text x="291" y="202">👀 CEX</text>
+      <rect x="22" y="178" width="82" height="38" rx="10" fill="#2a2f33" opacity="0.92"/><text x="30" y="202">💡 Tips</text>
+      <rect x="109" y="178" width="82" height="38" rx="10" fill="#2a2f33" opacity="0.92"/><text x="117" y="202">🔭 Hunt</text>
+      <rect x="196" y="178" width="82" height="38" rx="10" fill="#2a2f33" opacity="0.92"/><text x="204" y="202">🔌 Mux</text>
+      <rect x="283" y="178" width="82" height="38" rx="10" fill="#2a2f33" opacity="0.92"/><text x="291" y="202">👀 CEX</text>
     </g>
     <g>
-      <rect x="22" y="223" width="82" height="38" rx="10" fill="#9d6fc6" opacity="0.92"/><text x="30" y="247">🎯 Target</text>
-      <rect x="109" y="223" width="82" height="38" rx="10" fill="#9d6fc6" opacity="0.92"/><text x="117" y="247">📐 Math</text>
-      <rect x="196" y="223" width="82" height="38" rx="10" fill="#9d6fc6" opacity="0.92"/><text x="204" y="247">🧠 Needs</text>
-      <rect x="283" y="223" width="82" height="38" rx="10" fill="#9d6fc6" opacity="0.92"/><text x="291" y="247">🔧 Fix</text>
+      <rect x="22" y="223" width="82" height="38" rx="10" fill="#2a2f33" opacity="0.92"/><text x="30" y="247">🎯 Target</text>
+      <rect x="109" y="223" width="82" height="38" rx="10" fill="#2a2f33" opacity="0.92"/><text x="117" y="247">📐 Math</text>
+      <rect x="196" y="223" width="82" height="38" rx="10" fill="#2a2f33" opacity="0.92"/><text x="204" y="247">🧠 Needs</text>
+      <rect x="283" y="223" width="82" height="38" rx="10" fill="#2a2f33" opacity="0.92"/><text x="291" y="247">🔧 Fix</text>
     </g>
     <g>
-      <rect x="22" y="268" width="82" height="38" rx="10" fill="#9d6fc6" opacity="0.92"/><text x="30" y="292">⚡ Speed</text>
-      <rect x="109" y="268" width="82" height="38" rx="10" fill="#9d6fc6" opacity="0.92"/><text x="117" y="292">🛰 Titan</text>
-      <rect x="196" y="268" width="82" height="38" rx="10" fill="#9d6fc6" opacity="0.92"/><text x="204" y="292">🛣 Router</text>
-      <rect x="283" y="268" width="82" height="38" rx="10" fill="#9d6fc6" opacity="0.92"/><text x="291" y="292">⏱ Now</text>
+      <rect x="22" y="268" width="82" height="38" rx="10" fill="#2a2f33" opacity="0.92"/><text x="30" y="292">⚡ Speed</text>
+      <rect x="109" y="268" width="82" height="38" rx="10" fill="#2a2f33" opacity="0.92"/><text x="117" y="292">🛰 Titan</text>
+      <rect x="196" y="268" width="82" height="38" rx="10" fill="#2a2f33" opacity="0.92"/><text x="204" y="292">🛣 Router</text>
+      <rect x="283" y="268" width="82" height="38" rx="10" fill="#2a2f33" opacity="0.92"/><text x="291" y="292">⏱ Now</text>
     </g>
     <g>
-      <rect x="22" y="313" width="82" height="38" rx="10" fill="#9d6fc6" opacity="0.92"/><text x="30" y="337">📡 gRPC</text>
-      <rect x="109" y="313" width="82" height="38" rx="10" fill="#9d6fc6" opacity="0.92"/><text x="117" y="337">⏸ Pause</text>
-      <rect x="196" y="313" width="82" height="38" rx="10" fill="#9d6fc6" opacity="0.92"/><text x="204" y="337">▶ Resume</text>
-      <rect x="283" y="313" width="82" height="38" rx="10" fill="#9d6fc6" opacity="0.92"/><text x="291" y="337">🏠 Home</text>
+      <rect x="22" y="313" width="82" height="38" rx="10" fill="#2a2f33" opacity="0.92"/><text x="30" y="337">📡 gRPC</text>
+      <rect x="109" y="313" width="82" height="38" rx="10" fill="#2a2f33" opacity="0.92"/><text x="117" y="337">⏸ Pause</text>
+      <rect x="196" y="313" width="82" height="38" rx="10" fill="#2a2f33" opacity="0.92"/><text x="204" y="337">▶ Resume</text>
+      <rect x="283" y="313" width="82" height="38" rx="10" fill="#2a2f33" opacity="0.92"/><text x="291" y="337">🏠 Home</text>
     </g>
     <g>
-      <rect x="22" y="358" width="82" height="38" rx="10" fill="#9d6fc6" opacity="0.92"/><text x="30" y="382">📱 Desk</text>
-      <rect x="109" y="358" width="82" height="38" rx="10" fill="#9d6fc6" opacity="0.92"/><text x="117" y="382">💓 Pulse</text>
-      <rect x="196" y="358" width="82" height="38" rx="10" fill="#9d6fc6" opacity="0.92"/><text x="204" y="382">🔒 Hold</text>
-      <rect x="283" y="358" width="82" height="38" rx="10" fill="#9d6fc6" opacity="0.92"/><text x="291" y="382">📋 Menu</text>
+      <rect x="22" y="358" width="82" height="38" rx="10" fill="#2a2f33" opacity="0.92"/><text x="30" y="382">📱 Desk</text>
+      <rect x="109" y="358" width="82" height="38" rx="10" fill="#2a2f33" opacity="0.92"/><text x="117" y="382">💓 Pulse</text>
+      <rect x="196" y="358" width="82" height="38" rx="10" fill="#2a2f33" opacity="0.92"/><text x="204" y="382">🔒 Hold</text>
+      <rect x="283" y="358" width="82" height="38" rx="10" fill="#2a2f33" opacity="0.92"/><text x="291" y="382">📋 Menu</text>
     </g>
   </g>
 

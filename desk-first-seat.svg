@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 460" role="img" aria-label="Starter seat Telegram desk">
+  <defs>
+    <linearGradient id="kbGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#141a1f"/>
+      <stop offset="1" stop-color="#0e1317"/>
+    </linearGradient>
+    <pattern id="doodle" x="0" y="0" width="72" height="72" patternUnits="userSpaceOnUse">
+      <circle cx="10" cy="14" r="2.5" fill="#fff" opacity="0.035"/>
+      <circle cx="48" cy="22" r="1.8" fill="#fff" opacity="0.025"/>
+      <path d="M34 8 l1.5 3 3 1.5-3 1.5-1.5 3-1.5-3-3-1.5 3-1.5z" fill="#fff" opacity="0.03"/>
+      <path d="M58 52 q4-6 8 0-4 6-8 0" fill="none" stroke="#fff" stroke-width="1" opacity="0.025"/>
+      <circle cx="22" cy="58" r="4" fill="none" stroke="#fff" stroke-width="1" opacity="0.025"/>
+      <path d="M62 38 c0 3-2 5-4 5s-4-2-4-5 2-5 4-5 4 2 4 5" fill="#fff" opacity="0.02"/>
+      <path d="M6 42 l8 0" stroke="#fff" stroke-width="1" opacity="0.02"/>
+    </pattern>
+    <filter id="btnShadow" x="-8%" y="-8%" width="116%" height="130%">
+      <feDropShadow dx="0" dy="1" stdDeviation="0.6" flood-color="#000000" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <rect width="390" height="460" rx="28" fill="#07090b"/>
+  <rect x="14" y="14" width="362" height="432" rx="22" fill="#0d1214"/>
+
+  <rect x="22" y="28" width="300" height="60" rx="12" fill="#161c22"/>
+  <text x="34" y="48" font-family="ui-sans-serif,system-ui,sans-serif" font-size="12" font-weight="600" fill="#e6efea">Starter seat — Home</text>
+  <text x="34" y="66" font-family="ui-sans-serif,system-ui,sans-serif" font-size="11" fill="#8aa39a">flash plan — USDC-SOL</text>
+  <text x="34" y="81" font-family="ui-sans-serif,system-ui,sans-serif" font-size="11" fill="#6fe0c4">dry / HOLD — nothing sends.</text>
+
+  <rect x="14" y="98" width="362" height="292" fill="url(#kbGrad)"/>
+  <rect x="14" y="98" width="362" height="292" fill="url(#doodle)"/>
+
+  <g font-family="ui-sans-serif,system-ui,sans-serif" font-size="11" font-weight="600" fill="#fff" filter="url(#btnShadow)" text-anchor="middle">
+    <g>
+      <rect x="22" y="110" width="64" height="38" rx="10" fill="#2a2f33"/><text x="54" y="134">Home</text>
+      <rect x="92" y="110" width="64" height="38" rx="10" fill="#2a2f33"/><text x="124" y="134">Hunt</text>
+      <rect x="162" y="110" width="64" height="38" rx="10" fill="#2a2f33"/><text x="194" y="134">Read</text>
+      <rect x="231" y="110" width="64" height="38" rx="10" fill="#2a2f33"/><text x="263" y="134">Fix</text>
+      <rect x="301" y="110" width="64" height="38" rx="10" fill="#2a2f33"/><text x="333" y="134">More</text>
+    </g>
+  </g>
+
+  <g font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="13" font-weight="600" fill="#fff" filter="url(#btnShadow)" text-anchor="middle">
+    <g>
+      <rect x="22" y="160" width="111" height="42" rx="10" fill="#2a2f33"/><text x="77" y="186">/status</text>
+      <rect x="138" y="160" width="111" height="42" rx="10" fill="#2a2f33"/><text x="193" y="186">/hunt</text>
+      <rect x="254" y="160" width="111" height="42" rx="10" fill="#2a2f33"/><text x="309" y="186">/why</text>
+    </g>
+    <g>
+      <rect x="22" y="212" width="111" height="42" rx="10" fill="#2a2f33"/><text x="77" y="238">/doctor</text>
+      <rect x="138" y="212" width="111" height="42" rx="10" fill="#2a2f33"/><text x="193" y="238">/menu</text>
+      <rect x="254" y="212" width="111" height="42" rx="10" fill="#2a2f33"/><text x="309" y="238">/pause</text>
+    </g>
+  </g>
+
+  <g font-family="ui-sans-serif,system-ui,sans-serif" font-size="11" fill="#7d9490">
+    <text x="30" y="286">Six commands. No autotrade button, no custody, no send.</text>
+    <text x="30" y="304">Read the desk, hold the desk. That is the whole seat.</text>
+  </g>
+
+  <g font-family="ui-sans-serif,system-ui,sans-serif" font-size="12" font-weight="600">
+    <rect x="22" y="322" width="166" height="38" rx="12" fill="#121820" stroke="#6fe0c4" stroke-width="1" stroke-opacity="0.35"/>
+    <text x="105" y="346" fill="#6fe0c4" text-anchor="middle">🏠 Home</text>
+    <rect x="199" y="322" width="166" height="38" rx="12" fill="#121820" stroke="#6fe0c4" stroke-width="1" stroke-opacity="0.35"/>
+    <text x="282" y="346" fill="#6fe0c4" text-anchor="middle">📋 Menu</text>
+  </g>
+
+  <text x="28" y="420" font-size="12" fill="#6fe0c4" font-family="ui-sans-serif,system-ui,sans-serif">Starter seat · Telegram desk fixture · dry/HOLD</text>
+</svg>
