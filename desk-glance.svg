@@ -1,20 +1,77 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 520" role="img" aria-label="Telegram Glance board">
-  <rect width="390" height="520" rx="28" fill="#1a1024"/>
-  <rect x="14" y="14" width="362" height="492" rx="22" fill="#c9a8e8"/>
-  <text x="28" y="48" font-family="ui-sans-serif,system-ui,sans-serif" font-size="20" font-weight="700" fill="#2a1638">Quote</text>
-  <text x="200" y="48" font-family="ui-sans-serif,system-ui,sans-serif" font-size="20" font-weight="700" fill="#2a1638">Venues</text>
-  <g font-family="ui-sans-serif,system-ui,sans-serif" font-size="18" font-weight="700" fill="#1b1028">
-    <rect x="24" y="64" width="164" height="58" rx="14" fill="#efe4fb"/><text x="40" y="100">Talent</text>
-    <rect x="202" y="64" width="164" height="58" rx="14" fill="#efe4fb"/><text x="218" y="100">Now</text>
-    <rect x="24" y="132" width="164" height="58" rx="14" fill="#efe4fb"/><text x="40" y="168">Money</text>
-    <rect x="202" y="132" width="164" height="58" rx="14" fill="#efe4fb"/><text x="218" y="168">Needs</text>
-    <rect x="24" y="200" width="164" height="58" rx="14" fill="#efe4fb"/><text x="40" y="236">Pause</text>
-    <rect x="202" y="200" width="164" height="58" rx="14" fill="#efe4fb"/><text x="218" y="236">Rest</text>
-    <rect x="24" y="268" width="342" height="58" rx="14" fill="#efe4fb"/><text x="40" y="304">Resume</text>
+  <defs>
+    <pattern id="tg-doodle" width="72" height="72" patternUnits="userSpaceOnUse">
+      <rect width="72" height="72" fill="#b39ddb"/>
+      <g fill="none" stroke="#9b7fd0" stroke-width="1.2" opacity="0.45">
+        <circle cx="12" cy="14" r="4"/>
+        <path d="M34 8l2 5 5 1-4 3 1 5-4-3-4 3 1-5-4-3 5-1z"/>
+        <path d="M58 18c0 4-6 8-6 8s-6-4-6-8 2.7-8 6-8 6 4 6 8z"/>
+        <path d="M8 42h10M8 48h7"/>
+        <circle cx="44" cy="44" r="3"/>
+        <path d="M62 52c-4 0-6-3-6-6s2-6 6-6 6 3 6 6-2 6-6 6z"/>
+        <path d="M18 62l3-6 3 6"/>
+      </g>
+    </pattern>
+    <linearGradient id="btn-fill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8b79b8"/>
+      <stop offset="100%" stop-color="#7564a8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- phone frame -->
+  <rect width="390" height="520" rx="28" fill="#08080a"/>
+  <rect x="10" y="10" width="370" height="500" rx="22" fill="#111015" stroke="#1e1e24" stroke-width="1"/>
+
+  <!-- telegram keyboard field -->
+  <rect x="16" y="16" width="358" height="448" rx="18" fill="url(#tg-doodle)"/>
+
+  <!-- nav row: 5 compact pills -->
+  <g font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="13" font-weight="600" fill="#fff">
+    <rect x="22" y="28" width="64" height="34" rx="10" fill="url(#btn-fill)" opacity="0.92"/>
+    <text x="54" y="50" text-anchor="middle">🏠 Home</text>
+
+    <rect x="92" y="28" width="64" height="34" rx="10" fill="url(#btn-fill)" opacity="0.92"/>
+    <text x="124" y="50" text-anchor="middle">🔭 Hunt</text>
+
+    <rect x="162" y="28" width="64" height="34" rx="10" fill="url(#btn-fill)" opacity="0.92"/>
+    <text x="194" y="50" text-anchor="middle">📖 Read</text>
+
+    <rect x="232" y="28" width="64" height="34" rx="10" fill="url(#btn-fill)" opacity="0.92"/>
+    <text x="264" y="50" text-anchor="middle">🔧 Fix</text>
+
+    <rect x="302" y="28" width="64" height="34" rx="10" fill="url(#btn-fill)" opacity="0.92"/>
+    <text x="334" y="50" text-anchor="middle">⋯ More</text>
   </g>
-  <rect x="24" y="344" width="164" height="52" rx="16" fill="#2b1a3c"/><text x="48" y="376" fill="#f4e9ff" font-size="18" font-weight="700" font-family="ui-sans-serif,system-ui,sans-serif">Home</text>
-  <rect x="202" y="344" width="164" height="52" rx="16" fill="#2b1a3c"/><text x="218" y="376" fill="#f4e9ff" font-size="18" font-weight="700" font-family="ui-sans-serif,system-ui,sans-serif">Hunt tab</text>
-  <rect x="24" y="410" width="164" height="52" rx="16" fill="#efe4fb"/><text x="56" y="442" fill="#1b1028" font-size="18" font-weight="700" font-family="ui-sans-serif,system-ui,sans-serif">Why</text>
-  <rect x="202" y="410" width="164" height="52" rx="16" fill="#2b1a3c"/><text x="248" y="442" fill="#f4e9ff" font-size="18" font-weight="700" font-family="ui-sans-serif,system-ui,sans-serif">Land</text>
-  <text x="28" y="492" font-size="14" fill="#3a244f" font-family="ui-sans-serif,system-ui,sans-serif">Glance · Telegram desk fixture · dry/HOLD</text>
+
+  <!-- glance row: 3 columns -->
+  <g font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="15" font-weight="600" fill="#fff">
+    <rect x="22" y="72" width="108" height="40" rx="11" fill="url(#btn-fill)" opacity="0.94"/>
+    <text x="76" y="98" text-anchor="middle">📊 Status</text>
+
+    <rect x="138" y="72" width="108" height="40" rx="11" fill="url(#btn-fill)" opacity="0.94"/>
+    <text x="192" y="98" text-anchor="middle">🔭 Hunt</text>
+
+    <rect x="254" y="72" width="108" height="40" rx="11" fill="url(#btn-fill)" opacity="0.94"/>
+    <text x="308" y="98" text-anchor="middle">❓ Why</text>
+  </g>
+
+  <!-- control row: 2 wide pills -->
+  <g font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="16" font-weight="600" fill="#fff">
+    <rect x="22" y="122" width="166" height="42" rx="12" fill="url(#btn-fill)" opacity="0.94"/>
+    <text x="105" y="149" text-anchor="middle">💗 Pulse</text>
+
+    <rect x="196" y="122" width="166" height="42" rx="12" fill="url(#btn-fill)" opacity="0.94"/>
+    <text x="279" y="149" text-anchor="middle">⏸ Pause</text>
+  </g>
+
+  <!-- dry/HOLD status strip -->
+  <rect x="16" y="408" width="358" height="56" rx="14" fill="#2a2240" opacity="0.96"/>
+  <text x="28" y="442" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="13" fill="#d8fff4">
+    💗 pulse · scans=1 · clear=0 · short=1 · paused=
+  </text>
+
+  <!-- fixture footnote -->
+  <text x="28" y="492" font-family="ui-sans-serif,system-ui,sans-serif" font-size="12" fill="#6fe0c4" opacity="0.85">
+    Glance · Telegram desk fixture · dry/HOLD
+  </text>
 </svg>

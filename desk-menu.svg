@@ -1,28 +1,85 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 560" role="img" aria-label="Telegram hunt menu">
-  <rect width="390" height="560" rx="28" fill="#1a1024"/>
-  <rect x="14" y="14" width="362" height="532" rx="22" fill="#c9a8e8"/>
-  <g font-family="ui-sans-serif,system-ui,sans-serif" font-size="16" font-weight="700" fill="#1b1028">
-    <rect x="22" y="28" width="110" height="52" rx="12" fill="#efe4fb"/><text x="36" y="60">Tips</text>
-    <rect x="140" y="28" width="110" height="52" rx="12" fill="#efe4fb"/><text x="154" y="60">Hunt</text>
-    <rect x="258" y="28" width="110" height="52" rx="12" fill="#efe4fb"/><text x="272" y="60">Mux</text>
-    <rect x="22" y="90" width="110" height="52" rx="12" fill="#efe4fb"/><text x="36" y="122">Target</text>
-    <rect x="140" y="90" width="110" height="52" rx="12" fill="#efe4fb"/><text x="154" y="122">Math</text>
-    <rect x="258" y="90" width="110" height="52" rx="12" fill="#efe4fb"/><text x="272" y="122">Needs</text>
-    <rect x="22" y="152" width="110" height="52" rx="12" fill="#efe4fb"/><text x="36" y="184">Speed</text>
-    <rect x="140" y="152" width="110" height="52" rx="12" fill="#efe4fb"/><text x="154" y="184">Titan</text>
-    <rect x="258" y="152" width="110" height="52" rx="12" fill="#efe4fb"/><text x="272" y="184">Router</text>
-    <rect x="22" y="214" width="110" height="52" rx="12" fill="#efe4fb"/><text x="36" y="246">gRPC</text>
-    <rect x="140" y="214" width="110" height="52" rx="12" fill="#efe4fb"/><text x="154" y="246">Pause</text>
-    <rect x="258" y="214" width="110" height="52" rx="12" fill="#efe4fb"/><text x="272" y="246">Resume</text>
-    <rect x="22" y="276" width="110" height="52" rx="12" fill="#efe4fb"/><text x="36" y="308">Desk</text>
-    <rect x="140" y="276" width="110" height="52" rx="12" fill="#efe4fb"/><text x="154" y="308">Pulse</text>
-    <rect x="258" y="276" width="110" height="52" rx="12" fill="#efe4fb"/><text x="272" y="308">Hold</text>
+  <defs>
+    <pattern id="tg-doodle" width="72" height="72" patternUnits="userSpaceOnUse">
+      <rect width="72" height="72" fill="#b39ddb"/>
+      <g fill="none" stroke="#9b7fd0" stroke-width="1.2" opacity="0.45">
+        <circle cx="12" cy="14" r="4"/>
+        <path d="M34 8l2 5 5 1-4 3 1 5-4-3-4 3 1-5-4-3 5-1z"/>
+        <path d="M58 18c0 4-6 8-6 8s-6-4-6-8 2.7-8 6-8 6 4 6 8z"/>
+        <path d="M8 42h10M8 48h7"/>
+        <circle cx="44" cy="44" r="3"/>
+        <path d="M62 52c-4 0-6-3-6-6s2-6 6-6 6 3 6 6-2 6-6 6z"/>
+        <path d="M18 62l3-6 3 6"/>
+      </g>
+    </pattern>
+    <linearGradient id="btn-fill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8b79b8"/>
+      <stop offset="100%" stop-color="#7564a8"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="390" height="560" rx="28" fill="#08080a"/>
+  <rect x="10" y="10" width="370" height="540" rx="22" fill="#111015" stroke="#1e1e24" stroke-width="1"/>
+  <rect x="16" y="16" width="358" height="488" rx="18" fill="url(#tg-doodle)"/>
+
+  <!-- 4-column command grid -->
+  <g font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="12.5" font-weight="600" fill="#fff">
+    <!-- row 1 -->
+    <rect x="20" y="24" width="82" height="36" rx="10" fill="url(#btn-fill)" opacity="0.93"/><text x="61" y="47" text-anchor="middle">📊 Status</text>
+    <rect x="108" y="24" width="82" height="36" rx="10" fill="url(#btn-fill)" opacity="0.93"/><text x="149" y="47" text-anchor="middle">📝 Exam</text>
+    <rect x="196" y="24" width="82" height="36" rx="10" fill="url(#btn-fill)" opacity="0.93"/><text x="237" y="47" text-anchor="middle">🚪 Gates</text>
+    <rect x="284" y="24" width="82" height="36" rx="10" fill="url(#btn-fill)" opacity="0.93"/><text x="325" y="47" text-anchor="middle">🩺 Diag</text>
+
+    <!-- row 2 -->
+    <rect x="20" y="66" width="82" height="36" rx="10" fill="url(#btn-fill)" opacity="0.93"/><text x="61" y="89" text-anchor="middle">📈 Quote</text>
+    <rect x="108" y="66" width="82" height="36" rx="10" fill="url(#btn-fill)" opacity="0.93"/><text x="149" y="89" text-anchor="middle">🏛 Venues</text>
+    <rect x="196" y="66" width="82" height="36" rx="10" fill="url(#btn-fill)" opacity="0.93"/><text x="237" y="89" text-anchor="middle">❓ Why</text>
+    <rect x="284" y="66" width="82" height="36" rx="10" fill="url(#btn-fill)" opacity="0.93"/><text x="325" y="89" text-anchor="middle">📋 All</text>
+
+    <!-- row 3 -->
+    <rect x="20" y="108" width="82" height="36" rx="10" fill="url(#btn-fill)" opacity="0.93"/><text x="61" y="131" text-anchor="middle">💡 Tips</text>
+    <rect x="108" y="108" width="82" height="36" rx="10" fill="url(#btn-fill)" opacity="0.93"/><text x="149" y="131" text-anchor="middle">🔭 Hunt</text>
+    <rect x="196" y="108" width="82" height="36" rx="10" fill="url(#btn-fill)" opacity="0.93"/><text x="237" y="131" text-anchor="middle">🔀 Mux</text>
+    <rect x="284" y="108" width="82" height="36" rx="10" fill="url(#btn-fill)" opacity="0.93"/><text x="325" y="131" text-anchor="middle">👀 CEX</text>
+
+    <!-- row 4 -->
+    <rect x="20" y="150" width="82" height="36" rx="10" fill="url(#btn-fill)" opacity="0.93"/><text x="61" y="173" text-anchor="middle">🎯 Target</text>
+    <rect x="108" y="150" width="82" height="36" rx="10" fill="url(#btn-fill)" opacity="0.93"/><text x="149" y="173" text-anchor="middle">🧮 Math</text>
+    <rect x="196" y="150" width="82" height="36" rx="10" fill="url(#btn-fill)" opacity="0.93"/><text x="237" y="173" text-anchor="middle">📦 Needs</text>
+    <rect x="284" y="150" width="82" height="36" rx="10" fill="url(#btn-fill)" opacity="0.93"/><text x="325" y="173" text-anchor="middle">🔧 Fix</text>
+
+    <!-- row 5 -->
+    <rect x="20" y="192" width="82" height="36" rx="10" fill="url(#btn-fill)" opacity="0.93"/><text x="61" y="215" text-anchor="middle">⚡ Speed</text>
+    <rect x="108" y="192" width="82" height="36" rx="10" fill="url(#btn-fill)" opacity="0.93"/><text x="149" y="215" text-anchor="middle">🛸 Titan</text>
+    <rect x="196" y="192" width="82" height="36" rx="10" fill="url(#btn-fill)" opacity="0.93"/><text x="237" y="215" text-anchor="middle">🛣 Router</text>
+    <rect x="284" y="192" width="82" height="36" rx="10" fill="url(#btn-fill)" opacity="0.93"/><text x="325" y="215" text-anchor="middle">⏱ Now</text>
+
+    <!-- row 6 -->
+    <rect x="20" y="234" width="82" height="36" rx="10" fill="url(#btn-fill)" opacity="0.93"/><text x="61" y="257" text-anchor="middle">📡 gRPC</text>
+    <rect x="108" y="234" width="82" height="36" rx="10" fill="url(#btn-fill)" opacity="0.93"/><text x="149" y="257" text-anchor="middle">⏸ Pause</text>
+    <rect x="196" y="234" width="82" height="36" rx="10" fill="url(#btn-fill)" opacity="0.93"/><text x="237" y="257" text-anchor="middle">▶ Resume</text>
+    <rect x="284" y="234" width="82" height="36" rx="10" fill="url(#btn-fill)" opacity="0.93"/><text x="325" y="257" text-anchor="middle">🏠 Home</text>
+
+    <!-- row 7 -->
+    <rect x="20" y="276" width="82" height="36" rx="10" fill="url(#btn-fill)" opacity="0.93"/><text x="61" y="299" text-anchor="middle">🖥 Desk</text>
+    <rect x="108" y="276" width="82" height="36" rx="10" fill="url(#btn-fill)" opacity="0.93"/><text x="149" y="299" text-anchor="middle">💗 Pulse</text>
+    <rect x="196" y="276" width="82" height="36" rx="10" fill="url(#btn-fill)" opacity="0.93"/><text x="237" y="299" text-anchor="middle">✋ Hold</text>
+    <rect x="284" y="276" width="82" height="36" rx="10" fill="url(#btn-fill)" opacity="0.93"/><text x="325" y="299" text-anchor="middle">☰ Menu</text>
   </g>
-  <rect x="22" y="348" width="166" height="56" rx="16" fill="#2b1a3c"/>
-  <text x="44" y="384" fill="#f4e9ff" font-size="20" font-weight="700" font-family="ui-sans-serif,system-ui,sans-serif">Home</text>
-  <rect x="198" y="348" width="166" height="56" rx="16" fill="#2b1a3c"/>
-  <text x="220" y="384" fill="#f4e9ff" font-size="20" font-weight="700" font-family="ui-sans-serif,system-ui,sans-serif">Menu</text>
-  <rect x="22" y="420" width="342" height="56" rx="16" fill="#efe4fb"/>
-  <text x="140" y="456" fill="#1b1028" font-size="20" font-weight="700" font-family="ui-sans-serif,system-ui,sans-serif">Glance</text>
-  <text x="28" y="516" font-size="15" fill="#3a244f" font-family="ui-sans-serif,system-ui,sans-serif">Telegram control · your keys stay home</text>
+
+  <!-- bottom nav -->
+  <g font-family="ui-sans-serif,system-ui,-apple-system,sans-serif" font-size="14" font-weight="600" fill="#fff">
+    <rect x="20" y="332" width="168" height="40" rx="12" fill="#2a2240" opacity="0.96"/>
+    <text x="104" y="358" text-anchor="middle">🏠 Home</text>
+
+    <rect x="198" y="332" width="168" height="40" rx="12" fill="#2a2240" opacity="0.96"/>
+    <text x="282" y="358" text-anchor="middle">☰ Menu</text>
+
+    <rect x="20" y="382" width="346" height="40" rx="12" fill="url(#btn-fill)" opacity="0.94"/>
+    <text x="193" y="408" text-anchor="middle">👁 Glance</text>
+  </g>
+
+  <text x="28" y="516" font-family="ui-sans-serif,system-ui,sans-serif" font-size="12" fill="#6fe0c4" opacity="0.85">
+    Telegram control · your keys stay home
+  </text>
 </svg>
