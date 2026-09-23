@@ -52,25 +52,6 @@
 
   <article class="fixture-block">
     <span class="tag tag-verifiable">Verifiable artifact</span>
-    <h2 style="font-family:var(--serif);font-weight:400;font-size:24px;margin-bottom:8px">Glance board — <code>desk-glance.svg</code></h2>
-    <a href="../../desk-glance.svg" target="_blank" rel="noopener">
-      <img src="../../desk-glance.svg" alt="Glance fixture — Telegram desk control layout" width="390" height="520" loading="lazy" decoding="async"/>
-    </a>
-    <div class="prose">
-      <p><strong>What it is:</strong> A synthetic Telegram board layout shipped as a static SVG.</p>
-      <p><strong>What to look at:</strong> Control layout, dry/HOLD posture labels, menu structure — open the file in a browser or editor.</p>
-      <p><strong>What it proves:</strong> This exact file (same bytes) is what we publish and ship. Run the command below; same fixture in, same hash out.</p>
-      <p><strong>What it does NOT prove:</strong> A running desk, live fills, profit, or that the desk behaves as the picture suggests. Static SVG fixtures — not a running desk, not proof of fills.</p>
-    </div>
-    <p class="section-label" style="margin-top:16px">SHA-256</p>
-    <div class="hash-box" id="hashGlance">a162d898e14004ef1c3c00ca0db7683a1c52343c96b516ea4e7b70a922b74427</div>
-    <p class="prose" style="margin-bottom:6px">Reproduce (from the repo root or this site’s file URL after download):</p>
-    <div class="cmd">curl -sL "https://plumb-35.elghaly.dev/desk-glance.svg" | sha256sum</div>
-    <p class="prose" style="margin:8px 0 0;font-size:13px">This proves the file has not changed, not that the desk behaves as the picture suggests.</p>
-  </article>
-
-  <article class="fixture-block">
-    <span class="tag tag-verifiable">Verifiable artifact</span>
     <h2 style="font-family:var(--serif);font-weight:400;font-size:24px;margin-bottom:8px">Menu fixture — <code>desk-menu.svg</code></h2>
     <a href="../../desk-menu.svg" target="_blank" rel="noopener">
       <img src="../../desk-menu.svg" alt="Menu fixture — Telegram desk menu with Hold control" width="390" height="560" loading="lazy" decoding="async"/>
@@ -127,6 +108,7 @@
   </article>
 
   <div class="prose">
+    <p>The Glance board fixture now lives with Glance, sealed the same way: <a href="https://glance.elghaly.dev/proof/#board" rel="noopener">glance.elghaly.dev/proof</a>.</p>
     <p>See also: <a href="../onchain/">On-chain</a>, <a href="../claims/">Claims ledger</a>, <a href="../limits/">Limits</a>.</p>
   </div>
 
