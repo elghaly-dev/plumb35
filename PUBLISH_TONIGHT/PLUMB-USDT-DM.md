@@ -25,7 +25,7 @@ Pay **USDT (SPL) on Solana** to:
 
 Reply with the tx signature + which seat. Then we start the 3.35h clock on Telegram.
 
-Site: https://plumb.elghaly.dev
+Site: https://plumb-35.elghaly.dev
 Mail: support@elghaly.dev
 TG: @wyndham35
 
@@ -36,5 +36,5 @@ TG: @wyndham35
 ## Caption + photo
 
 Plumb seat — Telegram control · ready in 3.35h after pay · no profit promise.
-plumb.elghaly.dev
+plumb-35.elghaly.dev
 USDT SPL (Solana) 299 / 699 / 1999

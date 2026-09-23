@@ -30,7 +30,11 @@
 - [ ] Title = **Nobody knows a quiet desk**
 - [ ] Body pasted from `nobody-knows-a-quiet-desk.md`
 - [ ] USDT SPL Solana seats line present (299 / 699 / 1999)
-- [ ] Links: plumb.elghaly.dev · iris-35.elghaly.dev · support@elghaly.dev · @wyndham35
+- [ ] **DECIDE BEFORE POSTING — Starter price.** The pack says 299 USDT; the live
+      site says `$350` (and the mobile bar says "Lifetime seat · from $350").
+      699 and 1,999 match the site. Either bring the pack to 350, or state on the
+      site that the USDT price differs. Do not publish the two numbers unreconciled.
+- [ ] Links: plumb-35.elghaly.dev · iris-35.elghaly.dev · support@elghaly.dev · @wyndham35
 - [ ] No profit promises beyond copy · no Egypt sales pitch · no bot status dump
 
 ## Report back

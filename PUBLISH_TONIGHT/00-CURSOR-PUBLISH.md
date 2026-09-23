@@ -17,7 +17,7 @@ Plumb is that door — Telegram control, we build, you continue. Ready seat in 3
 
 If nobody knows us yet, the fix is not louder bots. It is a clear link and an honest story.
 
-→ https://plumb.elghaly.dev
+→ https://plumb-35.elghaly.dev
 → https://iris-35.elghaly.dev
 → support@elghaly.dev
 → Telegram @wyndham35 · USDT (SPL/Solana) seats 299 / 699 / 1999 — non-Egypt
