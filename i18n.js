@@ -25,8 +25,8 @@ en:{
   why2h:"Speed, eyes, your keys",why2:"You cannot watch every book by hand. A desk bot brings speed and constant eyes; you bring the rules, the size, and the choice to stay dry or arm when ready. Keys stay with you. Control stays on Telegram — no browser dashboard required.",
   why3h:"Delivered in 3.35 hours · we help we guide",why3:"After payment and brief, your binary is on your side within 3.35 hours — then a handover call. We help, we guide; you continue on Telegram. Start small, run dry first, treat early sessions as training — not hype, not a promise of profit.",
   evLabel:"Check before you pay",evTitle:"Evidence you can verify yourself.",evNote:"Fixtures you can open locally, on-chain path screenshots, and UI reference images — each labeled for what it is. None of this is a profit claim.",
-  glanceLabel:"Glance fixtures",glanceTitle:"Synthetic Telegram boards you can open now.",glanceNote:"Static SVG fixtures — not a running desk, not proof of fills. Use them to see menu layout and control surfaces before you buy.",
-  gf1h:"Glance board",gf1:"Open the SVG — inspect control layout. Dry/HOLD posture; no live execution implied.",
+  glanceLabel:"Desk fixtures",glanceTitle:"Synthetic Telegram boards you can open now.",glanceNote:"Static SVG fixtures — not a running desk, not proof of fills. Use them to see menu layout and control surfaces before you buy.",
+  gf1h:"Starter seat",gf1:"The entry seat's control surface — six commands, all read-or-hold. No autotrade button, no send.",
   gf2h:"Menu fixture",gf2:"Hold control visible in the menu tree. Same file ships with the desk for local inspection.",
   flashLabel:"Flash path · 15k USDC",flashTitle:"Signed on chain. Not a screenshot of a spreadsheet.",flashNote:"A Kamino flash borrow routed through Jupiter and repaid in one transaction. Wallets and figures are redacted — we are showing the path shape, not selling a number or return.",
   f1h:"Borrow · Kamino",f1:"Flash loan 15,000 USDC from the Kamino lending vault.",f2h:"Loop · Jupiter path",f2:"Borrow → Jupiter swaps → repay. Full round-trip in one transaction.",
@@ -124,6 +124,9 @@ en:{
   bi4:"Your timezone, for the handover call"
 },
 ar:{
+  glanceLabel:"نماذج الديسك",glanceTitle:"لوحات تيليجرام تجريبية يمكنك فتحها الآن.",glanceNote:"ملفات SVG ثابتة — ليست ديسك يعمل، وليست إثباتاً لأي تنفيذ. استخدمها لمعاينة تخطيط القائمة وأسطح التحكم قبل الشراء.",
+  gf1h:"المقعد الأول",gf1:"سطح التحكم للمقعد الأول — ستة أوامر، كلها قراءة أو إيقاف. لا زر تداول تلقائي، ولا إرسال.",
+  gf2h:"نموذج القائمة",gf2:"زر Hold ظاهر في شجرة القائمة. نفس الملف يُسلَّم مع الديسك للفحص محلياً.",
   metaTitle:"Plumb — برمجيات مكتب جاهزة",
   brandTag:"برمجيات مكتب جاهزة",
   heroEyebrow:"مقعد مدى الحياة · يُشحن dry/HOLD حتى تُفعّله",
@@ -228,6 +231,9 @@ ar:{
   bi4:"منطقتك الزمنية، لمكالمة التسليم"
 },
 ru:{
+  glanceLabel:"Фикстуры деска",glanceTitle:"Синтетические Telegram-доски, которые можно открыть прямо сейчас.",glanceNote:"Статичные SVG-файлы — не работающий деск и не доказательство исполнения. Посмотрите раскладку меню и поверхности управления до покупки.",
+  gf1h:"Первое место",gf1:"Поверхность управления начального места — шесть команд, все на чтение или удержание. Ни кнопки автоторговли, ни отправки.",
+  gf2h:"Фикстура меню",gf2:"Кнопка Hold видна в дереве меню. Тот же файл поставляется с деском для локальной проверки.",
   metaTitle:"Plumb — Готовое ПО для деска",
   brandTag:"Готовое ПО для деска",
   heroEyebrow:"Пожизненное место · dry/HOLD до активации",
@@ -331,6 +337,9 @@ ru:{
   bi4:"Ваш часовой пояс — для передачи"
 },
 zh:{
+  glanceLabel:"桌面样件",glanceTitle:"现在就能打开的合成 Telegram 面板。",glanceNote:"静态 SVG 样件 — 不是运行中的桌面，也不是成交证明。购买前用它们查看菜单布局与控制界面。",
+  gf1h:"入门席位",gf1:"入门席位的控制界面 — 六个命令，全部只读或暂停。没有自动交易按钮，没有发送。",
+  gf2h:"菜单样件",gf2:"菜单树中可见 Hold 控制。同一文件随桌面一起交付，可在本地检查。",
   metaTitle:"Plumb — 就绪桌面软件",
   brandTag:"就绪桌面软件",
   heroEyebrow:"终身席位 · dry/HOLD 直至你启用",
@@ -435,6 +444,9 @@ zh:{
   bi4:"你的时区，便于安排交接通话"
 },
 de:{
+  glanceLabel:"Desk-Fixtures",glanceTitle:"Synthetische Telegram-Boards, die Sie jetzt öffnen können.",glanceNote:"Statische SVG-Fixtures — kein laufender Desk, kein Nachweis von Fills. Damit sehen Sie Menüaufbau und Steuerflächen vor dem Kauf.",
+  gf1h:"Erster Sitz",gf1:"Die Steuerfläche des Einstiegssitzes — sechs Befehle, alle nur lesen oder halten. Kein Autotrade-Button, kein Senden.",
+  gf2h:"Menü-Fixture",gf2:"Hold-Steuerung im Menübaum sichtbar. Dieselbe Datei wird mit dem Desk ausgeliefert und lässt sich lokal prüfen.",
   metaTitle:"Plumb — Fertige Desk-Software",
   brandTag:"Fertige Desk-Software",
   heroEyebrow:"Lifetime-Platz · dry/HOLD bis du aktivierst",
@@ -539,6 +551,9 @@ de:{
   bi4:"Deine Zeitzone für das Übergabegespräch"
 },
 es:{
+  glanceLabel:"Fixtures del desk",glanceTitle:"Tableros de Telegram sintéticos que puedes abrir ahora.",glanceNote:"Fixtures SVG estáticos — no son un desk en marcha ni prueba de ejecuciones. Úsalos para ver la disposición del menú y las superficies de control antes de comprar.",
+  gf1h:"Primer asiento",gf1:"La superficie de control del asiento de entrada — seis comandos, todos de lectura o pausa. Sin botón de autotrade, sin envío.",
+  gf2h:"Fixture del menú",gf2:"Control Hold visible en el árbol del menú. El mismo archivo se entrega con el desk para inspección local.",
   metaTitle:"Plumb — Software de desk lista",
   brandTag:"Software de desk lista",
   heroEyebrow:"Asiento vitalicio · dry/HOLD hasta que lo actives",
