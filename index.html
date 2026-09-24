@@ -144,6 +144,12 @@ footer .net.monad span{color:var(--accent-warm)}
 
 /* ── Hero ── */
 .hero{padding:0 0 var(--space-md);margin-top:var(--space-md)}
+.locale-notice{
+  font-size:13px;color:var(--muted);background:var(--accent-warm-soft);
+  border:1px solid var(--line);border-radius:var(--radius-sm);
+  padding:12px 16px;margin-top:var(--space-sm);line-height:1.55;
+}
+.locale-notice[hidden]{display:none}
 .hero-copy{max-width:38em}
 .eyebrow{
   font-size:11px;letter-spacing:.22em;text-transform:uppercase;
@@ -904,6 +910,7 @@ if(l&&/^(en|ar|ru|zh|de|es)$/.test(l)){d.lang=l;d.dir=l==='ar'?'rtl':'ltr';}}cat
   </header>
 
   <main id="main">
+  <p class="locale-notice" id="homeLocaleNote" hidden></p>
   <section class="hero" id="top">
     <p class="flagship brand-lock">💭 you dream we build 🧠💡</p>
     <div class="hero-copy">
@@ -989,7 +996,7 @@ if(l&&/^(en|ar|ru|zh|de|es)$/.test(l)){d.lang=l;d.dir=l==='ar'?'rtl':'ltr';}}cat
       </a>
     </nav>
     <div class="section-head" style="margin-top:var(--space-lg)">
-      <p class="section-label" id="glanceLabel">Glance fixtures</p>
+      <p class="section-label" id="glanceLabel">Desk fixtures</p>
       <h3 class="section-title" id="glanceTitle" style="font-size:clamp(22px,3vw,28px)">Synthetic Telegram boards you can open now.</h3>
       <p class="section-note" id="glanceNote">Static SVG fixtures — not a running desk, not proof of fills. Use them to see menu layout and control surfaces before you buy.</p>
     </div>
@@ -997,8 +1004,8 @@ if(l&&/^(en|ar|ru|zh|de|es)$/.test(l)){d.lang=l;d.dir=l==='ar'?'rtl':'ltr';}}cat
       <figure>
         <a href="desk-first-seat.svg" target="_blank" rel="noopener"><img src="desk-first-seat.svg" alt="Starter seat fixture — Home nav and the six commands the entry seat ships with" width="390" height="460" loading="lazy" decoding="async"/></a>
         <figcaption>
-          <strong id="gf1h">Glance board</strong>
-          <span id="gf1">Open the SVG — inspect control layout. Dry/HOLD posture; no live execution implied.</span>
+          <strong id="gf1h">Starter seat</strong>
+          <span id="gf1">The entry seat's control surface — six commands, all read-or-hold. No autotrade button, no send.</span>
         </figcaption>
       </figure>
       <figure>
@@ -1011,7 +1018,7 @@ if(l&&/^(en|ar|ru|zh|de|es)$/.test(l)){d.lang=l;d.dir=l==='ar'?'rtl':'ltr';}}cat
     </div>
     <div class="section-head" style="margin-top:var(--space-xl)">
       <p class="section-label" id="flashLabel">Flash path · 15k USDC</p>
-      <h3 class="section-title" id="flashTitle" style="font-size:clamp(22px,3vw,28px)">Signed on chain. Not a screenshot of a spreadsheet.</h3>
+      <h3 class="section-title" id="flashTitle" style="font-size:clamp(22px,3vw,28px)">Screenshots of an on-chain flash path. No signature published.</h3>
       <p class="section-note" id="flashNote">A Kamino flash borrow routed through Jupiter and repaid in one transaction. Wallets and figures are redacted — we are showing the path shape, not selling a number or return.</p>
     </div>
     <div class="flash-gallery">
@@ -1116,7 +1123,7 @@ if(l&&/^(en|ar|ru|zh|de|es)$/.test(l)){d.lang=l;d.dir=l==='ar'?'rtl':'ltr';}}cat
       </article>
       <article class="delivery-term">
         <h3 id="dt4h">If it takes longer</h3>
-        <p id="dt4">Incomplete brief, scope expansion, or missing host access pauses the clock. We agree a new window before you pay extra. If we miss an agreed window and you no longer want to wait, ask and your money comes back — see <a href="refunds/">Refunds</a>.</p>
+        <p id="dt4">Incomplete brief, scope expansion, or missing host access pauses the clock. We agree a new window before you pay extra. Ask for your money back at any time, for any reason — see <a href="refunds/">Refunds</a>.</p>
       </article>
       <article class="delivery-term">
         <h3 id="dt5h">Updates &amp; follow-up</h3>
