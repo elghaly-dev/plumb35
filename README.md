@@ -20,7 +20,7 @@ Ask us on mail — [support@elghaly.dev](mailto:support@elghaly.dev) · We are 2
 
 Titan / gRPC quoted separately. Follow-up $149/mo after the update window.
 
-Flash proof gallery on the live page: Kamino 15k USDC borrow + Jupiter loop (redacted Solscan captures).
+Flash path screenshots on the live page: Kamino 15k USDC borrow + Jupiter loop (redacted Solscan captures — illustrations, no transaction signature published).
 
 ## Files
 
@@ -40,6 +40,9 @@ Text lives in **two** places and both must be changed together: the English
 in `index.html` and the same key in the `en` block of `i18n.js`. `i18n.js`
 overwrites the markup on load, so editing only the HTML has no visible effect.
 Each translatable element carries an `id` that matches its key.
+
+A key missing from a locale falls back to its `en` text, and the page then
+shows that locale's `localeNote` saying some parts are still in English.
 
 Images are served as WebP with the original PNG/JPEG kept as a `<picture>`
 fallback. If you replace one, regenerate both files or drop the `<source>`.
