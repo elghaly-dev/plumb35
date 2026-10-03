@@ -17,8 +17,8 @@
 <meta property="og:type" content="website"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:image" content="https://plumb-35.elghaly.dev/brand-35-plumb.jpg"/>
-<meta property="og:image:width" content="1168"/>
-<meta property="og:image:height" content="784"/>
+<meta property="og:image:width" content="1046"/>
+<meta property="og:image:height" content="702"/>
 <meta property="og:image:alt" content="35 Plumb Elghaly — house mark"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="Plumb — Ready Desk Software"/>
@@ -71,6 +71,10 @@ body{
 .wrap{max-width:1080px;margin:0 auto;padding:0 24px var(--space-xl)}
 a{color:var(--accent-warm);text-decoration:none;transition:opacity .2s}
 a:hover{opacity:.75}
+/* Links inside running text are underlined, as on elghaly.dev: by colour
+   alone they were too close to the words around them (axe link-in-text-block). */
+p a:not(.btn){text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;text-decoration-color:currentColor;text-decoration-color:color-mix(in srgb,currentColor 55%,transparent)}
+p a:not(.btn):hover,p a:not(.btn):focus-visible{text-decoration-color:currentColor}
 
 /* ── Header ── */
 header{
@@ -312,7 +316,7 @@ section{margin-top:var(--space-2xl)}
   display:inline-block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;
   color:var(--muted);margin-bottom:14px;font-weight:500;
 }
-.rail-tag.muted{opacity:.7}
+.rail-tag.muted{font-weight:400} /* was opacity:.7 — that took it under 4.5:1 */
 .rail h3{
   font-family:var(--serif);font-size:20px;font-weight:400;
   margin-bottom:10px;color:var(--ink);letter-spacing:-.01em;
@@ -515,7 +519,7 @@ footer .net span{
 footer .net-live span{color:var(--muted)}
 footer .networks-note{
   font-size:11px;color:var(--muted-soft);margin-top:14px;
-  line-height:1.5;max-width:28em;margin-left:auto;margin-right:auto;opacity:.85;
+  line-height:1.5;max-width:28em;margin-left:auto;margin-right:auto;
 }
 footer .love{
   font-family:var(--serif);font-size:15px;font-style:italic;
@@ -1226,7 +1230,7 @@ if(l&&/^(en|ar|ru|zh|de|es)$/.test(l)){d.lang=l;d.dir=l==='ar'?'rtl':'ltr';}}cat
   <section class="brand-plate reveal" id="brand" aria-labelledby="bpTitle">
     <div class="brand-plate-inner">
       <figure class="brand-plate-figure">
-        <picture><source srcset="brand-35-plumb.webp" type="image/webp"/><img src="brand-35-plumb.jpg" width="1168" height="784" loading="lazy" decoding="async"
+        <picture><source srcset="brand-35-plumb.webp" type="image/webp"/><img src="brand-35-plumb.jpg" width="1046" height="702" loading="lazy" decoding="async"
              alt="35 Plumb Elghaly house mark — the numerals 35 in a teal-to-violet gradient over PLUMB and ELGHALY, beside the star, hamsa and eye marks"/></picture>
       </figure>
       <div class="brand-plate-copy">
