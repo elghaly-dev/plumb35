@@ -138,14 +138,16 @@ function addMenus(seat, items){
     if(seat.querySelector('img[src*="'+it.src+'"]')) return;
     var fig=document.createElement('figure');
     fig.className='tg-menu';
-    fig.innerHTML='<img src="'+it.src+'" alt="'+it.cap+'"/><figcaption>'+it.cap+'</figcaption>';
+    // width/height reserve the box before the photo arrives (no layout jump);
+    // the CSS above keeps width:100%;height:auto, so they set the ratio only.
+    fig.innerHTML='<img src="'+it.src+'" width="'+it.w+'" height="'+it.h+'" loading="lazy" decoding="async" alt="'+it.cap+'"/><figcaption>'+it.cap+'</figcaption>';
     seat.appendChild(fig);
   });
 }
 var seatsAll=document.querySelectorAll('.seat');
-addMenus(seatsAll[0], [{src:'IMG_6723.jpeg', cap:'Starter Telegram menu'}]);
-addMenus(seatsAll[1], [{src:'IMG_6724.jpeg', cap:'Pro Telegram menu'}]);
-addMenus(seatsAll[2], [{src:'IMG_6727.jpeg', cap:'Source menu 1'},{src:'IMG_6726.jpeg', cap:'Source menu 2'},{src:'IMG_6728.jpeg', cap:'Source menu 3'}]);
+addMenus(seatsAll[0], [{src:'IMG_6723.jpeg', w:720, h:362, cap:'Starter Telegram menu'}]);
+addMenus(seatsAll[1], [{src:'IMG_6724.jpeg', w:720, h:574, cap:'Pro Telegram menu'}]);
+addMenus(seatsAll[2], [{src:'IMG_6727.jpeg', w:720, h:743, cap:'Source menu 1'},{src:'IMG_6726.jpeg', w:720, h:1288, cap:'Source menu 2'},{src:'IMG_6728.jpeg', w:720, h:1268, cap:'Source menu 3'}]);
 function row(chain,addr,btnId,btnLabel,href,linkLabel){
   return '<div class="cp-row"><div class="cp-chain">'+chain+'</div><div class="cp-addr">'+addr+'</div><div class="cp-actions"><button type="button" id="'+btnId+'">'+btnLabel+'</button><a href="'+href+'" target="_blank" rel="noopener">'+linkLabel+'</a></div></div>';
 }

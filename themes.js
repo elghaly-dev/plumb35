@@ -27,6 +27,11 @@
     r.style.setProperty('--accent',t.accent);
     r.style.setProperty('--line',t.line);
     r.style.setProperty('--surface',t.card);
+    // Muted text takes the theme's own dim colour. The page's --muted /
+    // --muted-soft were tuned for its #050505 base and fell under 4.5:1 on
+    // these themes' cards; every theme's dim clears 4.5:1 on its bg and card.
+    r.style.setProperty('--muted',t.dim);
+    r.style.setProperty('--muted-soft',t.dim);
     if(document.body){document.body.style.background=t.bg;document.body.style.color=t.ink;}
     try{localStorage.setItem(KEY,name);}catch(e){}
     document.querySelectorAll('[data-theme-item]').forEach(function(el){

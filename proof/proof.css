@@ -148,3 +148,7 @@ html[dir=rtl] .lead,html[dir=rtl] .prose{text-align:right}
   .proof-nav{gap:8px 12px}
   th,td{padding:12px}
 }
+
+/* Links inside running text are underlined, as on elghaly.dev (axe link-in-text-block). */
+p a:not(.btn){text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;text-decoration-color:currentColor;text-decoration-color:color-mix(in srgb,currentColor 55%,transparent)}
+p a:not(.btn):hover,p a:not(.btn):focus-visible{text-decoration-color:currentColor}
