@@ -2,7 +2,14 @@
 (function(){
 'use strict';
 var s=document.createElement('script'); s.src='themes.js?v=menu16'; document.head.appendChild(s);
-var STARTER_PAY='https://buy.stripe.com/dRm9ANc357GB6DS0EB3Ru03';
+// Seat buttons go to the PayPal shop (plumb-shop.elghaly.dev). Stripe stays wired
+// but switched off: set STRIPE_ENABLED to true to send the buttons back to it.
+var STRIPE_ENABLED=false;
+var STRIPE_PAY={
+  s1btn:['https://buy.stripe.com/dRm9ANc357GB6DS0EB3Ru03','Pay $350'],
+  s2btn:['https://buy.stripe.com/4gM00d4AD2mhfao1IF3Ru01','Pay $699'],
+  s3btn:['https://buy.stripe.com/5kQ5kx4AD2mh2nC0EB3Ru02','Pay $1,999']
+};
 var ETH_PAY='0x379F62A4EFFDAE688c5963B44667501f481CFE6D';
 var SOL_PAY='4vsXfhPXgwmP2cDdypGf9QrmdpMUhxCxRJ5aDDPxfsYo';
 var BTC_PAY='bc1qgtc26k0vuu8j3uhpvpsevgladug5n6en4jzm00';
@@ -166,13 +173,16 @@ function cryptoBox(){
   bindCopy('copyBase', BASE_PAY, 'Copy Base');
 }
 cryptoBox();
-function wireStarter(){
-  var btn=document.getElementById('s1btn');
-  if(btn) btn.href=STARTER_PAY;
+function wireSeats(){
+  if(!STRIPE_ENABLED) return;
+  Object.keys(STRIPE_PAY).forEach(function(id){
+    var btn=document.getElementById(id);
+    if(btn){ btn.href=STRIPE_PAY[id][0]; btn.textContent=STRIPE_PAY[id][1]; }
+  });
 }
-wireStarter();
+wireSeats();
 var _setLang=window.plumbSetLang;
-window.plumbSetLang=function(lang){ if(_setLang) _setLang(lang); wireStarter(); };
+window.plumbSetLang=function(lang){ if(_setLang) _setLang(lang); wireSeats(); };
 var header=document.querySelector('header');
 var toTop=document.getElementById('toTop');
 var bar=document.getElementById('mobileCta');

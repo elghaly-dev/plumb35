@@ -10,11 +10,11 @@ Ready desk software — lifetime paid seats.
 
 ---
 
-| Seat | Price | Stripe |
+| Seat | Price | Shop (PayPal) |
 |------|-------|--------|
-| Starter | $350 | [Pay](https://buy.stripe.com/dRm9ANc357GB6DS0EB3Ru03) |
-| Pro | $699 | [Pay](https://buy.stripe.com/4gM00d4AD2mhfao1IF3Ru01) |
-| Source | $1,999 | [Pay](https://buy.stripe.com/5kQ5kx4AD2mh2nC0EB3Ru02) |
+| Starter | $350 | [Buy](https://plumb-shop.elghaly.dev/products/plumb-starter) |
+| Pro | $699 | [Buy](https://plumb-shop.elghaly.dev/products/plumb-pro) |
+| Source | $1,999 | [Buy](https://plumb-shop.elghaly.dev/products/plumb-source) |
 
 Ask us on mail — [support@elghaly.dev](mailto:support@elghaly.dev) · We are 24
 
