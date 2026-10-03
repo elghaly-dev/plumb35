@@ -14,56 +14,8 @@ var ETH_PAY='0x379F62A4EFFDAE688c5963B44667501f481CFE6D';
 var SOL_PAY='4vsXfhPXgwmP2cDdypGf9QrmdpMUhxCxRJ5aDDPxfsYo';
 var BTC_PAY='bc1qgtc26k0vuu8j3uhpvpsevgladug5n6en4jzm00';
 var BASE_PAY='0x379F62A4EFFDAE688c5963B44667501f481CFE6D';
-var style=document.createElement('style');
-style.textContent=[
-  'header{display:flex;align-items:center;flex-wrap:nowrap;gap:10px}',
-  '.brand{display:flex;align-items:center;gap:10px;min-width:0}',
-  '.brand-35-letter,.brand-p-letter{display:none !important}',
-  '.brand-p{display:block !important;height:44px;width:44px;border-radius:12px;object-fit:cover;flex-shrink:0}',
-  '.bl-35{display:block !important}',
-  '.bl-stack,.bl-name,.bl-sub{display:none !important}',
-  '.brand-logo{display:flex !important;align-items:center;gap:11px}',
-  '.marks-owner,.site-nav{display:none !important}',
-  '.header-right{display:flex;align-items:center;gap:6px;flex:1;justify-content:flex-end}',
-  '.lang-switch{display:flex!important;flex-wrap:nowrap!important;gap:3px!important}',
-  '.lang-btn{padding:5px 7px!important;font-size:10px!important}',
-  '.theme-wrap{display:block!important}',
-  '.board-shot,.gallery,.gallery img,.hero-art,.desk-live,.hero figure{display:none !important;height:0 !important;margin:0 !important;padding:0 !important;overflow:hidden !important}',
-  '.rail-partners-row{display:flex!important;flex-wrap:wrap!important;justify-content:center!important;gap:22px 28px!important}',
-  '.ai-wrap{display:flex;flex-direction:column;align-items:center;gap:8px;width:112px;text-align:center;text-decoration:none;color:inherit}',
-  '.ai-tile{width:88px;height:88px;border-radius:22px;overflow:hidden;background:#0b0c0b;border:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 18px rgba(0,0,0,.28)}',
-  '.ai-tile img{width:100%;height:100%;object-fit:cover;display:block}',
-  '.ai-name{font-family:Instrument Serif,Georgia,serif;font-size:16px;line-height:1.2;color:var(--ink,#f5f5f7)}',
-  '.ai-note{font-size:11px;color:#2ee6c7;font-weight:500}',
-  '.partner svg,.partner .partner-logo{display:none !important}',
-  '.rec-frames{display:grid;grid-template-columns:1fr;gap:16px;margin-top:10px}',
-  '.rec-frame{border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:18px 14px 20px;background:rgba(255,255,255,.02)}',
-  '.rec-frame .rail-partners-label{margin:0 0 14px;text-align:center}',
-  '.rec-stack{display:flex;flex-direction:column;align-items:center;gap:18px}',
-  '.rail-brand{width:40px;height:40px;object-fit:contain;display:inline-block;vertical-align:middle;margin-right:10px;border-radius:10px;background:transparent}',
-  '.principle h3,.rail h3{display:flex;align-items:center;gap:10px}',
-  '.tg-menu{margin:14px 0 0;border-radius:18px;overflow:hidden;border:1px solid var(--line,#1e2a28)}',
-  '.tg-menu img{width:100%;height:auto;object-fit:contain !important;display:block}',
-  '.seat-preview img,.gallery img:not(.board-shot),.desk-live img{width:100% !important;height:auto !important;max-height:280px !important;object-fit:cover !important;object-position:center 78% !important;display:block}',
-  '.brand-plate{margin-top:20px}',
-  '#cryptoPay{margin-top:28px;padding:22px 20px;border:1px solid var(--line,#1e2a28);border-radius:20px;background:rgba(255,255,255,.02)}',
-  '#cryptoPay h2{font-family:Instrument Serif,Georgia,serif;font-size:28px;font-weight:400;margin:0 0 8px}',
-  '#cryptoPay .cp-note{color:var(--muted,#9b9ba1);font-size:14px;margin:0 0 16px;line-height:1.55}',
-  '.cp-row{display:flex;flex-direction:column;gap:8px;padding:14px 0;border-top:1px solid var(--line,#1e2a28)}',
-  '.cp-chain{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#2ee6c7}',
-  '.cp-addr{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13px;word-break:break-all;color:var(--ink,#f5f5f7)}',
-  '.cp-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}',
-  '.cp-actions button,.cp-actions a{background:transparent;border:1px solid var(--line,#1e2a28);color:var(--ink,#f5f5f7);border-radius:999px;padding:8px 14px;font-size:12px;cursor:pointer;text-decoration:none}',
-  'footer .networks-row{gap:16px 18px!important;align-items:flex-start!important}',
-  'footer .net{width:80px!important;opacity:1!important}',
-  'footer .net svg{display:none!important}',
-  'footer .net-tile{width:72px;height:72px;border-radius:20px;overflow:hidden;background:#0b0c0b;border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 18px rgba(0,0,0,.28)}',
-  'footer .net-tile img{width:100%;height:100%;object-fit:cover;display:block}',
-  'footer .net > span:last-child{font-size:11px!important;letter-spacing:.14em!important;color:var(--ink,#f5f5f7)!important}',
-  'footer .net-live .net-tile{box-shadow:0 0 0 1px rgba(46,230,199,.35),0 8px 18px rgba(0,0,0,.28)}',
-  '@media (max-width:720px){.rec-frames{grid-template-columns:1fr}.ai-tile{width:88px;height:88px}.bl-stack{display:none !important}footer .net-tile{width:64px;height:64px}footer .net{width:72px!important}}'
-].join('\n');
-document.head.appendChild(style);
+// The page and header rules this used to add after first paint live in
+// index.html (<style id="app-css">), so the page paints with them.
 function srcOf(key, fallback){
   var L=window.PLUMB_LOGOS||{};
   return L[key] || fallback || '';
