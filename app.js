@@ -21,7 +21,8 @@ function srcOf(key, fallback){
   return L[key] || fallback || '';
 }
 function tile(href,src,name,note){
-  var img=src?'<img src="'+src+'" alt="'+name+'"/>':'';
+  // The name is printed beside the logo, so the logo itself is decorative.
+  var img=src?'<img src="'+src+'" alt=""/>':'';
   return '<a class="ai-wrap" href="'+href+'" target="_blank" rel="noopener noreferrer"><span class="ai-tile">'+img+'</span><span class="ai-name">'+name+'</span>'+(note?'<span class="ai-note">'+note+'</span>':'')+'</a>';
 }
 function stamp(sel, src, name){
@@ -72,7 +73,7 @@ function paintNets(){
   var N=window.PLUMB_NETS||{};
   function net(cls,id,title,key,label){
     var src=N[key]||'';
-    return '<span class="net '+cls+'" id="'+id+'" title="'+title+'"><span class="net-tile">'+(src?'<img src="'+src+'" alt="'+label+'"/>':'')+'</span><span>'+label+'</span></span>';
+    return '<span class="net '+cls+'" id="'+id+'" title="'+title+'"><span class="net-tile">'+(src?'<img src="'+src+'" alt=""/>':'')+'</span><span>'+label+'</span></span>';
   }
   row.innerHTML=net('net-live','netSolTitle','Solana \u2014 supported network','sol','SOL')+net('','netEthTitle','Ethereum \u2014 expansion path','eth','ETH')+net('','netBtcTitle','Bitcoin \u2014 expansion path','btc','BTC')+net('','netArbTitle','Arbitrum \u2014 expansion path','arb','ARB')+net('monad','netMonadTitle','Monad \u2014 expansion path','monad','MONAD');
 }
