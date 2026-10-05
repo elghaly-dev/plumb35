@@ -44,7 +44,7 @@ en:{
   c1h:"What you hold",c1:"Your wallet keys, your funded wallet, your VPS or host, your RPC credentials, your Telegram bot token, and the running binary after handoff. You host it; you arm it; you accept the risk.",
   c2h:"What we never hold",c2:"We do not custody funds, do not take a cut of fills, and have no access to your balance at any point. No pooled capital, no managed account, nothing to deposit with us.",
   c3h:"What we can see",c3:"What you put in the brief, what you share on the handover call, and support messages you send us. During build we configure the binary for your named pairs — we do not run it on our infrastructure.",
-  c4h:"What we cannot see",c4:"Your private keys, your wallet balance, your live fills, or your RPC traffic after handoff. We are not in the signing path unless you explicitly share logs for support.",
+  c4h:"What we cannot see",c4:"Your private keys, your wallet balance, your actual fills, or your RPC traffic after handoff. We are not in the signing path unless you explicitly share logs for support.",
   p2h:"Telegram control",p2:"Start, pause, size, and read status from Telegram. No browser dashboard required — the desk talks to you where you already are.",
   p3h:"Solana desk · dry/HOLD default",p3:"Watches your named pairs on Solana, surfaces spreads, and evaluates against your rules while in dry/HOLD. Nothing sends until you explicitly arm it on your machine.",
   p7h:"Desk software only",p7:"This page sells lifetime Plumb seats — ready bot software you host. Not a token sale. Not an investment.",
