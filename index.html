@@ -219,6 +219,8 @@ footer .net.monad span{color:var(--accent-warm)}
   color:var(--ink);margin-bottom:6px;
 }
 .proof-link span{font-size:13px;color:var(--muted);line-height:1.5}
+.onchain-list{list-style:none;margin:var(--space-md) 0 0;padding:0;display:grid;gap:10px}
+.onchain-list a{display:block;padding:12px 14px;border:1px solid var(--line,rgba(255,255,255,.12));border-radius:12px;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
 .proof-flash-note{
   font-size:13px;color:var(--muted);margin-top:var(--space-sm);
   padding:var(--space-sm) var(--space-md);border:1px solid var(--line);
@@ -1077,6 +1079,17 @@ footer .net-live .net-tile{box-shadow:0 0 0 1px rgba(46,230,199,.35),0 8px 18px 
         </figcaption>
       </figure>
     </div>
+    <div class="section-head" style="margin-top:var(--space-xl)">
+      <p class="section-label" id="onchainLabel">On-chain · Solana mainnet</p>
+      <h3 class="section-title" id="onchainTitle" style="font-size:clamp(22px,3vw,28px)">Three transactions you can open yourself.</h3>
+      <p class="section-note" id="onchainNote">Each is a Kamino flash loan, a Jupiter SOL round-trip and the repay, all in one transaction, signed by the owner&#39;s own wallet (GrQX7F…oujqJS). Only the borrow size is shown.</p>
+    </div>
+    <ul class="onchain-list">
+      <li><a href="https://solscan.io/tx/3hXdmXzmZE4ZBdppSQpJtg7nDXSaoWbZ9UpTWMM9aRFcvrfZSrwLbp7zUsKhS3YCQ3bEbSk8snZRXrrdq7CmpZqi" rel="noopener" target="_blank">Jul 17, 2026 · 1,000 USDC flash loan, executed and repaid in one transaction · Solscan ↗</a></li>
+      <li><a href="https://solscan.io/tx/UBDrxUXdSe2hYgaLMLPoVzbczgKexvH4fvvMrFDfZ4aCjQS148dsb5V1CCx2E4Cii4Sk7kngnERQoJT7KiPqUQC" rel="noopener" target="_blank">Jul 21, 2026 · 30,000 USDC flash loan, executed and repaid in one transaction · Solscan ↗</a></li>
+      <li><a href="https://solscan.io/tx/4VaChnq4qMnfRL221CAKqDmpC4Jqe3Agte9ga2Ehqdcfcyn21eHZHVTkFBcR7NMjY7e3EaxXmZcN8nv1bMuyxG2U" rel="noopener" target="_blank">Jul 22, 2026 · 15,000 USDC flash loan, executed and repaid in one transaction · Solscan ↗</a></li>
+    </ul>
+    <p class="proof-flash-note" id="onchainLine">Proof the code path runs on mainnet. Not a promise of results. <a href="proof/onchain/">How to check them</a>.</p>
     <div class="section-head" style="margin-top:var(--space-xl)">
       <p class="section-label" id="galLabel">Board UI reference</p>
       <h3 class="section-title" id="galTitle" style="font-size:clamp(22px,3vw,28px)">Desk screenshots — UI reference only.</h3>
