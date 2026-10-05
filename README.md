@@ -20,7 +20,7 @@ Ask us on mail — [support@elghaly.dev](mailto:support@elghaly.dev) · We are 2
 
 Titan / gRPC quoted separately. Follow-up $149/mo after the update window.
 
-Flash path screenshots on the live page: Kamino 15k USDC borrow + Jupiter loop (redacted Solscan captures — illustrations, no transaction signature published).
+Flash path screenshots on the public page: Kamino 15k USDC borrow + Jupiter loop (redacted Solscan captures — illustrations, no transaction signature published).
 
 ## Files
 
