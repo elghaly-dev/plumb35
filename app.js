@@ -2,8 +2,9 @@
 (function(){
 'use strict';
 var s=document.createElement('script'); s.src='themes.js?v=menu16'; document.head.appendChild(s);
-// Seat buttons go to the PayPal shop (plumb-shop.elghaly.dev). Stripe stays wired
-// but switched off: set STRIPE_ENABLED to true to send the buttons back to it.
+// Seat buttons pay with PayPal directly; the href lives in index.html so it
+// works without JavaScript. Stripe stays wired but switched off: keep
+// STRIPE_ENABLED false or it replaces the PayPal links.
 var STRIPE_ENABLED=false;
 var STRIPE_PAY={
   s1btn:['https://buy.stripe.com/dRm9ANc357GB6DS0EB3Ru03','Pay $350'],
@@ -111,7 +112,7 @@ function cryptoBox(){
   var box=document.createElement('section');
   box.id='cryptoPay';
   box.className='reveal is-in';
-  box.innerHTML='<p class="section-label">Pay by crypto</p><h2>SOL \u00b7 ETH \u00b7 BTC \u00b7 Base</h2><p class="cp-note">Same seat price. Send, then mail the transaction hash to 35@elghaly.dev so the desk can match it.</p>'+row('Solana',SOL_PAY,'copySol','Copy SOL','https://solscan.io/account/'+SOL_PAY,'Solscan')+row('ETH \u00b7 Ethereum',ETH_PAY,'copyEth','Copy ETH','https://etherscan.io/address/'+ETH_PAY,'Etherscan')+row('BTC \u00b7 Bitcoin',BTC_PAY,'copyBtc','Copy BTC','https://mempool.space/address/'+BTC_PAY,'Mempool')+row('Base',BASE_PAY,'copyBase','Copy Base','https://basescan.org/address/'+BASE_PAY,'Basescan');
+  box.innerHTML='<p class="section-label">Pay by crypto</p><h2>SOL \u00b7 ETH \u00b7 BTC \u00b7 Base</h2><p class="cp-note">Same seat price. Send, then mail the transaction hash to support@elghaly.dev so the desk can match it.</p>'+row('Solana',SOL_PAY,'copySol','Copy SOL','https://solscan.io/account/'+SOL_PAY,'Solscan')+row('ETH \u00b7 Ethereum',ETH_PAY,'copyEth','Copy ETH','https://etherscan.io/address/'+ETH_PAY,'Etherscan')+row('BTC \u00b7 Bitcoin',BTC_PAY,'copyBtc','Copy BTC','https://mempool.space/address/'+BTC_PAY,'Mempool')+row('Base',BASE_PAY,'copyBase','Copy Base','https://basescan.org/address/'+BASE_PAY,'Basescan');
   seats.parentNode.insertBefore(box, seats.nextSibling);
   function bindCopy(id, addr, label){
     var c=document.getElementById(id);
