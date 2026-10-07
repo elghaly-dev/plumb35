@@ -2,8 +2,9 @@
 (function(){
 'use strict';
 var s=document.createElement('script'); s.src='themes.js?v=menu16'; document.head.appendChild(s);
-// Seat buttons go to the PayPal shop (plumb-shop.elghaly.dev). Stripe stays wired
-// but switched off: set STRIPE_ENABLED to true to send the buttons back to it.
+// Seat buttons pay with PayPal directly; the href lives in index.html so it
+// works without JavaScript. Stripe stays wired but switched off: keep
+// STRIPE_ENABLED false or it replaces the PayPal links.
 var STRIPE_ENABLED=false;
 var STRIPE_PAY={
   s1btn:['https://buy.stripe.com/dRm9ANc357GB6DS0EB3Ru03','Pay $350'],

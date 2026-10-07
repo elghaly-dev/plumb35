@@ -10,11 +10,16 @@ Ready desk software — lifetime paid seats.
 
 ---
 
-| Seat | Price | Shop (PayPal) |
-|------|-------|--------|
-| Starter | $350 | [Buy](https://plumb-shop.elghaly.dev/products/plumb-starter) |
-| Pro | $699 | [Buy](https://plumb-shop.elghaly.dev/products/plumb-pro) |
-| Source | $1,999 | [Buy](https://plumb-shop.elghaly.dev/products/plumb-source) |
+| Seat | Price | sku | Shop checkout |
+|------|-------|-----|---------------|
+| Starter | $350 | plumb-starter | [Shop](https://plumb-shop.elghaly.dev/products/plumb-starter) |
+| Pro | $699 | plumb-pro | [Shop](https://plumb-shop.elghaly.dev/products/plumb-pro) |
+| Source | $1,999 | plumb-source | [Shop](https://plumb-shop.elghaly.dev/products/plumb-source) |
+
+The seat buttons on the page pay with PayPal directly (PayPal Payments Standard
+links, no SDK, no keys). PayPal returns the buyer to `/thanks.html`. The shop
+checkout stays as a secondary link under each button.
+`python3 scripts/check_paypal.py` checks every PayPal link against the price on its card.
 
 Ask us on mail — [support@elghaly.dev](mailto:support@elghaly.dev) · We are 24
 
