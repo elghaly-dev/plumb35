@@ -54,11 +54,10 @@ function paint(){
   }
   stamp('#r1h', srcOf('jupiter'), 'Jupiter');
   stamp('#r2h', srcOf('jito'), 'Jito');
-  stamp('#p2h', srcOf('telegram'), 'Telegram');
   hideTitan();
 }
 function loadLogos(){
-  var keys=['claude','helius','triton','quicknode','jupiter','jito','telegram','chainstack','fastrpc','grok','grokbot'];
+  var keys=['claude','helius','triton','quicknode','jupiter','jito','chainstack','fastrpc','grok','grokbot'];
   paint();
   keys.forEach(function(k){
     var l=document.createElement('script');
@@ -99,8 +98,8 @@ function addMenus(seat, items){
   });
 }
 var seatsAll=document.querySelectorAll('.seat');
-addMenus(seatsAll[0], [{src:'IMG_6723.jpeg', w:720, h:362, cap:'Starter Telegram menu'}]);
-addMenus(seatsAll[1], [{src:'IMG_6724.jpeg', w:720, h:574, cap:'Pro Telegram menu'}]);
+addMenus(seatsAll[0], [{src:'IMG_6723.jpeg', w:720, h:362, cap:'Starter desk menu'}]);
+addMenus(seatsAll[1], [{src:'IMG_6724.jpeg', w:720, h:574, cap:'Pro desk menu'}]);
 addMenus(seatsAll[2], [{src:'IMG_6727.jpeg', w:720, h:743, cap:'Source menu 1'},{src:'IMG_6726.jpeg', w:720, h:1288, cap:'Source menu 2'},{src:'IMG_6728.jpeg', w:720, h:1268, cap:'Source menu 3'}]);
 function row(chain,addr,btnId,btnLabel,href,linkLabel){
   return '<div class="cp-row"><div class="cp-chain">'+chain+'</div><div class="cp-addr">'+addr+'</div><div class="cp-actions"><button type="button" id="'+btnId+'">'+btnLabel+'</button><a href="'+href+'" target="_blank" rel="noopener">'+linkLabel+'</a></div></div>';
