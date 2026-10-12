@@ -779,6 +779,7 @@ function setLang(lang){
     b.setAttribute('aria-pressed',b.dataset.lang===lang);
   });
   try{localStorage.setItem('plumb-lang',lang);}catch(e){}
+  if (window.pageMenuRefresh) window.pageMenuRefresh();
 }
 
 function init(){

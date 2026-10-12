@@ -1,9 +1,10 @@
-/* page-menu.js — "Chatting by elghaly | ⌄" at the top of a content page.
+/* page-menu.js — the "Ask ChatGPT | ⌄" button at the top of a content page.
  *
- * One split button: the main half opens Chatting by elghaly; the ⌄ half opens
- * a menu with Copy page, View as Markdown, Open in ChatGPT and Open in Cursor.
- * Plain JS. No tracking, no cookies, no network calls: the Markdown is built
- * from the page in this tab, so it is always the page as it is now.
+ * One split button: the main half opens this page in ChatGPT; the ⌄ half
+ * opens a menu with Ask Cursor and Copy page. Plumb also shows Chatting by
+ * elghaly beside it. Plain JS. No tracking, no
+ * cookies, no network calls: the Markdown is built from the page in this tab,
+ * so it is always the page as it is now.
  *
  * Use: put <div class="page-menu" data-page-menu></div> where the button
  * goes (reserve 44px of height inline, so nothing moves when it fills in),
@@ -45,7 +46,13 @@
     ".pm-panel a:hover,.pm-panel button:hover,.pm-panel a:focus-visible,.pm-panel button:focus-visible" +
     "{background:rgba(127,127,127,.18);outline:none}" +
     ".pm-panel .pm-sub{font-size:.8rem;font-weight:400;opacity:.75}" +
-    ".pm-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}";
+    ".pm-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}" +
+    ".pm-row{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:flex-end;align-items:stretch;width:100%}" +
+    ".pm-chat{display:inline-flex;align-items:center;justify-content:center;gap:.35rem;min-height:44px;" +
+    "padding:0 1.1rem;border:1px solid rgba(127,127,127,.45);border-radius:14px;font-size:1rem;line-height:1.2;" +
+    "font-weight:600;background:rgba(127,127,127,.06);color:inherit;text-decoration:none;white-space:nowrap}" +
+    ".pm-chat:hover{background:rgba(127,127,127,.16)}" +
+    ".pm-chat:focus-visible{outline:2px solid currentColor;outline-offset:2px}";
 
   // Drawn inline, so the button needs no image request and takes the text
   // colour of whatever page it sits on.
@@ -435,34 +442,110 @@
 
   // ── render ──────────────────────────────────────────────────────────────
   var CHATTING_URL = "https://chatting.elghaly.dev/";
+  var CHATTING_LABEL = "💬 Chatting by elghaly";
 
-  // The ⌄ menu: page tools (Chatting is the primary button).
-  var ITEMS = [
-    { act: "copy", label: "Copy page", sub: "Markdown for AI tools" },
-    { act: "md", label: "View as Markdown", sub: "Plain text" },
-    { href: function (q) { return "https://chatgpt.com/?q=" + q; }, label: "Open in ChatGPT" },
-    { href: function (q) { return "https://cursor.com/link/prompt?text=" + q; }, label: "Open in Cursor" }
-  ];
+  function chatgptUrl(q) { return "https://chatgpt.com/?q=" + q; }
+
+  var PM_L10N = {
+    en: {
+      askChatgpt: "Ask ChatGPT",
+      askCursor: "Ask Cursor",
+      copyPage: "Copy page",
+      copySub: "Markdown for AI tools",
+      groupAria: "Ask AI about this page",
+      moreAria: "More AI options: Ask Cursor, copy page",
+      copied: "Copied ✓",
+      copyFailed: "Copy failed",
+      copiedLive: "Page copied as Markdown"
+    },
+    ar: {
+      askChatgpt: "Ask ChatGPT",
+      askCursor: "Ask Cursor",
+      copyPage: "Copy page",
+      copySub: "Markdown for AI tools",
+      groupAria: "Ask AI about this page",
+      moreAria: "More AI options: Ask Cursor, copy page",
+      copied: "Copied ✓",
+      copyFailed: "Copy failed",
+      copiedLive: "Page copied as Markdown"
+    },
+    ru: {
+      askChatgpt: "Ask ChatGPT",
+      askCursor: "Ask Cursor",
+      copyPage: "Copy page",
+      copySub: "Markdown for AI tools",
+      groupAria: "Ask AI about this page",
+      moreAria: "More AI options: Ask Cursor, copy page",
+      copied: "Copied ✓",
+      copyFailed: "Copy failed",
+      copiedLive: "Page copied as Markdown"
+    },
+    zh: {
+      askChatgpt: "Ask ChatGPT",
+      askCursor: "Ask Cursor",
+      copyPage: "Copy page",
+      copySub: "Markdown for AI tools",
+      groupAria: "Ask AI about this page",
+      moreAria: "More AI options: Ask Cursor, copy page",
+      copied: "Copied ✓",
+      copyFailed: "Copy failed",
+      copiedLive: "Page copied as Markdown"
+    }
+  };
+
+  function pmLang() {
+    var l = document.documentElement.lang || "en";
+    return PM_L10N[l] || PM_L10N.en;
+  }
+
+  var built = [];
+
+  function applyLabels(w) {
+    var s = pmLang();
+    w.box.setAttribute("aria-label", s.groupAria);
+    w.summary.setAttribute("aria-label", s.moreAria);
+    w.mainLabel.textContent = s.askChatgpt;
+    w.cursorLabel.textContent = s.askCursor + " ↗";
+    w.copyLabel.textContent = s.copyPage;
+    w.copySub.textContent = s.copySub;
+  }
 
   function build(slot) {
+    slot.textContent = "";
+    var s = pmLang();
     var q = encodeURIComponent(prompt());
+
+    var row = document.createElement("div");
+    row.className = "pm-row";
+
+    var chat = document.createElement("a");
+    chat.className = "pm-chat";
+    chat.id = "chatBtn";
+    chat.href = CHATTING_URL;
+    chat.target = "_blank";
+    chat.rel = "noopener noreferrer";
+    chat.innerHTML = "<span>" + CHATTING_LABEL + "</span>";
+
     var box = document.createElement("div");
     box.className = "pm";
     box.setAttribute("role", "group");
-    box.setAttribute("aria-label", "Chatting by elghaly and page tools");
+    box.setAttribute("aria-label", s.groupAria);
 
     var main = document.createElement("a");
     main.className = "pm-main";
-    main.id = "chatBtn";
-    main.href = CHATTING_URL;
+    main.href = chatgptUrl(q);
     main.target = "_blank";
     main.rel = "noopener noreferrer";
-    main.innerHTML = "<span>💬 Chatting by elghaly</span>";
+    var mainLabel = document.createElement("span");
+    mainLabel.setAttribute("data-pm-label", "askChatgpt");
+    mainLabel.textContent = s.askChatgpt;
+    main.innerHTML = SPARK;
+    main.appendChild(mainLabel);
 
     var details = document.createElement("details");
     details.className = "pm-more";
     var summary = document.createElement("summary");
-    summary.setAttribute("aria-label", "More AI options: copy page, Markdown, ChatGPT, Cursor");
+    summary.setAttribute("aria-label", s.moreAria);
     summary.innerHTML = CHEV;
     var panel = document.createElement("div");
     panel.className = "pm-panel";
@@ -470,38 +553,52 @@
     live.className = "pm-sr";
     live.setAttribute("aria-live", "polite");
 
-    ITEMS.forEach(function (it) {
-      var el;
-      if (it.act) {
-        el = document.createElement("button");
-        el.type = "button";
-        el.setAttribute("data-pm", it.act);
-      } else {
-        el = document.createElement("a");
-        el.href = it.href(q);
-        el.target = "_blank";
-        el.rel = "noopener noreferrer";
-      }
-      var label = document.createElement("span");
-      label.textContent = it.label + (it.href ? " ↗" : "");
-      el.appendChild(label);
-      if (it.sub) {
-        var sub = document.createElement("span");
-        sub.className = "pm-sub";
-        sub.textContent = it.sub;
-        el.appendChild(sub);
-      }
-      panel.appendChild(el);
-    });
+    var cursorLink = document.createElement("a");
+    cursorLink.href = "https://cursor.com/link/prompt?text=" + q;
+    cursorLink.target = "_blank";
+    cursorLink.rel = "noopener noreferrer";
+    var cursorLabel = document.createElement("span");
+    cursorLabel.setAttribute("data-pm-label", "askCursor");
+    cursorLabel.textContent = s.askCursor + " ↗";
+    cursorLink.appendChild(cursorLabel);
+    panel.appendChild(cursorLink);
+
+    var copyBtn = document.createElement("button");
+    copyBtn.type = "button";
+    copyBtn.setAttribute("data-pm", "copy");
+    var copyLabel = document.createElement("span");
+    copyLabel.setAttribute("data-pm-label", "copyPage");
+    copyLabel.textContent = s.copyPage;
+    copyBtn.appendChild(copyLabel);
+    var copySub = document.createElement("span");
+    copySub.className = "pm-sub";
+    copySub.setAttribute("data-pm-label", "copySub");
+    copySub.textContent = s.copySub;
+    copyBtn.appendChild(copySub);
+    panel.appendChild(copyBtn);
 
     details.appendChild(summary);
-    // The panel hangs off the whole button (.pm is the positioned box), so
-    // it lines up with the button's edge rather than the ⌄ half.
     details.appendChild(panel);
     box.appendChild(main);
     box.appendChild(details);
-    slot.appendChild(box);
+    row.appendChild(chat);
+    row.appendChild(box);
+    slot.appendChild(row);
     slot.appendChild(live);
+
+    var widget = {
+      box: box,
+      summary: summary,
+      mainLabel: mainLabel,
+      cursorLabel: cursorLabel,
+      copyLabel: copyLabel,
+      copySub: copySub,
+      copyBtn: copyBtn,
+      live: live,
+      details: details,
+      panel: panel
+    };
+    built.push(widget);
 
     details.addEventListener("toggle", function () {
       if (!details.open) return;
@@ -513,12 +610,12 @@
       if (!target) return;
       var act = target.getAttribute("data-pm");
       if (act === "copy") {
-        var first = target.firstChild;
         copyText(toMarkdown()).then(function (ok) {
-          first.textContent = ok ? "Copied ✓" : "Copy failed";
-          live.textContent = ok ? "Page copied as Markdown" : "Copy failed";
+          var loc = pmLang();
+          copyLabel.textContent = ok ? loc.copied : loc.copyFailed;
+          live.textContent = ok ? loc.copiedLive : loc.copyFailed;
           setTimeout(function () {
-            first.textContent = "Copy page";
+            copyLabel.textContent = pmLang().copyPage;
             live.textContent = "";
             details.open = false;
           }, 1400);
@@ -546,6 +643,20 @@
 
   addStyle();
   for (var i = 0; i < slots.length; i++) build(slots[i]);
+
+  window.pageMenuRefresh = function () {
+    for (var j = 0; j < built.length; j++) applyLabels(built[j]);
+  };
+
+  if (typeof MutationObserver !== "undefined") {
+    var pmLangObs = new MutationObserver(function () {
+      window.pageMenuRefresh();
+    });
+    pmLangObs.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["lang"]
+    });
+  }
 
   // For tests and for anyone curious: the same Markdown the menu copies.
   window.pageMenuMarkdown = toMarkdown;
