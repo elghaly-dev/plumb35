@@ -31,7 +31,7 @@
 <link rel="manifest" href="site.webmanifest"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link rel="preload" as="image" href="brand-35-plumb.webp" type="image/webp" fetchpriority="high"/>
+<link rel="preload" as="image" href="plumb-starter-1080x1350.png" type="image/png" fetchpriority="high"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"/>
 <style>
 :root{
@@ -149,6 +149,17 @@ footer .net.monad span{color:var(--accent-warm)}
 
 /* ── Hero ── */
 .hero{padding:0 0 var(--space-md);margin-top:var(--space-md)}
+.hero-products{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-sm);margin-bottom:var(--space-lg)}
+.hero-products a{display:block;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line-strong);transition:border-color .2s,opacity .2s}
+.hero-products a:hover{border-color:var(--accent-warm);opacity:.95}
+.hero-products img{display:block;width:100%;height:auto;vertical-align:middle}
+.chat-btn{
+  display:inline-flex;align-items:center;gap:.35rem;flex-shrink:0;
+  min-height:32px;padding:0 .85rem;border:1px solid var(--line-strong);border-radius:999px;
+  font-size:11px;font-weight:500;color:var(--ink);letter-spacing:.02em;
+  white-space:nowrap;text-decoration:none;transition:border-color .2s,opacity .2s;
+}
+.chat-btn:hover{opacity:.85;border-color:var(--accent-warm)}
 .locale-notice{
   font-size:13px;color:var(--muted);background:var(--accent-warm-soft);
   border:1px solid var(--line);border-radius:var(--radius-sm);
@@ -703,6 +714,7 @@ footer .love{
 }
 @media(max-width:600px){
   .hero h1{font-size:38px}
+  .hero-products{grid-template-columns:1fr}
   section{margin-top:var(--space-xl)}
   .marks-owner{display:none}
   .brand-p{height:38px;width:38px;border-radius:10px}
@@ -911,7 +923,8 @@ header{display:flex;align-items:center;flex-wrap:nowrap;gap:10px}
 .principle h3,.rail h3{display:flex;align-items:center;gap:10px}
 .tg-menu{margin:14px 0 0;border-radius:18px;overflow:hidden;border:1px solid var(--line,#1e2a28)}
 .tg-menu img{width:100%;height:auto;object-fit:contain !important;display:block}
-.seat-preview img,.gallery img:not(.board-shot),.desk-live img{width:100% !important;height:auto !important;max-height:280px !important;object-fit:cover !important;object-position:center 78% !important;display:block}
+.hero-products img{width:100% !important;height:auto !important;max-height:none !important;object-fit:contain !important;display:block !important}
+.seat-preview img,.gallery img:not(.board-shot),.desk-live img{width:100% !important;height:auto !important;max-height:420px !important;object-fit:contain !important;object-position:center top !important;display:block}
 .brand-plate{margin-top:20px}
 #cryptoPay{margin-top:28px;padding:22px 20px;border:1px solid var(--line,#1e2a28);border-radius:20px;background:rgba(255,255,255,.02)}
 #cryptoPay h2{font-family:Instrument Serif,Georgia,serif;font-size:28px;font-weight:400;margin:0 0 8px}
@@ -961,6 +974,7 @@ footer .net-live .net-tile{box-shadow:0 0 0 1px rgba(46,230,199,.35),0 8px 18px 
       <a href="#seats" class="nav-cta" id="navSeats">Seats</a>
     </nav>
     <div class="header-right">
+      <a class="chat-btn" id="chatBtn" href="https://chatting.elghaly.dev">💬 Chatting by elghaly</a>
       <nav class="lang-switch" aria-label="Language">
         <button type="button" class="lang-btn active" data-lang="en" aria-pressed="true">EN</button>
         <button type="button" class="lang-btn" data-lang="ar" aria-pressed="false">AR</button>
@@ -976,10 +990,14 @@ footer .net-live .net-tile{box-shadow:0 0 0 1px rgba(46,230,199,.35),0 8px 18px 
   <main id="main">
   <p class="locale-notice" id="homeLocaleNote" hidden></p>
   <section class="hero" id="top">
+    <div class="hero-products" aria-label="Lifetime seats">
+      <a href="#seats"><img src="plumb-starter-1080x1350.png" width="1080" height="1350" alt="Plumb Starter — US$350 one-time seat" fetchpriority="high" decoding="async"/></a>
+      <a href="#seats"><img src="plumb-pro-1080x1350.png" width="1080" height="1350" alt="Plumb Pro — US$699 one-time seat" loading="lazy" decoding="async"/></a>
+      <a href="#seats"><img src="plumb-source-1080x1350.png" width="1080" height="1350" alt="Plumb Source — US$1,999 one-time seat" loading="lazy" decoding="async"/></a>
+    </div>
     <p class="flagship brand-lock">💭 you dream we build 🧠💡</p>
     <div class="hero-copy">
       <p class="eyebrow" id="heroEyebrow">Lifetime seat · ships dry · HOLD until you arm it</p>
-      <div class="page-menu" data-page-menu style="display:flex;justify-content:flex-end;min-height:34px;margin:0 0 .5rem"></div>
       <h1 id="heroH1">Your machine.<br/>Your keys.<br/>Delivered in 3.35 hours.</h1>
       <p class="lede" id="heroLede">Self-hosted Solana desk software you run on your hardware. Watches your named pairs, surfaces gaps on your board, and evaluates against <strong>your</strong> rules — controlled from a private, encrypted chat on your phone. Default posture is dry/HOLD: nothing sends until you explicitly arm it. Same house as <a href="https://35.elghaly.dev">35</a> and <a href="https://iris-35.elghaly.dev">IRIS</a>. We build, hand over, and stay reachable — we never touch your funds.</p>
       <p class="pitch-line" id="heroPitch">We build it. You run it. You keep it.</p>
@@ -1011,6 +1029,34 @@ footer .net-live .net-tile{box-shadow:0 0 0 1px rgba(46,230,199,.35),0 8px 18px 
         <h3 id="m2h">Arbitrage mode</h3>
         <p id="m2">Arbitrage watches two prices across venues and routes — same asset, different quotes — surfaces the gap on your board, and evaluates against your rules in dry/HOLD until you arm it. Full arbitrage board on Pro and Source.</p>
       </article>
+    </div>
+  </section>
+
+  <section class="brand-plate reveal" id="brand" aria-labelledby="bpTitle">
+    <div class="brand-plate-inner">
+      <figure class="brand-plate-figure">
+        <picture><source srcset="brand-35-plumb.webp" type="image/webp"/><img src="brand-35-plumb.jpg" width="1046" height="702" loading="lazy" decoding="async"
+             alt="35 Plumb Elghaly house mark — the numerals 35 in a teal-to-violet gradient over PLUMB and ELGHALY, beside the star, hamsa and eye marks"/></picture>
+      </figure>
+      <div class="brand-plate-copy">
+        <p class="section-label" id="bpLabel">The house mark</p>
+        <h2 class="section-title" id="bpTitle">35 · Plumb · Elghaly</h2>
+        <p class="section-note" id="bpNote">One house, one mark. Plumb is the desk software; 35 is the house that builds it. The same hands ship <a href="https://35.elghaly.dev">35</a> and <a href="https://iris-35.elghaly.dev">IRIS</a> — you are not buying from a storefront, you are buying from the people who wrote it.</p>
+        <ul class="brand-glyphs">
+          <li>
+            <span class="glyph" aria-hidden="true">✦</span>
+            <div><strong id="bg1h">The star</strong><span class="glyph-note" id="bg1">Direction. You name the pairs and the rules — the machine follows them, not us.</span></div>
+          </li>
+          <li>
+            <span class="glyph" aria-hidden="true">🪬</span>
+            <div><strong id="bg2h">The hamsa</strong><span class="glyph-note" id="bg2">Protection. Keys stay in your hands. You host it, you hold it, we never touch funds.</span></div>
+          </li>
+          <li>
+            <span class="glyph" aria-hidden="true">🧿</span>
+            <div><strong id="bg3h">The eye</strong><span class="glyph-note" id="bg3">Watch. Constant eyes on the book so you do not have to sit on the chart.</span></div>
+          </li>
+        </ul>
+      </div>
     </div>
   </section>
 
@@ -1256,39 +1302,6 @@ footer .net-live .net-tile{box-shadow:0 0 0 1px rgba(46,230,199,.35),0 8px 18px 
           <span class="partner-name">Cursor</span>
           <span class="partner-note" id="pCursor">We recommend · very hard worker</span>
         </a>
-        <a class="partner partner-rec" href="https://claude.ai/" target="_blank" rel="noopener noreferrer" title="Claude — Anthropic assistant">
-          <img class="partner-logo" src="assets/claude-logomark.svg" width="28" height="28" alt="" loading="lazy" decoding="async"/>
-          <span class="partner-name">Claude</span>
-          <span class="partner-note" id="pClaude">We recommend</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <section class="brand-plate reveal" id="brand" aria-labelledby="bpTitle">
-    <div class="brand-plate-inner">
-      <figure class="brand-plate-figure">
-        <picture><source srcset="brand-35-plumb.webp" type="image/webp"/><img src="brand-35-plumb.jpg" width="1046" height="702" loading="lazy" decoding="async"
-             alt="35 Plumb Elghaly house mark — the numerals 35 in a teal-to-violet gradient over PLUMB and ELGHALY, beside the star, hamsa and eye marks"/></picture>
-      </figure>
-      <div class="brand-plate-copy">
-        <p class="section-label" id="bpLabel">The house mark</p>
-        <h2 class="section-title" id="bpTitle">35 · Plumb · Elghaly</h2>
-        <p class="section-note" id="bpNote">One house, one mark. Plumb is the desk software; 35 is the house that builds it. The same hands ship <a href="https://35.elghaly.dev">35</a> and <a href="https://iris-35.elghaly.dev">IRIS</a> — you are not buying from a storefront, you are buying from the people who wrote it.</p>
-        <ul class="brand-glyphs">
-          <li>
-            <span class="glyph" aria-hidden="true">✦</span>
-            <div><strong id="bg1h">The star</strong><span class="glyph-note" id="bg1">Direction. You name the pairs and the rules — the machine follows them, not us.</span></div>
-          </li>
-          <li>
-            <span class="glyph" aria-hidden="true">🪬</span>
-            <div><strong id="bg2h">The hamsa</strong><span class="glyph-note" id="bg2">Protection. Keys stay in your hands. You host it, you hold it, we never touch funds.</span></div>
-          </li>
-          <li>
-            <span class="glyph" aria-hidden="true">🧿</span>
-            <div><strong id="bg3h">The eye</strong><span class="glyph-note" id="bg3">Watch. Constant eyes on the book so you do not have to sit on the chart.</span></div>
-          </li>
-        </ul>
       </div>
     </div>
   </section>
@@ -1301,7 +1314,7 @@ footer .net-live .net-tile{box-shadow:0 0 0 1px rgba(46,230,199,.35),0 8px 18px 
     <div class="seats">
       <article class="seat">
         <figure class="seat-preview">
-          <picture><source srcset="board-partial-350.webp" type="image/webp"/><img src="board-partial-350.png" alt="Starter partial board — 350 seat, pair slice" width="800" height="520" loading="lazy" decoding="async"/></picture>
+          <img src="plumb-starter-1080x1350.png" alt="Plumb Starter — US$350 one-time seat" width="1080" height="1350" loading="lazy" decoding="async"/>
           <figcaption id="s1cap">350 · partial board · 1–2 pairs · more pairs locked</figcaption>
         </figure>
         <p class="seat-tier" id="s1tier">Starter · 350 partial · $350</p>
@@ -1322,7 +1335,7 @@ footer .net-live .net-tile{box-shadow:0 0 0 1px rgba(46,230,199,.35),0 8px 18px 
       </article>
       <article class="seat featured">
         <figure class="seat-preview">
-          <picture><source srcset="board-full-arb.webp" type="image/webp"/><img src="board-full-arb.png" alt="Pro full arb board — multi-pair KEEP-style desk" width="1000" height="560" loading="lazy" decoding="async"/></picture>
+          <img src="plumb-pro-1080x1350.png" alt="Plumb Pro — US$699 one-time seat" width="1080" height="1350" loading="lazy" decoding="async"/>
           <figcaption id="s2cap">Full arbitrage board · multi-pair · you set slip/tip</figcaption>
         </figure>
         <p class="seat-tier" id="s2tier">Pro · full arbitrage · $699</p>
@@ -1343,7 +1356,7 @@ footer .net-live .net-tile{box-shadow:0 0 0 1px rgba(46,230,199,.35),0 8px 18px 
       </article>
       <article class="seat">
         <figure class="seat-preview">
-          <picture><source srcset="board-full-arb.webp" type="image/webp"/><img src="board-full-arb.png" alt="Source full arb board — same desk as Pro, plus source" width="1000" height="560" loading="lazy" decoding="async"/></picture>
+          <img src="plumb-source-1080x1350.png" alt="Plumb Source — US$1,999 one-time seat" width="1080" height="1350" loading="lazy" decoding="async"/>
           <figcaption id="s3cap">Full arbitrage board + source code</figcaption>
         </figure>
         <p class="seat-tier" id="s3tier">Source · full arbitrage + code · $1,999</p>
@@ -1457,7 +1470,7 @@ footer .net-live .net-tile{box-shadow:0 0 0 1px rgba(46,230,199,.35),0 8px 18px 
 
   <footer>
     <div class="marks marks-desk" aria-hidden="true">3️⃣🧿5️⃣</div>
-    <p id="footContact">Ask us on mail — <a href="mailto:support@elghaly.dev">support@elghaly.dev</a> · We are 24</p>
+    <p id="footContact">Email first: <a href="mailto:support@elghaly.dev">support@elghaly.dev</a>. Calls only by appointment.</p>
     <div class="networks-block" aria-label="Network family">
       <p class="networks-label" id="netLabel">Networks</p>
       <div class="networks-row">
@@ -1485,7 +1498,7 @@ footer .net-live .net-tile{box-shadow:0 0 0 1px rgba(46,230,199,.35),0 8px 18px 
       <p class="networks-note" id="netNote">Solana is the supported network on standard seats · ETH · BTC · ARB · MONAD shown as expansion paths only</p>
     </div>
     <p class="love brand-lock">made by love ❤️</p>
-    <p class="addr">elghaly, LLC · 548 Market St, San Francisco, CA 94104, United States · <a href="mailto:support@elghaly.dev">support@elghaly.dev</a></p>
+    <p class="addr" id="footAddr">elghaly, LLC · Email first: <a href="mailto:support@elghaly.dev">support@elghaly.dev</a>. Calls only by appointment.</p>
     <p class="addr legal-links"><a href="https://elghaly.dev/about.html">About</a> · <a href="https://elghaly.dev/contact.html">Contact</a> · <a href="/refunds/">Refunds</a> · <a href="https://elghaly.dev/delivery.html">Delivery</a> · <a href="https://elghaly.dev/terms.html">Terms</a> · <a href="https://elghaly.dev/privacy.html">Privacy</a></p>
     <p class="fine" id="fine">Plumb is desk software sold as-is, without warranty. We make no claims about results, returns, CLEAR, land, or any outcome. You host it, you hold the keys, you accept the risk. Not a token sale. Not an investment. <a href="refunds/">Refunds</a>.</p>
   <p class="lic-badges"><a href="https://creativecommons.org/licenses/by/4.0/" rel="license">© elghaly · CC BY 4.0</a> <a href="https://github.com/Alarm2024">Open source</a></p>
@@ -1503,6 +1516,5 @@ footer .net-live .net-tile{box-shadow:0 0 0 1px rgba(46,230,199,.35),0 8px 18px 
 
 <script src="i18n.js"></script>
 <script src="app.js" defer></script>
-<script src="/page-menu.js" defer></script>
 </body>
 </html>
