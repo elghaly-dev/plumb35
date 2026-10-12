@@ -200,7 +200,12 @@
       var cells = [];
       for (var c = trs[i].firstElementChild; c; c = c.nextElementSibling) {
         if (c.tagName === "TD" || c.tagName === "TH") {
-          cells.push(inlineOf(c).replace(/\n/g, " ").replace(/\|/g, "\\|"));
+          cells.push(
+            inlineOf(c)
+              .replace(/\\/g, "\\\\")
+              .replace(/\n/g, " ")
+              .replace(/\|/g, "\\|")
+          );
         }
       }
       if (cells.length) {
