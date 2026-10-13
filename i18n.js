@@ -8,6 +8,19 @@ const T={
 en:{
   metaTitle:"Plumb — Ready Desk Software",
   brandTag:"Ready desk software",
+  introEyebrow:"Plumb by elghaly · ready desk software",
+  introTitle:"Self-hosted Solana desk software you run on your machine",
+  introLede:"Plumb watches the pairs you name, surfaces gaps on your board, and follows your rules from a private chat on your phone. It ships dry/HOLD by default — nothing sends until you arm it on your hardware. We build the seat, hand it over, and stay reachable.",
+  introCta:"See lifetime seats",
+  statsNote:"Placeholder strip — not live metrics",
+  stat1Label:"Seats delivered",
+  stat1Value:"—",
+  stat2Label:"Pairs on your board",
+  stat2Value:"—",
+  stat3Label:"Handover window",
+  stat3Value:"—",
+  stat4Label:"Update window",
+  stat4Value:"—",
   heroEyebrow:"Lifetime seat · ships dry · HOLD until you arm it",
   heroH1:"Your machine.<br/>Your keys.<br/>Delivered in 3.35 hours.",
   heroLede:"Self-hosted Solana desk software you run on your hardware. Watches your named pairs, surfaces gaps on your board, and evaluates against <strong>your</strong> rules — controlled from a private, encrypted chat on your phone. Default posture is dry/HOLD: nothing sends until you explicitly arm it. Same house as "+LINK35+" and "+LINKIRIS+". We build, hand over, and stay reachable — we never touch your funds.",
@@ -133,6 +146,19 @@ ar:{
   gf2h:"نموذج القائمة",gf2:"زر Hold ظاهر في شجرة القائمة. نفس الملف يُسلَّم مع الديسك للفحص محلياً.",
   metaTitle:"Plumb — برمجيات مكتب جاهزة",
   brandTag:"برمجيات مكتب جاهزة",
+  introEyebrow:"Plumb من elghaly · برمجيات مكتب جاهزة",
+  introTitle:"برمجيات مكتب Solana تستضيفها على جهازك",
+  introLede:"Plumb يراقب الأزواج التي تسمّيها، يُظهر الفجوات على لوحتك، ويتبع قواعدك من دردشة خاصة على هاتفك. يُشحن افتراضياً dry/HOLD — لا شيء يُرسل حتى تُفعّله على جهازك. نبني المقعد، نسلّمه، ونبقى متاحين.",
+  introCta:"عرض مقاعد مدى الحياة",
+  statsNote:"شريط placeholder — ليست مقاييس حية",
+  stat1Label:"مقاعد مُسلَّمة",
+  stat1Value:"—",
+  stat2Label:"أزواج على لوحتك",
+  stat2Value:"—",
+  stat3Label:"نافذة التسليم",
+  stat3Value:"—",
+  stat4Label:"نافذة التحديثات",
+  stat4Value:"—",
   heroEyebrow:"مقعد مدى الحياة · يُشحن dry/HOLD حتى تُفعّله",
   heroH1:"آلتك.<br/>مفاتيحك.<br/>تُسلَّم خلال 3.35 ساعة.",
   heroLede:"برمجيات مكتب Solana تستضيفها على جهازك. تراقب أزواجك المحددة، تُظهر الفجوات على لوحتك، وتُقيِّم وفق <strong>قواعدك</strong> — من دردشة خاصة ومشفّرة على هاتفك. الوضع الافتراضي dry/HOLD: لا شيء يُرسل حتى تُفعّله صراحةً. نفس البيت مع "+LINK35+" و"+LINKIRIS+". نبني، نسلّم، ونبقى متاحين — لا نلمس أموالك أبداً.",
@@ -243,6 +269,19 @@ ru:{
   gf2h:"Фикстура меню",gf2:"Кнопка Hold видна в дереве меню. Тот же файл поставляется с деском для локальной проверки.",
   metaTitle:"Plumb — Готовое ПО для деска",
   brandTag:"Готовое ПО для деска",
+  introEyebrow:"Plumb от elghaly · готовое ПО для деска",
+  introTitle:"Self-hosted Solana-деск, который вы запускаете на своей машине",
+  introLede:"Plumb следит за парами, которые вы назовёте, показывает разрывы на доске и работает по вашим правилам из приватного чата на телефоне. По умолчанию dry/HOLD — ничего не отправляется, пока вы не активируете на своём железе. Мы собираем место, передаём и остаёмся на связи.",
+  introCta:"Смотреть пожизненные места",
+  statsNote:"Placeholder — не живые метрики",
+  stat1Label:"Мест доставлено",
+  stat1Value:"—",
+  stat2Label:"Пар на доске",
+  stat2Value:"—",
+  stat3Label:"Окно передачи",
+  stat3Value:"—",
+  stat4Label:"Окно обновлений",
+  stat4Value:"—",
   heroEyebrow:"Пожизненное место · dry/HOLD до активации",
   heroH1:"Ваша машина.<br/>Ваши ключи.<br/>Доставка за 3.35 часа.",
   heroLede:"Self-hosted ПО для Solana-деска на вашем оборудовании. Следит за указанными парами, показывает разрывы на доске и оценивает по <strong>вашим</strong> правилам — из приватного зашифрованного чата на вашем телефоне. По умолчанию dry/HOLD: ничего не отправляется, пока вы явно не активируете. Тот же дом, что "+LINK35+" и "+LINKIRIS+". Мы собираем, передаём и остаёмся на связи — мы не касаемся ваших средств.",
@@ -352,6 +391,19 @@ zh:{
   gf2h:"菜单样件",gf2:"菜单树中可见 Hold 控制。同一文件随桌面一起交付，可在本地检查。",
   metaTitle:"Plumb — 就绪桌面软件",
   brandTag:"就绪桌面软件",
+  introEyebrow:"Plumb · elghaly 就绪桌面软件",
+  introTitle:"在你机器上运行的自托管 Solana 交易台软件",
+  introLede:"Plumb 监控你指定的交易对，在面板上显示价差，并通过手机上的私密聊天按你的规则运行。默认 dry/HOLD——除非你在自己的硬件上启用，否则不会发送任何交易。我们搭建席位、交付并保持可联系。",
+  introCta:"查看终身席位",
+  statsNote:"占位条 — 非实时指标",
+  stat1Label:"已交付席位",
+  stat1Value:"—",
+  stat2Label:"面板上的交易对",
+  stat2Value:"—",
+  stat3Label:"交接窗口",
+  stat3Value:"—",
+  stat4Label:"更新窗口",
+  stat4Value:"—",
   heroEyebrow:"终身席位 · dry/HOLD 直至你启用",
   heroH1:"你的机器。<br/>你的私钥。<br/>3.35 小时内交付。",
   heroLede:"在你硬件上运行的自托管 Solana 交易台软件。监控你指定的交易对，在面板上显示价差，并按<strong>你的</strong>规则评估——通过你手机上的私密加密聊天控制。默认 dry/HOLD：除非你明确启用，否则不会发送任何交易。与 "+LINK35+" 和 "+LINKIRIS+" 同出一门。我们搭建、交付并保持可联系——绝不碰你的资金。",
@@ -674,7 +726,13 @@ es:{
 };
 
 const LANGS=['en','ar','ru','zh','de','es'];
+const LANGS_NAV=['en','ar','ru','zh'];
+const LANG_HREF={en:'/',ar:'/ar/',ru:'/ru/',zh:'/zh/'};
 const KEYS=[
+  ['introEyebrow','#introEyebrow'],['introTitle','#introTitle'],['introLede','#introLede'],['introCta','#introCta'],
+  ['statsNote','#statsNote'],['stat1Label','#stat1Label'],['stat1Value','#stat1Value'],
+  ['stat2Label','#stat2Label'],['stat2Value','#stat2Value'],['stat3Label','#stat3Label'],['stat3Value','#stat3Value'],
+  ['stat4Label','#stat4Label'],['stat4Value','#stat4Value'],
   ['heroEyebrow','#heroEyebrow'],['heroH1','#heroH1','html'],['heroLede','#heroLede','html'],
   ['heroPitch','#heroPitch'],['heroDelivery','#heroDelivery','html'],['heroDeliveryNote','#heroDeliveryNote'],['heroHelp','#heroHelp'],
   ['trustLabel','#trustLabel'],['trustStrong','#trustStrong'],['trustNote','#trustNote'],
@@ -731,6 +789,15 @@ const KEYS=[
   ['toTopLabel','#toTop','aria-label','attr']
 ];
 
+function pageLangFromPath(){
+  if(typeof window.PLUMB_PAGE_LANG==='string'&&LANGS_NAV.includes(window.PLUMB_PAGE_LANG))return window.PLUMB_PAGE_LANG;
+  var p=location.pathname.replace(/\/index\.html$/i,'').replace(/\/+$/,'')||'/';
+  if(p==='/ar')return 'ar';
+  if(p==='/ru')return 'ru';
+  if(p==='/zh')return 'zh';
+  return 'en';
+}
+
 function setLang(lang){
   if(!T[lang])lang='en';
   /* A key this locale lacks falls back to English. Skipping it instead left
@@ -775,16 +842,25 @@ function setLang(lang){
     if(el&&d[k])el.setAttribute('title',d[k]);
   });
   document.querySelectorAll('.lang-btn').forEach(b=>{
-    b.classList.toggle('active',b.dataset.lang===lang);
-    b.setAttribute('aria-pressed',b.dataset.lang===lang);
+    var on=b.dataset.lang===lang;
+    b.classList.toggle('active',on);
+    if(b.tagName==='BUTTON')b.setAttribute('aria-pressed',on);
+    if(b.tagName==='A'){
+      if(on)b.setAttribute('aria-current','page');
+      else b.removeAttribute('aria-current');
+    }
   });
   try{localStorage.setItem('plumb-lang',lang);}catch(e){}
 }
 
 function init(){
-  document.querySelectorAll('.lang-btn').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
-  let lang='en';
-  try{lang=localStorage.getItem('plumb-lang')||'en';}catch(e){}
+  let lang=pageLangFromPath();
+  if(lang==='en'){
+    try{
+      var saved=localStorage.getItem('plumb-lang');
+      if(saved&&LANGS.includes(saved))lang=saved;
+    }catch(e){}
+  }
   if(!LANGS.includes(lang))lang='en';
   setLang(lang);
 }

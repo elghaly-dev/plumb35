@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>Plumb — Ready Desk Software</title>
 <meta name="description" content="Self-hosted Solana desk software. Ships dry/HOLD. Controlled from a private chat on your phone, Jupiter routes, partial or full pair board. Delivered in 3.35 hours after payment and brief. Lifetime seats."/>
-<meta name="theme-color" content="#050505"/>
+<meta name="theme-color" content="#352373"/>
 <meta name="color-scheme" content="dark"/>
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1"/>
 <meta name="author" content="Elghaly"/>
@@ -750,7 +750,8 @@ footer .love{
    returning Arabic reader never sees an English LTR frame flip to RTL. */
 (function(){var d=document.documentElement;d.className+=' js';
 try{var l=localStorage.getItem('plumb-lang');
-if(l&&/^(en|ar|ru|zh|de|es)$/.test(l)){d.lang=l;d.dir=l==='ar'?'rtl':'ltr';}}catch(e){}})();
+if(l&&/^(en|ar|ru|zh|de|es)$/.test(l)){d.lang=l;d.dir=l==='ar'?'rtl':'ltr';}
+else if(typeof window.PLUMB_PAGE_LANG==='string'&&/^(en|ar|ru|zh)$/.test(window.PLUMB_PAGE_LANG)){d.lang=window.PLUMB_PAGE_LANG;d.dir=window.PLUMB_PAGE_LANG==='ar'?'rtl':'ltr';}}catch(e){}})();
 </script>
 <script type="application/ld+json">
 {
@@ -780,9 +781,7 @@ if(l&&/^(en|ar|ru|zh|de|es)$/.test(l)){d.lang=l;d.dir=l==='ar'?'rtl':'ltr';}}cat
     "en",
     "ar",
     "ru",
-    "zh",
-    "de",
-    "es"
+    "zh"
    ]
   },
   {
@@ -902,7 +901,7 @@ header{display:flex;align-items:center;flex-wrap:nowrap;gap:10px}
 .bl-35{display:block !important}
 .bl-stack,.bl-name,.bl-sub{display:none !important}
 .brand-logo{display:flex !important;align-items:center;gap:11px}
-.marks-owner,.site-nav{display:none !important}
+.marks-owner{display:none !important}
 .header-right{display:flex;align-items:center;gap:6px;flex:1;justify-content:flex-end}
 .lang-switch{display:flex!important;flex-wrap:nowrap!important;gap:3px!important}
 .lang-btn{padding:5px 7px!important;font-size:10px!important}
@@ -947,48 +946,68 @@ footer .net-live .net-tile{box-shadow:0 0 0 1px rgba(46,230,199,.35),0 8px 18px 
    pills do not slide left when it does. */
 .header-right{min-height:27px;flex-wrap:nowrap;min-width:0}
 .lang-switch{max-width:none}
-.header-right:not(:has(#themeMenu))::after{content:"";flex:0 0 93px;height:27px}
 </style>
+<link rel="stylesheet" href="/css/house-glass.css"/>
+<link rel="alternate" hreflang="en" href="https://plumb-35.elghaly.dev/"/>
+<link rel="alternate" hreflang="ar" href="https://plumb-35.elghaly.dev/ar/"/>
+<link rel="alternate" hreflang="ru" href="https://plumb-35.elghaly.dev/ru/"/>
+<link rel="alternate" hreflang="zh" href="https://plumb-35.elghaly.dev/zh/"/>
+<link rel="alternate" hreflang="x-default" href="https://plumb-35.elghaly.dev/"/>
 <style id="lic-badges-css">.lic-badges{margin:.75rem 0 0;font-size:.75rem;line-height:1.2}.lic-badges>a,.lic-badges>span{display:inline-flex;align-items:center;min-height:24px;margin:.2rem .15rem;padding:0 .6rem;border:1px solid currentColor;border-radius:999px;color:inherit;vertical-align:middle}.lic-badges>a{text-decoration:underline;text-underline-offset:2px}.lic-badges>span{text-decoration:none}</style>
 </head>
 <body>
 <a class="skip-link" href="#main" id="skipLink">Skip to content</a>
 <div class="wrap">
-  <header>
-    <div class="brand">
-      <img class="brand-p" src="logo.png" width="56" height="56" alt="" aria-hidden="true"/>
-      <a href="#top" class="brand-logo" aria-label="Plumb 35 — Elghaly, back to top">
-        <span class="bl-35" aria-hidden="true">35</span>
-        <span class="bl-stack" aria-hidden="true">
-          <span class="bl-name">PLUMB</span>
-          <span class="bl-sub">ELGHALY</span>
-        </span>
-      </a>
-    </div>
-    <nav class="site-nav" aria-label="Sections">
-      <a href="#what" id="navWhat">What</a>
-      <a href="#evidence" id="navEvidence">Evidence</a>
-      <a href="#custody" id="navCustody">Custody</a>
-      <a href="#delivery" id="navDelivery">Delivery</a>
-      <a href="#faq" id="navFaq">FAQ</a>
-      <a href="#seats" class="nav-cta" id="navSeats">Seats</a>
-    </nav>
-    <div class="header-right">
-      <a class="chat-btn" id="chatBtn" href="https://chatting.elghaly.dev">💬 Chatting by elghaly</a>
-      <nav class="lang-switch" aria-label="Language">
-        <button type="button" class="lang-btn active" data-lang="en" aria-pressed="true">EN</button>
-        <button type="button" class="lang-btn" data-lang="ar" aria-pressed="false">AR</button>
-        <button type="button" class="lang-btn" data-lang="ru" aria-pressed="false">RU</button>
-        <button type="button" class="lang-btn" data-lang="zh" aria-pressed="false">ZH</button>
-        <button type="button" class="lang-btn" data-lang="de" aria-pressed="false">DE</button>
-        <button type="button" class="lang-btn" data-lang="es" aria-pressed="false">ES</button>
+  <header class="nav">
+    <div class="nav__in">
+      <div class="nav__start">
+        <div class="brand">
+          <img class="brand-p" src="/logo.png" width="56" height="56" alt="" aria-hidden="true"/>
+          <a href="#top" class="brand-logo" aria-label="Plumb 35 — Elghaly, back to top">
+            <span class="bl-35" aria-hidden="true">Plumb</span>
+          </a>
+        </div>
+        <span class="house-badge" title="35 house mark"><span class="house-badge__dot" aria-hidden="true">●</span> 35</span>
+      </div>
+      <nav class="site-nav" aria-label="Sections">
+        <a href="#what" id="navWhat">What</a>
+        <a href="#evidence" id="navEvidence">Evidence</a>
+        <a href="#custody" id="navCustody">Custody</a>
+        <a href="#delivery" id="navDelivery">Delivery</a>
+        <a href="#faq" id="navFaq">FAQ</a>
+        <a href="#seats" class="nav-cta" id="navSeats">Seats</a>
       </nav>
-      <div class="marks marks-owner" aria-hidden="true">✝️🧿🪬</div>
+      <div class="header-right">
+        <a class="chat-btn" id="chatBtn" href="https://chatting.elghaly.dev">💬 Chatting by elghaly</a>
+        <nav class="lang-switch" aria-label="Language">
+          <a class="lang-btn active" href="/" data-lang="en" hreflang="en" lang="en">English</a>
+          <a class="lang-btn" href="/ar/" data-lang="ar" hreflang="ar" lang="ar">العربية</a>
+          <a class="lang-btn" href="/ru/" data-lang="ru" hreflang="ru" lang="ru">Русский</a>
+          <a class="lang-btn" href="/zh/" data-lang="zh" hreflang="zh" lang="zh">中文</a>
+        </nav>
+        <div class="marks marks-owner" aria-hidden="true">✝️🧿🪬</div>
+      </div>
     </div>
   </header>
 
   <main id="main">
   <p class="locale-notice" id="homeLocaleNote" hidden></p>
+  <section class="intro-hero" aria-labelledby="introTitle">
+    <p class="intro-hero__eyebrow" id="introEyebrow">Plumb by elghaly · ready desk software</p>
+    <h1 class="intro-hero__title" id="introTitle">Self-hosted Solana desk software you run on your machine</h1>
+    <p class="intro-hero__lede" id="introLede">Plumb watches the pairs you name, surfaces gaps on your board, and follows your rules from a private chat on your phone. It ships dry/HOLD by default — nothing sends until you arm it on your hardware. We build the seat, hand it over, and stay reachable.</p>
+    <p class="intro-hero__cta"><a class="btn btn-primary" id="introCta" href="#seats">See lifetime seats</a></p>
+  </section>
+  <section class="stats-strip" aria-labelledby="statsHeading">
+    <h2 class="sr-only" id="statsHeading">Desk stats</h2>
+    <p class="stats-note" id="statsNote">Placeholder strip — not live metrics</p>
+    <dl class="stats-grid">
+      <div><dt id="stat1Label">Seats delivered</dt><dd id="stat1Value">—</dd></div>
+      <div><dt id="stat2Label">Pairs on your board</dt><dd id="stat2Value">—</dd></div>
+      <div><dt id="stat3Label">Handover window</dt><dd id="stat3Value">—</dd></div>
+      <div><dt id="stat4Label">Update window</dt><dd id="stat4Value">—</dd></div>
+    </dl>
+  </section>
   <section class="hero" id="top">
     <div class="hero-products" aria-label="Lifetime seats">
       <a href="#seats"><img src="plumb-starter-1080x1350.png" width="1080" height="1350" alt="Plumb Starter — US$350 one-time seat" fetchpriority="high" decoding="async"/></a>
