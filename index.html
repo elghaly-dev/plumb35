@@ -230,6 +230,8 @@ footer .net.monad span{color:var(--accent-warm)}
   color:var(--ink);margin-bottom:6px;
 }
 .proof-link span{font-size:13px;color:var(--muted);line-height:1.5}
+.onchain-list{list-style:none;margin:var(--space-md) 0 0;padding:0;display:grid;gap:10px}
+.onchain-list a{display:block;padding:12px 14px;border:1px solid var(--line,rgba(255,255,255,.12));border-radius:12px;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
 .proof-flash-note{
   font-size:13px;color:var(--muted);margin-top:var(--space-sm);
   padding:var(--space-sm) var(--space-md);border:1px solid var(--line);
@@ -978,7 +980,6 @@ footer .net-live .net-tile{box-shadow:0 0 0 1px rgba(46,230,199,.35),0 8px 18px 
         <a href="#seats" class="nav-cta" id="navSeats">Seats</a>
       </nav>
       <div class="header-right">
-        <a class="chat-btn" id="chatBtn" href="https://chatting.elghaly.dev">💬 Chatting by elghaly</a>
         <nav class="lang-switch" aria-label="Language">
           <a class="lang-btn active" href="/" data-lang="en" hreflang="en" lang="en">English</a>
           <a class="lang-btn" href="/ar/" data-lang="ar" hreflang="ar" lang="ar">العربية</a>
@@ -997,16 +998,6 @@ footer .net-live .net-tile{box-shadow:0 0 0 1px rgba(46,230,199,.35),0 8px 18px 
     <h1 class="intro-hero__title" id="introTitle">Self-hosted Solana desk software you run on your machine</h1>
     <p class="intro-hero__lede" id="introLede">Plumb watches the pairs you name, surfaces gaps on your board, and follows your rules from a private chat on your phone. It ships dry/HOLD by default — nothing sends until you arm it on your hardware. We build the seat, hand it over, and stay reachable.</p>
     <p class="intro-hero__cta"><a class="btn btn-primary" id="introCta" href="#seats">See lifetime seats</a></p>
-  </section>
-  <section class="stats-strip" aria-labelledby="statsHeading">
-    <h2 class="sr-only" id="statsHeading">Desk stats</h2>
-    <p class="stats-note" id="statsNote">Placeholder strip — not live metrics</p>
-    <dl class="stats-grid">
-      <div><dt id="stat1Label">Seats delivered</dt><dd id="stat1Value">—</dd></div>
-      <div><dt id="stat2Label">Pairs on your board</dt><dd id="stat2Value">—</dd></div>
-      <div><dt id="stat3Label">Handover window</dt><dd id="stat3Value">—</dd></div>
-      <div><dt id="stat4Label">Update window</dt><dd id="stat4Value">—</dd></div>
-    </dl>
   </section>
   <section class="hero" id="top">
     <div class="hero-products" aria-label="Lifetime seats">
@@ -1146,6 +1137,16 @@ footer .net-live .net-tile{box-shadow:0 0 0 1px rgba(46,230,199,.35),0 8px 18px 
         </figcaption>
       </figure>
     </div>
+    <div class="section-head" style="margin-top:var(--space-xl)">
+      <p class="section-label" id="onchainLabel">On-chain · Solana mainnet</p>
+      <h3 class="section-title" id="onchainTitle" style="font-size:clamp(22px,3vw,28px)">Two transactions you can open yourself.</h3>
+      <p class="section-note" id="onchainNote">Each is a Kamino flash loan, a Jupiter SOL round-trip and the repay, all in one transaction, signed by the owner&#39;s own wallet (GrQX7F…oujqJS). Only the borrow size is shown.</p>
+    </div>
+    <ul class="onchain-list">
+      <li id="onchainRow1"><a href="https://solscan.io/tx/UBDrxUXdSe2hYgaLMLPoVzbczgKexvH4fvvMrFDfZ4aCjQS148dsb5V1CCx2E4Cii4Sk7kngnERQoJT7KiPqUQC" rel="noopener" target="_blank">Jul 21, 2026 · 30,000 USDC flash loan, executed and repaid in one transaction · Solscan ↗</a></li>
+      <li id="onchainRow2"><a href="https://solscan.io/tx/4VaChnq4qMnfRL221CAKqDmpC4Jqe3Agte9ga2Ehqdcfcyn21eHZHVTkFBcR7NMjY7e3EaxXmZcN8nv1bMuyxG2U" rel="noopener" target="_blank">Jul 22, 2026 · 15,000 USDC flash loan, executed and repaid in one transaction · Solscan ↗</a></li>
+    </ul>
+    <p class="proof-flash-note" id="onchainLine">Proof the code path runs on mainnet. Not a promise of results. <a href="proof/onchain/">How to check them</a>.</p>
     <div class="section-head" style="margin-top:var(--space-xl)">
       <p class="section-label" id="galLabel">Board UI reference</p>
       <h3 class="section-title" id="galTitle" style="font-size:clamp(22px,3vw,28px)">Desk screenshots — UI reference only.</h3>
