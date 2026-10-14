@@ -804,7 +804,7 @@ if(l&&/^(en|ar|ru|zh|de|es)$/.test(l)){d.lang=l;d.dir=l==='ar'?'rtl':'ltr';}}cat
      "price": "350",
      "priceCurrency": "USD",
      "description": "Partial pair board, 1–2 pairs, phone chat control and Jupiter rail, fixed slippage and tip defaults, 3 months of updates.",
-     "url": "https://plumb-shop.elghaly.dev/products/plumb-starter",
+     "url": "https://plumb-35.elghaly.dev/#seats",
      "availability": "https://schema.org/InStock"
     },
     {
@@ -813,7 +813,7 @@ if(l&&/^(en|ar|ru|zh|de|es)$/.test(l)){d.lang=l;d.dir=l==='ar'?'rtl':'ltr';}}cat
      "price": "699",
      "priceCurrency": "USD",
      "description": "Full multi-pair arbitrage board, you set slippage and tip, optional Jito bundle, private RPC hooks, 6 months of updates.",
-     "url": "https://plumb-shop.elghaly.dev/products/plumb-pro",
+     "url": "https://plumb-35.elghaly.dev/#seats",
      "availability": "https://schema.org/InStock"
     },
     {
@@ -822,7 +822,7 @@ if(l&&/^(en|ar|ru|zh|de|es)$/.test(l)){d.lang=l;d.dir=l==='ar'?'rtl':'ltr';}}cat
      "price": "1999",
      "priceCurrency": "USD",
      "description": "Everything in Pro plus the source code, pair workshop and 6 months of updates.",
-     "url": "https://plumb-shop.elghaly.dev/products/plumb-source",
+     "url": "https://plumb-35.elghaly.dev/#seats",
      "availability": "https://schema.org/InStock"
     }
    ]
@@ -974,7 +974,6 @@ footer .net-live .net-tile{box-shadow:0 0 0 1px rgba(46,230,199,.35),0 8px 18px 
       <a href="#seats" class="nav-cta" id="navSeats">Seats</a>
     </nav>
     <div class="header-right">
-      <a class="chat-btn" id="chatBtn" href="https://chatting.elghaly.dev">💬 Chatting by elghaly</a>
       <nav class="lang-switch" aria-label="Language">
         <button type="button" class="lang-btn active" data-lang="en" aria-pressed="true">EN</button>
         <button type="button" class="lang-btn" data-lang="ar" aria-pressed="false">AR</button>
@@ -998,6 +997,7 @@ footer .net-live .net-tile{box-shadow:0 0 0 1px rgba(46,230,199,.35),0 8px 18px 
     <p class="flagship brand-lock">💭 you dream we build 🧠💡</p>
     <div class="hero-copy">
       <p class="eyebrow" id="heroEyebrow">Lifetime seat · ships dry · HOLD until you arm it</p>
+      <div class="page-menu" data-page-menu style="display:flex;justify-content:flex-end;min-height:46px;margin:0 0 .5rem"></div>
       <h1 id="heroH1">Your machine.<br/>Your keys.<br/>Delivered in 3.35 hours.</h1>
       <p class="lede" id="heroLede">Self-hosted Solana desk software you run on your hardware. Watches your named pairs, surfaces gaps on your board, and evaluates against <strong>your</strong> rules — controlled from a private, encrypted chat on your phone. Default posture is dry/HOLD: nothing sends until you explicitly arm it. Same house as <a href="https://35.elghaly.dev">35</a> and <a href="https://iris-35.elghaly.dev">IRIS</a>. We build, hand over, and stay reachable — we never touch your funds.</p>
       <p class="pitch-line" id="heroPitch">We build it. You run it. You keep it.</p>
@@ -1331,7 +1331,7 @@ footer .net-live .net-tile{box-shadow:0 0 0 1px rgba(46,230,199,.35),0 8px 18px 
           <li>Capped seat</li>
         </ul>
         <a class="btn btn-primary" id="s1btn" href="https://www.paypal.com/ncp/payment/JXKHLJSXT2C54">Pay with PayPal</a>
-        <a class="seat-alt" id="s1alt" href="https://plumb-shop.elghaly.dev/products/plumb-starter">or use the shop checkout</a>
+        <a class="seat-alt" id="s1alt" href="#seats">Compare seats on this page</a>
       </article>
       <article class="seat featured">
         <figure class="seat-preview">
@@ -1352,7 +1352,7 @@ footer .net-live .net-tile{box-shadow:0 0 0 1px rgba(46,230,199,.35),0 8px 18px 
           <li>No size cap from us · Private RPC hooks</li>
         </ul>
         <a class="btn btn-primary" id="s2btn" href="https://www.paypal.com/ncp/payment/JJH7ESJLLNWQW">Pay with PayPal</a>
-        <a class="seat-alt" id="s2alt" href="https://plumb-shop.elghaly.dev/products/plumb-pro">or use the shop checkout</a>
+        <a class="seat-alt" id="s2alt" href="#seats">Compare seats on this page</a>
       </article>
       <article class="seat">
         <figure class="seat-preview">
@@ -1373,7 +1373,7 @@ footer .net-live .net-tile{box-shadow:0 0 0 1px rgba(46,230,199,.35),0 8px 18px 
           <li>No size cap from us</li>
         </ul>
         <a class="btn btn-primary" id="s3btn" href="https://www.paypal.com/ncp/payment/LL669USVKY3T6">Pay with PayPal</a>
-        <a class="seat-alt" id="s3alt" href="https://plumb-shop.elghaly.dev/products/plumb-source">or use the shop checkout</a>
+        <a class="seat-alt" id="s3alt" href="#seats">Compare seats on this page</a>
       </article>
     </div>
 
@@ -1515,6 +1515,7 @@ footer .net-live .net-tile{box-shadow:0 0 0 1px rgba(46,230,199,.35),0 8px 18px 
 </button>
 
 <script src="i18n.js"></script>
+<script src="/page-menu.js" defer></script>
 <script src="app.js" defer></script>
 </body>
 </html>

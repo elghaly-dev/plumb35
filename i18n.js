@@ -64,7 +64,7 @@ en:{
   r3t:"Quote rail · not default",r3h:"Titan · quote & routing eye",r3:"Titan is an optional quote-rail integration — routing visibility and path checks in dry/HOLD before you arm. Not turned on for Starter by default. Pro and Source include hook points; full Titan / gRPC pipe quoted from $400 after the brief.",
   r4t:"Expansion · brief",r4h:"BTC / ETH paths",r4:"Solana is the supported network on standard seats. Bitcoin and Ethereum routes are expansion work — discuss on Source or custom brief. We do <em>not</em> claim BTC/ETH execution on standard seats.",
   seatsLabel:"Lifetime seats",seatsTitle:"Pay once. Keep the seat.",
-  s1cap:"350 · partial board · 1–2 pairs · more pairs locked",s1tier:"Starter · 350 partial · $350",s1for:"First machine — learn the path",s1del:"Binary on your side in <time>3.35</time> hours after pay + brief",s1help:"Handover call included · ships dry/HOLD",s1btn:"Pay with PayPal",seatAlt:"or use the shop checkout",
+  s1cap:"350 · partial board · 1–2 pairs · more pairs locked",s1tier:"Starter · 350 partial · $350",s1for:"First machine — learn the path",s1del:"Binary on your side in <time>3.35</time> hours after pay + brief",s1help:"Handover call included · ships dry/HOLD",s1btn:"Pay with PayPal",seatAlt:"Compare seats on this page",
   s1f:["Partial pair board — limited slice, not full desk","1–2 pairs you name in the brief","Phone chat control + Jupiter rail","Fixed slippage & tip defaults","3 months of updates","Capped seat"],
   s2cap:"Full arbitrage board · multi-pair · you set slip/tip",s2tier:"Pro · full arbitrage · $699",s2for:"Operator who already trades",s2del:"Binary on your side in <time>3.35</time> hours after pay + brief",s2help:"Handover call included · ships dry/HOLD",s2btn:"Pay with PayPal",
   s2f:["Full multi-pair arbitrage board","You set slippage & tip","Optional Jito / operator bundle","Phone chat control","6 months of updates","No size cap from us · Private RPC hooks"],
@@ -175,7 +175,7 @@ ar:{
   proofOnchainT:"On-chain",proofOnchainD:"مسار المعاملة · توقيع أو رسوم توضيحية فقط",
   proofFlashNote:"رسوم توضيحية فقط — لا توقيع معاملة قابل للنشر في المستودع. <a href=\"proof/onchain/\">صفحة On-chain</a> تشرح ما يُعدّ دليلاً.",
   seatsLabel:"مقاعد مدى الحياة",seatsTitle:"ادفع مرة. واحتفظ بالمقعد.",
-  s1cap:"350 · لوحة جزئية · 1–2 زوج · أزواج إضافية مقفلة",s1tier:"Starter · 350 جزئية · $350",s1for:"أول آلة — تعلّم المسار",s1del:"الثنائي على جهازك خلال <time>3.35</time> ساعة بعد الدفع + الموجز",s1help:"مكالمة تسليم مشمولة · يُشحن dry/HOLD",s1btn:"ادفع عبر PayPal",seatAlt:"أو استخدم الدفع عبر المتجر",
+  s1cap:"350 · لوحة جزئية · 1–2 زوج · أزواج إضافية مقفلة",s1tier:"Starter · 350 جزئية · $350",s1for:"أول آلة — تعلّم المسار",s1del:"الثنائي على جهازك خلال <time>3.35</time> ساعة بعد الدفع + الموجز",s1help:"مكالمة تسليم مشمولة · يُشحن dry/HOLD",s1btn:"ادفع عبر PayPal",seatAlt:"قارن المقاعد في هذه الصفحة",
   s1f:["لوحة جزئية — شريحة محدودة","1–2 زوج في الموجز","تحكم عبر الدردشة + Jupiter","انزلاق وبقشيش ثابت","3 أشهر تحديثات","مقعد محدود"],
   s2cap:"لوحة المراجحة الكاملة · أزواج متعددة · أنت تحدد slip/tip",s2tier:"Pro · arb كامل · $699",s2for:"مشغّل يتداول بالفعل",s2del:"الثنائي على جهازك خلال <time>3.35</time> ساعة بعد الدفع + الموجز",s2help:"مكالمة تسليم مشمولة · يُشحن dry/HOLD",s2btn:"ادفع عبر PayPal",
   s2f:["لوحة arb متعددة الأزواج","أنت تضبط الانزلاق والبقشيش","Jito / operator اختياري","تحكم عبر الدردشة","6 أشهر تحديثات","بدون حد حجم · Private RPC"],
@@ -284,7 +284,7 @@ ru:{
   proofOnchainT:"On-chain",proofOnchainD:"On-chain path · подпись или только иллюстрации",
   proofFlashNote:"Только иллюстрации — в репозитории нет публикуемой подписи транзакции. <a href=\"proof/onchain/\">On-chain proof page</a> объясняет, что считается доказательством.",
   seatsLabel:"Пожизненные места",seatsTitle:"Заплатите один раз. Место остаётся вашим.",
-  s1cap:"350 · частичная доска · 1–2 пары · остальные пары закрыты",s1tier:"Starter · 350 · $350",s1for:"Первая машина — learn the path",s1del:"Бинарник у вас за <time>3.35</time> ч после оплаты + бриф",s1help:"Передача включена · dry/HOLD",s1btn:"Оплатить через PayPal",seatAlt:"или оплатите через магазин",
+  s1cap:"350 · частичная доска · 1–2 пары · остальные пары закрыты",s1tier:"Starter · 350 · $350",s1for:"Первая машина — learn the path",s1del:"Бинарник у вас за <time>3.35</time> ч после оплаты + бриф",s1help:"Передача включена · dry/HOLD",s1btn:"Оплатить через PayPal",seatAlt:"Сравните места на этой странице",
   s1f:["Partial board — slice","1–2 пары в брифе","Чат + Jupiter","Fixed slip/tip","3 мес. updates","Capped"],
   s2cap:"Полная арбитражная доска · несколько пар · slip/tip задаёте вы",s2tier:"Pro · arb · $699",s2for:"Оператор с опытом",s2del:"Бинарник у вас за <time>3.35</time> ч после оплаты + бриф",s2help:"Передача включена · dry/HOLD",s2btn:"Оплатить через PayPal",
   s2f:["Full arb board KEEP","Slip/tip вы","Jito optional","Управление из чата","6 мес.","No cap · RPC hooks"],
@@ -294,8 +294,8 @@ ru:{
   cmpLabel:"Сравнение",cmpFeature:"Feature",cmpS:"Starter $350",cmpP:"Pro $699",cmpSo:"Source $1,999",
   cmpRows:[["Board","Partial 350","Full arb","Full + source"],["Для кого","First machine","Operator","Desk + code"],["Pairs","1–2","Multi","Workshop"],["Получаете","Ready binary + передача","Ready binary + controls","Source"],["Управление из чата","Yes","Yes","Yes"],["Доставка после оплаты","3.35 h + brief","3.35 h + brief","3.35 h + brief"],["Default posture","Dry/HOLD до активации · Solana на стандартных seats · BTC/ETH только Source / custom brief","",""],["Updates","3 mo","6 mo","6 + workshop"],["Cap","Capped","No cap","No cap"],["Slip/tip","Fixed","You set","You code"],["Jito","—","Optional","Edit"],["RPC","—","Hooks","Edit"],["Workshop","—","—","Yes"],["Keys","Yours always","",""],["Handoff","Build → передача → управление с телефона","",""],["Titan","Extra","",""]],
   chatBtn:"💬 Chatting by elghaly",
-  footContact:"Сначала email: "+LINKMAIL+". Звонки только по записи.",
-  footAddr:"elghaly, LLC · Сначала email: "+LINKMAIL+". Звонки только по записи.",
+  footContact:"Сначала по почте: "+LINKMAIL+". Звонки только по договорённости.",
+  footAddr:"elghaly, LLC · Сначала по почте: "+LINKMAIL+". Звонки только по договорённости.",
   netLabel:"Networks",netNote:"Solana — поддерживаемая сеть на стандартных seats · ETH · BTC · ARB · MONAD только expansion paths",
   fine:"Plumb — программное обеспечение для деска, продаётся как есть, без каких-либо гарантий. Мы не делаем никаких заявлений о прибыли, доходности, CLEAR, land или любом ином результате. Вы размещаете его сами, ключи остаются у вас, риск принимаете вы. Это не продажа токенов. Это не инвестиция. "+LINKREFUNDS+".",
   once:"раз",netSol:"Solana — поддерживаемая сеть",netEth:"Ethereum — expansion path",netBtc:"Bitcoin — expansion path",netArb:"Arbitrum — expansion path",netMonad:"Monad — expansion path",
@@ -394,7 +394,7 @@ zh:{
   proofOnchainT:"On-chain",proofOnchainD:"链上路径 · 仅签名或说明图",
   proofFlashNote:"仅为说明图 — 仓库中无可发布的交易签名。<a href=\"proof/onchain/\">On-chain proof page</a> 说明什么才算证据。",
   seatsLabel:"终身席位",seatsTitle:"一次付费。席位永久保留。",
-  s1cap:"350 · 部分面板 · 1–2 对 · 更多交易对已锁定",s1tier:"Starter · 350 · $350",s1for:"第一台机器 — 学路径",s1del:"付款 + brief 后 <time>3.35</time> 小时内二进制文件到你这边",s1help:"含交接通话 · dry/HOLD 交付",s1btn:"使用 PayPal 付款",seatAlt:"或使用商店结账",
+  s1cap:"350 · 部分面板 · 1–2 对 · 更多交易对已锁定",s1tier:"Starter · 350 · $350",s1for:"第一台机器 — 学路径",s1del:"付款 + brief 后 <time>3.35</time> 小时内二进制文件到你这边",s1help:"含交接通话 · dry/HOLD 交付",s1btn:"使用 PayPal 付款",seatAlt:"在本页比较席位",
   s1f:["Partial board slice","brief 中 1–2 对","聊天控制 + Jupiter","固定 slip/tip","3 个月更新","Capped"],
   s2cap:"完整套利面板 · 多交易对 · slip/tip 由你设定",s2tier:"Pro · $699",s2for:"已有交易经验",s2del:"付款 + brief 后 <time>3.35</time> 小时内二进制文件到你这边",s2help:"含交接通话 · dry/HOLD 交付",s2btn:"使用 PayPal 付款",
   s2f:["Full arb KEEP board","自设 slip/tip","可选 Jito","聊天控制","6 个月","无 cap · RPC"],
@@ -404,8 +404,8 @@ zh:{
   cmpLabel:"对比席位",cmpFeature:"功能",cmpS:"Starter $350",cmpP:"Pro $699",cmpSo:"Source $1,999",
   cmpRows:[["Board","Partial 350","Full arb","Full + source"],["适合","首台","Operator","要代码"],["Pairs","1–2","Multi","Workshop"],["交付","就绪二进制 + 交接通话","就绪二进制 + 控制","Source"],["聊天控制","是","是","是"],["付款后交付","3.35 小时 + brief","3.35 小时 + brief","3.35 小时 + brief"],["默认状态","Dry/HOLD 直至启用 · 标准席位 Solana · BTC/ETH 仅 Source / custom brief","",""],["更新","3 月","6 月","6 月 + workshop"],["Cap","Capped","无 cap","无 cap"],["Slip/tip","固定","你设","改代码"],["Jito","—","可选","可改"],["RPC","—","Hooks","可改"],["Workshop","—","—","含"],["Keys","始终在你","",""],["Handoff","构建 → 交接通话 → 在手机上继续","",""],["Titan","不含","",""]],
   chatBtn:"💬 Chatting by elghaly",
-  footContact:"优先邮件："+LINKMAIL+"。通话仅预约。",
-  footAddr:"elghaly, LLC · 优先邮件："+LINKMAIL+"。通话仅预约。",
+  footContact:"请先发邮件："+LINKMAIL+"。电话仅限预约。",
+  footAddr:"elghaly, LLC · 请先发邮件："+LINKMAIL+"。电话仅限预约。",
   netLabel:"Networks",netNote:"Solana 是标准席位支持的网络 · ETH · BTC · ARB · MONAD 仅显示为扩展路径",
   fine:"Plumb 是按现状出售的交易台软件，不提供任何保证或担保。我们不对利润、回报、CLEAR、land 或任何结果作任何声明。由你自行托管，密钥在你手中，风险由你承担。这不是代币销售。这不是投资。 "+LINKREFUNDS+".",
   once:"一次",netSol:"Solana — 支持的网络",netEth:"Ethereum — 扩展路径",netBtc:"Bitcoin — 扩展路径",netArb:"Arbitrum — 扩展路径",netMonad:"Monad — 扩展路径",
@@ -779,6 +779,7 @@ function setLang(lang){
     b.setAttribute('aria-pressed',b.dataset.lang===lang);
   });
   try{localStorage.setItem('plumb-lang',lang);}catch(e){}
+  if (window.pageMenuRefresh) window.pageMenuRefresh();
 }
 
 function init(){
