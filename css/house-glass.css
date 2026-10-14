@@ -34,30 +34,47 @@
 
 :root {
   color-scheme: dark;
-  --house-bg: #5a4fc0;
-  --house-bg-2: #6a5fd0;
-  --house-card: #0d0b1f;
-  --house-card-2: #17142f;
-  --house-line: #1c1838;
-  --house-line-2: #2e2856;
-  --house-text: #ffffff;
-  --house-muted: #b9b3e6;
-  --house-gold: #c9c2ff;
-  --house-gold-2: #e2deff;
-  --house-gold-ink: #17123d;
+  /* Design spec tokens (chatting.elghaly.dev) */
+  --bg: #5a4fc0;
+  --bg-2: #6a5fd0;
+  --card: #0d0b1f;
+  --card-2: #17142f;
+  --line: #1c1838;
+  --line-2: #2e2856;
+  --text: #ffffff;
+  --muted: #b9b3e6;
+  --gold: #c9c2ff;
+  --gold-2: #e2deff;
+  --gold-ink: #17123d;
+  --pos: #7be3b0;
+  --radius: 22px;
+  --radius-sm: 20px;
+  --max: 72rem;
+  --gutter: 1rem;
+  --font: "Outfit", "Cairo", system-ui, sans-serif;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+
+  --house-bg: var(--bg);
+  --house-bg-2: var(--bg-2);
+  --house-card: var(--card);
+  --house-card-2: var(--card-2);
+  --house-line: var(--line);
+  --house-line-2: var(--line-2);
+  --house-text: var(--text);
+  --house-muted: var(--muted);
+  --house-gold: var(--gold);
+  --house-gold-2: var(--gold-2);
+  --house-gold-ink: var(--gold-ink);
   --house-on-bg-line: rgba(255, 255, 255, 0.2);
   --house-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04),
     0 18px 40px -20px rgba(16, 10, 58, 0.6);
-  --house-radius: 22px;
-  --house-font: "Outfit", "Cairo", ui-sans-serif, system-ui, sans-serif;
-  --house-max: 72rem;
-  --house-gutter: 1rem;
-  --house-pos: #7be3b0;
-  --house-ease: cubic-bezier(0.2, 0.7, 0.2, 1);
-  --pos: var(--house-pos);
-  --ease: var(--house-ease);
+  --house-radius: var(--radius);
+  --house-font: var(--font);
+  --house-max: var(--max);
+  --house-gutter: var(--gutter);
+  --house-pos: var(--pos);
+  --house-ease: var(--ease);
 
-  --bg: var(--house-bg);
   --bg-soft: var(--house-card);
   --surface: var(--house-card);
   --surface-hover: var(--house-card-2);
@@ -120,6 +137,39 @@ header.nav {
   border-bottom: 1px solid var(--house-on-bg-line);
   backdrop-filter: saturate(160%) blur(16px);
   -webkit-backdrop-filter: saturate(160%) blur(16px);
+}
+
+.nav__langbar {
+  border-bottom: 1px solid var(--house-on-bg-line);
+}
+
+.nav__langbar-in {
+  max-width: var(--house-max);
+  margin: 0 auto;
+  padding: 0.4rem var(--house-gutter);
+  display: flex;
+  justify-content: flex-end;
+  min-width: 0;
+}
+
+.nav__langbar .lang-switch {
+  margin-inline-start: 0;
+  width: 100%;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+@media (max-width: 420px) {
+  .nav__langbar .lang-switch {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+  }
+
+  .nav__langbar-in {
+    justify-content: flex-start;
+  }
 }
 
 header.nav.is-stuck {
@@ -249,7 +299,7 @@ header.nav.is-stuck {
 
 .lang-btn {
   flex: none;
-  min-height: 36px;
+  min-height: 44px;
   padding: 4px 10px;
   border: 1px solid transparent;
   border-radius: 999px;

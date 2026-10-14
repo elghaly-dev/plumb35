@@ -837,6 +837,11 @@ function setLang(lang){
 }
 
 function init(){
+  document.querySelectorAll('.lang-btn').forEach(b=>{
+    if(b.tagName==='BUTTON'){
+      b.addEventListener('click',()=>setLang(b.dataset.lang));
+    }
+  });
   let lang=pageLangFromPath();
   if(lang==='en'){
     try{

@@ -29,10 +29,7 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
 <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
 <link rel="manifest" href="site.webmanifest"/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link rel="preload" as="image" href="plumb-starter-1080x1350.png" type="image/png" fetchpriority="high"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"/>
 <style>
 :root{
   --bg:#050505;
@@ -95,7 +92,7 @@ header{
   transition:background .3s,border-color .3s;
 }
 header.is-stuck{background:rgba(5,5,5,.9);border-bottom-color:var(--line)}
-section[id]{scroll-margin-top:96px}
+section[id]{scroll-margin-top:132px}
 .brand{display:flex;align-items:center;gap:11px;min-width:0;flex-shrink:1}
 .brand-p{
   /* Sized to the live-text lockup beside it rather than the old 56px raster. */
@@ -783,7 +780,9 @@ else if(typeof window.PLUMB_PAGE_LANG==='string'&&/^(en|ar|ru|zh)$/.test(window.
     "en",
     "ar",
     "ru",
-    "zh"
+    "zh",
+    "de",
+    "es"
    ]
   },
   {
@@ -961,6 +960,18 @@ footer .net-live .net-tile{box-shadow:0 0 0 1px rgba(46,230,199,.35),0 8px 18px 
 <a class="skip-link" href="#main" id="skipLink">Skip to content</a>
 <div class="wrap">
   <header class="nav">
+    <div class="nav__langbar">
+      <div class="nav__langbar-in">
+        <nav class="lang-switch" aria-label="Language">
+          <a class="lang-btn active" href="/" data-lang="en" hreflang="en" lang="en">English</a>
+          <a class="lang-btn" href="/ar/" data-lang="ar" hreflang="ar" lang="ar">العربية</a>
+          <a class="lang-btn" href="/ru/" data-lang="ru" hreflang="ru" lang="ru">Русский</a>
+          <a class="lang-btn" href="/zh/" data-lang="zh" hreflang="zh" lang="zh">中文</a>
+          <button type="button" class="lang-btn" data-lang="de">Deutsch</button>
+          <button type="button" class="lang-btn" data-lang="es">Español</button>
+        </nav>
+      </div>
+    </div>
     <div class="nav__in">
       <div class="nav__start">
         <div class="brand">
@@ -979,15 +990,6 @@ footer .net-live .net-tile{box-shadow:0 0 0 1px rgba(46,230,199,.35),0 8px 18px 
         <a href="#faq" id="navFaq">FAQ</a>
         <a href="#seats" class="nav-cta" id="navSeats">Seats</a>
       </nav>
-      <div class="header-right">
-        <nav class="lang-switch" aria-label="Language">
-          <a class="lang-btn active" href="/" data-lang="en" hreflang="en" lang="en">English</a>
-          <a class="lang-btn" href="/ar/" data-lang="ar" hreflang="ar" lang="ar">العربية</a>
-          <a class="lang-btn" href="/ru/" data-lang="ru" hreflang="ru" lang="ru">Русский</a>
-          <a class="lang-btn" href="/zh/" data-lang="zh" hreflang="zh" lang="zh">中文</a>
-        </nav>
-        <div class="marks marks-owner" aria-hidden="true">✝️🧿🪬</div>
-      </div>
     </div>
   </header>
 
@@ -1519,7 +1521,7 @@ footer .net-live .net-tile{box-shadow:0 0 0 1px rgba(46,230,199,.35),0 8px 18px 
     </div>
     <p class="love brand-lock">made by love ❤️</p>
     <p class="addr" id="footAddr">Email first: <a href="mailto:support@elghaly.dev">support@elghaly.dev</a>. Calls only by appointment.</p>
-    <p class="addr legal-links"><a href="https://elghaly.dev/about.html">About</a> · <a href="https://elghaly.dev/contact.html">Contact</a> · <a href="/refunds/">Refunds</a> · <a href="https://elghaly.dev/delivery.html">Delivery</a> · <a href="https://elghaly.dev/terms.html">Terms</a> · <a href="https://elghaly.dev/privacy.html">Privacy</a></p>
+    <p class="addr legal-links"><a href="https://elghaly.dev/about.html">About</a> · <a href="https://elghaly.dev/contact.html">Contact</a> · <a href="https://chatting.elghaly.dev">Chatting</a> · <a href="/refunds/">Refunds</a> · <a href="https://elghaly.dev/delivery.html">Delivery</a> · <a href="https://elghaly.dev/terms.html">Terms</a> · <a href="https://elghaly.dev/privacy.html">Privacy</a></p>
     <p class="fine" id="fine">Plumb is desk software sold as-is, without warranty. We make no claims about results, returns, CLEAR, land, or any outcome. You host it, you hold the keys, you accept the risk. Not a token sale. Not an investment. <a href="refunds/">Refunds</a>.</p>
   <p class="lic-badges"><a href="https://creativecommons.org/licenses/by/4.0/" rel="license">© elghaly · CC BY 4.0</a> <a href="https://github.com/Alarm2024">Open source</a></p>
   </footer>

@@ -9,8 +9,8 @@
   --line-strong:rgba(255,255,255,.14);
   --accent-warm:#c9b896;
   --accent-warm-soft:rgba(201,184,150,.08);
-  --serif:"Instrument Serif",Georgia,serif;
-  --sans:"Inter",ui-sans-serif,system-ui,sans-serif;
+  --serif:"Outfit","Cairo",ui-sans-serif,system-ui,sans-serif;
+  --sans:"Outfit","Cairo",ui-sans-serif,system-ui,sans-serif;
   --space-xs:12px;
   --space-sm:20px;
   --space-md:32px;
@@ -35,6 +35,11 @@ a:hover{opacity:.75}
 header{
   display:flex;justify-content:space-between;align-items:center;gap:var(--space-sm);
   flex-wrap:wrap;padding:14px 0 var(--space-sm);border-bottom:1px solid var(--line);margin-bottom:var(--space-lg);
+}
+header.nav{margin-bottom:var(--space-lg);padding:0;border-bottom:0}
+header.nav .proof-nav-row{
+  display:flex;justify-content:space-between;align-items:center;gap:var(--space-sm);
+  flex-wrap:wrap;width:100%;padding:0.75rem 0;border-bottom:1px solid var(--line);
 }
 .brand{display:flex;align-items:center;gap:11px}
 .brand-p{height:40px;width:40px;border-radius:12px;object-fit:cover}
