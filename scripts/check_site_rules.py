@@ -25,8 +25,8 @@ FORBIDDEN = [
 
 def visible_text(raw: str) -> str:
     raw = re.sub(r"<!--.*?-->", "", raw, flags=re.S)
-    raw = re.sub(r"<script[\s\S]*?</script\s*>", "", raw, flags=re.I)
-    raw = re.sub(r"<style[\s\S]*?</style\s*>", "", raw, flags=re.I)
+    raw = re.sub(r"<script\b[\s\S]*?</script[^>]*>", "", raw, flags=re.I)
+    raw = re.sub(r"<style\b[\s\S]*?</style[^>]*>", "", raw, flags=re.I)
     raw = re.sub(r"<[^>]+>", " ", raw)
     return re.sub(r"\s+", " ", raw)
 
