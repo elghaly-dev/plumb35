@@ -52,6 +52,10 @@
   --house-font: "Outfit", "Cairo", ui-sans-serif, system-ui, sans-serif;
   --house-max: 72rem;
   --house-gutter: 1rem;
+  --house-pos: #7be3b0;
+  --house-ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --pos: var(--house-pos);
+  --ease: var(--house-ease);
 
   --bg: var(--house-bg);
   --bg-soft: var(--house-card);
