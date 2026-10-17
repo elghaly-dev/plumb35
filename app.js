@@ -1,7 +1,7 @@
 /* Plumb lockup350 + crypto */
 (function(){
 'use strict';
-var s=document.createElement('script'); s.src='themes.js?v=menu16'; document.head.appendChild(s);
+/* themes.js removed — Plumb uses the house glass palette (chatting.elghaly.dev). */
 // Seat buttons pay with PayPal directly; the href lives in index.html so it
 // works without JavaScript. Stripe stays wired but switched off: keep
 // STRIPE_ENABLED false or it replaces the PayPal links.

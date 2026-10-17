@@ -8,6 +8,10 @@ const T={
 en:{
   metaTitle:"Plumb — Ready Desk Software",
   brandTag:"Ready desk software",
+  introEyebrow:"Plumb by elghaly · ready desk software",
+  introTitle:"Self-hosted Solana desk software you run on your machine",
+  introLede:"Plumb watches the pairs you name, surfaces gaps on your board, and follows your rules from a private chat on your phone. It ships dry/HOLD by default — nothing sends until you arm it on your hardware. We build the seat, hand it over, and stay reachable.",
+  introCta:"See lifetime seats",
   heroEyebrow:"Lifetime seat · ships dry · HOLD until you arm it",
   heroH1:"Your machine.<br/>Your keys.<br/>Delivered in 3.35 hours.",
   heroLede:"Self-hosted Solana desk software you run on your hardware. Watches your named pairs, surfaces gaps on your board, and evaluates against <strong>your</strong> rules — controlled from a private, encrypted chat on your phone. Default posture is dry/HOLD: nothing sends until you explicitly arm it. Same house as "+LINK35+" and "+LINKIRIS+". We build, hand over, and stay reachable — we never touch your funds.",
@@ -35,8 +39,13 @@ en:{
   proofFixturesT:"Fixtures",proofFixturesD:"Open SVGs · SHA-256 check · verifiable alone",
   proofClaimsT:"Claims ledger",proofClaimsD:"Every sales-page claim · how a stranger checks it",
   proofLimitsT:"Limits",proofLimitsD:"What we cannot show — read before you pay",
-  proofOnchainT:"On-chain",proofOnchainD:"Transaction path · signature or illustrations only",
-  proofFlashNote:"Illustrations only — no publishable transaction signature in repo. <a href=\"proof/onchain/\">On-chain proof page</a> explains what would count as evidence.",
+  proofOnchainT:"On-chain",proofOnchainD:"Two mainnet signatures · Kamino borrow and repay in one tx",
+  onchainLabel:"On-chain · Solana mainnet",
+  onchainTitle:"Two transactions you can open yourself.",
+  onchainNote:"Each is a Kamino flash loan, a Jupiter SOL round-trip and the repay, all in one transaction, signed by the owner&#39;s own wallet (GrQX7F…oujqJS). Only the borrow size is shown.",
+  onchainRow1:"Jul 21, 2026 · 30,000 USDC flash loan, executed and repaid in one transaction · Solscan ↗",
+  onchainRow2:"Jul 22, 2026 · 15,000 USDC flash loan, executed and repaid in one transaction · Solscan ↗",
+  onchainLine:"Proof the code path runs on mainnet. Not a promise of results. <a href=\"proof/onchain/\">How to check them</a>.",
   galLabel:"Board UI reference",galTitle:"Desk screenshots — UI reference only.",galNote:"These are labeled screenshots of board layouts, not reproducible proof and not a promise of current market behavior. <strong>Starter</strong> ships the partial slice. <strong>Pro / Source</strong> ships the full arbitrage board.",
   g2t:"Starter $350 · UI reference",g2h:"350 · partial board",g2:"Pair slice — 1–2 pairs, capped, fixed defaults. A limited slice, not the full desk.",
   g3t:"Pro $699 · Source $1,999 · UI reference",g3h:"Full arbitrage board",g3:"Multi-pair desk layout — you set slip/tip, no size cap from us.",
@@ -73,9 +82,8 @@ en:{
   seatAll:"<strong>Every seat:</strong> Keys stay with you. We build, you continue. Titan / gRPC not included — quoted extra after brief. Optional follow-up $149/mo after the update window.",
   cmpLabel:"Compare seats",cmpFeature:"Feature",cmpS:"Starter $350",cmpP:"Pro $699",cmpSo:"Source $1,999",
   cmpRows:[["Board shape","Partial · 350-style slice","Full arbitrage board","Full arbitrage board + source"],["Who it is for","First machine, learn the path","Operator who already trades","Desk that wants the code"],["Pairs","1–2 on partial board","Multi-pair full board","Workshop + you edit"],["What you receive","Ready binary + handover call","Ready binary + controls","Source + seat"],["Phone chat control","Yes","Yes","Yes"],["Delivered after pay","3.35 hours + brief","3.35 hours + brief","3.35 hours + brief"],["Default posture","Dry/HOLD until you arm · Solana on standard seats · BTC/ETH via Source / custom brief only","",""],["Updates included","3 months","6 months","6 months + workshop"],["Trade size cap","Capped seat","No cap from us","No cap from us"],["Slippage & tip","Fixed defaults","You set","You change the code"],["Jito / operator","—","Optional · ask in brief","Yours to edit"],["Private RPC","—","Hook points","Yours to edit"],["Workshop","—","—","Included"],["Keys","Stay with you — always","",""],["Handoff","We build → handover call → you continue from your phone","",""],["Titan / gRPC","Not included in any seat — extra after brief","",""]],
-  chatBtn:"💬 Chatting by elghaly",
   footContact:"Email first: "+LINKMAIL+". Calls only by appointment.",
-  footAddr:"elghaly, LLC · Email first: "+LINKMAIL+". Calls only by appointment.",
+  footAddr:"Email first: "+LINKMAIL+". Calls only by appointment.",
   netLabel:"Networks",netNote:"Solana is the supported network on standard seats · ETH · BTC · ARB · MONAD shown as expansion paths only",
   fine:"Plumb is desk software sold as-is, without warranty. We make no claims about results, returns, CLEAR, land, or any outcome. You host it, you hold the keys, you accept the risk. Not a token sale. Not an investment. "+LINKREFUNDS+".",
   once:"once",netSol:"Solana — supported network",netEth:"Ethereum — expansion path",netBtc:"Bitcoin — expansion path",netArb:"Arbitrum — expansion path",netMonad:"Monad — expansion path",
@@ -133,6 +141,10 @@ ar:{
   gf2h:"نموذج القائمة",gf2:"زر Hold ظاهر في شجرة القائمة. نفس الملف يُسلَّم مع الديسك للفحص محلياً.",
   metaTitle:"Plumb — برمجيات مكتب جاهزة",
   brandTag:"برمجيات مكتب جاهزة",
+  introEyebrow:"Plumb من elghaly · برمجيات مكتب جاهزة",
+  introTitle:"برمجيات مكتب Solana تستضيفها على جهازك",
+  introLede:"Plumb يراقب الأزواج التي تسمّيها، يُظهر الفجوات على لوحتك، ويتبع قواعدك من دردشة خاصة على هاتفك. يُشحن افتراضياً dry/HOLD — لا شيء يُرسل حتى تُفعّله على جهازك. نبني المقعد، نسلّمه، ونبقى متاحين.",
+  introCta:"عرض مقاعد مدى الحياة",
   heroEyebrow:"مقعد مدى الحياة · يُشحن dry/HOLD حتى تُفعّله",
   heroH1:"آلتك.<br/>مفاتيحك.<br/>تُسلَّم خلال 3.35 ساعة.",
   heroLede:"برمجيات مكتب Solana تستضيفها على جهازك. تراقب أزواجك المحددة، تُظهر الفجوات على لوحتك، وتُقيِّم وفق <strong>قواعدك</strong> — من دردشة خاصة ومشفّرة على هاتفك. الوضع الافتراضي dry/HOLD: لا شيء يُرسل حتى تُفعّله صراحةً. نفس البيت مع "+LINK35+" و"+LINKIRIS+". نبني، نسلّم، ونبقى متاحين — لا نلمس أموالك أبداً.",
@@ -172,7 +184,13 @@ ar:{
   proofFixturesT:"Fixtures",proofFixturesD:"افتح SVG · تحقق SHA-256 · قابل للتحقق وحدك",
   proofClaimsT:"Claims ledger",proofClaimsD:"كل ادعاء في صفحة البيع · كيف يتحقق منه غريب",
   proofLimitsT:"Limits",proofLimitsD:"ما لا نستطيع إظهاره — اقرأ قبل الدفع",
-  proofOnchainT:"On-chain",proofOnchainD:"مسار المعاملة · توقيع أو رسوم توضيحية فقط",
+  proofOnchainT:"On-chain",proofOnchainD:"توقيعان على mainnet · اقتراض Kamino وسداد في معاملة واحدة",
+  onchainLabel:"On-chain · Solana mainnet",
+  onchainTitle:"معاملتان يمكنك فتحهما بنفسك.",
+  onchainNote:"كل واحدة قرض flash من Kamino، جولة SOL عبر Jupiter، والسداد — كلها في معاملة واحدة، موقّعة من محفظة المالك (GrQX7F…oujqJS). يُعرض حجم الاقتراض فقط.",
+  onchainRow1:"21 يوليو 2026 · قرض flash 30,000 USDC، نُفّذ وسُدّد في معاملة واحدة · Solscan ↗",
+  onchainRow2:"22 يوليو 2026 · قرض flash 15,000 USDC، نُفّذ وسُدّد في معاملة واحدة · Solscan ↗",
+  onchainLine:"دليل أن مسار الكود يعمل على mainnet. ليس وعداً بنتائج. <a href=\"proof/onchain/\">كيف تتحقق</a>.",
   proofFlashNote:"رسوم توضيحية فقط — لا توقيع معاملة قابل للنشر في المستودع. <a href=\"proof/onchain/\">صفحة On-chain</a> تشرح ما يُعدّ دليلاً.",
   seatsLabel:"مقاعد مدى الحياة",seatsTitle:"ادفع مرة. واحتفظ بالمقعد.",
   s1cap:"350 · لوحة جزئية · 1–2 زوج · أزواج إضافية مقفلة",s1tier:"Starter · 350 جزئية · $350",s1for:"أول آلة — تعلّم المسار",s1del:"الثنائي على جهازك خلال <time>3.35</time> ساعة بعد الدفع + الموجز",s1help:"مكالمة تسليم مشمولة · يُشحن dry/HOLD",s1btn:"ادفع عبر PayPal",seatAlt:"أو استخدم الدفع عبر المتجر",
@@ -184,9 +202,8 @@ ar:{
   seatAll:"<strong>كل مقعد:</strong> المفاتيح معك. نحن نبني، أنت تستمر. Titan / gRPC إضافي. متابعة $149/شهر اختيارية.",
   cmpLabel:"قارن المقاعد",cmpFeature:"الميزة",cmpS:"Starter $350",cmpP:"Pro $699",cmpSo:"Source $1,999",
   cmpRows:[["شكل اللوحة","جزئية · 350","لوحة arb كاملة","لوحة + مصدر"],["لمن","أول آلة","مشغّل","مكتب يريد الكود"],["الأزواج","1–2","متعدد","ورشة + تحرير"],["ما تستلم","ثنائي جاهز + مكالمة تسليم","ثنائي جاهز + تحكم","مصدر + مقعد"],["تحكم عبر الدردشة","نعم","نعم","نعم"],["يُسلَّم بعد الدفع","3.35 ساعة + موجز","3.35 ساعة + موجز","3.35 ساعة + موجز"],["الوضع الافتراضي","Dry/HOLD حتى التفعيل · Solana على المقاعد القياسية · BTC/ETH عبر Source / موجز مخصص فقط","",""],["التحديثات","3 أشهر","6 أشهر","6 + ورشة"],["حد الحجم","محدود","بدون حد","بدون حد"],["Slip & tip","ثابت","أنت","في الكود"],["Jito","—","اختياري","تحرير"],["Private RPC","—","خطافات","تحرير"],["ورشة","—","—","مشمولة"],["المفاتيح","معك دائماً","",""],["التسليم","نبني → مكالمة تسليم → تكمل من هاتفك","",""],["Titan / gRPC","إضافي","",""]],
-  chatBtn:"💬 Chatting by elghaly",
   footContact:"البريد أولاً: "+LINKMAIL+". المكالمات بموعد فقط.",
-  footAddr:"elghaly, LLC · البريد أولاً: "+LINKMAIL+". المكالمات بموعد فقط.",
+  footAddr:"البريد أولاً: "+LINKMAIL+". المكالمات بموعد فقط.",
   netLabel:"Networks",netNote:"Solana الشبكة المدعومة على المقاعد القياسية · ETH · BTC · ARB · MONAD مسارات توسع فقط",
   fine:"Plumb برمجيات مكتب تداول تُباع كما هي، بدون أي ضمان أو كفالة. لا نقدّم أي ادعاءات بشأن الأرباح أو العوائد أو CLEAR أو land أو أي نتيجة. أنت تستضيف، أنت تحمل المفاتيح، أنت تقبل المخاطر. ليس بيع رمز. ليس استثمار. "+LINKREFUNDS+".",
   once:"مرة",netSol:"Solana — شبكة مدعومة",netEth:"Ethereum — مسار توسع",netBtc:"Bitcoin — مسار توسع",netArb:"Arbitrum — مسار توسع",netMonad:"Monad — مسار توسع",
@@ -243,6 +260,10 @@ ru:{
   gf2h:"Фикстура меню",gf2:"Кнопка Hold видна в дереве меню. Тот же файл поставляется с деском для локальной проверки.",
   metaTitle:"Plumb — Готовое ПО для деска",
   brandTag:"Готовое ПО для деска",
+  introEyebrow:"Plumb от elghaly · готовое ПО для деска",
+  introTitle:"Self-hosted Solana-деск, который вы запускаете на своей машине",
+  introLede:"Plumb следит за парами, которые вы назовёте, показывает разрывы на доске и работает по вашим правилам из приватного чата на телефоне. По умолчанию dry/HOLD — ничего не отправляется, пока вы не активируете на своём железе. Мы собираем место, передаём и остаёмся на связи.",
+  introCta:"Смотреть пожизненные места",
   heroEyebrow:"Пожизненное место · dry/HOLD до активации",
   heroH1:"Ваша машина.<br/>Ваши ключи.<br/>Доставка за 3.35 часа.",
   heroLede:"Self-hosted ПО для Solana-деска на вашем оборудовании. Следит за указанными парами, показывает разрывы на доске и оценивает по <strong>вашим</strong> правилам — из приватного зашифрованного чата на вашем телефоне. По умолчанию dry/HOLD: ничего не отправляется, пока вы явно не активируете. Тот же дом, что "+LINK35+" и "+LINKIRIS+". Мы собираем, передаём и остаёмся на связи — мы не касаемся ваших средств.",
@@ -281,7 +302,13 @@ ru:{
   proofFixturesT:"Fixtures",proofFixturesD:"Открой SVG · проверь SHA-256 · проверяешь сам",
   proofClaimsT:"Claims ledger",proofClaimsD:"Каждое утверждение на странице · как проверить",
   proofLimitsT:"Limits",proofLimitsD:"Чего мы не можем показать — читай до оплаты",
-  proofOnchainT:"On-chain",proofOnchainD:"On-chain path · подпись или только иллюстрации",
+  proofOnchainT:"On-chain",proofOnchainD:"Две подписи mainnet · заём и возврат Kamino в одной tx",
+  onchainLabel:"On-chain · Solana mainnet",
+  onchainTitle:"Две транзакции, которые вы можете открыть сами.",
+  onchainNote:"Каждая — flash-заём Kamino, круг SOL через Jupiter и погашение в одной транзакции, подписано кошельком владельца (GrQX7F…oujqJS). Показан только размер займа.",
+  onchainRow1:"21 июл. 2026 · flash loan 30 000 USDC, выполнен и погашен в одной транзакции · Solscan ↗",
+  onchainRow2:"22 июл. 2026 · flash loan 15 000 USDC, выполнен и погашен в одной транзакции · Solscan ↗",
+  onchainLine:"Доказательство, что кодовый путь работает в mainnet. Не обещание результатов. <a href=\"proof/onchain/\">Как проверить</a>.",
   proofFlashNote:"Только иллюстрации — в репозитории нет публикуемой подписи транзакции. <a href=\"proof/onchain/\">On-chain proof page</a> объясняет, что считается доказательством.",
   seatsLabel:"Пожизненные места",seatsTitle:"Заплатите один раз. Место остаётся вашим.",
   s1cap:"350 · частичная доска · 1–2 пары · остальные пары закрыты",s1tier:"Starter · 350 · $350",s1for:"Первая машина — learn the path",s1del:"Бинарник у вас за <time>3.35</time> ч после оплаты + бриф",s1help:"Передача включена · dry/HOLD",s1btn:"Оплатить через PayPal",seatAlt:"или оплатите через магазин",
@@ -293,9 +320,8 @@ ru:{
   seatAll:"<strong>Каждый seat:</strong> Ключи у вас. Мы строим, вы продолжаете. Titan/gRPC extra. Follow-up $149/mo.",
   cmpLabel:"Сравнение",cmpFeature:"Feature",cmpS:"Starter $350",cmpP:"Pro $699",cmpSo:"Source $1,999",
   cmpRows:[["Board","Partial 350","Full arb","Full + source"],["Для кого","First machine","Operator","Desk + code"],["Pairs","1–2","Multi","Workshop"],["Получаете","Ready binary + передача","Ready binary + controls","Source"],["Управление из чата","Yes","Yes","Yes"],["Доставка после оплаты","3.35 h + brief","3.35 h + brief","3.35 h + brief"],["Default posture","Dry/HOLD до активации · Solana на стандартных seats · BTC/ETH только Source / custom brief","",""],["Updates","3 mo","6 mo","6 + workshop"],["Cap","Capped","No cap","No cap"],["Slip/tip","Fixed","You set","You code"],["Jito","—","Optional","Edit"],["RPC","—","Hooks","Edit"],["Workshop","—","—","Yes"],["Keys","Yours always","",""],["Handoff","Build → передача → управление с телефона","",""],["Titan","Extra","",""]],
-  chatBtn:"💬 Chatting by elghaly",
   footContact:"Сначала email: "+LINKMAIL+". Звонки только по записи.",
-  footAddr:"elghaly, LLC · Сначала email: "+LINKMAIL+". Звонки только по записи.",
+  footAddr:"Сначала email: "+LINKMAIL+". Звонки только по записи.",
   netLabel:"Networks",netNote:"Solana — поддерживаемая сеть на стандартных seats · ETH · BTC · ARB · MONAD только expansion paths",
   fine:"Plumb — программное обеспечение для деска, продаётся как есть, без каких-либо гарантий. Мы не делаем никаких заявлений о прибыли, доходности, CLEAR, land или любом ином результате. Вы размещаете его сами, ключи остаются у вас, риск принимаете вы. Это не продажа токенов. Это не инвестиция. "+LINKREFUNDS+".",
   once:"раз",netSol:"Solana — поддерживаемая сеть",netEth:"Ethereum — expansion path",netBtc:"Bitcoin — expansion path",netArb:"Arbitrum — expansion path",netMonad:"Monad — expansion path",
@@ -352,6 +378,10 @@ zh:{
   gf2h:"菜单样件",gf2:"菜单树中可见 Hold 控制。同一文件随桌面一起交付，可在本地检查。",
   metaTitle:"Plumb — 就绪桌面软件",
   brandTag:"就绪桌面软件",
+  introEyebrow:"Plumb · elghaly 就绪桌面软件",
+  introTitle:"在你机器上运行的自托管 Solana 交易台软件",
+  introLede:"Plumb 监控你指定的交易对，在面板上显示价差，并通过手机上的私密聊天按你的规则运行。默认 dry/HOLD——除非你在自己的硬件上启用，否则不会发送任何交易。我们搭建席位、交付并保持可联系。",
+  introCta:"查看终身席位",
   heroEyebrow:"终身席位 · dry/HOLD 直至你启用",
   heroH1:"你的机器。<br/>你的私钥。<br/>3.35 小时内交付。",
   heroLede:"在你硬件上运行的自托管 Solana 交易台软件。监控你指定的交易对，在面板上显示价差，并按<strong>你的</strong>规则评估——通过你手机上的私密加密聊天控制。默认 dry/HOLD：除非你明确启用，否则不会发送任何交易。与 "+LINK35+" 和 "+LINKIRIS+" 同出一门。我们搭建、交付并保持可联系——绝不碰你的资金。",
@@ -391,7 +421,13 @@ zh:{
   proofFixturesT:"Fixtures",proofFixturesD:"打开 SVG · SHA-256 校验 · 可自行验证",
   proofClaimsT:"Claims ledger",proofClaimsD:"销售页每条陈述 · 陌生人如何核对",
   proofLimitsT:"Limits",proofLimitsD:"我们无法展示的内容 — 付款前请读",
-  proofOnchainT:"On-chain",proofOnchainD:"链上路径 · 仅签名或说明图",
+  proofOnchainT:"On-chain",proofOnchainD:"两笔 mainnet 签名 · Kamino 同一 tx 借还",
+  onchainLabel:"On-chain · Solana mainnet",
+  onchainTitle:"两笔可自行打开的交易。",
+  onchainNote:"每笔均为 Kamino 闪电贷、经 Jupiter 的 SOL 往返与归还，全部在同一笔交易内，由所有者钱包（GrQX7F…oujqJS）签名。仅显示借入规模。",
+  onchainRow1:"2026年7月21日 · 30,000 USDC 闪电贷，在同一笔交易内执行并归还 · Solscan ↗",
+  onchainRow2:"2026年7月22日 · 15,000 USDC 闪电贷，在同一笔交易内执行并归还 · Solscan ↗",
+  onchainLine:"证明代码路径在 mainnet 上运行。不承诺结果。<a href=\"proof/onchain/\">如何核对</a>。",
   proofFlashNote:"仅为说明图 — 仓库中无可发布的交易签名。<a href=\"proof/onchain/\">On-chain proof page</a> 说明什么才算证据。",
   seatsLabel:"终身席位",seatsTitle:"一次付费。席位永久保留。",
   s1cap:"350 · 部分面板 · 1–2 对 · 更多交易对已锁定",s1tier:"Starter · 350 · $350",s1for:"第一台机器 — 学路径",s1del:"付款 + brief 后 <time>3.35</time> 小时内二进制文件到你这边",s1help:"含交接通话 · dry/HOLD 交付",s1btn:"使用 PayPal 付款",seatAlt:"或使用商店结账",
@@ -403,9 +439,8 @@ zh:{
   seatAll:"<strong>每席位：</strong>密钥在你处。我们构建，你继续。Titan/gRPC 另计。可选 $149/月 follow-up。",
   cmpLabel:"对比席位",cmpFeature:"功能",cmpS:"Starter $350",cmpP:"Pro $699",cmpSo:"Source $1,999",
   cmpRows:[["Board","Partial 350","Full arb","Full + source"],["适合","首台","Operator","要代码"],["Pairs","1–2","Multi","Workshop"],["交付","就绪二进制 + 交接通话","就绪二进制 + 控制","Source"],["聊天控制","是","是","是"],["付款后交付","3.35 小时 + brief","3.35 小时 + brief","3.35 小时 + brief"],["默认状态","Dry/HOLD 直至启用 · 标准席位 Solana · BTC/ETH 仅 Source / custom brief","",""],["更新","3 月","6 月","6 月 + workshop"],["Cap","Capped","无 cap","无 cap"],["Slip/tip","固定","你设","改代码"],["Jito","—","可选","可改"],["RPC","—","Hooks","可改"],["Workshop","—","—","含"],["Keys","始终在你","",""],["Handoff","构建 → 交接通话 → 在手机上继续","",""],["Titan","不含","",""]],
-  chatBtn:"💬 Chatting by elghaly",
   footContact:"优先邮件："+LINKMAIL+"。通话仅预约。",
-  footAddr:"elghaly, LLC · 优先邮件："+LINKMAIL+"。通话仅预约。",
+  footAddr:"优先邮件："+LINKMAIL+"。通话仅预约。",
   netLabel:"Networks",netNote:"Solana 是标准席位支持的网络 · ETH · BTC · ARB · MONAD 仅显示为扩展路径",
   fine:"Plumb 是按现状出售的交易台软件，不提供任何保证或担保。我们不对利润、回报、CLEAR、land 或任何结果作任何声明。由你自行托管，密钥在你手中，风险由你承担。这不是代币销售。这不是投资。 "+LINKREFUNDS+".",
   once:"一次",netSol:"Solana — 支持的网络",netEth:"Ethereum — 扩展路径",netBtc:"Bitcoin — 扩展路径",netArb:"Arbitrum — 扩展路径",netMonad:"Monad — 扩展路径",
@@ -674,7 +709,10 @@ es:{
 };
 
 const LANGS=['en','ar','ru','zh','de','es'];
+const LANGS_NAV=['en','ar','ru','zh'];
+const LANG_HREF={en:'/',ar:'/ar/',ru:'/ru/',zh:'/zh/'};
 const KEYS=[
+  ['introEyebrow','#introEyebrow'],['introTitle','#introTitle'],['introLede','#introLede'],['introCta','#introCta'],
   ['heroEyebrow','#heroEyebrow'],['heroH1','#heroH1','html'],['heroLede','#heroLede','html'],
   ['heroPitch','#heroPitch'],['heroDelivery','#heroDelivery','html'],['heroDeliveryNote','#heroDeliveryNote'],['heroHelp','#heroHelp'],
   ['trustLabel','#trustLabel'],['trustStrong','#trustStrong'],['trustNote','#trustNote'],
@@ -687,6 +725,9 @@ const KEYS=[
   ['proofClaimsT','#proofClaimsT'],['proofClaimsD','#proofClaimsD'],
   ['proofLimitsT','#proofLimitsT'],['proofLimitsD','#proofLimitsD'],
   ['proofOnchainT','#proofOnchainT'],['proofOnchainD','#proofOnchainD'],
+  ['onchainLabel','#onchainLabel'],['onchainTitle','#onchainTitle'],['onchainNote','#onchainNote'],
+  ['onchainRow1','#onchainRow1 a'],['onchainRow2','#onchainRow2 a'],
+  ['onchainLine','#onchainLine','html'],
   ['proofFlashNote','#proofFlashNote','html'],
   ['glanceLabel','#glanceLabel'],['glanceTitle','#glanceTitle'],['glanceNote','#glanceNote'],
   ['gf1h','#gf1h'],['gf1','#gf1'],['gf2h','#gf2h'],['gf2','#gf2'],
@@ -714,7 +755,7 @@ const KEYS=[
   ['seatAlt','#s1alt'],['seatAlt','#s2alt'],['seatAlt','#s3alt'],
   ['seatAll','#seatAll','html'],['cmpLabel','#cmpLabel'],['cmpFeature','#cmpFeature'],
   ['cmpS','#cmpS'],['cmpP','#cmpP'],['cmpSo','#cmpSo'],
-  ['chatBtn','#chatBtn'],['footContact','#footContact','html'],['footAddr','#footAddr','html'],['netLabel','#netLabel'],['netNote','#netNote'],
+  ['footContact','#footContact','html'],['footAddr','#footAddr','html'],['netLabel','#netLabel'],['netNote','#netNote'],
   ['fine','#fine','html'],
   ['skipLink','#skipLink'],
   ['navWhat','#navWhat'],['navEvidence','#navEvidence'],['navCustody','#navCustody'],['navDelivery','#navDelivery'],
@@ -730,6 +771,15 @@ const KEYS=[
   ['briefLabel','#briefLabel'],['bi1','#bi1'],['bi2','#bi2'],['bi3','#bi3'],['bi4','#bi4'],
   ['toTopLabel','#toTop','aria-label','attr']
 ];
+
+function pageLangFromPath(){
+  if(typeof window.PLUMB_PAGE_LANG==='string'&&LANGS_NAV.includes(window.PLUMB_PAGE_LANG))return window.PLUMB_PAGE_LANG;
+  var p=location.pathname.replace(/\/index\.html$/i,'').replace(/\/+$/,'')||'/';
+  if(p==='/ar')return 'ar';
+  if(p==='/ru')return 'ru';
+  if(p==='/zh')return 'zh';
+  return 'en';
+}
 
 function setLang(lang){
   if(!T[lang])lang='en';
@@ -775,16 +825,30 @@ function setLang(lang){
     if(el&&d[k])el.setAttribute('title',d[k]);
   });
   document.querySelectorAll('.lang-btn').forEach(b=>{
-    b.classList.toggle('active',b.dataset.lang===lang);
-    b.setAttribute('aria-pressed',b.dataset.lang===lang);
+    var on=b.dataset.lang===lang;
+    b.classList.toggle('active',on);
+    if(b.tagName==='BUTTON')b.setAttribute('aria-pressed',on);
+    if(b.tagName==='A'){
+      if(on)b.setAttribute('aria-current','page');
+      else b.removeAttribute('aria-current');
+    }
   });
   try{localStorage.setItem('plumb-lang',lang);}catch(e){}
 }
 
 function init(){
-  document.querySelectorAll('.lang-btn').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
-  let lang='en';
-  try{lang=localStorage.getItem('plumb-lang')||'en';}catch(e){}
+  document.querySelectorAll('.lang-btn').forEach(b=>{
+    if(b.tagName==='BUTTON'){
+      b.addEventListener('click',()=>setLang(b.dataset.lang));
+    }
+  });
+  let lang=pageLangFromPath();
+  if(lang==='en'){
+    try{
+      var saved=localStorage.getItem('plumb-lang');
+      if(saved&&LANGS.includes(saved))lang=saved;
+    }catch(e){}
+  }
   if(!LANGS.includes(lang))lang='en';
   setLang(lang);
 }

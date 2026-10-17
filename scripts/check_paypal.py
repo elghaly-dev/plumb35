@@ -16,7 +16,7 @@ from html.parser import HTMLParser
 from urllib.parse import urlsplit, parse_qs
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-BUSINESS = "1918825752@qq.com"
+BUSINESS = "support@elghaly.dev"
 VOID = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "source", "track", "wbr"}
 
 

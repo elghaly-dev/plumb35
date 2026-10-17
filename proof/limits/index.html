@@ -9,32 +9,36 @@
 <meta name="theme-color" content="#050505"/>
 <link rel="icon" href="../../favicon.png" type="image/png"/>
 <link rel="icon" href="../../favicon.svg" type="image/svg+xml"/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../../css/house-glass.css"/>
 <link rel="stylesheet" href="../proof.css"/>
 <style id="lic-badges-css">.lic-badges{margin:.75rem 0 0;font-size:.75rem;line-height:1.2}.lic-badges>a,.lic-badges>span{display:inline-flex;align-items:center;min-height:24px;margin:.2rem .15rem;padding:0 .6rem;border:1px solid currentColor;border-radius:999px;color:inherit;vertical-align:middle}.lic-badges>a{text-decoration:underline;text-underline-offset:2px}.lic-badges>span{text-decoration:none}</style>
 </head>
 <body>
 <div class="wrap">
-  <header>
-    <div class="brand">
-      <img class="brand-p" src="../../logo.png" width="40" height="40" alt="" aria-hidden="true"/>
-      <a href="../../" class="brand-logo" aria-label="Plumb — home">
-        <span class="bl-35">35</span>
-        <span class="bl-stack"><span class="bl-name">PLUMB</span><span class="bl-sub">PROOF</span></span>
-      </a>
+  <header class="nav">
+    <div class="nav__langbar">
+      <div class="nav__langbar-in">
+        <nav class="lang-switch" aria-label="Language">
+          <button type="button" class="lang-btn active" data-lang="en" aria-pressed="true">English</button>
+          <button type="button" class="lang-btn" data-lang="ar" aria-pressed="false">العربية</button>
+          <button type="button" class="lang-btn" data-lang="ru" aria-pressed="false">Русский</button>
+          <button type="button" class="lang-btn" data-lang="zh" aria-pressed="false">中文</button>
+          <button type="button" class="lang-btn" data-lang="de" aria-pressed="false">Deutsch</button>
+          <button type="button" class="lang-btn" data-lang="es" aria-pressed="false">Español</button>
+        </nav>
+      </div>
     </div>
-    <div class="header-right">
-      <nav class="lang-switch" aria-label="Language">
-        <button type="button" class="lang-btn active" data-lang="en" aria-pressed="true">EN</button>
-        <button type="button" class="lang-btn" data-lang="ar" aria-pressed="false">AR</button>
-        <button type="button" class="lang-btn" data-lang="ru" aria-pressed="false">RU</button>
-        <button type="button" class="lang-btn" data-lang="zh" aria-pressed="false">ZH</button>
-        <button type="button" class="lang-btn" data-lang="de" aria-pressed="false">DE</button>
-        <button type="button" class="lang-btn" data-lang="es" aria-pressed="false">ES</button>
-      </nav>
-      <a href="../../" id="proofBackHome">← Plumb home</a>
+    <div class="nav__in proof-nav-row">
+      <div class="brand">
+        <img class="brand-p" src="../../logo.png" width="40" height="40" alt="" aria-hidden="true"/>
+        <a href="../../" class="brand-logo" aria-label="Plumb — home">
+          <span class="bl-35">35</span>
+          <span class="bl-stack"><span class="bl-name">PLUMB</span><span class="bl-sub">PROOF</span></span>
+        </a>
+      </div>
+      <div class="header-right">
+        <a href="../../" id="proofBackHome">← Plumb home</a>
+      </div>
     </div>
   </header>
 
@@ -62,7 +66,7 @@
     </li>
     <li>
       <strong>Screenshots are not proof</strong>
-      A screenshot is an image we produced. Only a transaction signature — copyable, checkable on two independent explorers — is on-chain evidence. We have no publishable signature yet, so we show no on-chain screenshots. See <a href="../onchain/">On-chain</a>.
+      A screenshot is an image we produced. Only a transaction signature — copyable, checkable on two independent explorers — is on-chain evidence. That is why the <a href="../onchain/">On-chain</a> page lists two signatures with Solscan links instead of screenshots — and why it shows the borrow size only, with no result figures.
     </li>
     <li>
       <strong>Fixtures prove layout, not behaviour</strong>
@@ -88,7 +92,8 @@
   </div>
 
   <footer>
-    <p class="addr">elghaly, LLC · Email first: <a href="mailto:support@elghaly.dev">support@elghaly.dev</a>. Calls only by appointment.</p>
+    <p>elghaly, LLC</p>
+    <p class="addr">Email first: <a href="mailto:support@elghaly.dev">support@elghaly.dev</a>. Calls only by appointment.</p>
     <p class="addr legal-links"><a href="https://elghaly.dev/about.html">About</a> · <a href="https://elghaly.dev/contact.html">Contact</a> · <a href="/refunds/">Refunds</a> · <a href="https://elghaly.dev/delivery.html">Delivery</a> · <a href="https://elghaly.dev/terms.html">Terms</a> · <a href="https://elghaly.dev/privacy.html">Privacy</a></p>
     <p class="fine">Plumb is desk software sold as-is, without warranty. We make no claims about results, returns, CLEAR, land, or any outcome. You host it, you hold the keys, you accept the risk. Not a token sale. Not an investment.</p>
   <p class="lic-badges"><a href="https://creativecommons.org/licenses/by/4.0/" rel="license">© elghaly · CC BY 4.0</a> <a href="https://github.com/Alarm2024">Open source</a></p>
