@@ -437,12 +437,14 @@ header.nav.is-stuck {
 /* ── Cards & sections ── */
 .section-title,
 .hero h1,
+.hero h2,
 .intro-hero__title {
   font-family: var(--house-font);
   font-weight: 700;
 }
 
-.hero h1 {
+.hero h1,
+.hero h2 {
   font-size: clamp(2rem, 5vw, 3rem);
 }
 
@@ -637,7 +639,8 @@ section[id]{scroll-margin-top:132px}
   font-size:11px;letter-spacing:.22em;text-transform:uppercase;
   color:var(--muted);font-weight:500;margin-bottom:var(--space-sm);
 }
-.hero h1{
+.hero h1,
+.hero h2{
   font-family:var(--serif);
   font-size:clamp(42px,6.5vw,64px);
   font-weight:400;line-height:1.05;letter-spacing:-.025em;
@@ -1180,7 +1183,8 @@ footer .love{
   .to-top{display:none}
 }
 @media(max-width:600px){
-  .hero h1{font-size:38px}
+  .hero h1,
+  .hero h2{font-size:38px}
   .hero-products{grid-template-columns:1fr}
   section{margin-top:var(--space-xl)}
   .marks-owner{display:none}
