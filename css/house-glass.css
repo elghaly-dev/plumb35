@@ -663,6 +663,8 @@ section[id]{scroll-margin-top:132px}
   font-weight:500;letter-spacing:.02em;
 }
 .delivery time{font-family:var(--serif);font-size:17px;color:var(--ink);font-weight:400}
+.delivery.delivery-lg{display:inline-block;font-size:14.5px;letter-spacing:.01em;border-radius:18px;line-height:1.5}
+.delivery.delivery-lg time{font-size:19px}
 .delivery-note{font-size:11px;color:var(--muted-soft);font-weight:400;margin-left:4px}
 .hero-help{font-size:14px;color:var(--muted-soft);font-weight:400}
 .trust-band{
