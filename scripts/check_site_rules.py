@@ -3,16 +3,20 @@
 import pathlib
 import re
 import sys
+from html.parser import HTMLParser
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 
 FOOTER_URLS = [
+    "https://chatting.elghaly.dev",
     "https://elghaly.dev/about.html",
-    "https://elghaly.dev/contact.html",
+    "mailto:support@elghaly.dev",
     "https://elghaly.dev/delivery.html",
     "https://elghaly.dev/terms.html",
     "https://elghaly.dev/privacy.html",
 ]
+
+FOOTER_BLOCK = re.compile(r"<footer\b[^>]*>(.*?)</footer>", re.I | re.S)
 
 FORBIDDEN_WORDS = re.compile(r"\b(live|profit|guarantee|audit|launched)\b", re.I)
 FORBIDDEN = [
@@ -22,17 +26,68 @@ FORBIDDEN = [
     (re.compile(r"facebook\.com", re.I), "Facebook"),
 ]
 
+SKIP_DIRS = {".git", ".github", "node_modules", "scripts"}
+
+
+class _VisibleStrip(HTMLParser):
+    __slots__ = ("_skip", "out")
+
+    def __init__(self) -> None:
+        super().__init__()
+        self._skip = 0
+        self.out: list[str] = []
+
+    def handle_starttag(self, tag: str, attrs) -> None:
+        if tag.lower() in ("script", "style"):
+            self._skip += 1
+
+    def handle_endtag(self, tag: str) -> None:
+        if tag.lower() in ("script", "style") and self._skip:
+            self._skip -= 1
+
+    def handle_data(self, data: str) -> None:
+        if not self._skip:
+            self.out.append(data)
+
 
 def visible_text(raw: str) -> str:
     raw = re.sub(r"<!--.*?-->", "", raw, flags=re.S)
-    raw = re.sub(r"<script\b[\s\S]*?</script[^>]*>", "", raw, flags=re.I)
-    raw = re.sub(r"<style\b[\s\S]*?</style[^>]*>", "", raw, flags=re.I)
-    raw = re.sub(r"<[^>]+>", " ", raw)
-    return re.sub(r"\s+", " ", raw)
+    parser = _VisibleStrip()
+    parser.feed(raw)
+    parser.close()
+    return re.sub(r"\s+", " ", " ".join(parser.out))
+
+
+def is_redirect(raw: str) -> bool:
+    head = raw.split("</head>", 1)[0] if re.search(r"</head>", raw, re.I) else raw[:4000]
+    return bool(re.search(r'<meta[^>]+http-equiv=["\']refresh["\']', head, re.I))
+
+
+def is_full_page(path: pathlib.Path, raw: str) -> bool:
+    if not re.search(r"<!DOCTYPE\s+html|<html\b", raw, re.I):
+        return False
+    if is_redirect(raw):
+        return False
+    return True
+
+
+def footer_has_llc(raw: str) -> bool:
+    block = FOOTER_BLOCK.search(raw)
+    if block:
+        return "elghaly, LLC" in block.group(1)
+    return False
+
+
+def html_files():
+    for path in sorted(ROOT.rglob("*.html")):
+        if any(part in SKIP_DIRS for part in path.parts):
+            continue
+        yield path
 
 
 def main():
     errors = []
+    pages = list(html_files())
     index = ROOT / "index.html"
     if not index.exists():
         errors.append("missing index.html")
@@ -43,18 +98,24 @@ def main():
                 errors.append("index.html missing footer URL %s" % url)
         if "elghaly, LLC" not in text:
             errors.append("index.html missing elghaly, LLC")
-        vis = visible_text(text)
+
+    for path in pages:
+        rel = path.relative_to(ROOT)
+        raw = path.read_text(encoding="utf-8")
+        if is_full_page(path, raw) and not footer_has_llc(raw):
+            errors.append("%s: footer missing elghaly, LLC" % rel)
+        vis = visible_text(raw)
         for pat, label in FORBIDDEN:
             if pat.search(vis):
-                errors.append("index.html: forbidden %s" % label)
+                errors.append("%s: forbidden %s" % (rel, label))
         for match in FORBIDDEN_WORDS.finditer(vis):
-            errors.append("index.html: forbidden word %r" % match.group(0))
+            errors.append("%s: forbidden word %r" % (rel, match.group(0)))
 
     for msg in errors:
         print("FAIL", msg)
     if errors:
         sys.exit(1)
-    print("ok: plumb index footer + house rules")
+    print("ok: %d HTML file(s), plumb footer + house rules" % len(pages))
 
 
 if __name__ == "__main__":

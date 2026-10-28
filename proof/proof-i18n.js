@@ -2,57 +2,36 @@
 const PROOF_T={
   en:{
     backHome:"← Plumb home",
-    navOnchain:"On-chain",
     navFixtures:"Fixtures",
     navClaims:"Claims",
     navLimits:"Limits",
-    localeNote:""
+    localeNote:"",
   },
   ar:{
     backHome:"← الصفحة الرئيسية",
-    navOnchain:"On-chain",
     navFixtures:"Fixtures",
     navClaims:"Claims",
     navLimits:"Limits",
-    localeNote:"نص هذه الصفحة بالإنجليزية. العبارات القانونية والالتزامات لم تُترجم — لا تعامل أي ترجمة آلية على أنها التزام."
+    localeNote:"",
   },
   ru:{
     backHome:"← На главную",
-    navOnchain:"On-chain",
     navFixtures:"Fixtures",
     navClaims:"Claims",
     navLimits:"Limits",
-    localeNote:"Текст страницы на английском. Юридически значимые формулировки не переводились — не считайте машинный перевод обязательством."
+    localeNote:"",
   },
   zh:{
     backHome:"← 返回首页",
-    navOnchain:"On-chain",
     navFixtures:"Fixtures",
     navClaims:"Claims",
     navLimits:"Limits",
-    localeNote:"本页正文为英文。具有法律或承诺性质的句子未翻译——请勿将机器翻译视为同等承诺。"
-  },
-  de:{
-    backHome:"← Startseite",
-    navOnchain:"On-chain",
-    navFixtures:"Fixtures",
-    navClaims:"Claims",
-    navLimits:"Limits",
-    localeNote:"Seiteninhalt auf Englisch. Rechtlich relevante Formulierungen sind nicht übersetzt — maschinelle Übersetzungen gelten nicht als Verpflichtung."
-  },
-  es:{
-    backHome:"← Inicio",
-    navOnchain:"On-chain",
-    navFixtures:"Fixtures",
-    navClaims:"Claims",
-    navLimits:"Limits",
-    localeNote:"El cuerpo de esta página está en inglés. Las frases con peso legal o de compromiso no se tradujeron — no trate una traducción automática como el mismo compromiso."
+    localeNote:"",
   }
 };
 
 const PROOF_KEYS=[
   ['backHome','#proofBackHome'],
-  ['navOnchain','#navOnchain'],
   ['navFixtures','#navFixtures'],
   ['navClaims','#navClaims'],
   ['navLimits','#navLimits'],
@@ -64,15 +43,16 @@ function setProofLang(lang){
   const d=PROOF_T[lang];
   document.documentElement.lang=lang;
   document.documentElement.dir=lang==='ar'?'rtl':'ltr';
-  PROOF_KEYS.forEach(([k,sel])=>{
+  PROOF_KEYS.forEach(([k,sel,mode])=>{
     const el=document.querySelector(sel);
-    if(!el)return;
+    if(!el||d[k]===undefined)return;
     if(k==='localeNote'){
       el.hidden=!d.localeNote;
       el.textContent=d.localeNote||'';
       return;
     }
-    if(d[k])el.textContent=d[k];
+    if(mode==='html')el.innerHTML=d[k];
+    else el.textContent=d[k];
   });
   document.querySelectorAll('.lang-btn').forEach(b=>{
     b.classList.toggle('active',b.dataset.lang===lang);
